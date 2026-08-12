@@ -1,0 +1,314 @@
+import json
+import os
+
+# Saturation dataset of Homeric Characters & Epithets with Classical Philology details
+
+HOMERIC_HEROES_RESEARCH = [
+    # --- ACHAEAN HEROES & KINGS ---
+    {
+        "id": "achilles",
+        "nameKo": "아킬레우스",
+        "nameGreek": "Ἀχιλλεύς",
+        "nameTransliteration": "Achilleus",
+        "epithetGreek": "ποδάρκης δῖος Ἀχιλλεύς / ποδὰς ὠκὺς Ἀχιλλεύς",
+        "epithetTransliteration": "podarkes dios Achilleus / podas okys Achilleus",
+        "epithetKo": "발이 빠른 아킬레우스 / 신과 같은 아킬레우스",
+        "side": "achaean",
+        "role": "아카이오이 최고의 전사, 프티아의 미르미돈족 수장, 테티스와 펠레우스의 아들",
+        "description": "운명적 요절과 불멸의 영광(Kleos) 사이에서 갈등하며, 친구 파트로클로스의 죽음으로 파멸적 분노(Mēnis)에 휩싸였다가 프리아모스 왕과의 화해를 통해 비극적 인간성을 완성함.",
+        "aristeiaOrKeyBook": "일리아스 20-22권 (스카만드로스 강가에서의 대도살 및 헥토르 결투)",
+        "philologyNote": "6보격 운율의 후반부(Dactylic Hexameter verse-end)에 부합하도록 설계된 전형적인 구전 공식어구."
+    },
+    {
+        "id": "agamemnon",
+        "nameKo": "아가멤논",
+        "nameGreek": "Ἀγαμέμνων",
+        "nameTransliteration": "Agamemnon",
+        "epithetGreek": "ἄναξ ἀνδρῶν Ἀγαμέμνων / εὐρὺ κρείων Ἀγαμέμνων",
+        "epithetTransliteration": "anax andron Agamemnon / eury kreion Agamemnon",
+        "epithetKo": "인간들의 군주 아가멤논 / 넓은 땅을 통치하는 아가멤논",
+        "side": "achaean",
+        "role": "미케네의 국왕, 그리스 연합군 총사령관, 아트레우스의 아들",
+        "description": "최고 통치자로서의 권위(Anax)와 오만(Hubris)으로 아킬레우스의 전리품 브리세이스를 침해하여 전역을 위기에 빠뜨렸으나, 후일 19권에서 제우스가 내린 눈멂(Atē)을 시인하고 화해함.",
+        "aristeiaOrKeyBook": "일리아스 11권 (아가멤논의 무공 절정 Aristeia)",
+        "philologyNote": "Anax andron(ἄναξ ἀνδρῶν)은 미케네 Linear B 점토판의 Wa-na-ka(관료제적 절대군주) 칭호가 호메로스 시어로 잔존한 대표적 역사언어학적 아카이즘."
+    },
+    {
+        "id": "diomedes",
+        "nameKo": "디오메데스",
+        "nameGreek": "Διομήδης",
+        "nameTransliteration": "Diomedes",
+        "epithetGreek": "βοὴν ἀγαθὸς Διομήδης / Τυδεΐδης",
+        "epithetTransliteration": "boen agathos Diomedes / Tydeides",
+        "epithetKo": "전함 소리 우렁찬 디오메데스 / 티데우스의 아들",
+        "side": "achaean",
+        "role": "아르고스의 국왕, 7인의 테베 공격자 티데우스의 아들",
+        "description": "아테나 여신의 완벽한 가호를 받아 전장에서 신들(아프로디테, 아레스)에게까지 상처를 입힌 완벽한 전사이자 사려 깊은 조언자.",
+        "aristeiaOrKeyBook": "일리아스 5권 (디오메데스의 대무공 Aristeia)",
+        "philologyNote": "Boēn agathos(βοὴν ἀγαθὸς)는 전장에서 적을 위압하는 고함소리이자 영웅적 전사 칭호."
+    },
+    {
+        "id": "ajax-telamon",
+        "nameKo": "대(大) 아이아스",
+        "nameGreek": "Αἴας Τελαμώνιος",
+        "nameTransliteration": "Aias Telamonios",
+        "epithetGreek": "ἕρκος Ἀχαιῶν / μέγας Αἴας",
+        "epithetTransliteration": "herkos Achaion / megas Aias",
+        "epithetKo": "아카이오이의 방파제 / 거대한 아이아스",
+        "side": "achaean",
+        "role": "살라미스의 국왕, 테라몬의 아들, 아킬레우스 다음가는 거구의 최강 전사",
+        "description": "신들의 도움 없이 순수한 육체적 힘(Biē)과 거대한 8겹 소가죽 방패로 트로이군의 침공을 홀로 막아선 아카이오이의 수호 방패.",
+        "aristeiaOrKeyBook": "일리아스 15권 (그리스 함선 수호전)",
+        "philologyNote": "Herkos Achaion(ἕρκος Ἀχαιῶν)은 방어막이자 성벽을 의미하며, 그의 타워형 방패(Tower Shield)는 미케네 시대의 고고학적 방패 형태를 반영함."
+    },
+    {
+        "id": "menelaus",
+        "nameKo": "메넬라오스",
+        "nameGreek": "Μενέλαος",
+        "nameTransliteration": "Menelaos",
+        "epithetGreek": "ἀρηΐφιλος Μενέλαος / ξανθὸς Μενέλαος",
+        "epithetTransliteration": "areiphilos Menelaos / xanthos Menelaos",
+        "epithetKo": "아레스의 사랑을 받는 메넬라오스 / 금발의 메넬라오스",
+        "side": "achaean",
+        "role": "스파르타의 국왕, 헬레네의 남편, 아가멤논의 동생",
+        "description": "아내 헬레네를 빼앗긴 원한으로 트로이 원정을 이끌었으며, 파리스와의 1:1 결투에서 승리하고 후일 오뒷세이아 4권에서 텔레마코스를 환대함.",
+        "aristeiaOrKeyBook": "일리아스 3권 (파리스와의 결투) & 17권 (파트로클로스 시신 수호)",
+        "philologyNote": "Xanthos(ξανθός)는 고대 인체 묘사에서 영웅적 금발/적갈색 머리를 의미함."
+    },
+    {
+        "id": "nestor",
+        "nameKo": "네스토르",
+        "nameGreek": "Νέστωρ",
+        "nameTransliteration": "Nestor",
+        "epithetGreek": "Γερήνιος ἱππότα Νέστωρ / ἡδυεπὴς Νέστωρ",
+        "epithetTransliteration": "Gerenios hippota Nestor / hedyepes Nestor",
+        "epithetKo": "게레니아의 기사 네스토르 / 감로수처럼 달콤하게 말하는 네스토르",
+        "side": "achaean",
+        "role": "필로스의 늙은 국왕, 3세대에 걸친 영웅들의 지혜로운 조언자",
+        "description": "아킬레우스와 아가멤논의 분쟁 시 중재를 시도하며, 과거 이아손과 헤라클레스 시대의 옛 영웅담을 들려주어 전사들의 사기를 북돋움.",
+        "aristeiaOrKeyBook": "일리아스 1권 (중재 연설) & 11권 (패리-로드 구전 시술)",
+        "philologyNote": "Hedyepēs(ἡδυεπής)는 '입에서 굴리는 말이 꿀보다 달콤하다'는 구전 시인의 언어적 예지 선찬."
+    },
+    {
+        "id": "odysseus",
+        "nameKo": "오뒷세우스",
+        "nameGreek": "Ὀδυσσεύς",
+        "nameTransliteration": "Odysseus",
+        "epithetGreek": "πολύτροπος Ὀδυσσεύς / πολύμητις Ὀδυσσεύς",
+        "epithetTransliteration": "polytropos Odysseus / polymetis Odysseus",
+        "epithetKo": "파란만장한 잔꾀의 오뒷세우스 / 꾀가 많은 오뒷세우스",
+        "side": "odyssey-hero",
+        "role": "이타케의 국왕, 트로이 목마의 발명자, 10년의 방랑을 이겨낸 귀환의 영웅",
+        "description": "물리적 힘(Biē)보다 꾀와 지혜(Mētis)로 고난을 극복하며, 신들의 시험과 마녀, 거인, 저승 방문을 거쳐 고향 이타케로 귀환하여 왕국을 회복함.",
+        "aristeiaOrKeyBook": "오뒷세이아 9-12권 (방랑기 이야기) & 22권 (구혼자 응징)",
+        "philologyNote": "Polytropos(πολύτροπος)는 '다방면으로 회전하는, 수많은 길을 경험한'이란 뜻으로 《오뒷세이아》 1행의 첫 번째 핵심 수식어."
+    },
+    {
+        "id": "patroclus",
+        "nameKo": "파트로클로스",
+        "nameGreek": "Πάτροκλος",
+        "nameTransliteration": "Patroklos",
+        "epithetGreek": "ἱπποκέλευθος Πάτροκλος / Διῒ φίλος",
+        "epithetTransliteration": "hippokeleuthos Patroklos / Dii philos",
+        "epithetKo": "말 탄 전사 파트로클로스 / 제우스의 사랑을 받는 자",
+        "side": "achaean",
+        "role": "아킬레우스의 가장 친한 전우이자 분신",
+        "description": "위기에 빠진 그리스군을 구하기 위해 아킬레우스의 갑옷을 입고 출전했다가 헥토르의 손에 전사함. 그의 죽음은 아킬레우스의 전장 복귀와 분노의 폭발을 야기함.",
+        "aristeiaOrKeyBook": "일리아스 16권 (파트로클로스의 출전과 전사)",
+        "philologyNote": "호메로스 시인이 직접 2인칭('파트로클로스여, 그대는...')으로 부르는 드문 정서적 호칭 대상."
+    },
+    {
+        "id": "idomeneus",
+        "nameKo": "이도메네오스",
+        "nameGreek": "Ἰδομενεύς",
+        "nameTransliteration": "Idomeneus",
+        "epithetGreek": "δουρίκλυτος Ἰδομενεύς",
+        "epithetTransliteration": "douriklytos Idomeneus",
+        "epithetKo": "창으로 명성을 떨친 이도메네오스",
+        "side": "achaean",
+        "role": "크레타 섬의 국왕, 미노스 왕의 손자, 백 대의 함선을 이끌고 출전한 베테랑 장수",
+        "description": "고령임에도 불구하고 트로이군 함선 공격전에서 앞장서 적장들을 베어넘긴 크레타의 용맹한 국왕.",
+        "aristeiaOrKeyBook": "일리아스 13권 (이도메네오스의 무공)",
+        "philologyNote": "Douriklytos(δουρίκλυτος)는 청동기 창(Dory) 무기의 명성을 상징함."
+    },
+    {
+        "id": "ajax-oileus",
+        "nameKo": "소(小) 아이아스",
+        "nameGreek": "Αἴας Ōϊλῆος",
+        "nameTransliteration": "Aias Oileos",
+        "epithetGreek": "ταχὺς Αἴας / Ὀϊλῆος ταχὺς Αἴας",
+        "epithetTransliteration": "tachys Aias / Oileos tachys Aias",
+        "epithetKo": "발 빠른 아이아스 / 오일레우스의 아들 아이아스",
+        "side": "achaean",
+        "role": "로크리스 전사들의 수장, 창던지기와 달리기의 달인",
+        "description": "대 아이아스와 함께 '두 아이아스(Aiantidai)'로 불리며 전선을 누볐으나, 트로이 함락 시 카산드라를 아테나 신전에서 범하여 신들의 분노를 사고 귀환길에 수장됨.",
+        "aristeiaOrKeyBook": "일리아스 14권 & 오뒷세이아 4권 (귀환길 수장)",
+        "philologyNote": "대 아이아스와의 운율적 구별을 위해 Tachys(발빠른) 수식어가 고정 배정됨."
+    },
+
+    # --- TROJAN HEROES & ROYALTY ---
+    {
+        "id": "hector",
+        "nameKo": "헥토르",
+        "nameGreek": "Ἕκτωρ",
+        "nameTransliteration": "Hektor",
+        "epithetGreek": "κορυθαίολος Ἕκτωρ / ἀνδροφόνος Ἕκτωρ",
+        "epithetTransliteration": "korythaiolos Hektor / androphonos Hektor",
+        "epithetKo": "투구를 번득이는 헥토르 / 사람을 도살하는 헥토르",
+        "side": "trojan",
+        "role": "트로이의 왕자, 도시의 방어자, 프리아모스 왕과 헤카베의 장남",
+        "description": "아내 안드로마케와 아들 아스티아낙스를 사랑하는 고결한 가장이자 조국 트로이를 수호하기 위해 아킬레우스와의 비극적 죽음을 직면하는 가슴 아픈 영웅.",
+        "aristeiaOrKeyBook": "일리아스 12권 (성문 파쇄) & 22권 (아킬레우스와의 결투 및 전사)",
+        "philologyNote": "Korythaiolos(κορυθαίολος)는 청동 투구의 갈기가 번득이는 장엄한 전사 형상."
+    },
+    {
+        "id": "priam",
+        "nameKo": "프리아모스",
+        "nameGreek": "Πρίαμος",
+        "nameTransliteration": "Priamos",
+        "epithetGreek": "Πρίαμος θεοειδής / ἐϋμμελίω Πριάμοιο",
+        "epithetTransliteration": "Priamos theoeidēs / eummelio Priamoio",
+        "epithetKo": "신과 같은 프리아모스 왕 / 좋은 물푸레나무 창을 가진 프리아모스",
+        "side": "trojan",
+        "role": "트로이의 늙은 국왕, 헥토르와 파리스의 아버지",
+        "description": "아들 헥토르의 시신을 되찾기 위해 적진 한가운데 아킬레우스의 텐트로 밤중에 홀로 들어가 아들의 원수 손에 키스하는 비극적 아버지의 상징.",
+        "aristeiaOrKeyBook": "일리아스 24권 (아킬레우스 텐트 방문 및 헥토르 시신 몸값 탄원)",
+        "philologyNote": "Theoeidēs(θεοειδής)는 신적 고귀함을 지닌 왕족 칭호."
+    },
+    {
+        "id": "paris",
+        "nameKo": "파리스 (알렉산드로스)",
+        "nameGreek": "Πάρις / Ἀλέξανδρος",
+        "nameTransliteration": "Paris / Alexandros",
+        "epithetGreek": "Δύσπαρις / θεοειδὴς Ἀλέξανδρος",
+        "epithetTransliteration": "Dysparis / theoeides Alexandros",
+        "epithetKo": "재앙의 파리스 / 신과 같이 잘생긴 알렉산드로스",
+        "side": "trojan",
+        "role": "트로이의 둘째 왕자, 헬레네를 유혹하여 트로이 전쟁을 야기한 인물",
+        "description": "활쏘기에 능하며 미모가 뛰어났으나 전장에서는 헥토르의 질책을 받았으며, 후일 아폴론의 도움으로 아킬레우스의 발꿈치를 쏘아 그를 죽임.",
+        "aristeiaOrKeyBook": "일리아스 3권 (메넬라오스 결투) & 11권 (디오메데스 발에 활을 쏨)",
+        "philologyNote": "Dysparis(Δύσπαρις)는 헥토르가 아우를 비판할 때 쓰는 '재앙 덩어리 파리스'라는 운율 조어."
+    },
+    {
+        "id": "aeneas",
+        "nameKo": "아이네이아스 (에네아스)",
+        "nameGreek": "Αἰνείας",
+        "nameTransliteration": "Aineias",
+        "epithetGreek": "ἄναξ ἀνδρῶν Αἰνείας / βουλήφορος",
+        "epithetTransliteration": "anax andron Aineias / boulephoros",
+        "epithetKo": "인간들의 군주 아이네이아스 / 조언자 아이네이아스",
+        "side": "trojan",
+        "role": "데르다노스족 수장, 앙키세스와 여신 아프로디테의 아들",
+        "description": "아키엘레우스와 디오메데스의 공격 시 신들의 구출을 받으며, 후일 트로이 유민을 이끌고 이탈리아로 건너가 로마 제국의 조상이 되는 운명을 지님.",
+        "aristeiaOrKeyBook": "일리아스 5권 (아프로디테와 알키비아데스 구출) & 20권 (아킬레우스 결투)",
+        "philologyNote": "호메로스 서사시에서 아가멤논 외에 'Anax andron' 칭호를 가진 극소수 왕족."
+    },
+    {
+        "id": "sarpedon",
+        "nameKo": "사르페돈",
+        "nameGreek": "Σαρπηδών",
+        "nameTransliteration": "Sarpedon",
+        "epithetGreek": "ἀγὸς Λυκίων / Διὸς υἱός",
+        "epithetTransliteration": "agos Lykion / Dios uios",
+        "epithetKo": "리키아 전사들의 지도자 사르페돈 / 제우스의 아들",
+        "side": "trojan",
+        "role": "리키아 동맹군의 수장, 최고신 제우스의 아들",
+        "description": "귀족의 의무(Noblesse Oblige)를 강조한 고결한 장수로서 그리스 성벽을 파쇄했으나 파트로클로스의 손에 전사함. 제우스가 그의 죽음에 피눈물을 흘림.",
+        "aristeiaOrKeyBook": "일리아스 12권 (성벽 파쇄) & 16권 (전사 및 제우스의 운망)",
+        "philologyNote": "Noblesse Oblige를 명시한 12권의 사르페돈 연설('글라우코스여, 우리가 연회에서 상석을 차지하는 만큼 앞장서 싸워야 하지 않겠는가')은 영웅주의의 백미."
+    },
+    {
+        "id": "andromache",
+        "nameKo": "안드로마케",
+        "nameGreek": "Ἀνδρομάχη",
+        "nameTransliteration": "Andromache",
+        "epithetGreek": "λευκώλενος Ἀνδρομάχη",
+        "epithetTransliteration": "leukolenos Andromache",
+        "epithetKo": "하얀 팔의 안드로마케",
+        "side": "trojan",
+        "role": "헥토르의 아내, 킬리키아 테베 왕 에에티온의 딸",
+        "description": "부모와 일곱 형제를 아킬레우스에게 잃은 비극의 여인. 헥토르에게 성벽 수비를 애원하며, 헥토르 사후 트로이 함락의 비극을 예견하고 애가(Lament)를 부름.",
+        "aristeiaOrKeyBook": "일리아스 6권 (헥토르와의 성문 비극적 작별) & 24권 (헥토르 비가)",
+        "philologyNote": "Leukōlenos(λευκώλενος)는 숭고한 여성성과 왕족 여신/왕비의 신성한 미모 표현."
+    },
+
+    # --- OLYMPIAN GODS ---
+    {
+        "id": "zeus",
+        "nameKo": "제우스",
+        "nameGreek": "Ζεύς",
+        "nameTransliteration": "Zeus",
+        "epithetGreek": "νεφεληγερέτα Ζεύς / πατὴρ ἀνδρῶν τε θεῶν τε",
+        "epithetTransliteration": "nephelegereta Zeus / pater andron te theon te",
+        "epithetKo": "구름을 모으는 제우스 / 신들과 인간들의 아버지 제우스",
+        "side": "god",
+        "role": "올림포스 최고신, 운명(Moira)과 우주 질서의 수호자",
+        "description": "테티스 여신의 청원을 받아들여 아킬레우스의 명예가 회복될 때까지 트로이군에게 승리를 주기로 맹세(Will of Zeus - Dios Boule)하고 전황을 관장함.",
+        "aristeiaOrKeyBook": "일리아스 1권 (눈짓 맹세) & 8/15권 (전장 균형 조율)",
+        "philologyNote": "Nephelēgereta(νεφεληγερέτα)는 6보격 운율 문두/문말 조율용 최고신 고유 구전 성구."
+    },
+    {
+        "id": "athena",
+        "nameKo": "아테나",
+        "nameGreek": "Ἀθηνᾶ / Ἀθηναίη",
+        "nameTransliteration": "Athena / Athenaie",
+        "epithetGreek": "γλαυκῶπις Ἀθήνη / Παλλὰς Ἀθήνη",
+        "epithetTransliteration": "glaukopis Athene / Pallas Athene",
+        "epithetKo": "빛나는 눈의 아테나 / 팔라스 아테나",
+        "side": "god",
+        "role": "지혜와 전쟁, 전략의 여신, 아카이오이(그리스) 및 오뒷세우스의 절대적 수호신",
+        "description": "아킬레우스의 분노를 통제하고 디오메데스와 오뒷세우스에게 꾀(Metis)와 용기를 부여하여 트로이 함락을 지휘함.",
+        "aristeiaOrKeyBook": "일리아스 5권 (디오메데스 가호) & 오뒷세이아 전체 (오뒷세우스 귀환 조력)",
+        "philologyNote": "Glaukōpis(γλαυκῶπις)는 '올빼미의 빛나는 눈' 또는 '투명하게 번득이는 강렬한 눈빛'을 의미함."
+    },
+    {
+        "id": "apollo",
+        "nameKo": "아폴론",
+        "nameGreek": "Ἀπόλλων",
+        "nameTransliteration": "Apollon",
+        "epithetGreek": "ἑκηβόλος Ἀπόλλων / Φοῖβος Ἀπόλλων",
+        "epithetTransliteration": "hekebolos Apollon / Phoibos Apollon",
+        "epithetKo": "멀리서 쏘는 아폴론 / 빛나는 포이보스 아폴론",
+        "side": "god",
+        "role": "궁술, 예언, 역병, 음악의 신, 트로이군의 강력한 신성 수호자",
+        "description": "1권에서 사제 크리세스의 기도를 듣고 그리스 진영에 역병의 화살을 쏘아 올렸으며, 파트로클로스를 해체하고 헥토르의 시신을 수호함.",
+        "aristeiaOrKeyBook": "일리아스 1권 (역병 화살) & 16권 (파트로클로스 장구 해체)",
+        "philologyNote": "Hekēbolos(ἑκηβόλος)는 신성한 은화살의 명중력과 먼 거리의 영적 타격을 의미."
+    },
+    {
+        "id": "poseidon",
+        "nameKo": "포세이돈",
+        "nameGreek": "Ποσειδῶν",
+        "nameTransliteration": "Poseidon",
+        "epithetGreek": "γαϊήοχος ἐννοσίγαιος",
+        "epithetTransliteration": "gaieochos ennosigaios",
+        "epithetKo": "대지를 흔드는 포세이돈 / 바다의 지배자",
+        "side": "god",
+        "role": "바다와 지진, 말(Horse)의 신, 아카이오이의 수호신이자 오뒷세우스의 원수",
+        "description": "일리아스에서는 제우스의 금령을 어기고 몰래 아카이오이군을 도왔으며, 오뒷세이아에서는 아들 퀴클롭스의 눈을 멀게 한 오뒷세우스에게 10년 바다 방랑 저주를 내림.",
+        "aristeiaOrKeyBook": "일리아스 13-14권 (그리스 진영 참전) & 오뒷세이아 5권 (풍랑 유발)",
+        "philologyNote": "Ennosigaios(ἐννοσίγαιος)는 지진의 전율적 대지 진동을 묘사하는 고형 수식어."
+    },
+    {
+        "id": "hermes",
+        "nameKo": "헤르메스",
+        "nameGreek": "Ἑρμῆς",
+        "nameTransliteration": "Hermes",
+        "epithetGreek": "διάκτορος Ἀργεϊφόντης",
+        "epithetTransliteration": "diaktoros Argeiphontes",
+        "epithetKo": "안내자 헤르메스 / 아르구스를 살해한 자",
+        "side": "god",
+        "role": "신들의 전령, 인도자(Psychopompos), 경계와 길의 신",
+        "description": "프리아모스 왕을 밤중에 은밀히 아킬레우스의 텐트로 안내(24권)했으며, 키르케의 마술에 빠진 오뒷세우스에게 몰리(Moly) 풀을 주어 살림.",
+        "aristeiaOrKeyBook": "일리아스 24권 (프리아모스 인도) & 오뒷세이아 10권 (몰리 약초 부여)",
+        "philologyNote": "Argeïphontes(Ἀργεϊφόντης)는 100개 눈의 거인 아르구스를 벤 신화적 아카이즘 성구."
+    }
+]
+
+# Write to wave-1-saturation.json
+session_dir = "c:/Working/.omo/ulw-research/20260813-075300"
+out_path = os.path.join(session_dir, "wave-1-saturation.json")
+with open(out_path, "w", encoding="utf-8") as f:
+    json.dump(HOMERIC_HEROES_RESEARCH, f, ensure_ascii=False, indent=2)
+
+print(f"Phase 1 Saturation Wave Complete: Saved {len(HOMERIC_HEROES_RESEARCH)} detailed records to {out_path}")

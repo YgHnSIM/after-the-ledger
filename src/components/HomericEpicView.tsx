@@ -7,8 +7,10 @@ import { BookOpen, Shield, Feather, Sparkles, Scale, GraduationCap, Globe, Libra
 export const HomericEpicView: React.FC = () => {
   const [activeSection, setActiveSection] = useState<'books' | 'characters' | 'concepts' | 'matrix' | 'scholarship' | 'problem'>('scholarship');
   const [activeScholarshipTab, setActiveScholarshipTab] = useState<'all' | 'oral' | 'near-east' | 'linear-b' | 'textual'>('all');
+  const [selectedCharacterSide, setSelectedCharacterSide] = useState<'all' | 'achaean' | 'trojan' | 'god' | 'odyssey-hero' | 'odyssey-monster'>('all');
   const [selectedEpic, setSelectedEpic] = useState<'all' | 'iliad' | 'odyssey'>('all');
   const [selectedBook, setSelectedBook] = useState<number | null>(null);
+
 
   const filteredBooks = HOMERIC_BOOKS.filter(b => selectedEpic === 'all' || b.epic === selectedEpic);
 
@@ -191,42 +193,135 @@ export const HomericEpicView: React.FC = () => {
       {/* SECTION 2: CHARACTERS & EPITHETS */}
       {activeSection === 'characters' && (
         <section style={{ marginBottom: '4rem' }}>
-          <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>영웅 공식어구 및 인물 도감 (Formulaic Epithets & Characters)</h2>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-            구전 시인(랩소도스)들이 운율(Hexameter)을 맞추기 위해 사용한 고유 수식어구(Formulaic Epithets)와 주요 인물 성격을 분석합니다.
-          </p>
+          <div style={{ marginBottom: '1.25rem' }}>
+            <h2 className="section-title" style={{ marginBottom: '0.35rem' }}>
+              영웅 공식어구 및 인물 도감 (Formulaic Epithets & Characters Archive)
+            </h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', margin: 0 }}>
+              구전 시인(랩소도스)들이 6보격 운율(Dactylic Hexameter)을 즉석 조율하기 위해 사용한 운율 고유 수식어구(Formulaic Epithets)와 {HOMERIC_CHARACTERS.length}인의 인물 서사 기능·문헌학 사료를 제공합니다.
+            </p>
+          </div>
 
+          {/* SIDE FILTER SUBTABS */}
+          <div className="scholarship-subtabs">
+            <button
+              className={`scholarship-subtab-btn ${selectedCharacterSide === 'all' ? 'active' : ''}`}
+              onClick={() => setSelectedCharacterSide('all')}
+            >
+              <Shield size={14} /> <span>전체 인물 ({HOMERIC_CHARACTERS.length}인)</span>
+            </button>
+            <button
+              className={`scholarship-subtab-btn ${selectedCharacterSide === 'achaean' ? 'active' : ''}`}
+              onClick={() => setSelectedCharacterSide('achaean')}
+            >
+              <Award size={14} /> <span>아카이오이 전사/왕족</span>
+            </button>
+            <button
+              className={`scholarship-subtab-btn ${selectedCharacterSide === 'trojan' ? 'active' : ''}`}
+              onClick={() => setSelectedCharacterSide('trojan')}
+            >
+              <Milestone size={14} /> <span>트로이 수호자/왕족</span>
+            </button>
+            <button
+              className={`scholarship-subtab-btn ${selectedCharacterSide === 'god' ? 'active' : ''}`}
+              onClick={() => setSelectedCharacterSide('god')}
+            >
+              <Sparkles size={14} /> <span>올림포스 주요 신</span>
+            </button>
+            <button
+              className={`scholarship-subtab-btn ${selectedCharacterSide === 'odyssey-hero' ? 'active' : ''}`}
+              onClick={() => setSelectedCharacterSide('odyssey-hero')}
+            >
+              <BookOpen size={14} /> <span>오뒷세이아 영웅/귀환</span>
+            </button>
+            <button
+              className={`scholarship-subtab-btn ${selectedCharacterSide === 'odyssey-monster' ? 'active' : ''}`}
+              onClick={() => setSelectedCharacterSide('odyssey-monster')}
+            >
+              <Globe size={14} /> <span>마녀/님프/거인</span>
+            </button>
+          </div>
+
+          {/* CHARACTER CARDS GRID */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.25rem' }}>
-            {HOMERIC_CHARACTERS.map((char) => (
-              <div key={char.id} className="card" style={{ background: 'var(--bg-surface)', borderTop: '4px solid var(--civ-greece)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', margin: 0 }}>
-                    {char.nameKo}
-                  </h3>
-                  <span style={{ fontSize: '0.85rem', fontFamily: 'serif', color: 'var(--text-muted)' }}>
-                    {char.nameGreek}
-                  </span>
-                </div>
+            {HOMERIC_CHARACTERS.filter(c => selectedCharacterSide === 'all' || c.side === selectedCharacterSide).map((char) => {
+              const borderTopColor = 
+                char.side === 'achaean' ? 'var(--civ-greece)' :
+                char.side === 'trojan' ? 'var(--civ-mesopotamia)' :
+                char.side === 'god' ? 'var(--civ-israel-judah)' :
+                char.side === 'odyssey-hero' ? 'var(--civ-israel)' : 'var(--civ-egypt)';
 
-                {/* FORMULAIC EPITHET BADGE */}
-                <div style={{ background: 'var(--bg-surface-elevated)', border: '1px solid var(--border-highlight)', padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-md)', marginBottom: '1rem' }}>
-                  <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', marginBottom: '0.25rem' }} className="font-cinzel">
-                    영웅 공식 수식어구 (Formulaic Epithet)
+              const sideLabel =
+                char.side === 'achaean' ? '🏛️ 아카이오이 (그리스)' :
+                char.side === 'trojan' ? '🏺 트로이 진영' :
+                char.side === 'god' ? '⚡ 올림포스 신' :
+                char.side === 'odyssey-hero' ? '⛵ 오뒷세이아 영웅' : '🌀 신화적 존재';
+
+              return (
+                <div key={char.id} className="card" style={{ background: 'var(--bg-surface)', borderTop: `4px solid ${borderTopColor}`, display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+                    <div>
+                      <span className="status-badge" style={{ fontSize: '0.72rem', background: 'var(--bg-surface-elevated)', border: '1px solid var(--border-color)', marginBottom: '0.35rem', display: 'inline-block' }}>
+                        {sideLabel}
+                      </span>
+                      <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', margin: 0, color: 'var(--text-primary)' }}>
+                        {char.nameKo}
+                      </h3>
+                    </div>
+                    <div style={{ textAlign: 'right' }}>
+                      <div style={{ fontSize: '1.1rem', fontFamily: 'serif', color: 'var(--text-primary)', fontWeight: 700 }}>
+                        {char.nameGreek}
+                      </div>
+                      {char.nameTransliteration && (
+                        <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontFamily: 'var(--font-cinzel)' }}>
+                          {char.nameTransliteration}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--civ-mesopotamia)', fontFamily: 'var(--font-serif)' }}>
-                    {char.epithet}
+
+                  {/* FORMULAIC EPITHET BOX */}
+                  <div style={{ background: 'var(--bg-surface-elevated)', border: '1px solid var(--border-highlight)', padding: '0.75rem 0.9rem', borderRadius: 'var(--radius-md)' }}>
+                    <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--civ-greece)', textTransform: 'uppercase', marginBottom: '0.25rem' }} className="font-cinzel">
+                      📜 6보격 운율 공식 수식어구 (Formulaic Epithet)
+                    </div>
+                    <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem' }}>
+                      {char.epithetKo || char.epithet}
+                    </div>
+                    {char.epithetGreek && (
+                      <div style={{ fontSize: '0.85rem', color: 'var(--civ-mesopotamia)', fontFamily: 'serif', fontWeight: 600 }}>
+                        {char.epithetGreek}
+                      </div>
+                    )}
+                    {char.epithetTransliteration && (
+                      <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontFamily: 'var(--font-cinzel)', marginTop: '0.15rem' }}>
+                        {char.epithetTransliteration}
+                      </div>
+                    )}
                   </div>
-                </div>
 
-                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
-                  <strong>신분 및 역할:</strong> {char.role}
-                </div>
+                  <div style={{ fontSize: '0.86rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
+                    <strong>👑 신분 및 서사적 역할:</strong> {char.role}
+                  </div>
 
-                <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--text-secondary)', margin: 0 }}>
-                  {char.description}
-                </p>
-              </div>
-            ))}
+                  <p style={{ fontSize: '0.88rem', lineHeight: 1.55, color: 'var(--text-secondary)', margin: 0 }}>
+                    {char.description}
+                  </p>
+
+                  {char.aristeiaOrKeyBook && (
+                    <div style={{ fontSize: '0.82rem', color: 'var(--civ-israel-judah)', background: 'rgba(200, 90, 36, 0.08)', padding: '0.5rem 0.75rem', borderRadius: 'var(--radius-sm)', border: '1px solid rgba(200, 90, 36, 0.2)' }}>
+                      <strong>⚔️ 무공 절정 / 원전 핵심 권수:</strong> {char.aristeiaOrKeyBook}
+                    </div>
+                  )}
+
+                  {char.philologyNote && (
+                    <div className="scholarship-citation-box" style={{ fontSize: '0.78rem', marginTop: 'auto' }}>
+                      💡 서양고전학 문헌학 해설: {char.philologyNote}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
           </div>
         </section>
       )}

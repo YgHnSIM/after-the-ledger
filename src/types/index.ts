@@ -104,10 +104,16 @@ export interface HomericCharacter {
   id: string;
   nameKo: string;
   nameGreek: string;
+  nameTransliteration?: string;
   epithet: string;            // 영웅 수식어구 (Formulaic Epithet)
+  epithetGreek?: string;
+  epithetTransliteration?: string;
+  epithetKo?: string;
   side: 'achaean' | 'trojan' | 'god' | 'odyssey-hero' | 'odyssey-monster';
   role: string;
   description: string;
+  aristeiaOrKeyBook?: string;
+  philologyNote?: string;
 }
 
 export interface HomericConcept {
