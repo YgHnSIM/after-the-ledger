@@ -103,7 +103,7 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "ποδάρκης δῖος Ἀχιλλεύς",
         "transliteration": "podarkes dios Achilleus",
         "korean": "발이 빠른 신과 같은 아킬레우스",
-        "grammarCaseAndMeter": "주격(Nominative) • 6보격 문말(Verse-end)"
+        "grammarCaseAndMeter": "주격(Nominative) • 6보격 문말 고유 성구"
       },
       {
         "greek": "ποδὰς ὠκὺς Ἀχιλλεύς",
@@ -122,6 +122,12 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "transliteration": "rhexenori Achilei",
         "korean": "전선을 파쇄하는 아킬레우스에게",
         "grammarCaseAndMeter": "여격(Dative) • 전사 무공 수식어"
+      },
+      {
+        "greek": "φέριστος Ἀχαιῶν",
+        "transliteration": "pheristos Achaion",
+        "korean": "아카이오이 백성 중 가장 뛰어난 장수",
+        "grammarCaseAndMeter": "주격(Nominative) • 최강의 영웅 표상"
       }
     ]
   },
@@ -150,13 +156,19 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "εὐρὺ κρείων Ἀγαμέμνων",
         "transliteration": "eury kreion Agamemnon",
         "korean": "넓은 땅을 통치하는 아가멤논",
-        "grammarCaseAndMeter": "주격(Nominative) • 영토 지배자 칭호"
+        "grammarCaseAndMeter": "주격(Nominative) • 영토 지배자"
       },
       {
         "greek": "Ἀτρεΐδης Ἀγαμέμνων",
         "transliteration": "Atreides Agamemnon",
         "korean": "아트레우스의 아들 아가멤논",
-        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭(Patronymic)"
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭"
+      },
+      {
+        "greek": "κύδιστε Ἀγαμέμνων",
+        "transliteration": "kydiste Agamemnon",
+        "korean": "가장 영광스러운 아가멤논이여",
+        "grammarCaseAndMeter": "호격(Vocative) • 장엄 호칭"
       }
     ]
   },
@@ -179,7 +191,7 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "βοὴν ἀγαθὸς Διομήδης",
         "transliteration": "boen agathos Diomedes",
         "korean": "전함 소리 우렁찬 디오메데스",
-        "grammarCaseAndMeter": "주격(Nominative) • 전장 외침 칭호"
+        "grammarCaseAndMeter": "주격(Nominative) • 전장 함성 수식어"
       },
       {
         "greek": "Τυδεΐδης Διομήδης",
@@ -190,8 +202,14 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
       {
         "greek": "κρατερός Διομήδης",
         "transliteration": "krateros Diomedes",
-        "korean": "강력한 디오메데스",
-        "grammarCaseAndMeter": "주격(Nominative) • 무공 칭호"
+        "korean": "강력한 무공의 디오메데스",
+        "grammarCaseAndMeter": "주격(Nominative) • 운율 단축 수식어"
+      },
+      {
+        "greek": "ἵπποδαμος Διομήδης",
+        "transliteration": "hippodamos Diomedes",
+        "korean": "말을 길들이는 디오메데스",
+        "grammarCaseAndMeter": "주격(Nominative) • 기마 무공 수식어"
       }
     ]
   },
@@ -240,16 +258,28 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Xanthos(ξανθός)는 고대 인체 묘사에서 영웅적 금발/적갈색 머리를 의미함.",
     "epithetsList": [
       {
-        "greek": "ἀρηΐφιλος Μενέλαος / ξανθὸς Μενέλαος",
-        "transliteration": "areiphilos Menelaos / xanthos Menelaos",
-        "korean": "아레스의 사랑을 받는 메넬라오스 / 금발의 메넬라오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "βοὴν ἀγαθὸς Μενέλαος",
+        "transliteration": "boen agathos Menelaos",
+        "korean": "전함 소리 우렁찬 메넬라오스",
+        "grammarCaseAndMeter": "주격(Nominative) • 전장 함성 수식어"
       },
       {
-        "greek": "θεοειδής Μενέλαος",
-        "transliteration": "theoeides Menelaos",
-        "korean": "신과 같은 메넬라오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "ξανθὸς Μενέλαος",
+        "transliteration": "xanthos Menelaos",
+        "korean": "금발의 메넬라오스",
+        "grammarCaseAndMeter": "주격(Nominative) • 용모 특징 수식어"
+      },
+      {
+        "greek": "Ἀτρεΐδης Μενέλαος",
+        "transliteration": "Atreides Menelaos",
+        "korean": "아트레우스의 아들 메넬라오스",
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭"
+      },
+      {
+        "greek": "ἀρηΐφιλος Μενέλαος",
+        "transliteration": "areiphilos Menelaos",
+        "korean": "전쟁신 아레스의 사랑을 받는 메넬라오스",
+        "grammarCaseAndMeter": "주격(Nominative) • 신성 비호"
       }
     ]
   },
@@ -269,16 +299,22 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Hedyepēs(ἡδυεπής)는 '입에서 굴리는 말이 꿀보다 달콤하다'는 구전 시인의 언어적 예지 선찬.",
     "epithetsList": [
       {
-        "greek": "Γερήνιος ἱππότα Νέστωρ / ἡδυεπὴς Νέστωρ",
-        "transliteration": "Gerenios hippota Nestor / hedyepes Nestor",
-        "korean": "게레니아의 기사 네스토르 / 감로수처럼 달콤하게 말하는 네스토르",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "Γερήνιος ἱππότα Νέστωρ",
+        "transliteration": "Gerenios hippota Nestor",
+        "korean": "게레니아의 기수 네스토르",
+        "grammarCaseAndMeter": "주격(Nominative) • 고대 원로 기수 칭호"
       },
       {
-        "greek": "θεοειδής Νέστωρ",
-        "transliteration": "theoeides Nestor",
-        "korean": "신과 같은 네스토르",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Νηληϊάδης Νέστωρ",
+        "transliteration": "Neleiades Nestor",
+        "korean": "네레우스의 아들 네스토르",
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭"
+      },
+      {
+        "greek": "ἡδυεπὴς Νέστωρ",
+        "transliteration": "hedyepes Nestor",
+        "korean": "꿀처럼 달콤한 말을 하는 네스토르",
+        "grammarCaseAndMeter": "주격(Nominative) • 원로 변론가 수식어"
       }
     ]
   },
@@ -301,7 +337,7 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "πολύτροπος Ὀδυσσεύς",
         "transliteration": "polytropos Odysseus",
         "korean": "파란만장한 잔꾀의 오뒷세우스",
-        "grammarCaseAndMeter": "주격(Nominative) • 오뒷세이아 1권 1행 문두"
+        "grammarCaseAndMeter": "주격(Nominative) • 《오뒷세이아》 1권 1행 문두"
       },
       {
         "greek": "πολύμητις Ὀδυσσεύς",
@@ -345,16 +381,22 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "호메로스 시인이 직접 2인칭('파트로클로스여, 그대는...')으로 부르는 드문 정서적 호칭 대상.",
     "epithetsList": [
       {
-        "greek": "ἱπποκέλευθος Πάτροκλος / Διῒ φίλος",
-        "transliteration": "hippokeleuthos Patroklos / Dii philos",
-        "korean": "말 탄 전사 파트로클로스 / 제우스의 사랑을 받는 자",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "Μενοιτιάδης Πατρόκλεις",
+        "transliteration": "Menoitiades Patrokleis",
+        "korean": "메노이티오스의 아들 파트로클로스여",
+        "grammarCaseAndMeter": "호격(Vocative) • 시인의 직접 감정 호출"
       },
       {
-        "greek": "θεοειδής Πάτροκλος",
-        "transliteration": "theoeides Patroklos",
-        "korean": "신과 같은 파트로클로스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "ἱππεῦ Πατρόκλεες",
+        "transliteration": "hippeu Patroklees",
+        "korean": "용맹한 기수 파트로클로스여",
+        "grammarCaseAndMeter": "호격(Vocative) • 6보격 2인칭 특수 호칭"
+      },
+      {
+        "greek": "θεόφιν μήστωρ ἀτάλαντος",
+        "transliteration": "theophin mestor atalantos",
+        "korean": "신과 같은 기략을 지닌 장수",
+        "grammarCaseAndMeter": "주격(Nominative) • 아킬레우스 대역 무공"
       }
     ]
   },
@@ -374,16 +416,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Douriklytos(δουρίκλυτος)는 청동기 창(Dory) 무기의 명성을 상징함.",
     "epithetsList": [
       {
-        "greek": "δουρίκλυτος Ἰδομενεύς",
+        "greek": "δουρικλυτὸς Ἰδομενεύς",
         "transliteration": "douriklytos Idomeneus",
-        "korean": "창으로 명성을 떨친 이도메네오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "korean": "창으로 명성을 떨치는 이도메네오스",
+        "grammarCaseAndMeter": "주격(Nominative) • 크레타 무공 창술 수식어"
       },
       {
-        "greek": "θεοειδής Ἰδομενεύς",
-        "transliteration": "theoeides Idomeneus",
-        "korean": "신과 같은 이도메네오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Ἰδομενεὺς ἄναξ",
+        "transliteration": "Idomeneus anax",
+        "korean": "크레타의 왕 이도메네오스 군주",
+        "grammarCaseAndMeter": "주격(Nominative) • 관료제 군주 칭호"
       }
     ]
   },
@@ -440,7 +482,7 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
       {
         "greek": "ἀνδροφόνος Ἕκτωρ",
         "transliteration": "androphonos Hektor",
-        "korean": "사람을 도살하는 헥토르",
+        "korean": "사람을 살상하는 헥토르",
         "grammarCaseAndMeter": "주격(Nominative) • 전장 위압 수식어"
       },
       {
@@ -473,16 +515,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Theoeidēs(θεοειδής)는 신적 고귀함을 지닌 왕족 칭호.",
     "epithetsList": [
       {
-        "greek": "Πρίαμος θεοειδής / ἐϋμμελίω Πριάμοιο",
-        "transliteration": "Priamos theoeidēs / eummelio Priamoio",
-        "korean": "신과 같은 프리아모스 왕 / 좋은 물푸레나무 창을 가진 프리아모스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "Πρίαμος θεοειδής",
+        "transliteration": "Priamos theoeides",
+        "korean": "신과 같은 프리아모스",
+        "grammarCaseAndMeter": "주격(Nominative) • 트로이 성왕 수식어"
       },
       {
-        "greek": "θεοειδής Πρίαμος",
-        "transliteration": "theoeides Priamos",
-        "korean": "신과 같은 프리아모스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Δαρδανίδης Πρίαμος",
+        "transliteration": "Dardanides Priamos",
+        "korean": "다르다노스의 후손 프리아모스",
+        "grammarCaseAndMeter": "주격(Nominative) • 트로이 왕가 시조 부칭"
       }
     ]
   },
@@ -502,16 +544,22 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Dysparis(Δύσπαρις)는 헥토르가 아우를 비판할 때 쓰는 '재앙 덩어리 파리스'라는 운율 조어.",
     "epithetsList": [
       {
-        "greek": "Δύσπαρις / θεοειδὴς Ἀλέξανδρος",
-        "transliteration": "Dysparis / theoeides Alexandros",
-        "korean": "재앙의 파리스 / 신과 같이 잘생긴 알렉산드로스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "Δύσπαρις",
+        "transliteration": "Dysparis",
+        "korean": "불운과 파멸의 파리스",
+        "grammarCaseAndMeter": "주격(Nominative) • 트로이 파멸 비극 수식어"
       },
       {
-        "greek": "θεοειδής Πάρις / Ἀλέξανδρος",
-        "transliteration": "theoeides Paris / Alexandros",
-        "korean": "신과 같은 파리스 (알렉산드로스)",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Ἀλέξανδρος θεοειδής",
+        "transliteration": "Alexandros theoeides",
+        "korean": "신과 같은 용모의 알렉산드로스(파리스)",
+        "grammarCaseAndMeter": "주격(Nominative) • 미모 수식어"
+      },
+      {
+        "greek": "Ἑλένης πόσις ἠϋκόμοιο",
+        "transliteration": "Helenes posis eukomoio",
+        "korean": "아름다운 머리채의 헬레네의 남편",
+        "grammarCaseAndMeter": "주격(Nominative) • 서사적 관계 수식어"
       }
     ]
   },
@@ -531,16 +579,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "호메로스 서사시에서 아가멤논 외에 'Anax andron' 칭호를 가진 극소수 왕족.",
     "epithetsList": [
       {
-        "greek": "ἄναξ ἀνδρῶν Αἰνείας / βουλήφορος",
-        "transliteration": "anax andron Aineias / boulephoros",
-        "korean": "인간들의 군주 아이네이아스 / 조언자 아이네이아스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "Ἀγχισιάδης Αἰνείας",
+        "transliteration": "Anchisiades Aineias",
+        "korean": "앙키세스의 아들 아이네이아스",
+        "grammarCaseAndMeter": "주격(Nominative) • 혈통 부칭"
       },
       {
-        "greek": "θεοειδής Αἰνείας",
-        "transliteration": "theoeides Aineias",
-        "korean": "신과 같은 아이네이아스 (에네아스)",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Τρώων βουληφόρος",
+        "transliteration": "Troon boulephoros",
+        "korean": "트로이인들의 지혜로운 조언자",
+        "grammarCaseAndMeter": "주격(Nominative) • 지도자 수식어"
       }
     ]
   },
@@ -560,16 +608,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Noblesse Oblige를 명시한 12권의 사르페돈 연설('글라우코스여, 우리가 연회에서 상석을 차지하는 만큼 앞장서 싸워야 하지 않겠는가')은 영웅주의의 백미.",
     "epithetsList": [
       {
-        "greek": "ἀγὸς Λυκίων / Διὸς υἱός",
-        "transliteration": "agos Lykion / Dios uios",
-        "korean": "리키아 전사들의 지도자 사르페돈 / 제우스의 아들",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "Διὸς υἱὸς Σαρπηδών",
+        "transliteration": "Dios huios Sarpedon",
+        "korean": "제우스의 직계 아들 사르페돈",
+        "grammarCaseAndMeter": "주격(Nominative) • 제우스 직계 신성"
       },
       {
-        "greek": "θεοειδής Σαρπηδών",
-        "transliteration": "theoeides Sarpedon",
-        "korean": "신과 같은 사르페돈",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "ἀγὸς Λυκίων",
+        "transliteration": "agos Lykion",
+        "korean": "리키아 전사들의 영도자",
+        "grammarCaseAndMeter": "주격(Nominative) • Noblesse Oblige 12권"
       }
     ]
   },
@@ -592,13 +640,13 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "λευκώλενος Ἀνδρομάχη",
         "transliteration": "leukolenos Andromache",
         "korean": "하얀 팔의 안드로마케",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "grammarCaseAndMeter": "주격(Nominative) • 고귀한 여인 수식어"
       },
       {
-        "greek": "θεοειδής Ἀνδρομάχη",
-        "transliteration": "theoeides Andromache",
-        "korean": "신과 같은 안드로마케",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Ἕκτορος ἄλοχος",
+        "transliteration": "Hektoros alochos",
+        "korean": "헥토르의 정숙한 아내",
+        "grammarCaseAndMeter": "주격(Nominative) • 서사적 관계 성구"
       }
     ]
   },
@@ -662,7 +710,7 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "γλαυκῶπις Ἀθήνη",
         "transliteration": "glaukopis Athene",
         "korean": "빛나는 눈의 아테나",
-        "grammarCaseAndMeter": "주격(Nominative) • 올빼미/투명한 눈빛 칭호"
+        "grammarCaseAndMeter": "주격(Nominative) • 올빼미/투명 눈빛 칭호"
       },
       {
         "greek": "Παλλάδ' Ἀθηναίην",
@@ -700,16 +748,22 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Hekēbolos(ἑκηβόλος)는 신성한 은화살의 명중력과 먼 거리의 영적 타격을 의미.",
     "epithetsList": [
       {
-        "greek": "ἑκηβόλος Ἀπόλλων / Φοῖβος Ἀπόλλων",
-        "transliteration": "hekebolos Apollon / Phoibos Apollon",
-        "korean": "멀리서 쏘는 아폴론 / 빛나는 포이보스 아폴론",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "ἑκηβόλος Ἀπόλλων",
+        "transliteration": "hekebolos Apollon",
+        "korean": "멀리 화살을 쏘는 아폴론",
+        "grammarCaseAndMeter": "주격(Nominative) • 활과 화살 신성"
       },
       {
-        "greek": "θεοειδής Ἀπόλλων",
-        "transliteration": "theoeides Apollon",
-        "korean": "신과 같은 아폴론",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Φοῖβος Ἀπόλλων",
+        "transliteration": "Phoibos Apollon",
+        "korean": "빛나는 포이보스 아폴론",
+        "grammarCaseAndMeter": "주격(Nominative) • 광명과 정화"
+      },
+      {
+        "greek": "ἄναξ ἑκάεργος",
+        "transliteration": "anax hekaergos",
+        "korean": "멀리서 힘을 미치는 군주",
+        "grammarCaseAndMeter": "주격(Nominative) • 역병 징벌 신성"
       }
     ]
   },
@@ -731,14 +785,14 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
       {
         "greek": "γαϊήοχος ἐννοσίγαιος",
         "transliteration": "gaieochos ennosigaios",
-        "korean": "대지를 흔드는 포세이돈 / 바다의 지배자",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "korean": "대지를 흔드는 포세이돈",
+        "grammarCaseAndMeter": "주격(Nominative) • 지진과 바다 신성"
       },
       {
-        "greek": "θεοειδής Ποσειδῶν",
-        "transliteration": "theoeides Poseidon",
-        "korean": "신과 같은 포세이돈",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "κυανοχαίτης Ποσειδάων",
+        "transliteration": "kyanochaites Poseidaon",
+        "korean": "검푸른 머리채의 포세이돈",
+        "grammarCaseAndMeter": "주격(Nominative) • 바다 색채 수식어"
       }
     ]
   },
@@ -760,14 +814,14 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
       {
         "greek": "διάκτορος Ἀργεϊφόντης",
         "transliteration": "diaktoros Argeiphontes",
-        "korean": "안내자 헤르메스 / 아르구스를 살해한 자",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "korean": "아르고스를 살해한 인도자 헤르메스",
+        "grammarCaseAndMeter": "주격(Nominative) • 전령의 신"
       },
       {
-        "greek": "θεοειδής Ἑρμῆς",
-        "transliteration": "theoeides Hermes",
-        "korean": "신과 같은 헤르메스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "ἐριούνιος Ἑρμῆς",
+        "transliteration": "eriounios Hermes",
+        "korean": "행운을 가져다주는 헤르메스",
+        "grammarCaseAndMeter": "주격(Nominative) • 인도자 수식어"
       }
     ]
   },
@@ -822,16 +876,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Pepnymenos(πεπνυμένος)는 청년이 어른 영웅으로 성숙해가는 신중함과 지혜를 상징.",
     "epithetsList": [
       {
-        "greek": "πεπνυμένος Τηλέμαχος / θεοειδὴς Τηλέμαχος",
-        "transliteration": "pepnymenos Telemachos / theoeides Telemachos",
-        "korean": "사려 깊은 텔레마코스 / 신과 같은 텔레마코스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "πεπνυμένος Τηλέμαχος",
+        "transliteration": "pepnymenos Telemachos",
+        "korean": "슬기로운 텔레μα코스",
+        "grammarCaseAndMeter": "주격(Nominative) • 청년 성장 지혜"
       },
       {
-        "greek": "θεοειδής Τηλέμαχος",
-        "transliteration": "theoeides Telemachos",
-        "korean": "신과 같은 텔레마코스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Ὀδυσσῆος φίλος υἱός",
+        "transliteration": "Odysseos philos huios",
+        "korean": "오뒷세우스의 사랑하는 아들",
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 계승 부칭"
       }
     ]
   },
@@ -938,16 +992,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Audeessa(αὐδήεσσα)는 신이면서 인간의 언어로 대화할 수 있는 현세 교섭적 여신 표현.",
     "epithetsList": [
       {
-        "greek": "ἐϋπλόκαμος Κίρκη / δεινὴ θεὸς αὐδήεσσα",
-        "transliteration": "euplokamos Kirke / deine theos audeessa",
-        "korean": "땋은 머리의 아름다운 여신 키르케 / 사람의 목소리를 내는 무서운 여신",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "δεινὴ θεὸς αὐδήεσσα",
+        "transliteration": "deine theos audeessa",
+        "korean": "무서운 말씨를 지닌 마녀 여신 키르케",
+        "grammarCaseAndMeter": "주격(Nominative) • 아이아이에 섬 마법사"
       },
       {
-        "greek": "θεοειδής Κίρκη",
-        "transliteration": "theoeides Kirke",
-        "korean": "신과 같은 키르케",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Κίρκη ἠϋκόμοιο",
+        "transliteration": "Kirke eukomoio",
+        "korean": "아름다운 머리채의 키르케",
+        "grammarCaseAndMeter": "주격(Nominative) • 여신 수식어"
       }
     ]
   },
@@ -967,16 +1021,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Kalypso는 '감추다, 은폐하다(Kalypto)'라는 어원에서 유래하여 영웅의 정체성을 7년간 은폐한 서사적 의미 포함.",
     "epithetsList": [
       {
-        "greek": "πότνια Καλυψώ / δῖα θεάων",
-        "transliteration": "potnia Kalypso / dia theaon",
-        "korean": "존엄한 칼립소 여신 / 여신들 중의 여신",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "δῖα θεάων Καλυψώ",
+        "transliteration": "dia theaon Kalypso",
+        "korean": "여신 중의 신성한 칼립소",
+        "grammarCaseAndMeter": "주격(Nominative) • 오귀기아 섬 님프"
       },
       {
-        "greek": "θεοειδής Καλυψώ",
-        "transliteration": "theoeides Kalypso",
-        "korean": "신과 같은 칼립소",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Καλυψὼ ἠϋκόμοιο",
+        "transliteration": "Kalypso eukomoio",
+        "korean": "자태가 아름다운 칼립소",
+        "grammarCaseAndMeter": "주격(Nominative) • 영원한 불사 님프"
       }
     ]
   },
@@ -996,16 +1050,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Outis(Οὖτις - Nobody)와 Mētis(꾀/지혜)의 음운론적 언어유희(Wordplay)가 결합된 최고 문학적 모티브.",
     "epithetsList": [
       {
-        "greek": "κρατερὸς Πολύφημος / ἀντίθεος Πολύφημος",
-        "transliteration": "krateros Polyphemos / antitheos Polyphemos",
-        "korean": "강력한 폴리페모스 / 신에 필적하는 폴리페모스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "κρατερός Πολύφημος",
+        "transliteration": "krateros Polyphemos",
+        "korean": "강력한 거인 폴리페모스",
+        "grammarCaseAndMeter": "주격(Nominative) • 외눈박이 퀴클롭스"
       },
       {
-        "greek": "θεοειδής Πολύφημος",
-        "transliteration": "theoeides Polyphemos",
-        "korean": "신과 같은 폴리페모스 (퀴클롭스)",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "υἱὸς Ποσειδάωνος",
+        "transliteration": "huios Poseidaonos",
+        "korean": "포세이돈의 직계 아들",
+        "grammarCaseAndMeter": "주격(Nominative) • 바다 신 직계 부칭"
       }
     ]
   },
@@ -1025,16 +1079,22 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Boōpis(βοῶπις)는 '소처럼 크고 깊고 신성한 눈'을 뜻하는 청동기 시대 여신 찬가 표상.",
     "epithetsList": [
       {
-        "greek": "βοῶπις πότνια Ἥρη / χρυσόθρονος Ἥρη",
-        "transliteration": "boopis potnia Here / chrysothronos Here",
-        "korean": "소의 눈을 가진 존엄한 왕비 헤라 / 황금 보좌의 헤라",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "πότνια Ἥρη",
+        "transliteration": "potnia Here",
+        "korean": "전능한 여신 헤라",
+        "grammarCaseAndMeter": "주격(Nominative) • 여신 관료 칭호"
       },
       {
-        "greek": "θεοειδής Ἥρα / Ἥρη",
-        "transliteration": "theoeides Hera / Here",
-        "korean": "신과 같은 헤라",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "βοῶπις πότνια Ἥρη",
+        "transliteration": "boopis potnia Here",
+        "korean": "소의 눈을 가진 전능한 헤라",
+        "grammarCaseAndMeter": "주격(Nominative) • 자비로운 커다란 눈"
+      },
+      {
+        "greek": "λευκώλενος Ἥρη",
+        "transliteration": "leukolenos Here",
+        "korean": "하얀 팔의 헤라",
+        "grammarCaseAndMeter": "주격(Nominative) • 신성 미모 수식어"
       }
     ]
   },
@@ -1054,16 +1114,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Philomeidēs(φιλομειδὴς)는 '미소를 사랑하는' 관능적 미의 유혹을 상징하는 고유 성구.",
     "epithetsList": [
       {
-        "greek": "φιλομειδὴς Ἀφροδίτη / Διὸς θυγάτηρ",
-        "transliteration": "philomeides Aphrodite / Dios thygater",
-        "korean": "미소짓는 아프로디테 / 제우스의 딸 아프로디테",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "φιλομειδὴς Ἀφροδίτη",
+        "transliteration": "philomeides Aphrodite",
+        "korean": "미소를 사랑하는 아프로디테",
+        "grammarCaseAndMeter": "주격(Nominative) • 미소와 사랑"
       },
       {
-        "greek": "θεοειδής Ἀφροδίτη",
-        "transliteration": "theoeides Aphrodite",
-        "korean": "신과 같은 아프로디테",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "χρυσέη Ἀφροδίτη",
+        "transliteration": "chrysee Aphrodite",
+        "korean": "황금빛의 아프로디테",
+        "grammarCaseAndMeter": "주격(Nominative) • 찬란한 미모"
       }
     ]
   },
@@ -1083,16 +1143,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Brotoloigos(βροτολοιγὸς)는 '인간을 파멸시키는, 살상에 광분하는' 공포의 전쟁신 수식어.",
     "epithetsList": [
       {
-        "greek": "βροτολοιγὸς Ἄρης / μιαιφόνος",
-        "transliteration": "brotoloigos Ares / miaiphonos",
-        "korean": "사람을 삼키는 전신 아레스 / 피에 굶주린 아레스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "βροτολοιγὸς Ἄρης",
+        "transliteration": "brotoloigos Ares",
+        "korean": "인간에게 재앙을 가져오는 아레스",
+        "grammarCaseAndMeter": "주격(Nominative) • 전쟁 살상 광기"
       },
       {
-        "greek": "θεοειδής Ἄρης",
-        "transliteration": "theoeides Ares",
-        "korean": "신과 같은 아레스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "μιαιφόνος Ἄρης",
+        "transliteration": "miaiphonos Ares",
+        "korean": "피에 주린 아레스",
+        "grammarCaseAndMeter": "주격(Nominative) • 전장 피비린내"
       }
     ]
   },
@@ -1112,16 +1172,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Ekphrasis(문학적 미술품 묘사)의 문학사상 최초 최고 템플릿인 '아킬레우스의 방패'.",
     "epithetsList": [
       {
-        "greek": "ἀμφιγυήεις Ἥφαιστος / κλυτοτέχνης",
-        "transliteration": "amphigyeeis Hephaistos / klytotechnis",
-        "korean": "양다리를 저는 헤파이스토스 / 명성 높은 대장장이 신",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "ἀμφιγυήεις Ἡφαίστος",
+        "transliteration": "amphigyeis Hephaistos",
+        "korean": "절룩거리는 대장장이 헤파이스토스",
+        "grammarCaseAndMeter": "주격(Nominative) • 장인 신성"
       },
       {
-        "greek": "θεοειδής Ἥφαιστος",
-        "transliteration": "theoeides Hephaistos",
-        "korean": "신과 같은 헤파이스토스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "κλυτοτέχνης Ἡφαίστος",
+        "transliteration": "klytotechnes Hephaistos",
+        "korean": "명성 높은 기술의 헤파이스토스",
+        "grammarCaseAndMeter": "주격(Nominative) • 방패 제작 명장"
       }
     ]
   },
@@ -1141,16 +1201,16 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Argyropeza(ἀργυρόπεζα)는 물결 위에 은빛으로 빛나는 여신의 발걸음을 형상화.",
     "epithetsList": [
       {
-        "greek": "ἀργυρόπεζα Θέτις / Νηρηΐς",
-        "transliteration": "argyropeza Thetis / Nereis",
-        "korean": "은빛 발의 테티스 / 바다의 님프 테티스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
+        "greek": "ἀργυρόπεζα Θέτις",
+        "transliteration": "argyropeza Thetis",
+        "korean": "은빛 발의 테티스",
+        "grammarCaseAndMeter": "주격(Nominative) • 바다 님프 수식어"
       },
       {
-        "greek": "θεοειδής Θέτις",
-        "transliteration": "theoeides Thetis",
-        "korean": "신과 같은 테티스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "greek": "Θέτις ἠϋκόμοιο",
+        "transliteration": "Thetis eukomoio",
+        "korean": "아름다운 머리채의 테티스",
+        "grammarCaseAndMeter": "속격/주격 • 신성 모티브"
       }
     ]
   }
