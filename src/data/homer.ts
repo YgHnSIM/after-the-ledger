@@ -15,7 +15,7 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     termTransliteration: 'Nostos',
     termKo: '고향으로의 귀환 (Nostos)',
     definition: '전쟁의 파괴와 바다의 방랑을 이겨내고 자신의 잃어버린 자아, 가문, 왕국(아이타케)으로 복귀하는 귀환 여행.',
-    exampleInHomer: '오뒷세우스는 칼립소 여신이 제시한 "죽지 않는 신성"의 유혹을 거절하고, 죽을 운명의 인간으로서 고향 이타케와 아내 페넬로페에게 돌아가는 귀환(Nostos)을 선택한다. (오뒷세우스 5권)'
+    exampleInHomer: '오뒷세우스는 칼립소 여신이 제시한 "죽지 않는 신성"의 유혹을 거절하고, 죽을 운명의 인간으로서 고향 이타케와 아내 페넬로페에게 돌아가는 귀환(Nostos)을 선택한다. (오뒷세이아 5권)'
   },
   {
     id: 'xenia',
@@ -48,6 +48,38 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     termKo: '신성한 거룩한 분노 (Mēnis)',
     definition: '인간의 단순한 화가 아니라 신이나 반신 영웅만이 가질 수 있는 우주적이고 파괴적인 거룩한 파괴적 분노.',
     exampleInHomer: '《일리아스》 1권 첫 글자 "μῆνιν(Mēnin)"으로 선언되며, 파트로클로스의 죽음 이후 헥토르를 도살하고 시신을 끌고 다니는 아킬레우스의 광기적 분노의 동력이다.'
+  },
+  {
+    id: 'ate',
+    termGreek: 'ἄτη',
+    termTransliteration: 'Atē',
+    termKo: '정신의 눈멂 / 파멸적 착오 (Atē)',
+    definition: '신들에 의해 눈이 멀어 도덕적·이성적 판단력을 잃고 파멸적 행동을 저지르는 상태.',
+    exampleInHomer: '아가멤논은 19권에서 아킬레우스와 화해하며 자신이 아킬레우스의 전리품을 빼앗은 오만은 신 제우스와 아테가 내린 눈멂(Atē) 때문이었다고 시인한다.'
+  },
+  {
+    id: 'moira',
+    termGreek: 'μοῖρα',
+    termTransliteration: 'Moira',
+    termKo: '할당된 운명과 몫 (Moira)',
+    definition: '신들조차 임의로 변경할 수 없는 인간 각자에게 할당된 수명과 운명의 경계.',
+    exampleInHomer: '제우스는 자신이 사랑하는 아들 사르페돈이 죽을 운명(Moira)에 처했을 때 그를 살리고 싶어 하지만, 헤라의 경고를 듣고 운명의 섭리를 꺾지 못한다. (일리아스 16권)'
+  },
+  {
+    id: 'hubris',
+    termGreek: 'ὕβρις',
+    termTransliteration: 'Hubris',
+    termKo: '신성과 경계를 넘어서는 오만 (Hubris)',
+    definition: '자신의 인간적 한계를 잊고 신성을 침범하거나 타인의 존엄을 짓밟는 과도한 오만.',
+    exampleInHomer: '오뒷세우스가 퀴클롭스를 이긴 후 오만하게 자신의 진짜 이름을 외쳤다가 포세이돈의 저주를 받게 되며, 이타케의 구혼자들은 구혼자 오만(Hubris)으로 사형 판결을 받는다.'
+  },
+  {
+    id: 'aristeia',
+    termGreek: 'ἀριστεία',
+    termTransliteration: 'Aristeia',
+    termKo: '영웅의 무공 절정 순간 (Aristeia)',
+    definition: '전장에서 개별 전사가 신의 가호와 빛을 받아 적진을 홀로 괴멸시키는 영웅적 무공의 최고조.',
+    exampleInHomer: '일리아스 5권 디오메데스의 무공 절정(Aristeia)과 21권 아킬레우스가 크산토스 강물을 핏빛으로 물들이는 전율적인 무공 순간.'
   }
 ];
 
@@ -80,22 +112,31 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     description: '물리적 힘(Biē)보다 꾀와 지혜(Mētis)로 고난을 극복하며, 신들의 시험과 마녀, 거인, 저승 방문을 거쳐 고향 이타케로 귀환하여 왕국을 회복함.'
   },
   {
-    id: 'agamemnon',
-    nameKo: '아가멤논',
-    nameGreek: 'Ἀγαμέμνων',
-    epithet: '인간들의 왕 아가멤논 (ἄναξ ἀνδρῶν Ἀγαμέμνων / Anax andrōn Agamemnōn)',
+    id: 'patroclus',
+    nameKo: '파트로클로스',
+    nameGreek: 'Πάτροκλος',
+    epithet: '말 탄 전사 파트로클로스 (ἱπποκέλευθος Πάτροκλος / Hippokeleuthos Patroklos)',
     side: 'achaean',
-    role: '미케네의 국왕, 아카이오이 원정군 총사령관',
-    description: '권력욕과 오만함으로 아킬레우스와 갈등하여 그리스군을 멸망의 위기로 몰아넣었으며, 귀환 후 아내 클리타임네스트라에게 살해당하는 비극적 말로를 맞이함.'
+    role: '아킬레우스의 가장 친한 전우이자 분신',
+    description: '위기에 빠진 그리스군을 구하기 위해 아킬레우스의 갑옷을 입고 출전했다가 헥토르의 손에 전사함. 그의 죽음은 아킬레우스의 전장 복귀와 분노의 폭발을 야기함.'
   },
   {
-    id: 'athena',
-    nameKo: '아테나',
-    nameGreek: 'Ἀθηνᾶ',
-    epithet: '빛나는 눈의 아테나 (γλαυκῶπις Ἀθήνη / Glaukōpis Athene)',
-    side: 'god',
-    role: '지혜, 전쟁 기략, 공예의 여신',
-    description: '일리아스에서는 아킬레우스의 이성을 조율하고, 오뒷세이아에서는 오뒷세우스와 그의 아들 텔레마코스의 수호신으로 변장하여 귀환을 적극적으로 돕는 지혜의 신.'
+    id: 'priam',
+    nameKo: '프리아모스',
+    nameGreek: 'Πρίαμος',
+    epithet: '신과 같은 프리아모스 왕 (Πρίαμος θεοειδής / Priamos theoeidēs)',
+    side: 'trojan',
+    role: '트로이의 늙은 국왕, 헥토르와 파리스의 아버지',
+    description: '아들 헥토르의 시신을 되찾기 위해 적진 한가운데 아킬레우스의 텐트로 밤중에 홀로 들어가 아들의 원수 손에 키스하는 비극적 아버지의 상징.'
+  },
+  {
+    id: 'telemachus',
+    nameKo: '텔레마코스',
+    nameGreek: 'Τηλέμαχος',
+    epithet: '사려 깊은 텔레마코스 (πεπνυμένος Τηλέμαχος / Pepnymenos Telemachos)',
+    side: 'odyssey-hero',
+    role: '오뒷세우스와 페넬로페의 아들',
+    description: '아버지가 없는 이타케에서 구혼자들의 압박을 받으며 성장하여, 필로스와 스파르타로 아버지를 찾는 여정을 떠나 마침내 귀환한 아버지와 함께 구혼자들을 응징함.'
   },
   {
     id: 'penelope',
@@ -105,6 +146,15 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     side: 'odyssey-hero',
     role: '이타케의 왕비, 오뒷세우스의 충절스러운 아내',
     description: '20년간 남편의 귀환을 기다리며, 낮에는 수의를 짜고 밤에는 푸는 지혜(Mētis)로 108명의 구혼자들의 압박을 물리친 절개와 지혜의 상징.'
+  },
+  {
+    id: 'circe',
+    nameKo: '키르케',
+    nameGreek: 'Κίρκη',
+    epithet: '땋은 머리의 아름다운 여신 키르케 (ἐϋπλόκαμος Κίρκη / Euplokamos Kirke)',
+    side: 'odyssey-monster',
+    role: '아이아이에 섬의 마녀 여신',
+    description: '오뒷세우스의 선원들을 돼지로 변하게 만들었으나, 오뒷세우스의 지혜(몰리 풀)에 가복되어 1년간 환대하고 저승 방문(Nekyia) 길을 안내해줌.'
   }
 ];
 
@@ -167,6 +217,26 @@ export const HOMERIC_BOOKS: HomericBookSummary[] = [
     keyCharacters: ['achilles', 'agamemnon', 'athena']
   },
   {
+    bookNumber: 3,
+    epic: 'iliad',
+    titleKo: '일리아스 3권: 파리스와 메넬라오스의 단독 결투',
+    titleGreek: 'Ἰλιάς Γ: Ὅρκια. Τειχοσκοπία. Πάριδος καὶ Μενελάου μονομαχία',
+    summary: '양군이 맞붙기 직전, 전쟁의 원인이 된 파리스와 헬레네의 남편 메넬라오스가 단독 결투로 전쟁을 끝내기로 합의한다. 아프로디테 여신이 위험에 처한 파리스를 구출한다.',
+    keyEvents: [
+      '트로이 성벽 위에서 헬레네가 프리아모스 왕에게 그리스 영웅들을 소개함 (Teichoskopia)',
+      '메넬라오스와 파리스의 1:1 단독 결투',
+      '패배 직전 아프로디테 여신이 파리스를 안개 속으로 구출함'
+    ],
+    iconicLines: [
+      {
+        greek: 'οὐ νέμεσις Τρῶας καὶ ἐϋκνήμιδας Ἀχαιοὺς / τοιῇδ\' ἀμφὶ γυναικὶ πολὺν χρόνον ἄλγεα πάσχειν',
+        transliteration: 'ou nemesis Trōas kai eyknēmidas Achaious / toiēd\' amphi gynarki polyn chronon algea paschein',
+        korean: '트로이인들과 그리스인들이 저토록 아름다운 여인을 위해 오랜 세월 고통을 견디는 것은 결코 탓할 일이 아니로다!'
+      }
+    ],
+    keyCharacters: ['priam', 'hector']
+  },
+  {
     bookNumber: 6,
     epic: 'iliad',
     titleKo: '일리아스 6권: 헥토르와 안드로마케의 작별',
@@ -208,6 +278,46 @@ export const HOMERIC_BOOKS: HomericBookSummary[] = [
     keyCharacters: ['achilles', 'odysseus', 'agamemnon']
   },
   {
+    bookNumber: 16,
+    epic: 'iliad',
+    titleKo: '일리아스 16권: 파트로클로스의 전사',
+    titleGreek: 'Ἰλιάς Π: Πατρόκλεια',
+    summary: '그리스군 함선이 불타자 파트로클로스가 아킬레우스의 갑옷을 입고 출전하여 트로이군을 격퇴하지만, 아폴론의 기만과 헥토르의 창에 맞아 전사한다.',
+    keyEvents: [
+      '아킬레우스의 갑옷과 전차를 빌려 출전하는 파트로클로스',
+      '제우스의 아들 사르페돈의 비극적 전사',
+      '아폴론의 등 타격으로 방어 해제된 파트로클로스를 헥토르가 전사시킴'
+    ],
+    iconicLines: [
+      {
+        greek: 'ἤδη γάρ τοι σχεδὸν ἕστηκεν θάνατος καὶ μοῖρα κραταιή',
+        transliteration: 'ēdē gar toi schedon hestēken thanatos kai moira krataiē',
+        korean: '너 또한 오래 살지 못하리라! 위대한 아킬레우스의 손에 죽을 강력한 운명(Moira)이 이미 네 곁에 다가와 있느니라!'
+      }
+    ],
+    keyCharacters: ['patroclus', 'hector', 'achilles']
+  },
+  {
+    bookNumber: 18,
+    epic: 'iliad',
+    titleKo: '일리아스 18권: 아킬레우스의 통곡과 헤파이토스의 방패',
+    titleGreek: 'Ἰλιάς Σ: Ὁπλοποιΐα',
+    summary: '파트로클로스의 죽음을 들은 아킬레우스가 흙을 머리에 뒤집어쓰고 절규한다. 어머니 테티스가 대장장이 신 헤파이토스에게 부탁하여 우주와 인간 사회 전체가 새겨진 신성한 방패를 제작한다.',
+    keyEvents: [
+      '파트로클로스의 죽음에 대한 아킬레우스의 절규와 분노 폭발',
+      '테티스의 헤파이토스 대장간 방문',
+      '해, 달, 평화의 도시, 재판, 전쟁, 농경이 새겨진 아킬레우스 신성 방패(Shield of Achilles) 완성'
+    ],
+    iconicLines: [
+      {
+        greek: 'ἐν δ\' ἐτίθει γαῖαν, ἐν δ\' οὐρανόν, ἐν δὲ θάλασσαν',
+        transliteration: 'en d\' etithei gaian, en d\' ouranon, en de thalassan',
+        korean: '그 방패 위에 신은 땅과 하늘과 바다를 새겨 넣으셨고, 쉬지 않는 태양과 둥근 달을 새겨 넣으셨도다!'
+      }
+    ],
+    keyCharacters: ['achilles', 'hector']
+  },
+  {
     bookNumber: 22,
     epic: 'iliad',
     titleKo: '일리아스 22권: 헥토르의 죽음',
@@ -247,7 +357,7 @@ export const HOMERIC_BOOKS: HomericBookSummary[] = [
         korean: '지상에 살아있는 그 어떤 인간도 감히 하지 못한 일을 내가 견뎌내었노라. 내 아들을 죽인 사람의 손을 입에 대었노라!'
       }
     ],
-    keyCharacters: ['achilles', 'hector', 'athena']
+    keyCharacters: ['achilles', 'hector', 'priam']
   },
 
   // ODYSSEY KEY BOOKS
@@ -270,7 +380,27 @@ export const HOMERIC_BOOKS: HomericBookSummary[] = [
         korean: '들려주소서, 무사 여신이여! 그 임기응변에 능한(Polytropos) 남자의 이야기를! 트로이의 신성한 도성을 무너뜨린 후 수없이 방랑했던 그 사람의 이야기를!'
       }
     ],
-    keyCharacters: ['odysseus', 'athena', 'penelope']
+    keyCharacters: ['odysseus', 'athena', 'penelope', 'telemachus']
+  },
+  {
+    bookNumber: 5,
+    epic: 'odyssey',
+    titleKo: '오뒷세이아 5권: 칼립소의 섬과 뗏목 항해',
+    titleGreek: 'Ὀδύσσεια ε: Καλυψοῦς ἄντρον. Ὀδυσσέως σχεδία',
+    summary: '7년간 칼립소 여신의 섬 오귀기아에 갇혀있던 오뒷세우스. 헤르메스 신의 전갈을 받은 칼립소가 영생의 제안을 물리치고 뗏목을 만들어 고향 이타케로 향하는 오뒷세우스의 귀환(Nostos) 시작.',
+    keyEvents: [
+      '헤르메스의 오귀기아 섬 방문 및 제우스의 명령 전갈',
+      '칼립소의 영생 약속 거절 및 바닷가에서 고향을 향해 눈물 흘리는 오뒷세우스',
+      '뗏목 제작과 폭풍우 속 파이아케스 왕국 표류'
+    ],
+    iconicLines: [
+      {
+        greek: 'ἤματα δ\' ἐν πέτρῃσι καὶ ἠϊόνεσσι καθίζων / δάκρυσι καὶ στοναχῇσι καὶ ἄλγεσι θυμὸν ἐρέχθων',
+        transliteration: 'ēmata d\' en petrēsi kai ēïonessi kathizōn / dakrysi kai stonachēsi kai algesi thymon erechthōn',
+        korean: '그는 바윗가와 해변에 앉아 눈물과 탄식과 고통으로 마음을 찢으며 끊임없이 바다를 바라보며 눈물지었노라!'
+      }
+    ],
+    keyCharacters: ['odysseus', 'athena']
   },
   {
     bookNumber: 9,
@@ -295,6 +425,27 @@ export const HOMERIC_BOOKS: HomericBookSummary[] = [
     keyCharacters: ['odysseus', 'athena']
   },
   {
+    bookNumber: 10,
+    epic: 'odyssey',
+    titleKo: '오뒷세이아 10권: 키르케의 섬과 돼지로 변한 선원들',
+    titleGreek: 'Ὀδύσσεια κ: Τὰ περὶ Αἴολον καὶ Λαιστρυγόνας καὶ Κίρκην',
+    summary: '바람의 신 아이올로스의 주머니 실패와 식인 거인 라이스트뤼고네스족의 공격으로 배 1척만 남은 오뒷세우스. 키르케의 섬에서 선원들이 돼지로 변하지만 몰리(Moly) 풀의 지혜로 극복함.',
+    keyEvents: [
+      '아이올로스 바람 주머니와 선원들의 시기심',
+      '키르케의 마법 마개와 선원들의 돼지 변신',
+      '헤르메스가 준 마법 방어 약초 몰리(Moly) 복용',
+      '저승 방문(Nekyia) 지시를 받는 오뒷세우스'
+    ],
+    iconicLines: [
+      {
+        greek: 'μῶλυ δέ μιν καλέουσι θεοί· χαλεπὸν δέ τ\' ὀρύσσειν / ἀνδράσι γε θνητοῖσι, θεοὶ δέ τε πάντα δύνανται',
+        transliteration: 'mōly de min kaleousi theoi; chalepon de t\' oryssein / andrasi ge thnētoisi, theoi de te panta dynantai',
+        korean: '신들은 그 약초를 "몰리(Moly)"라 부르니, 죽을 운명의 인간이 캐내기엔 어려우나 신들은 모든 것을 할 수 있느니라!'
+      }
+    ],
+    keyCharacters: ['odysseus', 'circe']
+  },
+  {
     bookNumber: 11,
     epic: 'odyssey',
     titleKo: '오뒷세이아 11권: 저승 방문 (Nekyia)',
@@ -314,6 +465,27 @@ export const HOMERIC_BOOKS: HomericBookSummary[] = [
       }
     ],
     keyCharacters: ['odysseus', 'achilles', 'agamemnon']
+  },
+  {
+    bookNumber: 21,
+    epic: 'odyssey',
+    titleKo: '오뒷세이아 21권: 활 쏘기 시험과 변장 해제',
+    titleGreek: 'Ὀδύσσεια φ: Τόξου θέσις',
+    summary: '페넬로페가 오뒷세우스의 강철 활을 꺼내어 12개의 도끼 자루 구멍을 통과시키는 자에게 시집가겠다고 선언한다. 그 어떤 구혼자도 활시위를 얹지 못하지만, 거지로 변장한 오뒷세우스가 가볍게 활을 쏜다.',
+    keyEvents: [
+      '페넬로페의 12개 도끼 구멍 활 쏘기 시험 선언',
+      '구혼자들의 잇따른 실패와 비웃음',
+      '거지 변장 오뒷세우스의 활 쥐기 및 거문고처럼 시위 시위 매기',
+      '도끼 구멍 12개를 일직선으로 통과하는 화살'
+    ],
+    iconicLines: [
+      {
+        greek: 'ὡς ὅτ\' ἀνὴρ φόρμιγγος ἐπιστάμενος καὶ ἀοιδῆς / ῥηϊδίως ἐτάνυσσε νέῳ περὶ κόλλοπι χορδήν',
+        transliteration: 'hōs hot\' anēr phormingos epistamenos kai aoidēs / rhēïdiōs etanysse neō peri kollopi chordēn',
+        korean: '수금과 가창에 능숙한 가수가 새 줄을 팽팽하게 쉽게 매듯, 오뒷세우스는 아무런 힘도 들이지 않고 거대한 활시위를 당겼도다!'
+      }
+    ],
+    keyCharacters: ['odysseus', 'penelope', 'telemachus']
   },
   {
     bookNumber: 23,
