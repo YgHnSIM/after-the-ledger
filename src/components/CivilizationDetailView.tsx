@@ -69,7 +69,8 @@ export const CivilizationDetailView: React.FC<CivilizationDetailViewProps> = ({
       </div>
 
       {/* TWO COLUMN CONTENT: DEEP NARRATIVE & STAGES */}
-      <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: '2rem', marginBottom: '3rem' }}>
+      <div className="grid-responsive-2col" style={{ marginBottom: '3rem' }}>
+
         {/* NARRATIVE MAIN COLUMN */}
         <div>
           <section className="card" style={{ marginBottom: '2rem' }}>

@@ -24,7 +24,8 @@ export const ThemesView: React.FC<ThemesViewProps> = ({ initialEssayId }) => {
         </p>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 2.5fr', gap: '2rem' }}>
+      <div className="grid-responsive-themes">
+
         {/* ESSAY LIST SIDEBAR */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
           {COMPARATIVE_ESSAYS.map((essay) => {

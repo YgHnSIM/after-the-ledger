@@ -772,10 +772,29 @@ p:last-child {
   color: var(--text-muted);
 }
 
+/* Responsive Grid Utilities */
+.grid-responsive-2col {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.grid-responsive-themes {
+  display: grid;
+  grid-template-columns: 1fr 2.5fr;
+  gap: 2rem;
+}
+
+.grid-responsive-3col {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 1.5rem;
+}
+
 /* Responsive Breakpoints & Mobile Overrides */
 @media (max-width: 900px) {
   body {
-    padding-bottom: 64px; /* Room for bottom navigation bar */
+    padding-bottom: 96px; /* Room for bottom navigation bar + safe area */
   }
 
   .navbar {
@@ -796,12 +815,36 @@ p:last-child {
   }
 
   .main-container {
-    padding: 1.25rem 1rem 2rem 1rem;
+    padding: 1.25rem 1rem 5rem 1rem;
   }
 
-  h1 { font-size: 1.85rem; }
-  h2 { font-size: 1.45rem; }
-  h3 { font-size: 1.2rem; }
+  /* Responsive Fluid Typography */
+  h1, .hero-title {
+    font-size: clamp(1.45rem, 5.2vw, 1.85rem) !important;
+    line-height: 1.3 !important;
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+
+  h2, .section-title {
+    font-size: clamp(1.2rem, 4vw, 1.45rem) !important;
+    line-height: 1.35 !important;
+    word-break: keep-all;
+    text-wrap: balance;
+  }
+
+  h3 {
+    font-size: 1.15rem !important;
+    line-height: 1.38 !important;
+  }
+
+  /* Automatic 1-Column Stacking for Grids on Mobile */
+  .grid-responsive-2col,
+  .grid-responsive-themes,
+  .grid-responsive-3col {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
 
   .modal-overlay {
     padding: 1rem;
@@ -824,7 +867,8 @@ p:last-child {
   }
 
   .card {
-    padding: 1.2rem;
+    padding: 1.1rem;
   }
 }
+
 

@@ -269,33 +269,34 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                 <span>기원전 300 BCE</span>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', alignItems: 'center', gap: '1rem' }}>
+              <div className="grid-responsive-3col" style={{ alignItems: 'center' }}>
                 <span style={{ fontWeight: 600, fontSize: '0.88rem', color: 'var(--civ-mesopotamia)' }}>메소포타미아</span>
-                <div style={{ height: '20px', background: 'rgba(200, 100, 50, 0.2)', border: '1px solid var(--civ-mesopotamia)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '90%' }}>
+                <div style={{ height: '20px', background: 'rgba(200, 100, 50, 0.2)', border: '1px solid var(--civ-mesopotamia)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '100%' }}>
                   <span style={{ position: 'absolute', left: '10px', top: '1px', fontSize: '0.72rem', fontWeight: 600 }}>우루크 점토판 ~ 길가메시 표준판 (3300 ~ 650 BCE)</span>
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', alignItems: 'center', gap: '1rem' }}>
+              <div className="grid-responsive-3col" style={{ alignItems: 'center' }}>
                 <span style={{ fontWeight: 600, fontSize: '0.88rem', color: 'var(--civ-egypt)' }}>이집트</span>
-                <div style={{ height: '20px', background: 'rgba(27, 138, 144, 0.2)', border: '1px solid var(--civ-egypt)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '85%', marginLeft: '5%' }}>
+                <div style={{ height: '20px', background: 'rgba(27, 138, 144, 0.2)', border: '1px solid var(--civ-egypt)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '100%' }}>
                   <span style={{ position: 'absolute', left: '10px', top: '1px', fontSize: '0.72rem', fontWeight: 600 }}>아비도스 표찰 ~ 사자의 서 파피루스 (3250 ~ 1200 BCE)</span>
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', alignItems: 'center', gap: '1rem' }}>
+              <div className="grid-responsive-3col" style={{ alignItems: 'center' }}>
                 <span style={{ fontWeight: 600, fontSize: '0.88rem', color: 'var(--civ-greece)' }}>그리스</span>
-                <div style={{ height: '20px', background: 'rgba(29, 78, 216, 0.2)', border: '1px solid var(--civ-greece)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '40%', marginLeft: '50%' }}>
+                <div style={{ height: '20px', background: 'rgba(29, 78, 216, 0.2)', border: '1px solid var(--civ-greece)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '100%' }}>
                   <span style={{ position: 'absolute', left: '10px', top: '1px', fontSize: '0.72rem', fontWeight: 600 }}>Linear B (1400BCE) & Alphabet (775~300 BCE)</span>
                 </div>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 3fr', alignItems: 'center', gap: '1rem' }}>
+              <div className="grid-responsive-3col" style={{ alignItems: 'center' }}>
                 <span style={{ fontWeight: 600, fontSize: '0.88rem', color: 'var(--civ-israel)' }}>이스라엘·유다</span>
-                <div style={{ height: '20px', background: 'rgba(126, 34, 206, 0.2)', border: '1px solid var(--civ-israel)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '30%', marginLeft: '65%' }}>
+                <div style={{ height: '20px', background: 'rgba(126, 34, 206, 0.2)', border: '1px solid var(--civ-israel)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '100%' }}>
                   <span style={{ position: 'absolute', left: '10px', top: '1px', fontSize: '0.72rem', fontWeight: 600 }}>게제르 달력 ~ 쿰란 사해문서 (950 ~ 150 BCE)</span>
                 </div>
               </div>
+
             </div>
           )}
         </div>
