@@ -100,15 +100,23 @@ export interface HomericBookSummary {
   keyCharacters: string[];
 }
 
+export interface HomericEpithetItem {
+  greek: string;               // e.g. "ποδάρκης δῖος Ἀχιλλεύς"
+  transliteration: string;     // e.g. "podarkes dios Achilleus"
+  korean: string;              // e.g. "발이 빠른 신과 같은 아킬레우스"
+  grammarCaseAndMeter: string; // e.g. "주격(Nominative) • 6보격 문말(Verse-end)"
+}
+
 export interface HomericCharacter {
   id: string;
   nameKo: string;
   nameGreek: string;
   nameTransliteration?: string;
-  epithet: string;            // 영웅 수식어구 (Formulaic Epithet)
+  epithet: string;            // 대표 영웅 수식어구 (Primary Epithet)
   epithetGreek?: string;
   epithetTransliteration?: string;
   epithetKo?: string;
+  epithetsList?: HomericEpithetItem[]; // 다중 구전 운율 수식어구 체계 (Multiple Formulaic Epithet System)
   side: 'achaean' | 'trojan' | 'god' | 'odyssey-hero' | 'odyssey-monster';
   role: string;
   description: string;

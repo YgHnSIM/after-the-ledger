@@ -280,23 +280,41 @@ export const HomericEpicView: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* FORMULAIC EPITHET BOX */}
-                  <div style={{ background: 'var(--bg-surface-elevated)', border: '1px solid var(--border-highlight)', padding: '0.75rem 0.9rem', borderRadius: 'var(--radius-md)' }}>
-                    <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--civ-greece)', textTransform: 'uppercase', marginBottom: '0.25rem' }} className="font-cinzel">
-                      📜 6보격 운율 공식 수식어구 (Formulaic Epithet)
+                  {/* MULTI FORMULAIC EPITHET SYSTEM BOX */}
+                  <div style={{ background: 'var(--bg-surface-elevated)', border: '1px solid var(--border-highlight)', padding: '0.75rem 0.9rem', borderRadius: 'var(--radius-md)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <div style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--civ-greece)', textTransform: 'uppercase' }} className="font-cinzel">
+                      📜 밀만 패리 다중 구전 운율 수식어 체계 (Formulaic Epithets System)
                     </div>
-                    <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem' }}>
-                      {char.epithetKo || char.epithet}
-                    </div>
-                    {char.epithetGreek && (
-                      <div style={{ fontSize: '0.85rem', color: 'var(--civ-mesopotamia)', fontFamily: 'serif', fontWeight: 600 }}>
-                        {char.epithetGreek}
-                      </div>
-                    )}
-                    {char.epithetTransliteration && (
-                      <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontFamily: 'var(--font-cinzel)', marginTop: '0.15rem' }}>
-                        {char.epithetTransliteration}
-                      </div>
+                    {char.epithetsList && char.epithetsList.length > 0 ? (
+                      char.epithetsList.map((ep, idx) => (
+                        <div key={idx} style={{ background: 'var(--bg-surface)', padding: '0.5rem 0.7rem', borderRadius: 'var(--radius-sm)', borderLeft: '3px solid var(--civ-mesopotamia)' }}>
+                          <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                            {ep.korean}
+                          </div>
+                          <div style={{ fontSize: '0.83rem', color: 'var(--civ-mesopotamia)', fontFamily: 'serif', fontWeight: 600 }}>
+                            {ep.greek} ({ep.transliteration})
+                          </div>
+                          <div style={{ fontSize: '0.73rem', color: 'var(--text-muted)', fontFamily: 'var(--font-cinzel)', marginTop: '0.15rem' }}>
+                            🏷️ {ep.grammarCaseAndMeter}
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <>
+                        <div style={{ fontSize: '0.92rem', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.2rem' }}>
+                          {char.epithetKo || char.epithet}
+                        </div>
+                        {char.epithetGreek && (
+                          <div style={{ fontSize: '0.85rem', color: 'var(--civ-mesopotamia)', fontFamily: 'serif', fontWeight: 600 }}>
+                            {char.epithetGreek}
+                          </div>
+                        )}
+                        {char.epithetTransliteration && (
+                          <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontFamily: 'var(--font-cinzel)', marginTop: '0.15rem' }}>
+                            {char.epithetTransliteration}
+                          </div>
+                        )}
+                      </>
                     )}
                   </div>
 
