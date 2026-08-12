@@ -1025,6 +1025,134 @@ p:last-child {
   line-height: 1.45;
 }
 
+/* Homeric Scholarship & Comparative Philology UI Styles */
+.scholarship-subtabs {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0.25rem 0;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+.scholarship-subtabs::-webkit-scrollbar {
+  display: none;
+}
+
+.scholarship-subtab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+}
+
+.scholarship-subtab-btn:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-highlight);
+  color: var(--text-primary);
+}
+
+.scholarship-subtab-btn.active {
+  background: var(--civ-greece);
+  color: #ffffff;
+  border-color: var(--civ-greece);
+  box-shadow: var(--shadow-sm);
+}
+
+.scholarship-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.scholarship-citation-box {
+  background: var(--bg-surface-elevated);
+  border-left: 3px solid var(--civ-greece);
+  padding: 0.65rem 0.85rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.78rem;
+  font-family: var(--font-cinzel);
+  color: var(--text-secondary);
+}
+
+.near-eastern-parallel-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.parallel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.parallel-box {
+  padding: 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.84rem;
+  line-height: 1.45;
+}
+
+.parallel-box-ne {
+  background: rgba(200, 90, 36, 0.08);
+  border: 1px solid rgba(200, 90, 36, 0.2);
+}
+
+.parallel-box-homer {
+  background: rgba(30, 64, 175, 0.08);
+  border: 1px solid rgba(30, 64, 175, 0.2);
+}
+
+.linear-b-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  font-size: 0.84rem;
+}
+
+.linear-b-table th {
+  background: var(--bg-surface-elevated);
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: var(--text-primary);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.linear-b-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border-color);
+  vertical-align: top;
+}
+
+.linear-b-table tr:last-child td {
+  border-bottom: none;
+}
+
+
 
 
 

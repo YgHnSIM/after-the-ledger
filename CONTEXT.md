@@ -76,6 +76,8 @@
 4. **반응형 1열 그리드 스택 & 가변 타이포그래피 (Fluid Typography & 1-Col Stacking)**: 모바일(<= 900px)에서 고정 2단/3단 그리드를 100% 수직 스택으로 변환하고 헤딩 크기를 스케일링하여 텍스트 찌그러짐 현상 완벽 방지.
 5. **모바일 인터랙티브 마일스톤 & 4중 연대 벡터 뱃지화 (Interactive Milestone & 4-Dates Vector)**: BCE 5대 절대연대 마일스톤 핀과 사건·성립·편집·사본 4중 연대 뱃지 모듈을 통해 모바일에서도 동시대성 비교와 선후관계를 직관 시각화.
 6. **개요 타임라인 텍스트-바 분리 카드 구조 (Text-Bar Separated Mobile Timeline Card)**: absolute 고정 높이 바 텍스트 겹침을 제거하고, 문명 배지 → 비주얼 프로그레스 바 → 유물 서사 텍스트가 수직으로 흐르는 전용 카드 구조로 가독성 완성.
+7. **호메로스 서양고전학 & 근동 비교 필놀로지 데이터 레이어 (Homeric Scholarship & Comparative Philology)**: 구전 공식설(Parry-Lord), 근동 서사시(길가메시 등) 모티브 대조, 미케네 Linear B 어휘(Wanax), 알렉산드리아 도서관 오벨로스 비평 사료 출처(Citations)를 인터랙티브 4대 연구 서브 탭으로 통합.
+
 
 
 

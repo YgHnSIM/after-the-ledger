@@ -213,3 +213,43 @@ export interface GlossaryItem {
   definition: string;
   context: string;
 }
+
+// ----------------------------------------------------
+// Homeric Scholarship & Comparative Philology Types
+// ----------------------------------------------------
+
+export interface HomericScholarshipRecord {
+  id: string;
+  category: 'oral-formulaic' | 'homeric-question' | 'neoanalysis' | 'textual-criticism';
+  categoryLabel: string;
+  titleKo: string;
+  scholarName: string;      // e.g. "Milman Parry & Albert Lord", "F.A. Wolf", "Gregory Nagy"
+  yearOrEra: string;        // e.g. "1930-1954", "1795"
+  coreThesis: string;       // 핵심 연구 명제
+  evidenceDescription: string; // 주요 근거 및 사료
+  citation: string;         // 학술 출처 저술/DOI 명칭
+  impactOnHomer: string;    // 호메로스 이해에 미친 영향
+}
+
+export interface NearEasternParallel {
+  id: string;
+  nearEasternWork: string;  // e.g. "길가메시 서사시 (Epic of Gilgamesh)"
+  nearEasternEra: string;   // e.g. "c. 2100 ~ 1200 BCE"
+  homericWork: string;      // e.g. "일리아스 (Iliad)"
+  motifTitle: string;       // e.g. "전우의 죽음과 주인공의 비극적 분노"
+  nearEasternEvidence: string; // 메소포타미아/우가리트 사료 내용
+  homericEvidence: string;     // 호메로스 대응 구절/권수
+  comparativeAnalysis: string; // Martin L. West & Walter Burkert 등의 학술 비교 분석
+  citation: string;
+}
+
+export interface LinearBComparison {
+  id: string;
+  linearBTerm: string;      // e.g. "wa-na-ka"
+  linearBTransliteration: string;
+  linearBMeaning: string;   // e.g. "미케네 궁전의 최고 군주/왕"
+  homericTerm: string;      // e.g. "ἄναξ (Anax)"
+  homericMeaning: string;   // e.g. "신 또는 전사 부족장 (아가멤논/제우스)"
+  historicalShift: string;  // 청동기 붕괴(c. 1200 BCE) 후 왕권 붕괴와 어휘 의미 변천 해설
+  tabletReference: string;  // e.g. "Pylos Ta 711, Knossos V 52"
+}
