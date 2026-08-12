@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { HOMERIC_BOOKS, HOMERIC_CHARACTERS, HOMERIC_CONCEPTS, COMPARATIVE_EPIC_MATRIX } from '../data/homer';
+import { HOMERIC_BOOKS, HOMERIC_CHARACTERS, HOMERIC_CONCEPTS, COMPARATIVE_EPIC_MATRIX, CONCEPT_RELATIONSHIPS } from '../data/homer';
 import { HOMERIC_SCHOLARSHIP_RECORDS, NEAR_EASTERN_PARALLELS, LINEAR_B_COMPARISONS } from '../data/homerScholarship';
-import { BookOpen, Shield, Feather, Sparkles, Scale, GraduationCap, Globe, Library, Milestone, CheckCircle2, Award, Quote, Flame } from 'lucide-react';
+import { BookOpen, Shield, Feather, Sparkles, Scale, GraduationCap, Globe, Library, Milestone, CheckCircle2, Award, Quote, Flame, GitMerge, Scroll, Network } from 'lucide-react';
 
 
 export const HomericEpicView: React.FC = () => {
   const [activeSection, setActiveSection] = useState<'books' | 'characters' | 'concepts' | 'matrix' | 'scholarship' | 'problem'>('scholarship');
   const [activeScholarshipTab, setActiveScholarshipTab] = useState<'all' | 'oral' | 'question' | 'neoanalysis' | 'evolutionary' | 'near-east' | 'linear-b'>('all');
+  const [activeConceptSubTab, setActiveConceptSubTab] = useState<'cards' | 'linear-b' | 'network' | 'matrix'>('cards');
 
   const [selectedCharacterSide, setSelectedCharacterSide] = useState<'all' | 'achaean' | 'trojan' | 'god' | 'odyssey-hero' | 'odyssey-monster'>('all');
   const [selectedEpic, setSelectedEpic] = useState<'all' | 'iliad' | 'odyssey'>('all');
@@ -355,71 +356,248 @@ export const HomericEpicView: React.FC = () => {
       {activeSection === 'concepts' && (
         <section style={{ marginBottom: '4rem' }}>
           <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>호메로스 {HOMERIC_CONCEPTS.length}대 사상 개념어 (Core Homeric Lexicon)</h2>
-          <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-            《일리아스》와 《오뒷세이아》 원전의 인간관, 도덕관, 세계관을 관통하는 {HOMERIC_CONCEPTS.length}개 핵심 그리스어 개념어의 조어 인도유럽어 어원, 서양고전학 문헌학, 비교신화학 사료를 전수 분석합니다.
+          <p style={{ color: 'var(--text-secondary)', marginBottom: '1.25rem', fontSize: '0.9rem' }}>
+            《일리아스》와 《오뒷세이아》 원전의 인간관, 도덕관, 세계관을 관통하는 {HOMERIC_CONCEPTS.length}개 핵심 그리스어 개념어의 조어 인도유럽어 어원, 미케네 선문자 B 점토판 실증, 서사적 인과 네트워크, 4대 비교 서사시 행렬을 전수 분석합니다.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.5rem' }}>
-            {HOMERIC_CONCEPTS.map((c) => (
-              <div key={c.id} className="card" style={{ background: 'var(--bg-surface)', borderLeft: '4px solid var(--civ-israel-judah)', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.65rem' }}>
-                  <div>
-                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', margin: 0, color: 'var(--text-primary)' }}>
-                      {c.termKo}
-                    </h3>
-                    {c.primaryPassages && (
-                      <span style={{ fontSize: '0.78rem', color: 'var(--accent-primary)', fontFamily: 'monospace', fontWeight: 600, display: 'inline-block', marginTop: '0.25rem' }}>
-                        📍 원전 앵커: {c.primaryPassages}
-                      </span>
+          {/* CONCEPT SUBTABS */}
+          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
+            <button
+              onClick={() => setActiveConceptSubTab('cards')}
+              className={`btn ${activeConceptSubTab === 'cards' ? 'btn-primary' : 'btn-outline'}`}
+              style={{ fontSize: '0.86rem', padding: '0.45rem 0.9rem' }}
+            >
+              📜 10대 개념어 총람 & 문헌학
+            </button>
+            <button
+              onClick={() => setActiveConceptSubTab('linear-b')}
+              className={`btn ${activeConceptSubTab === 'linear-b' ? 'btn-primary' : 'btn-outline'}`}
+              style={{ fontSize: '0.86rem', padding: '0.45rem 0.9rem' }}
+            >
+              𐀷 미케네 선문자 B 점토판 실증 (Linear B)
+            </button>
+            <button
+              onClick={() => setActiveConceptSubTab('network')}
+              className={`btn ${activeConceptSubTab === 'network' ? 'btn-primary' : 'btn-outline'}`}
+              style={{ fontSize: '0.86rem', padding: '0.45rem 0.9rem' }}
+            >
+              🕸️ 서사적 인과 네트워크 (Dynamics Flow)
+            </button>
+            <button
+              onClick={() => setActiveConceptSubTab('matrix')}
+              className={`btn ${activeConceptSubTab === 'matrix' ? 'btn-primary' : 'btn-outline'}`}
+              style={{ fontSize: '0.86rem', padding: '0.45rem 0.9rem' }}
+            >
+              🌍 4대 비교 서사시 행렬 교차 연계
+            </button>
+          </div>
+
+          {/* SUBTAB 1: CARDS */}
+          {activeConceptSubTab === 'cards' && (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.5rem' }}>
+              {HOMERIC_CONCEPTS.map((c) => (
+                <div key={c.id} className="card" style={{ background: 'var(--bg-surface)', borderLeft: '4px solid var(--civ-israel-judah)', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.65rem' }}>
+                    <div>
+                      <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', margin: 0, color: 'var(--text-primary)' }}>
+                        {c.termKo}
+                      </h3>
+                      {c.primaryPassages && (
+                        <span style={{ fontSize: '0.78rem', color: 'var(--accent-primary)', fontFamily: 'monospace', fontWeight: 600, display: 'inline-block', marginTop: '0.25rem' }}>
+                          📍 원전 앵커: {c.primaryPassages}
+                        </span>
+                      )}
+                    </div>
+                    <span style={{ fontSize: '1.25rem', fontFamily: 'serif', fontWeight: 700, color: 'var(--civ-israel-judah)', textAlign: 'right' }}>
+                      {c.termGreek}
+                      <div style={{ fontSize: '0.82rem', fontWeight: 400, color: 'var(--text-tertiary)', fontFamily: 'sans-serif' }}>{c.termTransliteration}</div>
+                    </span>
+                  </div>
+
+                  {/* Linear B Attestation Badge */}
+                  {c.linearBAttestation && (
+                    <div style={{ background: 'rgba(111, 66, 193, 0.09)', padding: '0.45rem 0.65rem', borderRadius: '4px', borderLeft: '3px solid #6f42c1', fontSize: '0.82rem' }}>
+                      <strong style={{ color: '#6f42c1' }}>𐀷 미케네 점토판 사료:</strong> <span style={{ fontFamily: 'monospace' }}>{c.linearBAttestation.sign} ({c.linearBAttestation.transliteration})</span> — {c.linearBAttestation.tabletCitation}
+                    </div>
+                  )}
+
+                  {/* Etymology & Opposing Terms */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.82rem' }}>
+                    {c.etymology && (
+                      <div style={{ background: 'rgba(184, 134, 11, 0.08)', padding: '0.45rem 0.65rem', borderRadius: '4px', borderLeft: '3px solid #b8860b' }}>
+                        <strong style={{ color: '#b8860b' }}>🌱 PIE 어원학:</strong> {c.etymology}
+                      </div>
+                    )}
+                    {c.opposingConcept && (
+                      <div style={{ background: 'rgba(178, 34, 34, 0.08)', padding: '0.45rem 0.65rem', borderRadius: '4px', borderLeft: '3px solid #b22222' }}>
+                        <strong style={{ color: '#b22222' }}>⚖️ 대립·대비 개념:</strong> {c.opposingConcept}
+                      </div>
                     )}
                   </div>
-                  <span style={{ fontSize: '1.25rem', fontFamily: 'serif', fontWeight: 700, color: 'var(--civ-israel-judah)', textAlign: 'right' }}>
-                    {c.termGreek}
-                    <div style={{ fontSize: '0.82rem', fontWeight: 400, color: 'var(--text-tertiary)', fontFamily: 'sans-serif' }}>{c.termTransliteration}</div>
-                  </span>
-                </div>
 
-                {/* Etymology & Opposing Terms */}
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.82rem' }}>
-                  {c.etymology && (
-                    <div style={{ background: 'rgba(184, 134, 11, 0.08)', padding: '0.45rem 0.65rem', borderRadius: '4px', borderLeft: '3px solid #b8860b' }}>
-                      <strong style={{ color: '#b8860b' }}>🌱 PIE 어원학:</strong> {c.etymology}
+                  {/* Definition */}
+                  <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'var(--text-primary)', margin: 0 }}>
+                    {c.definition}
+                  </p>
+
+                  {/* Homeric Example */}
+                  <div style={{ background: 'var(--bg-surface-elevated)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.86rem', color: 'var(--text-secondary)', borderLeft: '3px solid var(--border-highlight)' }}>
+                    <strong style={{ color: 'var(--text-primary)' }}>📜 원문 활용 실증:</strong> {c.exampleInHomer}
+                  </div>
+
+                  {/* Philological & Comparative Depth */}
+                  {c.philosophicalDepth && (
+                    <div style={{ background: 'rgba(74, 114, 178, 0.07)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.84rem', color: 'var(--text-secondary)', borderLeft: '3px solid var(--accent-primary)', lineHeight: 1.55 }}>
+                      <strong style={{ color: 'var(--accent-primary)', display: 'block', marginBottom: '0.2rem' }}>🎓 고전 문헌학 비평 (Snell, Dodds, Nagy):</strong>
+                      {c.philosophicalDepth}
                     </div>
                   )}
-                  {c.opposingConcept && (
-                    <div style={{ background: 'rgba(178, 34, 34, 0.08)', padding: '0.45rem 0.65rem', borderRadius: '4px', borderLeft: '3px solid #b22222' }}>
-                      <strong style={{ color: '#b22222' }}>⚖️ 대립·대비 개념:</strong> {c.opposingConcept}
+
+                  {c.comparativeMythology && (
+                    <div style={{ background: 'rgba(40, 167, 69, 0.07)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.84rem', color: 'var(--text-secondary)', borderLeft: '3px solid #28a745', lineHeight: 1.55 }}>
+                      <strong style={{ color: '#28a745', display: 'block', marginBottom: '0.2rem' }}>🌍 근동·비교신화학 사료:</strong>
+                      {c.comparativeMythology}
                     </div>
                   )}
                 </div>
+              ))}
+            </div>
+          )}
 
-                {/* Definition */}
-                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'var(--text-primary)', margin: 0 }}>
-                  {c.definition}
+          {/* SUBTAB 2: LINEAR B MYCENAEAN ATTESTATIONS */}
+          {activeConceptSubTab === 'linear-b' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <div className="card" style={{ background: 'var(--bg-surface-elevated)', borderLeft: '4px solid #6f42c1' }}>
+                <h3 style={{ fontSize: '1.15rem', color: '#6f42c1', margin: '0 0 0.5rem 0' }}>𐀷 청동기 시대 미케네 선문자 B (Linear B) 점토판 고증 총람</h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                  기원전 13세기 미케네 문명의 필로스(Pylos) 및 크놋소스(Knossos) 궁전 관료제 점토판 사료에 직접 기록된 음절 문자(Syllabograms)와 호메로스 8세기 서사시 어휘의 500년 언어학적 연속성을 실증합니다.
                 </p>
-
-                {/* Homeric Example */}
-                <div style={{ background: 'var(--bg-surface-elevated)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.86rem', color: 'var(--text-secondary)', borderLeft: '3px solid var(--border-highlight)' }}>
-                  <strong style={{ color: 'var(--text-primary)' }}>📜 원문 활용 실증:</strong> {c.exampleInHomer}
-                </div>
-
-                {/* Philological & Comparative Depth */}
-                {c.philosophicalDepth && (
-                  <div style={{ background: 'rgba(74, 114, 178, 0.07)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.84rem', color: 'var(--text-secondary)', borderLeft: '3px solid var(--accent-primary)', lineHeight: 1.55 }}>
-                    <strong style={{ color: 'var(--accent-primary)', display: 'block', marginBottom: '0.2rem' }}>🎓 고전 문헌학 비평 (Snell, Dodds, Nagy):</strong>
-                    {c.philosophicalDepth}
-                  </div>
-                )}
-
-                {c.comparativeMythology && (
-                  <div style={{ background: 'rgba(40, 167, 69, 0.07)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.84rem', color: 'var(--text-secondary)', borderLeft: '3px solid #28a745', lineHeight: 1.55 }}>
-                    <strong style={{ color: '#28a745', display: 'block', marginBottom: '0.2rem' }}>🌍 근동·비교신화학 사료:</strong>
-                    {c.comparativeMythology}
-                  </div>
-                )}
               </div>
-            ))}
-          </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1rem' }}>
+                {HOMERIC_CONCEPTS.filter(c => c.linearBAttestation).map((c) => {
+                  const b = c.linearBAttestation!;
+                  return (
+                    <div key={c.id} className="card" style={{ background: 'var(--bg-surface)', borderTop: '3px solid #6f42c1' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                        <span style={{ fontSize: '1.4rem', fontWeight: 700, color: '#6f42c1', fontFamily: 'serif' }}>{b.sign}</span>
+                        <span style={{ fontSize: '0.82rem', padding: '0.2rem 0.5rem', background: 'rgba(111,66,193,0.1)', color: '#6f42c1', borderRadius: '4px', fontWeight: 600 }}>{b.tabletCitation}</span>
+                      </div>
+                      <h4 style={{ margin: '0 0 0.25rem 0', fontSize: '1.05rem', color: 'var(--text-primary)' }}>{c.termKo} ({c.termGreek})</h4>
+                      <div style={{ fontSize: '0.85rem', color: 'var(--accent-primary)', fontWeight: 600, fontFamily: 'monospace', marginBottom: '0.5rem' }}>
+                        미케네 그리스어: {b.mycenaeanGreek} [{b.transliteration}]
+                      </div>
+                      <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.5 }}>
+                        {b.contextAndMeaning}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* SUBTAB 3: CONCEPT DYNAMICS NETWORK */}
+          {activeConceptSubTab === 'network' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <div className="card" style={{ background: 'var(--bg-surface-elevated)', borderLeft: '4px solid var(--accent-primary)' }}>
+                <h3 style={{ fontSize: '1.15rem', color: 'var(--accent-primary)', margin: '0 0 0.5rem 0' }}>🕸️ 호메로스 서사시 닫힌 고리(Closed-Loop) 인과 네트워크</h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                  10대 핵심 개념어는 파편화된 요소가 아니라 영웅의 운명, 신적 징벌, 무공 승화, 문명 회복을 잇는 9개 단계의 서사적 인과 고리로 상호 작동합니다.
+                </p>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1rem' }}>
+                {CONCEPT_RELATIONSHIPS.map((rel, idx) => {
+                  const source = HOMERIC_CONCEPTS.find(c => c.id === rel.sourceId);
+                  const target = HOMERIC_CONCEPTS.find(c => c.id === rel.targetId);
+                  const isOppose = rel.type === 'opposes';
+                  const isCulminate = rel.type === 'culminates';
+                  const badgeColor = isOppose ? '#b22222' : isCulminate ? '#28a745' : 'var(--accent-primary)';
+
+                  return (
+                    <div key={rel.id} className="card" style={{ background: 'var(--bg-surface)', borderLeft: `4px solid ${badgeColor}` }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.65rem' }}>
+                        <span style={{ width: '24px', height: '24px', borderRadius: '50%', background: badgeColor, color: '#fff', fontSize: '0.75rem', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                          {idx + 1}
+                        </span>
+                        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: badgeColor, background: 'var(--bg-surface-elevated)', padding: '0.2rem 0.5rem', borderRadius: '4px' }}>
+                          {rel.typeLabelKo}
+                        </span>
+                      </div>
+
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'var(--bg-surface-elevated)', padding: '0.6rem', borderRadius: 'var(--radius-sm)', marginBottom: '0.65rem', fontWeight: 700, fontSize: '0.9rem' }}>
+                        <span style={{ color: 'var(--text-primary)' }}>{source?.termKo.split(' ')[0]} ({source?.termGreek})</span>
+                        <span style={{ color: badgeColor, fontSize: '1.1rem' }}>➔</span>
+                        <span style={{ color: 'var(--text-primary)' }}>{target?.termKo.split(' ')[0]} ({target?.termGreek})</span>
+                      </div>
+
+                      <p style={{ fontSize: '0.86rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.55 }}>
+                        {rel.narrativeDescription}
+                      </p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* SUBTAB 4: 4-EPIC COMPARATIVE MATRIX */}
+          {activeConceptSubTab === 'matrix' && (
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <div className="card" style={{ background: 'var(--bg-surface-elevated)', borderLeft: '4px solid #28a745' }}>
+                <h3 style={{ fontSize: '1.15rem', color: '#28a745', margin: '0 0 0.5rem 0' }}>🌍 동서양 4대 비교 서사시 행렬 교차 연계 (Comparative Epic Cross-Ref)</h3>
+                <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0, lineHeight: 1.6 }}>
+                  그리스 서사시(호메로스), 메소포타미아(길가메시), 인도(마하바라타), 고대 북유럽(비외르우프)의 4대 문명 서사시를 10대 사상 개념어 앵커로 유기적 직교 비교합니다.
+                </p>
+              </div>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+                {COMPARATIVE_EPIC_MATRIX.map((m) => {
+                  const linkedConcept = HOMERIC_CONCEPTS.find(c => c.id === m.conceptId);
+                  return (
+                    <div key={m.id} className="card" style={{ background: 'var(--bg-surface)', borderTop: '4px solid #28a745', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.5rem' }}>
+                        <h4 style={{ margin: 0, fontSize: '1.15rem', color: 'var(--text-primary)' }}>{m.theme}</h4>
+                        {linkedConcept && (
+                          <span style={{ fontSize: '0.82rem', padding: '0.2rem 0.6rem', background: 'rgba(40,167,69,0.12)', color: '#28a745', borderRadius: '12px', fontWeight: 700 }}>
+                            {linkedConcept.termKo} ({linkedConcept.termGreek})
+                          </span>
+                        )}
+                      </div>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem', fontSize: '0.85rem' }}>
+                        <div style={{ background: 'rgba(74,114,178,0.06)', padding: '0.65rem', borderRadius: '4px', borderLeft: '3px solid var(--accent-primary)' }}>
+                          <strong style={{ color: 'var(--accent-primary)', display: 'block', marginBottom: '0.2rem' }}>🏛️ 그리스 서사시 (호메로스):</strong>
+                          {m.iliadOdysseyManifestation}
+                        </div>
+                        <div style={{ background: 'rgba(184,134,11,0.06)', padding: '0.65rem', borderRadius: '4px', borderLeft: '3px solid #b8860b' }}>
+                          <strong style={{ color: '#b8860b', display: 'block', marginBottom: '0.2rem' }}>📜 메소포타미아 (길가메시):</strong>
+                          {m.nearEasternParallel}
+                        </div>
+                        {m.indianMahabharataParallel && (
+                          <div style={{ background: 'rgba(111,66,193,0.06)', padding: '0.65rem', borderRadius: '4px', borderLeft: '3px solid #6f42c1' }}>
+                            <strong style={{ color: '#6f42c1', display: 'block', marginBottom: '0.2rem' }}>☸️ 인도 서사시 (마하바라타):</strong>
+                            {m.indianMahabharataParallel}
+                          </div>
+                        )}
+                        {m.norseBeowulfParallel && (
+                          <div style={{ background: 'rgba(220,53,69,0.06)', padding: '0.65rem', borderRadius: '4px', borderLeft: '3px solid #dc3545' }}>
+                            <strong style={{ color: '#dc3545', display: 'block', marginBottom: '0.2rem' }}>🛡️ 고대 북유럽 (비외르우프):</strong>
+                            {m.norseBeowulfParallel}
+                          </div>
+                        )}
+                      </div>
+
+                      <div style={{ background: 'var(--bg-surface-elevated)', padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-sm)', fontSize: '0.84rem', color: 'var(--text-secondary)' }}>
+                        <strong style={{ color: 'var(--text-primary)' }}>💡 문명사적 학술 비교 통찰:</strong> {m.comparativeInsight}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          )}
         </section>
       )}
 

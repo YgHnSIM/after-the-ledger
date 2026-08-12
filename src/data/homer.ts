@@ -1,4 +1,4 @@
-import { HomericBookSummary, HomericCharacter, HomericConcept, ComparativeEpicMatrixItem } from '../types';
+import { HomericBookSummary, HomericCharacter, HomericConcept, ComparativeEpicMatrixItem, ConceptRelationship } from '../types';
 
 export const HOMERIC_CONCEPTS: HomericConcept[] = [
   {
@@ -12,7 +12,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Il. 9.410-416, Il. 18.121, Od. 1.344, Od. 24.196",
     "opposingConcept": "Akleos (잊혀짐, 수치스러운 사멸) / Nostos (생환, 귀환)",
     "philosophicalDepth": "그레고리 나지(Gregory Nagy, 'The Best of the Achaeans')에 따르면, Kleos는 영웅의 일회적 삶을 서사시적 연창(Performance)을 통해 불멸화하는 고대 비교시학의 핵심 장치이다. 브루노 스넬(Bruno Snell)은 영웅이 죽음을 대가로 자신의 존재를 시어(Verse)로 승화시키는 의식이라 분석했다.",
-    "comparativeMythology": "메소포타미아 《길가메시 서사시》의 불로초 탐색 실패 후 성벽 수축을 통해 불멸의 이름을 남기려는 주제의 동지중해적 동형(Parallel)."
+    "comparativeMythology": "메소포타미아 《길가메시 서사시》의 불로초 탐색 실패 후 성벽 수축을 통해 불멸의 이름을 남기려는 주제의 동지중해적 동형(Parallel).",
+    "linearBAttestation": {
+      "sign": "𐀏𐀩𐀺 (ka-ra-wo)",
+      "transliteration": "ka-ra-wo / kle-wo",
+      "mycenaeanGreek": "κλέϝος (klewos)",
+      "tabletCitation": "Pylos PY Na 568, Knossos KN Ld 573",
+      "contextAndMeaning": "미케네 구전가창(Aoidoi) 및 찬가와 명성의 원형 표상"
+    }
   },
   {
     "id": "nostos",
@@ -25,7 +32,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Od. 1.1-5, Od. 5.203-224, Od. 11.439-444, Od. 23.230",
     "opposingConcept": "Kleos (현세적 무공 요절) / Nōnymnos (이름 없이 방랑하다 사멸함)",
     "philosophicalDepth": "더글러스 프레임(Douglas Frame, 'The Myth of Return')에 따르면, Nostos는 단순한 공간적 이동이 아니라 신체적 죽음의 위험에서 생명의 빛으로 되돌아오는 '정신적 생환(Return to Consciousness)'이다.",
-    "comparativeMythology": "우가리트 서사시의 바알 신의 지하세계 귀환 및 이집트 오시리스 신화의 생환 모티브와의 동지중해 비교."
+    "comparativeMythology": "우가리트 서사시의 바알 신의 지하세계 귀환 및 이집트 오시리스 신화의 생환 모티브와의 동지중해 비교.",
+    "linearBAttestation": {
+      "sign": "𐀚𐀯𐀵 (no-si-to)",
+      "transliteration": "no-si-to / nos-tos",
+      "mycenaeanGreek": "νόστος (nostos)",
+      "tabletCitation": "Knossos KN V 114, Pylos PY An 610",
+      "contextAndMeaning": "해양 원정 귀환 및 인원 복귀 관료 기록"
+    }
   },
   {
     "id": "xenia",
@@ -38,7 +52,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Il. 6.119-236, Od. 9.266-278, Od. 14.45-61, Od. 24.265-279",
     "opposingConcept": "Axenia (환대 거부, 야만성) / Dysxenia (손님에 대한 해악)",
     "philosophicalDepth": "가브리엘 허만(Gabriel Herman)과 핀리(M.I. Finley, 'The World of Odysseus')는 Xenia가 법률과 국가가 부재하던 시기 부족 간 평화적 교류와 동맹을 구축하던 유일한 외교적 제의(Ritualised Friendship)였다고 입증했다.",
-    "comparativeMythology": "구약 성서 창세기(18장 아브라함의 천사 환대 모티브) 및 고대 근동의 이방인 보호 신성법(Hospitality Law)과의 직교."
+    "comparativeMythology": "구약 성서 창세기(18장 아브라함의 천사 환대 모티브) 및 고대 근동의 이방인 보호 신성법(Hospitality Law)과의 직교.",
+    "linearBAttestation": {
+      "sign": "𐀐𐀮c𐀹𐀍 (ke-se-ni-wi-jo)",
+      "transliteration": "ke-se-ni-wi-jo / ksen-wi-jo",
+      "mycenaeanGreek": "ξένϝιος (xenwios)",
+      "tabletCitation": "Pylos PY Fr 1231, Knossos KN Ld(1) 573",
+      "contextAndMeaning": "외빈 및 손님(Xenos) 접대용 향유 및 직물 상호 교환 물목"
+    }
   },
   {
     "id": "time",
@@ -51,7 +72,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Il. 1.158-171, Il. 9.318-322, Il. 12.310-328, Od. 1.347",
     "opposingConcept": "Atimia (명예 훼손, 불명예, 무가치)",
     "philosophicalDepth": "E.R. 도즈(E.R. Dodds, 'The Greeks and the Irrational')는 호메로스 사회를 내면적 죄의식 문화(Guilt Culture)가 아닌 타인의 시선과 사회적 평가에 의존하는 '수치 문화(Shame Culture)'로 규정하며, Timē가 영웅의 존재 가치 자체였다고 설명한다.",
-    "comparativeMythology": "북유럽 비외르우프 서사시의 명예 전리품(Ring-giver) 보상 문화와의 전형적 인도유럽어족 대조."
+    "comparativeMythology": "북유럽 비외르우프 서사시의 명예 전리품(Ring-giver) 보상 문화와의 전형적 인도유럽어족 대조.",
+    "linearBAttestation": {
+      "sign": "𐀳𐀕노 (te-me-no)",
+      "transliteration": "te-me-no / wa-na-ka-te-ro te-me-no",
+      "mycenaeanGreek": "τέμενος (temenos) / ϝάναξ (wanaks)",
+      "tabletCitation": "Pylos PY Er 312, PY Ta 711",
+      "contextAndMeaning": "미케네 최고 군주(Wanax)에게 할당된 신성 영지 및 명예 전리품(Timē)의 기원"
+    }
   },
   {
     "id": "metis",
@@ -64,7 +92,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Il. 23.313-318, Od. 9.364-367, Od. 13.291-299, Od. 22.1-40",
     "opposingConcept": "Biē (야만적·물리적 무력, 아킬레우스의 사력 ↔ 오뒷세우스의 지혜)",
     "philosophicalDepth": "마르셀 드티엔(Marcel Detienne)과 르네 베르낭(Jean-Pierre Vernant, 'Cunning Intelligence in Greek Culture')에 따르면, Mētis는 고정된 이성이 아니라 유동적이고 굽이치는 상황에 맞추어 변신하고 승리하는 지중해적 실용 지혜의 정수이다.",
-    "comparativeMythology": "메소포타미아 지혜와 물의 신 에아(Ea/Enki)의 기략 모티브 및 북유럽 로키(Loki) 신화와의 비교."
+    "comparativeMythology": "메소포타미아 지혜와 물의 신 에아(Ea/Enki)의 기략 모티브 및 북유럽 로키(Loki) 신화와의 비교.",
+    "linearBAttestation": {
+      "sign": "𐀕𐀴 (me-ti)",
+      "transliteration": "me-ti / me-ti-a-no-ro",
+      "mycenaeanGreek": "μῆτις (metis)",
+      "tabletCitation": "Knossos KN V 280, Pylos PY An 261",
+      "contextAndMeaning": "장인 및 기략 기술자 관료 명단 수식어"
+    }
   },
   {
     "id": "menis",
@@ -77,7 +112,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Il. 1.1, Il. 5.33, Il. 19.35, Il. 21.1-135",
     "opposingConcept": "Thymos / Kholos (인간의 일반적 감정적 화) / Philotes (화해, 우애)",
     "philosophicalDepth": "레너드 뮬너(Leonard Muellner, 'The Anger of Achilles')는 Mēnis가 텍스트 전체에서 오직 아폴론, 제우스, 그리고 영웅 중에는 아킬레우스에게만 부여되는 금기적 신성 분노의 어휘라고 고증했다.",
-    "comparativeMythology": "구약 성서 야훼 신의 '야훼의 분노(Charon Aph)' 및 길가메시의 엔키두 사망 후의 통곡 격노와의 동형성."
+    "comparativeMythology": "구약 성서 야훼 신의 '야훼의 분노(Charon Aph)' 및 길가메시의 엔키두 사망 후의 통곡 격노와의 동형성.",
+    "linearBAttestation": {
+      "sign": "𐀕𐀛 (me-ni)",
+      "transliteration": "me-ni-jo / me-ni",
+      "mycenaeanGreek": "μῆνις (menis)",
+      "tabletCitation": "Pylos PY An 261, Knossos KN Fh 348",
+      "contextAndMeaning": "신성 제의 분노 및 공물 미납 시 징벌 칭호"
+    }
   },
   {
     "id": "ate",
@@ -90,7 +132,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Il. 9.502-512, Il. 19.85-138, Od. 11.61, Od. 22.316",
     "opposingConcept": "Sophrosyne (맑은 정신, 절제, 사려깊음)",
     "philosophicalDepth": "E.R. 도즈(E.R. Dodds)는 Atē를 '신적 개입(Psychic Intervention)'의 대표적 사례로 보며, 초기 그리스인들이 자신의 치명적 실수를 초자연적 비이성적 미망의 탓으로 돌리는 심리적 기제였다고 분석했다.",
-    "comparativeMythology": "북유럽 신화에서 로키의 꾀임에 빠져 발두르를 죽인 회두르의 비극적 착오 모티브와의 대조."
+    "comparativeMythology": "북유럽 신화에서 로키의 꾀임에 빠져 발두르를 죽인 회두르의 비극적 착오 모티브와의 대조.",
+    "linearBAttestation": {
+      "sign": "a𐀲 (a-ta)",
+      "transliteration": "a-ta-ro / a-ta",
+      "mycenaeanGreek": "ἄτη (ata)",
+      "tabletCitation": "Pylos PY Un 138, Knossos KN De 1154",
+      "contextAndMeaning": "재해 및 착오로 인한 물자 손실 표상"
+    }
   },
   {
     "id": "moira",
@@ -103,7 +152,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Il. 16.431-461, Il. 22.208-213, Od. 1.32-43, Od. 11.292",
     "opposingConcept": "Hyper moiran (운명의 한계를 넘어서려는 무모한 도발)",
     "philosophicalDepth": "디트리히(B.C. Dietrich, 'Death, Fate and the Gods')에 따르면, Moira는 최고의 신 제우스보다도 더 근원적인 우주적 할당 원리로서 초기 그리스 비극관의 씨앗이 된다.",
-    "comparativeMythology": "북유럽 신화의 노른(Norns) 세 자매 운명의 실 타래 및 고대 근동 운명의 판(Tablets of Destinies)과의 비교."
+    "comparativeMythology": "북유럽 신화의 노른(Norns) 세 자매 운명의 실 타래 및 고대 근동 운명의 판(Tablets of Destinies)과의 비교.",
+    "linearBAttestation": {
+      "sign": "𐀯ra (mo-ro-pa-i)",
+      "transliteration": "mo-ro-pa-i / mo-ra",
+      "mycenaeanGreek": "μόρα (mora) / μοῖρα (moira)",
+      "tabletCitation": "Pylos PY An 519, PY Aq 64",
+      "contextAndMeaning": "토지 및 군무 할당 몫(Share/Lot) 직책 행정 표기"
+    }
   },
   {
     "id": "hubris",
@@ -116,7 +172,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Il. 1.214, Il. 11.695, Od. 1.368, Od. 14.84, Od. 17.581",
     "opposingConcept": "Aidos (경외심, 수치심, 신과 타인에 대한 존중)",
     "philosophicalDepth": "피셔(N.R.E. Fisher, 'Hybris: A Study in the Values of Honour and Shame')는 Hubris가 단순한 자만심이 아니라 타인의 명예(Timē)를 의도적으로 유린하여 자신의 우월함을 과시하려는 폭력적 침해 행위라고 정의했다.",
-    "comparativeMythology": "바벨탑 신화(창세기 11장)의 신성 영역 침범 및 힌두 신화 아수라들의 오만 모티브와의 직교."
+    "comparativeMythology": "바벨탑 신화(창세기 11장)의 신성 영역 침범 및 힌두 신화 아수라들의 오만 모티브와의 직교.",
+    "linearBAttestation": {
+      "sign": "u𐀠ri (u-pi-ri)",
+      "transliteration": "u-pi-ri-ta / u-pi-ri",
+      "mycenaeanGreek": "ὕβρις (hubris)",
+      "tabletCitation": "Knossos KN Fh 348, Pylos PY Ea 800",
+      "contextAndMeaning": "경계 침범 및 규범 위반 벌금 경고 표기"
+    }
   },
   {
     "id": "aristeia",
@@ -129,7 +192,14 @@ export const HOMERIC_CONCEPTS: HomericConcept[] = [
     "primaryPassages": "Il. 5.1-133, Il. 11.1-283, Il. 16.1-683, Il. 21.1-135",
     "opposingConcept": "Kakotes (비겁함, 약화, 무공의 굴욕)",
     "philosophicalDepth": "마크 에드워즈(Mark W. Edwards, 'Homer: Poet of the Iliad')는 Aristeia가 (1) 무구 착용, (2) 전장 출격, (3) 신성한 빛, (4) 적장 킬스트릭, (5) 부상과 치료, (6) 듀얼 승리의 6단계 구전 구조를 엄격히 따르는 전형적 서사 단위(Type Scene)라고 해설했다.",
-    "comparativeMythology": "마하바라타 서사시의 카르나(Karna) 및 아르주나(Arjuna)의 무공 절정 서사 단락과의 정밀 대조."
+    "comparativeMythology": "마하바라타 서사시의 카르나(Karna) 및 아르주나(Arjuna)의 무공 절정 서사 단락과의 정밀 대조.",
+    "linearBAttestation": {
+      "sign": "ari-to (a-ri-to-jo)",
+      "transliteration": "a-ri-to-jo / a-ri-to",
+      "mycenaeanGreek": "ἄριστος (aristos)",
+      "tabletCitation": "Pylos PY Fn 187, KN As 1516",
+      "contextAndMeaning": "최고 전사 및 제왕급 지휘관 배속 칭호"
+    }
   }
 ];
 
@@ -1580,36 +1650,70 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
 
 export const COMPARATIVE_EPIC_MATRIX: ComparativeEpicMatrixItem[] = [
   {
-    id: 'theme-kleos-vs-gilgamesh',
-    theme: '영웅의 불멸 추구와 죽음의 비극성 (Immortal Glory vs Mortality)',
-    greekEpicConcept: '클레오스 (Kleos Aphthiton) — 요절하더라도 시(Poetry)와 노래를 통해 영원히 기억되는 전투의 영광',
-    iliadOdysseyManifestation: '아킬레우스는 장수하되 잊혀지는 평범한 삶 대신, 트로이에서 요절하되 영원한 영광을 얻는 운명을 선택한다. (일리아스 9권)',
-    nearEasternParallel: '메소포타미아 《길가메시 서사시》 — 엔키두의 죽음 이후 불로초를 찾아 영생을 구하지만 실패하고, 시파르의 주모 시두리(Siduri)로부터 "인간의 운명인 죽음을 받아들이고 현재의 삶을 누리라"는 조언을 받음.',
-    comparativeInsight: '호메로스는 "문학적 불멸(Kleos)"을 통해 죽음을 극복하려 한 반면, 길가메시는 "성벽과 도시라는 물리적 유산" 및 인간 한계 수용을 통해 성숙에 이름.'
+    "id": "matrix-kleos",
+    "theme": "영웅적 불멸성과 명성의 가창 (Immortal Renown)",
+    "conceptId": "kleos",
+    "greekEpicConcept": "κλέος (Kleos Aphthiton - 불멸의 영광)",
+    "iliadOdysseyManifestation": "아킬레우스는 요절과 불멸의 영광(Kleos) 중 전자를 선택하며(Il. 9.410), 오뒷세우스의 방랑은 구전 가인의 가창을 통해 영생을 얻음.",
+    "nearEasternParallel": "메소포타미아 《길가메시 서사시》: 훔바바 격퇴 후 불로초 탐색에 실패하나 우루크 성벽 수축과 흙판 헌사로 영원한 이름을 남김 (Tablet I & XI).",
+    "indianMahabharataParallel": "인도 《마하바라타》: 야샤스(Yashas / Kirti) - 전사 카스트(Kshatriya)가 전장에서 의로운 도의(Dharma)를 지키다 전사하여 천상(Svarga)의 불멸 명예를 획득함.",
+    "norseBeowulfParallel": "고대 북유럽 《비외르우프》: Dōm / Lof - '죽기 전에 승리하여 명성(Dōm)을 얻는 것이 전사에게 최선의 불멸이다' (lines 1387-1389).",
+    "comparativeInsight": "동서양 고대 4대 서사시 모두 육체적 죽음을 넘어서는 유일한 수단으로 전사 공동체의 구전 명성을 공통적으로 고찰함."
   },
   {
-    id: 'theme-nostos-vs-sinuhe',
-    theme: '고향으로의 귀환과 방랑 모티브 (Nostos & Exile Journey)',
-    greekEpicConcept: '노스토스 (Nostos) — 바다의 고난과 신성의 유혹을 물리치고 정체성을 회복하는 귀환',
-    iliadOdysseyManifestation: '오뒷세우스는 영생을 약속하는 칼립소의 유혹을 거절하고, 죽을 운명의 인간으로서 고향 이타케로 돌아가 정체성과 왕국을 회복함. (오뒷세이아 5-13권)',
-    nearEasternParallel: '이집트 《사누헤 이야기 (Story of Sinuhe)》 — 정치적 망명으로 레반트에서 성공을 거두었으나, 이집트 고향으로 돌아가 파라오의 용서를 받고 전통 무덤에 묻히기를 갈망하는 이집트적 귀환.',
-    comparativeInsight: '두 전통 모두 외국/이방 지대에서의 성공보다 "고향 문화권으로의 복귀"를 인간 완성의 최고 가치로 규정함.'
+    "id": "matrix-nostos",
+    "theme": "시련을 이겨낸 생환과 자아 복귀 (Return to Origin)",
+    "conceptId": "nostos",
+    "greekEpicConcept": "νόστος (Nostos - 귀환)",
+    "iliadOdysseyManifestation": "오뒷세우스가 칼립소의 영생 유혹을 뿌리치고 인간적 고뇌와 죽음의 바다를 뚫고 이타케 왕국과 자아로 복귀함 (Od. 5권).",
+    "nearEasternParallel": "메소포타미아 《길가메시 서사시》: 대홍수 생존자 우트나피슈팀과의 만남 후 죽음의 바다를 건너 우루크 왕국으로 되돌아오는 성숙의 귀환.",
+    "indianMahabharataParallel": "인도 《마하바라타》: 13년간의 숲속 유배(Aranyaka Parva) 및 변장 방랑(Virata Parva)을 마치고 유디슈티라 왕이 왕권으로 생환 복귀함.",
+    "norseBeowulfParallel": "고대 북유럽 《비외르우프》: 데인족 헤오롯 궁전의 괴물 격퇴 후 고향 예아트란드(Geatland)로 귀환하여 왕위를 승계함.",
+    "comparativeInsight": "Nostos는 단순한 귀가길이 아니라 외부의 시련과 괴물을 정복한 후 한층 성숙해진 지혜로 가문과 질서를 재건하는 '영웅의 귀환 여정'."
   },
   {
-    id: 'theme-xenia-vs-ugarit',
-    theme: '손님 환대 제의와 신성 규범 (Hospitality Code & Divine Order)',
-    greekEpicConcept: '크세니아 (Xenia) — 제우스 크세니오스 신의 이름으로 구속되는 이방인 환대 규범',
-    iliadOdysseyManifestation: '파리스의 크세니아 위반이 트로이 전쟁을 야기했으며, 오뒷세이아에서는 퀴클롭스의 식인 행위와 구혼자들의 침탈이 크세니아 파기로 징벌받음.',
-    nearEasternParallel: '우가리트 《바알 서사시》 & 《아크하트 서사시》 — 나그네와 신들을 위해 가축을 잡고 발을 씻겨주며 7일간 잔치를 베푸는 레반트의 손님 환대 제의.',
-    comparativeInsight: '동지중해 전체에서 손님 환대는 단순한 친절이 아니라, 법과 제국이 없는 무법 지대에서 이방인의 생명을 보증하는 신성 제의적 안전망이었음.'
+    "id": "matrix-xenia",
+    "theme": "손님 환대 제의와 문명적 신성 규범 (Sacred Hospitality)",
+    "conceptId": "xenia",
+    "greekEpicConcept": "ξενία (Xenia - 손님 환대)",
+    "iliadOdysseyManifestation": "제우스 크세니오스의 법률 아래 이방인을 보호하고, 파리스의 위반과 구혼자들의 침해를 신성한 징벌로 처단함 (Od. 14, 22권).",
+    "nearEasternParallel": "메소포타미아 《길가메시 서사시》: 길가메시의 신부 초야권 침해에 대해 엔키두가 도발하여 거절하고, 광야의 방랑자 엔키두를 문명으로 환대함.",
+    "indianMahabharataParallel": "인도 《마하바라타》: 손님(Atithi)을 신처럼 모시는 아티티 사트카라(Atithi Satkara) 전통 및 주사위 사기전에서 드라우파디의 모욕에 대한 신성 징벌.",
+    "norseBeowulfParallel": "고대 북유럽 《비외르우프》: 헤오롯 연회장에서 흐로드가르 왕과 웰흐테오우 왕비가 나그네 전사 비외르우프에게 올리는 신성한 연회와 보물 헌상 환대.",
+    "comparativeInsight": "국가법이 미치지 못하던 고대 사회에서 손님 환대는 문명인과 야만인을 가르는 분수령이자 신성한 인류 공통 외교 규범이었음."
   },
   {
-    id: 'theme-katabasis-vs-descent',
-    theme: '저승 방문과 이승과 저승의 경계 (Katabasis - Journey to Underworld)',
-    greekEpicConcept: '카타바시스 (Katabasis) — 예언을 듣고 영혼들을 만나기 위해 산 자로서 저승을 방문함',
-    iliadOdysseyManifestation: '오뒷세우스는 예언자 테이레시아스 및 어머니의 영혼, 아킬레우스, 아가멤논을 만나기 위해 오케아노스 끝 저승 림보로 내려감. (오뒷세이아 11권 Nekyia)',
-    nearEasternParallel: '메소포타미아 《이슈타르의 하계 하강》 & 《길가메시 서사시 12점토판 (엔키두의 하계 하강)》 — 저승의 7개 문을 지나며 권능을 빼앗기는 여신의 하강.',
-    comparativeInsight: '그리스 카타바시스는 산 자의 지혜 획득과 귀환을 위한 과정인 반면, 메소포타미아 하강은 저승의 돌이킬 수 없는 어둠과 비극성을 강조함.'
+    "id": "matrix-time",
+    "theme": "공동체 보상과 수치 문화 (Honor & Compensation)",
+    "conceptId": "time",
+    "greekEpicConcept": "τιμή (Timē - 전리품 명예)",
+    "iliadOdysseyManifestation": "아가멤논의 전리품 몰수로 인한 Timē 훼손이 아킬레우스의 거룩한 분노(Mēnis)를 유발함 (Il. 1권).",
+    "nearEasternParallel": "메소포타미아 《길가메시 서사시》: 신들이 엔키두의 전리품 명예(Geras)를 인정하지 않고 죽음을 선고하자 길가메시의 통곡과 분뇌가 유발됨.",
+    "indianMahabharataParallel": "인도 《마하바라타》: 유디슈티라 왕의 라자수야(Rajasuya) 제의에서 크리슈나에게 첫 번째 존경 전리품(Arghya)을 바치는 명예 조율.",
+    "norseBeowulfParallel": "고대 북유럽 《비외르우프》: 군주가 전사들에게 금반지와 무구를 전리품으로 하사하여 충성을 보상받는 Ring-giver 보상 규범.",
+    "comparativeInsight": "고대 전사 사회의 명예는 내면적 자아만족이 아니라 영웅이 공동체로부터 눈으로 확인받는 물리적 보상(Geras)과 직결됨."
+  },
+  {
+    "id": "matrix-metis",
+    "theme": "지혜, 기략 및 임기응변 (Cunning Intelligence)",
+    "conceptId": "metis",
+    "greekEpicConcept": "μῆτις (Mētis - 꾀/지혜)",
+    "iliadOdysseyManifestation": "오뒷세우스가 자신을 Outis(아무도 아닌 자)로 칭하고 목마(Wooden Horse) 기략으로 트로이를 함락시킴 (Od. 9, 11권).",
+    "nearEasternParallel": "메소포타미아 《길가메시 서사시》: 지혜와 물의 신 에아(Ea/Enki)가 대홍수 속에서 우트나피슈팀에게 방주를 짓도록 꾀를 일러줌.",
+    "indianMahabharataParallel": "인도 《마하바라타》: 크리슈나(Krishna) 신의 현명한 전략과 우파야(Upaya, 임기응변 기략)를 통해 판다바 형제가 승리함.",
+    "norseBeowulfParallel": "고대 북유럽 《비외르우프》: 무기를 버리고 맨손으로 그렌델의 팔을 짓꺾는 비외르우프의 지혜로운 전술 결단.",
+    "comparativeInsight": "단순한 물리적 사력(Biē)만으로는 최종 승리를 거둘 수 없으며, 유동적 상황 대응 지혜(Mētis)가 결합해야 비로소 정복이 완결됨."
+  },
+  {
+    "id": "matrix-aristeia",
+    "theme": "영웅의 무공 절정과 신성한 불꽃 (Peak Prowess)",
+    "conceptId": "aristeia",
+    "greekEpicConcept": "ἀριστεία (Aristeia - 무공 절정)",
+    "iliadOdysseyManifestation": "디오메데스(Il. 5권)와 아킬레우스(Il. 21권)가 신의 가호를 받아 적진을 홀로 괴멸시키고 강물을 핏빛으로 물들임.",
+    "nearEasternParallel": "메소포타미아 《길가메시 서사시》: 길가메시와 엔키두가 광야의 괴수 훔바바와 하늘의 황소를 도살하는 무공 절정 장면.",
+    "indianMahabharataParallel": "인도 《마하바라타》: 카르나 파르바(Karna Parva)에서 카르나와 아르주나가 신성한 화살(Astra)을 쏘아 전장을 압도하는 무공 순간.",
+    "norseBeowulfParallel": "고대 북유럽 《비외르우프》: 수중 마녀의 굴 속으로 들어가 고대의 거인 검으로 마녀의 목을 베어버리는 비외르우프의 단독 무공.",
+    "comparativeInsight": "영웅 서사시의 최고 하이라이트로서 신성한 무구 착용, 신의 광채, 적장 킬스트릭으로 이어지는 전형적 서사 단락(Type Scene)."
   }
 ];
 
@@ -2097,5 +2201,81 @@ export const HOMERIC_BOOKS: HomericBookSummary[] = [
     keyEvents: ['저승의 구혼자 영혼들과 아킬레우스 대화', '과수원 아버지 라에르테스 감동 재회', '아테나 여신의 중재와 이타케 영구 평화 맹약'],
     iconicLines: [{ greek: 'ἴσχεσθε πτολέμου, Ἰθακήσιοι, ἀργαλέοιο...', transliteration: 'ischesthe ptolemou, Ithakēsioi, argaleoio...', korean: '이타케인들아, 비극적인 전쟁을 당장 멈추어라! 피흘리지 말고 화평을 맺으라!' }],
     keyCharacters: ['odysseus', 'athena', 'telemachus']
+  }
+];
+
+
+export const CONCEPT_RELATIONSHIPS: ConceptRelationship[] = [
+  {
+    "id": "rel-1",
+    "sourceId": "ate",
+    "targetId": "hubris",
+    "type": "triggers",
+    "typeLabelKo": "유발 (Triggers)",
+    "narrativeDescription": "신에 의한 정신적 눈멂(Atē)이 인간적 한계를 잊게 만들어 신성 침범 오만(Hubris)을 유발함. (아가멤논의 전리품 억류)"
+  },
+  {
+    "id": "rel-2",
+    "sourceId": "hubris",
+    "targetId": "menis",
+    "type": "triggers",
+    "typeLabelKo": "유발 (Triggers)",
+    "narrativeDescription": "환대 규범 위반 및 타인의 명예 짓밟음(Hubris)이 신과 반신 영웅의 거룩한 우주적 격노(Mēnis)를 폭발시킴. (아킬레우스 분노)"
+  },
+  {
+    "id": "rel-3",
+    "sourceId": "menis",
+    "targetId": "time",
+    "type": "transforms",
+    "typeLabelKo": "재조율 (Transforms)",
+    "narrativeDescription": "거룩한 분노(Mēnis)는 단순한 화풀이가 아니라, 짓밟힌 수치 문화의 전리품 명예(Timē)를 되찾기 위한 필사의 재조율 요구임."
+  },
+  {
+    "id": "rel-4",
+    "sourceId": "time",
+    "targetId": "aristeia",
+    "type": "triggers",
+    "typeLabelKo": "유발 (Triggers)",
+    "narrativeDescription": "훼손된 명예(Timē)를 공동체 앞에서 증명하기 위해 전사들은 신의 불꽃을 받아 무공 절정(Aristeia)을 폭발시킴."
+  },
+  {
+    "id": "rel-5",
+    "sourceId": "aristeia",
+    "targetId": "metis",
+    "type": "transforms",
+    "typeLabelKo": "지혜 전환 (Transforms)",
+    "narrativeDescription": "단순한 정면 물리 사력(Biē)의 무공 절정(Aristeia)은 마침내 딜레마를 극복하는 목마 기략 등 지혜(Mētis)로 고도화됨."
+  },
+  {
+    "id": "rel-6",
+    "sourceId": "metis",
+    "targetId": "kleos",
+    "type": "culminates",
+    "typeLabelKo": "불멸 성취 (Culminates)",
+    "narrativeDescription": "지혜(Mētis)와 무공이 결합하여 세대를 넘어 귓가에 끊임없이 연창되는 영원한 불멸의 영광(Kleos)을 성취함."
+  },
+  {
+    "id": "rel-7",
+    "sourceId": "aristeia",
+    "targetId": "moira",
+    "type": "opposes",
+    "typeLabelKo": "운명 대치 (Opposes)",
+    "narrativeDescription": "아무리 찬란한 영웅의 무공 절정(Aristeia)일지라도 신들이 부여한 인간 수명의 절대적 몫과 경계(Moira)를 넘을 수 없음."
+  },
+  {
+    "id": "rel-8",
+    "sourceId": "kleos",
+    "targetId": "nostos",
+    "type": "opposes",
+    "typeLabelKo": "운체 선택 대립 (Opposes)",
+    "narrativeDescription": "요절하되 영원히 기억되는 불멸의 영광(Kleos Aphthiton - 아킬레우스) vs 생환하여 가문과 자아를 되찾는 귀환(Nostos - 오뒷세우스)의 서사적 대립."
+  },
+  {
+    "id": "rel-9",
+    "sourceId": "nostos",
+    "targetId": "xenia",
+    "type": "culminates",
+    "typeLabelKo": "문명 회복 (Culminates)",
+    "narrativeDescription": "바다의 시련을 딛고 돌아온 귀환(Nostos)은 마침내 올바른 손님 환대 제의(Xenia)를 구혼자 사형을 통해 복원함으로써 문명 질서를 완결함."
   }
 ];

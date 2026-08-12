@@ -126,6 +126,14 @@ export interface HomericCharacter {
   philologyNote?: string;
 }
 
+export interface LinearBAttestation {
+  sign: string;                // e.g. "𐀷𐀩𐀏" or transliterated syllabogram
+  transliteration: string;     // e.g. "wa-na-ka"
+  mycenaeanGreek: string;      // e.g. "ϝάναξ (wanaks)"
+  tabletCitation: string;      // e.g. "Pylos PY Ta 711, PY Er 312"
+  contextAndMeaning: string;   // e.g. "미케네 최고 군주/관료 수장 표상"
+}
+
 export interface HomericConcept {
   id: string;
   termGreek: string;
@@ -138,14 +146,27 @@ export interface HomericConcept {
   opposingConcept?: string;            // 대립/대비되는 개념어 (e.g. "Biē ↔ Mētis")
   philosophicalDepth?: string;         // 서양고전학 문헌학 및 비교철학 심화 해설 (Snell, Dodds, Nagy)
   comparativeMythology?: string;       // 근동 및 비교신화학적 사료 (Gilgamesh, Ugarit 등)
+  linearBAttestation?: LinearBAttestation; // 미케네 선문자 B 점토판 실증 사료
+}
+
+export interface ConceptRelationship {
+  id: string;
+  sourceId: string;
+  targetId: string;
+  type: 'triggers' | 'opposes' | 'transforms' | 'culminates';
+  typeLabelKo: string;
+  narrativeDescription: string;
 }
 
 export interface ComparativeEpicMatrixItem {
   id: string;
   theme: string;
+  conceptId?: string;                  // 호메로스 10대 개념어 연계 ID (e.g. "kleos", "xenia")
   greekEpicConcept: string;
   iliadOdysseyManifestation: string;
-  nearEasternParallel: string;
+  nearEasternParallel: string;         // 메소포타미아 길가메시 서사시 등
+  indianMahabharataParallel?: string;  // 인도 마하바라타 / 라마야나 서사시
+  norseBeowulfParallel?: string;       // 고대 북유럽 비외르우프 / 에다 서사시
   comparativeInsight: string;
 }
 
