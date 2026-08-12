@@ -14,6 +14,7 @@ import { Footer } from './components/Footer';
 import { CivilizationId } from './types';
 
 import { InstitutionsView } from './components/InstitutionsView';
+import { HomericEpicView } from './components/HomericEpicView';
 
 export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<string>('home');
@@ -72,6 +73,7 @@ export const App: React.FC = () => {
         {currentTab === 'compare' && (
           <CompareView onSelectArtifact={(id) => handleSelectTab('artifacts', id)} />
         )}
+        {currentTab === 'homer' && <HomericEpicView />}
         {currentTab === 'civilizations' && (
           <CivilizationDetailView
             initialCivId={activeParam as CivilizationId}

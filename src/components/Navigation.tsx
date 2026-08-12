@@ -19,6 +19,7 @@ export const Navigation: React.FC<NavigationProps> = ({
   const navItems = [
     { id: 'home', label: '개요', icon: Compass },
     { id: 'compare', label: '비교 타임라인', icon: Layers },
+    { id: 'homer', label: '일리아스·오뒷세이아', icon: BookOpen },
     { id: 'civilizations', label: '문명별 연구', icon: Globe },
     { id: 'artifacts', label: '유물·텍스트 DB', icon: Scroll },
     { id: 'institutions', label: '서기관·제도', icon: GraduationCap },

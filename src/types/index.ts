@@ -81,6 +81,50 @@ export interface ScribalInstitution {
   historicalImpact: string;
 }
 
+// --- HOMERIC EPIC MASTERY TYPES ---
+export interface HomericBookSummary {
+  bookNumber: number;
+  epic: 'iliad' | 'odyssey';
+  titleKo: string;
+  titleGreek: string;
+  summary: string;
+  keyEvents: string[];
+  iconicLines: {
+    greek: string;
+    transliteration: string;
+    korean: string;
+  }[];
+  keyCharacters: string[];
+}
+
+export interface HomericCharacter {
+  id: string;
+  nameKo: string;
+  nameGreek: string;
+  epithet: string;            // 영웅 수식어구 (Formulaic Epithet)
+  side: 'achaean' | 'trojan' | 'god' | 'odyssey-hero' | 'odyssey-monster';
+  role: string;
+  description: string;
+}
+
+export interface HomericConcept {
+  id: string;
+  termGreek: string;
+  termTransliteration: string;
+  termKo: string;
+  definition: string;
+  exampleInHomer: string;
+}
+
+export interface ComparativeEpicMatrixItem {
+  id: string;
+  theme: string;
+  greekEpicConcept: string;
+  iliadOdysseyManifestation: string;
+  nearEasternParallel: string;
+  comparativeInsight: string;
+}
+
 export interface SourceReference {
   id: string;
   grade: 'A' | 'B' | 'C' | 'D';
