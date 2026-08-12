@@ -131,8 +131,13 @@ export interface HomericConcept {
   termGreek: string;
   termTransliteration: string;
   termKo: string;
+  etymology?: string;                  // 인도유럽어족 어원 및 언어학적 origin
   definition: string;
   exampleInHomer: string;
+  primaryPassages?: string;            // 원전 핵심 권수 및 행수 (e.g. "Il. 9.410-416")
+  opposingConcept?: string;            // 대립/대비되는 개념어 (e.g. "Biē ↔ Mētis")
+  philosophicalDepth?: string;         // 서양고전학 문헌학 및 비교철학 심화 해설 (Snell, Dodds, Nagy)
+  comparativeMythology?: string;       // 근동 및 비교신화학적 사료 (Gilgamesh, Ugarit 등)
 }
 
 export interface ComparativeEpicMatrixItem {

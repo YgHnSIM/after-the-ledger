@@ -356,28 +356,67 @@ export const HomericEpicView: React.FC = () => {
         <section style={{ marginBottom: '4rem' }}>
           <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>호메로스 {HOMERIC_CONCEPTS.length}대 사상 개념어 (Core Homeric Lexicon)</h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-            《일리아스》와 《오뒷세이아》 원전의 인간관, 도덕관, 세계관을 관통하는 {HOMERIC_CONCEPTS.length}개 핵심 그리스어 개념어를 정밀 분석합니다.
+            《일리아스》와 《오뒷세이아》 원전의 인간관, 도덕관, 세계관을 관통하는 {HOMERIC_CONCEPTS.length}개 핵심 그리스어 개념어의 조어 인도유럽어 어원, 서양고전학 문헌학, 비교신화학 사료를 전수 분석합니다.
           </p>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.25rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(360px, 1fr))', gap: '1.5rem' }}>
             {HOMERIC_CONCEPTS.map((c) => (
-              <div key={c.id} className="card" style={{ background: 'var(--bg-surface)', borderLeft: '4px solid var(--civ-israel-judah)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-                  <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', margin: 0 }}>
-                    {c.termKo}
-                  </h3>
-                  <span style={{ fontSize: '1.1rem', fontFamily: 'serif', fontWeight: 700, color: 'var(--civ-israel-judah)' }}>
-                    {c.termGreek} ({c.termTransliteration})
+              <div key={c.id} className="card" style={{ background: 'var(--bg-surface)', borderLeft: '4px solid var(--civ-israel-judah)', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', borderBottom: '1px solid var(--border-subtle)', paddingBottom: '0.65rem' }}>
+                  <div>
+                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.35rem', margin: 0, color: 'var(--text-primary)' }}>
+                      {c.termKo}
+                    </h3>
+                    {c.primaryPassages && (
+                      <span style={{ fontSize: '0.78rem', color: 'var(--accent-primary)', fontFamily: 'monospace', fontWeight: 600, display: 'inline-block', marginTop: '0.25rem' }}>
+                        📍 원전 앵커: {c.primaryPassages}
+                      </span>
+                    )}
+                  </div>
+                  <span style={{ fontSize: '1.25rem', fontFamily: 'serif', fontWeight: 700, color: 'var(--civ-israel-judah)', textAlign: 'right' }}>
+                    {c.termGreek}
+                    <div style={{ fontSize: '0.82rem', fontWeight: 400, color: 'var(--text-tertiary)', fontFamily: 'sans-serif' }}>{c.termTransliteration}</div>
                   </span>
                 </div>
 
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'var(--text-primary)', marginBottom: '1rem' }}>
+                {/* Etymology & Opposing Terms */}
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', fontSize: '0.82rem' }}>
+                  {c.etymology && (
+                    <div style={{ background: 'rgba(184, 134, 11, 0.08)', padding: '0.45rem 0.65rem', borderRadius: '4px', borderLeft: '3px solid #b8860b' }}>
+                      <strong style={{ color: '#b8860b' }}>🌱 PIE 어원학:</strong> {c.etymology}
+                    </div>
+                  )}
+                  {c.opposingConcept && (
+                    <div style={{ background: 'rgba(178, 34, 34, 0.08)', padding: '0.45rem 0.65rem', borderRadius: '4px', borderLeft: '3px solid #b22222' }}>
+                      <strong style={{ color: '#b22222' }}>⚖️ 대립·대비 개념:</strong> {c.opposingConcept}
+                    </div>
+                  )}
+                </div>
+
+                {/* Definition */}
+                <p style={{ fontSize: '0.92rem', lineHeight: 1.6, color: 'var(--text-primary)', margin: 0 }}>
                   {c.definition}
                 </p>
 
-                <div style={{ background: 'var(--bg-surface-elevated)', padding: '0.85rem', borderRadius: 'var(--radius-sm)', fontSize: '0.88rem', color: 'var(--text-secondary)', borderLeft: '3px solid var(--border-highlight)' }}>
-                  <strong style={{ color: 'var(--text-primary)' }}>원문 활용 예시:</strong> {c.exampleInHomer}
+                {/* Homeric Example */}
+                <div style={{ background: 'var(--bg-surface-elevated)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.86rem', color: 'var(--text-secondary)', borderLeft: '3px solid var(--border-highlight)' }}>
+                  <strong style={{ color: 'var(--text-primary)' }}>📜 원문 활용 실증:</strong> {c.exampleInHomer}
                 </div>
+
+                {/* Philological & Comparative Depth */}
+                {c.philosophicalDepth && (
+                  <div style={{ background: 'rgba(74, 114, 178, 0.07)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.84rem', color: 'var(--text-secondary)', borderLeft: '3px solid var(--accent-primary)', lineHeight: 1.55 }}>
+                    <strong style={{ color: 'var(--accent-primary)', display: 'block', marginBottom: '0.2rem' }}>🎓 고전 문헌학 비평 (Snell, Dodds, Nagy):</strong>
+                    {c.philosophicalDepth}
+                  </div>
+                )}
+
+                {c.comparativeMythology && (
+                  <div style={{ background: 'rgba(40, 167, 69, 0.07)', padding: '0.75rem', borderRadius: 'var(--radius-sm)', fontSize: '0.84rem', color: 'var(--text-secondary)', borderLeft: '3px solid #28a745', lineHeight: 1.55 }}>
+                    <strong style={{ color: '#28a745', display: 'block', marginBottom: '0.2rem' }}>🌍 근동·비교신화학 사료:</strong>
+                    {c.comparativeMythology}
+                  </div>
+                )}
               </div>
             ))}
           </div>
