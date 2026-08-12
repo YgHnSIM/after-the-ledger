@@ -953,15 +953,78 @@ p:last-child {
   border: 1px solid rgba(107, 33, 168, 0.25);
 }
 
-/* Era Sync Synchronized Group */
-.era-sync-group {
-  background: var(--bg-surface);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
-  padding: 1.25rem;
-  margin-bottom: 1.5rem;
-  border-left: 5px solid var(--border-highlight);
+/* Home View Timeline Card & Micro-Ruler Styles */
+.home-ruler-chips {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.75rem;
+  font-family: var(--font-cinzel);
+  font-weight: 700;
+  color: var(--text-secondary);
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 0.5rem;
+  overflow-x: auto;
+  gap: 0.35rem;
 }
+
+.home-ruler-chip {
+  padding: 0.2rem 0.5rem;
+  background: var(--bg-surface-elevated);
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+}
+
+.home-timeline-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.home-timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.home-timeline-civ-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.home-timeline-bar-track {
+  width: 100%;
+  height: 10px;
+  background: var(--bg-surface-elevated);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.home-timeline-bar-fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.home-timeline-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+}
+
 
 
 

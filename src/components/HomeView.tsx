@@ -260,44 +260,89 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
               </div>
             </div>
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed var(--border-color)', paddingBottom: '0.5rem' }}>
-                <span>기원전 3400 BCE</span>
-                <span>BCE 2500</span>
-                <span>BCE 1500</span>
-                <span>BCE 800</span>
-                <span>기원전 300 BCE</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {/* TOP RULER CHIPS */}
+              <div className="home-ruler-chips">
+                <span className="home-ruler-chip">3400 BCE</span>
+                <span className="home-ruler-chip">2500 BCE</span>
+                <span className="home-ruler-chip">1500 BCE</span>
+                <span className="home-ruler-chip">800 BCE</span>
+                <span className="home-ruler-chip">300 BCE</span>
               </div>
 
-              <div className="grid-responsive-3col" style={{ alignItems: 'center' }}>
-                <span style={{ fontWeight: 600, fontSize: '0.88rem', color: 'var(--civ-mesopotamia)' }}>메소포타미아</span>
-                <div style={{ height: '20px', background: 'rgba(200, 100, 50, 0.2)', border: '1px solid var(--civ-mesopotamia)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '100%' }}>
-                  <span style={{ position: 'absolute', left: '10px', top: '1px', fontSize: '0.72rem', fontWeight: 600 }}>우루크 점토판 ~ 길가메시 표준판 (3300 ~ 650 BCE)</span>
+              {/* MESOPOTAMIA CARD */}
+              <div className="home-timeline-card" style={{ borderLeft: '4px solid var(--civ-mesopotamia)' }}>
+                <div className="home-timeline-header">
+                  <span className="home-timeline-civ-title" style={{ color: 'var(--civ-mesopotamia)' }}>
+                    메소포타미아 (점토판 쐐기문자)
+                  </span>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                    BCE 3300 ~ 650
+                  </span>
+                </div>
+                <div className="home-timeline-bar-track">
+                  <div className="home-timeline-bar-fill" style={{ width: '90%', background: 'var(--civ-mesopotamia)' }}></div>
+                </div>
+                <div className="home-timeline-desc">
+                  우루크 회계 점토판 (c. 3300 BCE) → 수메르 어휘목록 → 길가메시 서사시 니네베 표준판 (c. 650 BCE)
                 </div>
               </div>
 
-              <div className="grid-responsive-3col" style={{ alignItems: 'center' }}>
-                <span style={{ fontWeight: 600, fontSize: '0.88rem', color: 'var(--civ-egypt)' }}>이집트</span>
-                <div style={{ height: '20px', background: 'rgba(27, 138, 144, 0.2)', border: '1px solid var(--civ-egypt)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '100%' }}>
-                  <span style={{ position: 'absolute', left: '10px', top: '1px', fontSize: '0.72rem', fontWeight: 600 }}>아비도스 표찰 ~ 사자의 서 파피루스 (3250 ~ 1200 BCE)</span>
+              {/* EGYPT CARD */}
+              <div className="home-timeline-card" style={{ borderLeft: '4px solid var(--civ-egypt)' }}>
+                <div className="home-timeline-header">
+                  <span className="home-timeline-civ-title" style={{ color: 'var(--civ-egypt)' }}>
+                    이집트 (상형문자 & 파피루스)
+                  </span>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                    BCE 3250 ~ 1200
+                  </span>
+                </div>
+                <div className="home-timeline-bar-track">
+                  <div className="home-timeline-bar-fill" style={{ width: '85%', marginLeft: '5%', background: 'var(--civ-egypt)' }}></div>
+                </div>
+                <div className="home-timeline-desc">
+                  아비도스 상아 표찰 (c. 3250 BCE) → 피라미드/관 텍스트 → 아니의 사자의 서 파피루스 (c. 1250 BCE)
                 </div>
               </div>
 
-              <div className="grid-responsive-3col" style={{ alignItems: 'center' }}>
-                <span style={{ fontWeight: 600, fontSize: '0.88rem', color: 'var(--civ-greece)' }}>그리스</span>
-                <div style={{ height: '20px', background: 'rgba(29, 78, 216, 0.2)', border: '1px solid var(--civ-greece)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '100%' }}>
-                  <span style={{ position: 'absolute', left: '10px', top: '1px', fontSize: '0.72rem', fontWeight: 600 }}>Linear B (1400BCE) & Alphabet (775~300 BCE)</span>
+              {/* GREECE CARD */}
+              <div className="home-timeline-card" style={{ borderLeft: '4px solid var(--civ-greece)' }}>
+                <div className="home-timeline-header">
+                  <span className="home-timeline-civ-title" style={{ color: 'var(--civ-greece)' }}>
+                    그리스 (Linear B & 알파벳)
+                  </span>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                    BCE 1400 ~ 300
+                  </span>
+                </div>
+                <div className="home-timeline-bar-track">
+                  <div className="home-timeline-bar-fill" style={{ width: '45%', marginLeft: '45%', background: 'var(--civ-greece)' }}></div>
+                </div>
+                <div className="home-timeline-desc">
+                  미케네 Linear B 점토판 (c. 1400 BCE) → 디필론/네스토르 알파벳 유희시 (c. 750 BCE)
                 </div>
               </div>
 
-              <div className="grid-responsive-3col" style={{ alignItems: 'center' }}>
-                <span style={{ fontWeight: 600, fontSize: '0.88rem', color: 'var(--civ-israel)' }}>이스라엘·유다</span>
-                <div style={{ height: '20px', background: 'rgba(126, 34, 206, 0.2)', border: '1px solid var(--civ-israel)', borderRadius: 'var(--radius-sm)', position: 'relative', width: '100%' }}>
-                  <span style={{ position: 'absolute', left: '10px', top: '1px', fontSize: '0.72rem', fontWeight: 600 }}>게제르 달력 ~ 쿰란 사해문서 (950 ~ 150 BCE)</span>
+              {/* ISRAEL CARD */}
+              <div className="home-timeline-card" style={{ borderLeft: '4px solid var(--civ-israel)' }}>
+                <div className="home-timeline-header">
+                  <span className="home-timeline-civ-title" style={{ color: 'var(--civ-israel)' }}>
+                    이스라엘·유다 (음설 알파벳)
+                  </span>
+                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                    BCE 950 ~ 150
+                  </span>
+                </div>
+                <div className="home-timeline-bar-track">
+                  <div className="home-timeline-bar-fill" style={{ width: '35%', marginLeft: '60%', background: 'var(--civ-israel)' }}></div>
+                </div>
+                <div className="home-timeline-desc">
+                  게제르 달력 (c. 925 BCE) → 케테프 힌놈 은제 부적 (c. 600 BCE) → 쿰란 사해문서 (c. 150 BCE)
                 </div>
               </div>
-
             </div>
+
           )}
         </div>
       </section>
