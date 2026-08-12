@@ -17,6 +17,46 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
   const [showPreservationBiasOverlay, setShowPreservationBiasOverlay] = useState<boolean>(false);
   const [selectedArtifactDrawer, setSelectedArtifactDrawer] = useState<ArtifactRecord | null>(null);
   const [activeCivTab, setActiveCivTab] = useState<string>('all');
+  const [activeMilestonePin, setActiveMilestonePin] = useState<string>('all');
+  const [viewMode, setViewMode] = useState<'civ-lane' | 'era-sync'>('civ-lane');
+
+  // Milestone Pins Definition
+  const milestonePins = [
+    { id: 'all', label: '전체 BCE (3400 ~ 300)' },
+    { id: '3400', label: '📍 BCE 3400 (우루크)' },
+    { id: '2500', label: '📍 BCE 2500 (피라미드)' },
+    { id: '1400', label: '📍 BCE 1400 (Linear B/우가리트)' },
+    { id: '800', label: '📍 BCE 800 (알파벳/구전)' },
+    { id: '300', label: '📍 BCE 300 (사해문서)' },
+  ];
+
+  // Era Sync Groups Definition for 1:1 Synchronized Comparison
+  const eraSyncGroups = [
+    {
+      id: 'era-1',
+      titleKo: '1. 문자의 발생과 관료 회계 시대 (c. 3400 ~ 2500 BCE)',
+      descriptionKo: '메소포타미아 점토판 회계와 이집트 왕조 라벨이 동시대에 초기 문자로 성립한 시대.',
+      filter: (a: ArtifactRecord) => a.dateStartBCE >= 2500
+    },
+    {
+      id: 'era-2',
+      titleKo: '2. 거대 문헌 집성체 & 청동기 아카이브 시대 (c. 2500 ~ 1200 BCE)',
+      descriptionKo: '피라미드 텍스트, 함무라비 법전, 미케네 Linear B 및 우가리트 알파벳 점토판의 황금기.',
+      filter: (a: ArtifactRecord) => a.dateStartBCE >= 1200 && a.dateStartBCE < 2500
+    },
+    {
+      id: 'era-3',
+      titleKo: '3. 철기시대 음설 알파벳 확산 & 구전 가창 시대 (c. 1200 ~ 700 BCE)',
+      descriptionKo: '페니키아·고대 고대 그리스 알파벳 수용, 호메로스 서사시 구전 가창 및 이스라엘 부적 비문.',
+      filter: (a: ArtifactRecord) => a.dateStartBCE >= 700 && a.dateStartBCE < 1200
+    },
+    {
+      id: 'era-4',
+      titleKo: '4. 서사시 정경화 & 사해문서 알렉산드리아 시대 (c. 700 ~ 300 BCE)',
+      descriptionKo: '아테네 참주 정서, 히브리 성서 사제 편집, 사해문서 가죽 두루마리 및 옥시린쿠스 파피루스 사본.',
+      filter: (a: ArtifactRecord) => a.dateStartBCE < 700
+    }
+  ];
 
   // Genre labels
   const genres: { id: GenreCategory | 'all'; label: string }[] = [
@@ -30,10 +70,15 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
     { id: 'personal-letters', label: '편지·일상·유희' },
   ];
 
-  // Filter artifacts
+  // Filter artifacts with Milestone Pins
   const filteredArtifacts = ARTIFACTS.filter((a) => {
     if (selectedGenre !== 'all' && a.genre !== selectedGenre) return false;
     if (selectedConfidence !== 'all' && a.confidence !== selectedConfidence) return false;
+    if (activeMilestonePin === '3400' && a.dateStartBCE < 3000) return false;
+    if (activeMilestonePin === '2500' && (a.dateStartBCE < 2000 || a.dateStartBCE >= 3000)) return false;
+    if (activeMilestonePin === '1400' && (a.dateStartBCE < 1000 || a.dateStartBCE >= 2000)) return false;
+    if (activeMilestonePin === '800' && (a.dateStartBCE < 500 || a.dateStartBCE >= 1000)) return false;
+    if (activeMilestonePin === '300' && a.dateStartBCE >= 500) return false;
     return true;
   });
 
@@ -44,6 +89,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
   const displayedCivs = activeCivTab === 'all'
     ? Object.values(CIVILIZATIONS)
     : Object.values(CIVILIZATIONS).filter((c) => c.id === activeCivTab);
+
 
 
   return (
@@ -214,142 +260,282 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
         </section>
       )}
 
-      {/* SYNCHRONIZED MULTI-LANE TIMELINE */}
+      {/* SYNCHRONIZED MULTI-LANE TIMELINE & ERA SYNC */}
       <section style={{ marginBottom: '4rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-          <h2 className="section-title" style={{ margin: 0 }}>
-            문명별 동기화 타임라인 레인 (Synchronized Lanes)
-          </h2>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+          <div>
+            <h2 className="section-title" style={{ margin: 0 }}>
+              고대 문자문화 동기화 타임라인 레인
+            </h2>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0 }}>
+              문명별 레인 또는 시기별 동시대 대조(Era Sync) 모드로 4중 연대 벡터를 정밀 탐색합니다.
+            </p>
+          </div>
           <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
             총 {filteredArtifacts.length}개 유물 레코드 정렬됨
           </span>
         </div>
 
-        {/* CIVILIZATION SEGMENTED SWITCHER */}
-        <div style={{ marginBottom: '1.25rem' }}>
-          <div className="segmented-control">
+        {/* VIEW MODE TOGGLE (CIVILIZATION LANES vs ERA SYNC 1:1 COMPARISON) */}
+        <div style={{ marginBottom: '1rem' }}>
+          <div className="segmented-control" style={{ background: 'var(--bg-surface)' }}>
             <button
-              className={`segmented-btn ${activeCivTab === 'all' ? 'active' : ''}`}
-              onClick={() => setActiveCivTab('all')}
+              className={`segmented-btn ${viewMode === 'civ-lane' ? 'active' : ''}`}
+              onClick={() => setViewMode('civ-lane')}
             >
-              전체 문명 레인 보기
+              <Layers size={16} /> <span>문명별 레인 보기 (Civ Lanes)</span>
             </button>
-
-            {Object.values(CIVILIZATIONS).map((c) => (
-              <button
-                key={c.id}
-                className={`segmented-btn ${activeCivTab === c.id ? 'active' : ''}`}
-                onClick={() => setActiveCivTab(c.id)}
-              >
-                {c.nameKo}
-              </button>
-            ))}
+            <button
+              className={`segmented-btn ${viewMode === 'era-sync' ? 'active' : ''}`}
+              onClick={() => setViewMode('era-sync')}
+            >
+              <BookOpen size={16} /> <span>시대별 동시대 대조 (Synchronized Era View)</span>
+            </button>
           </div>
         </div>
 
-        {/* CHRONOLOGICAL VISUAL RULER BAR */}
-        <div className="card" style={{ marginBottom: '1.5rem', background: 'var(--bg-surface-elevated)', padding: '1rem 1.5rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', fontFamily: 'var(--font-cinzel)', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-            <span>c. 3400 BCE (우루크)</span>
-            <span>c. 2500 BCE (피라미드)</span>
-            <span>c. 1400 BCE (Linear B/우가리트)</span>
-            <span>c. 800 BCE (알파벳)</span>
-            <span>c. 300 BCE (사해문서)</span>
+        {/* CIVILIZATION FILTER (ONLY IN CIV-LANE MODE) */}
+        {viewMode === 'civ-lane' && (
+          <div style={{ marginBottom: '1.25rem' }}>
+            <div className="segmented-control">
+              <button
+                className={`segmented-btn ${activeCivTab === 'all' ? 'active' : ''}`}
+                onClick={() => setActiveCivTab('all')}
+              >
+                전체 문명 레인 보기
+              </button>
+
+              {Object.values(CIVILIZATIONS).map((c) => (
+                <button
+                  key={c.id}
+                  className={`segmented-btn ${activeCivTab === c.id ? 'active' : ''}`}
+                  onClick={() => setActiveCivTab(c.id)}
+                >
+                  {c.nameKo}
+                </button>
+              ))}
+            </div>
           </div>
+        )}
+
+        {/* INTERACTIVE CHRONOLOGICAL MILESTONE PINS BAR */}
+        <div className="card" style={{ marginBottom: '1.5rem', background: 'var(--bg-surface-elevated)', padding: '1rem 1.25rem' }}>
+          <div style={{ fontSize: '0.8rem', fontFamily: 'var(--font-cinzel)', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
+            📍 인터랙티브 절대연대 5대 마일스톤 핀 (Interactive BCE Milestones)
+          </div>
+
+          <div className="timeline-milestone-pins" style={{ marginBottom: '0.75rem' }}>
+            {milestonePins.map((pin) => (
+              <button
+                key={pin.id}
+                className={`milestone-pin-chip ${activeMilestonePin === pin.id ? 'active' : ''}`}
+                onClick={() => setActiveMilestonePin(pin.id)}
+              >
+                {pin.label}
+              </button>
+            ))}
+          </div>
+
           <div style={{ position: 'relative', height: '8px', background: 'var(--border-color)', borderRadius: 'var(--radius-full)', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', left: '0%', width: '100%', height: '100%', background: 'linear-gradient(90deg, #c85a24, #107e84 35%, #1e40af 65%, #6b21a8 85%, #d97706 100%)', opacity: 0.85 }} />
           </div>
         </div>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          {displayedCivs.map((civ) => {
-            const artifacts = getCivArtifacts(civ.id);
+        {/* VIEW MODE 1: CIVILIZATION LANES */}
+        {viewMode === 'civ-lane' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            {displayedCivs.map((civ) => {
+              const artifacts = getCivArtifacts(civ.id);
 
-            return (
-              <div
-                key={civ.id}
-                className="card"
-                style={{
-                  borderTop: `4px solid ${civ.accentColor}`,
-                  background: 'var(--bg-surface)'
-                }}
-              >
-                {/* LANE HEADER */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
-                  <div>
-                    <span className={`civ-tag civ-${civ.id}`} style={{ marginRight: '0.5rem' }}>
-                      {civ.nameKo}
-                    </span>
-                    <span style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
-                      문자 도입: {civ.scriptEmergenceBCE > 0 ? `BCE ${civ.scriptEmergenceBCE}년경` : `${civ.scriptEmergenceBCE}`} ({civ.scriptName})
+              return (
+                <div
+                  key={civ.id}
+                  className="card"
+                  style={{
+                    borderTop: `4px solid ${civ.accentColor}`,
+                    background: 'var(--bg-surface)'
+                  }}
+                >
+                  {/* LANE HEADER */}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
+                    <div>
+                      <span className={`civ-tag civ-${civ.id}`} style={{ marginRight: '0.5rem' }}>
+                        {civ.nameKo}
+                      </span>
+                      <span style={{ fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
+                        문자 도입: {civ.scriptEmergenceBCE > 0 ? `BCE ${civ.scriptEmergenceBCE}년경` : `${civ.scriptEmergenceBCE}`} ({civ.scriptName})
+                      </span>
+                    </div>
+                    <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+                      {artifacts.length}개 유물 레코드 표시 중
                     </span>
                   </div>
-                  <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)' }}>
-                    {artifacts.length}개 유물 레코드 표시 중
-                  </span>
+
+                  {/* ARTIFACT ITEMS IN LANE */}
+                  {artifacts.length === 0 ? (
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', padding: '1rem 0' }}>
+                      선택한 마일스톤 연대/필터 조건에 해당하는 유물이 없습니다.
+                    </div>
+                  ) : (
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem' }}>
+                      {artifacts.map((artifact) => {
+                        const relativeYears = civ.scriptEmergenceBCE - artifact.dateStartBCE;
+                        return (
+                          <div
+                            key={artifact.id}
+                            className="card card-hover"
+                            onClick={() => setSelectedArtifactDrawer(artifact)}
+                            style={{
+                              padding: '1rem',
+                              cursor: 'pointer',
+                              background: 'var(--bg-card)',
+                              borderLeft: `3px solid ${civ.accentColor}`
+                            }}
+                          >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.35rem' }}>
+                              <span className={`status-badge status-${artifact.confidence}`}>
+                                {artifact.confidence === 'sure' && '확실'}
+                                {artifact.confidence === 'likely' && '유력'}
+                                {artifact.confidence === 'debated' && '논쟁 중'}
+                                {artifact.confidence === 'unknown' && '알 수 없음'}
+                              </span>
+                              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                                {timeMode === 'absolute'
+                                  ? `BCE ${artifact.dateStartBCE}년경`
+                                  : `t+${Math.max(0, relativeYears)}년`}
+                              </span>
+                            </div>
+
+                            <h4 style={{ fontSize: '1rem', fontFamily: 'var(--font-serif)', marginBottom: '0.25rem' }}>
+                              {artifact.titleKo}
+                            </h4>
+
+                            <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
+                              {artifact.genreLabel} • {artifact.materialLabel}
+                            </div>
+
+                            {/* 4-DATES VECTOR BADGES */}
+                            <div className="dates-vector-group">
+                              <span className="dates-vector-badge dates-vector-witness" title="현존 실물 사본 제작 연대">
+                                📜 사본: {artifact.witnessDateBCE}
+                              </span>
+                              {artifact.compositionDateBCE && (
+                                <span className="dates-vector-badge dates-vector-comp" title="최초 구전/성립 연대">
+                                  🗣️ 성립: {artifact.compositionDateBCE}
+                                </span>
+                              )}
+                              {artifact.dateEventBCE && (
+                                <span className="dates-vector-badge dates-vector-event" title="서술 서사 사건 연대">
+                                  ⚔️ 사건: BCE {artifact.dateEventBCE}
+                                </span>
+                              )}
+                            </div>
+
+                            <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.4, margin: '0.5rem 0 0 0', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                              {artifact.summary}
+                            </p>
+
+                            <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '0.5rem', marginTop: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                              <span>단위: {artifact.textUnitLabel}</span>
+                              <ArrowRight size={12} style={{ color: civ.accentColor }} />
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
                 </div>
+              );
+            })}
+          </div>
+        )}
 
-                {/* ARTIFACT ITEMS IN LANE */}
-                {artifacts.length === 0 ? (
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', padding: '1rem 0' }}>
-                    선택한 필터 조건에 해당하는 유물이 없습니다.
+        {/* VIEW MODE 2: ERA SYNC 1:1 SYNCHRONIZED COMPARISON */}
+        {viewMode === 'era-sync' && (
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+            {eraSyncGroups.map((group) => {
+              const groupArtifacts = filteredArtifacts.filter(group.filter);
+              return (
+                <div key={group.id} className="era-sync-group">
+                  <div style={{ marginBottom: '1rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.75rem' }}>
+                    <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.3rem', margin: '0 0 0.25rem 0', color: 'var(--text-primary)' }}>
+                      {group.titleKo}
+                    </h3>
+                    <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', margin: 0 }}>
+                      {group.descriptionKo} ({groupArtifacts.length}개 유물 동시대 대조)
+                    </p>
                   </div>
-                ) : (
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem' }}>
-                    {artifacts.map((artifact) => {
-                      const relativeYears = civ.scriptEmergenceBCE - artifact.dateStartBCE;
-                      return (
-                        <div
-                          key={artifact.id}
-                          className="card card-hover"
-                          onClick={() => setSelectedArtifactDrawer(artifact)}
-                          style={{
-                            padding: '1rem',
-                            cursor: 'pointer',
-                            background: 'var(--bg-card)',
-                            borderLeft: `3px solid ${civ.accentColor}`
-                          }}
-                        >
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.35rem' }}>
-                            <span className={`status-badge status-${artifact.confidence}`}>
-                              {artifact.confidence === 'sure' && '확실'}
-                              {artifact.confidence === 'likely' && '유력'}
-                              {artifact.confidence === 'debated' && '논쟁 중'}
-                              {artifact.confidence === 'unknown' && '알 수 없음'}
-                            </span>
-                            <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                              {timeMode === 'absolute'
-                                ? `BCE ${artifact.dateStartBCE}년경`
-                                : `t+${Math.max(0, relativeYears)}년`}
-                            </span>
+
+                  {groupArtifacts.length === 0 ? (
+                    <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', padding: '0.5rem 0' }}>
+                      선택한 연대 핀 조건에 해당하는 유물이 이 시기에 존재하지 않습니다.
+                    </div>
+                  ) : (
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem' }}>
+                      {groupArtifacts.map((artifact) => {
+                        const civInfo = CIVILIZATIONS[artifact.civilization];
+                        return (
+                          <div
+                            key={artifact.id}
+                            className="card card-hover"
+                            onClick={() => setSelectedArtifactDrawer(artifact)}
+                            style={{
+                              padding: '1rem',
+                              cursor: 'pointer',
+                              background: 'var(--bg-card)',
+                              borderLeft: `3px solid ${civInfo?.accentColor || 'var(--border-color)'}`
+                            }}
+                          >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
+                              <span className={`civ-tag civ-${artifact.civilization}`}>{civInfo?.nameKo}</span>
+                              <span className={`status-badge status-${artifact.confidence}`}>
+                                {artifact.confidence === 'sure' && '확실'}
+                                {artifact.confidence === 'likely' && '유력'}
+                                {artifact.confidence === 'debated' && '논쟁 중'}
+                              </span>
+                            </div>
+
+                            <h4 style={{ fontSize: '1.02rem', fontFamily: 'var(--font-serif)', marginBottom: '0.25rem' }}>
+                              {artifact.titleKo}
+                            </h4>
+
+                            {/* 4-DATES VECTOR BADGES */}
+                            <div className="dates-vector-group">
+                              <span className="dates-vector-badge dates-vector-witness" title="현존 실물 사본 제작 연대">
+                                📜 사본: {artifact.witnessDateBCE}
+                              </span>
+                              {artifact.compositionDateBCE && (
+                                <span className="dates-vector-badge dates-vector-comp" title="최초 구전/성립 연대">
+                                  🗣️ 성립: {artifact.compositionDateBCE}
+                                </span>
+                              )}
+                              {artifact.dateEventBCE && (
+                                <span className="dates-vector-badge dates-vector-event" title="서술 서사 사건 연대">
+                                  ⚔️ 사건: BCE {artifact.dateEventBCE}
+                                </span>
+                              )}
+                            </div>
+
+                            <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.4, margin: '0.5rem 0 0 0', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+                              {artifact.summary}
+                            </p>
+
+                            <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '0.5rem', marginTop: '0.65rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                              <span>{artifact.materialLabel}</span>
+                              <ArrowRight size={12} style={{ color: civInfo?.accentColor }} />
+                            </div>
                           </div>
-
-                          <h4 style={{ fontSize: '1rem', fontFamily: 'var(--font-serif)', marginBottom: '0.25rem' }}>
-                            {artifact.titleKo}
-                          </h4>
-
-                          <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.5rem' }}>
-                            {artifact.genreLabel} • {artifact.materialLabel}
-                          </div>
-
-                          <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.4, margin: 0, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                            {artifact.summary}
-                          </p>
-
-                          <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '0.5rem', marginTop: '0.75rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                            <span>단위: {artifact.textUnitLabel}</span>
-                            <ArrowRight size={12} style={{ color: civ.accentColor }} />
-                          </div>
-                        </div>
-                      );
-                    })}
-                  </div>
-                )}
-              </div>
-            );
-          })}
-        </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        )}
       </section>
+
 
       {/* ARTIFACT SIDE DRAWER MODAL */}
       {selectedArtifactDrawer && (

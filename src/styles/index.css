@@ -866,9 +866,102 @@ p:last-child {
     display: none;
   }
 
-  .card {
-    padding: 1.1rem;
-  }
+/* Timeline Milestone Pins Scrubber Bar */
+.timeline-milestone-pins {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0.25rem 0;
+  width: 100%;
 }
+
+.timeline-milestone-pins::-webkit-scrollbar {
+  display: none;
+}
+
+.milestone-pin-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.85rem;
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.milestone-pin-chip:hover {
+  background: var(--bg-surface);
+  border-color: var(--border-highlight);
+  color: var(--text-primary);
+}
+
+.milestone-pin-chip.active {
+  background: var(--text-primary);
+  color: var(--bg-primary);
+  border-color: var(--text-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 4-Dates Vector Badges (사건, 성립, 편집, 사본) */
+.dates-vector-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin: 0.5rem 0;
+}
+
+.dates-vector-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.72rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.dates-vector-event {
+  background: rgba(200, 90, 36, 0.1);
+  color: var(--civ-mesopotamia);
+  border: 1px solid rgba(200, 90, 36, 0.25);
+}
+
+.dates-vector-comp {
+  background: rgba(16, 126, 132, 0.1);
+  color: var(--civ-egypt);
+  border: 1px solid rgba(16, 126, 132, 0.25);
+}
+
+.dates-vector-redact {
+  background: rgba(30, 64, 175, 0.1);
+  color: var(--civ-greece);
+  border: 1px solid rgba(30, 64, 175, 0.25);
+}
+
+.dates-vector-witness {
+  background: rgba(107, 33, 168, 0.1);
+  color: var(--civ-israel);
+  border: 1px solid rgba(107, 33, 168, 0.25);
+}
+
+/* Era Sync Synchronized Group */
+.era-sync-group {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+  border-left: 5px solid var(--border-highlight);
+}
+
 
 

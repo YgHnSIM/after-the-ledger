@@ -55,8 +55,11 @@ export interface ArtifactRecord {
   extent: string;
   actors: string;
   context: string;
+  dateEventBCE?: string;
   compositionDateBCE?: string;
+  redactionDateBCE?: string;
   witnessDateBCE: string;
+
   confidence: ConfidenceLevel;
   confidenceReason: string;
   summary: string;
