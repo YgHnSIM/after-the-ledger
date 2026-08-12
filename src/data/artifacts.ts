@@ -7,6 +7,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '우루크 행정 점토판 코퍼스',
     titleNative: 'Uruk IV-III Administrative Archives',
     civilization: 'mesopotamia',
+    museumAccessionNo: 'Pergamon Museum W 9656,a / CDLI P000001',
     script: '초기 쐐기문자 / 상형 쐐기문자',
     language: '수메르어 추정',
     dateStartBCE: 3300,
@@ -27,6 +28,12 @@ export const ARTIFACTS: ArtifactRecord[] = [
     summary: '인류 현존 가장 이른 회계 문서군으로 곡물 배급, 수확, 가축 수량을 수치와 표기 기호로 기록함',
     description: '우루크 IV 층에서 출토된 이 점토판들은 단순 숫자 점토 구슬(Tokens)과 물꼬(Bulla)에서 진화하여 문자가 행정 장부로 정착되었음을 증명한다. 계수 단위와 재화 항목이 구획된 사각형 격자 안에 기록되어 있다.',
     preservationNotes: '점토라는 불멸의 재료 덕분에 화재 및 층위 속에서 수천 년간 보존됨',
+    inscriptionBreakdown: {
+      scriptOriginal: '🔻▶ 5 SHEBAR 🔻 1 BAN2 KU3',
+      transliteration: '5 še-bar 1 ban2 ku3-babbar',
+      translationKo: '보리 5단 및 은 1반(Ban) 수령',
+      literaryContext: '우루크 Eanna 신전 중앙 수확 창고 서기관이 작성한 수확물 세입 장부.'
+    },
     sources: [
       { id: 's-uruk-1', grade: 'A', gradeLabel: 'A: 유물 소장기관 / 코퍼스 DB', title: 'CDLI (Cuneiform Digital Library Initiative)', authorOrInstitution: 'UCLA / MPIWG', url: 'https://cdli.mpiwg-berlin.mpg.de/' }
     ],
@@ -38,6 +45,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: 'ED Lu A (표준 직업목록 점토판)',
     titleNative: 'Standard Professions List (ED Lu A)',
     civilization: 'mesopotamia',
+    museumAccessionNo: 'Penn Museum CBS 7094 / DCCLT P000006',
     script: '초기 쐐기문자 (Early Dynastic Cuneiform)',
     language: '수메르어',
     dateStartBCE: 3100,
@@ -58,6 +66,12 @@ export const ARTIFACTS: ArtifactRecord[] = [
     summary: '왕(NAMEŠDA)부터 각 분야 서기관, 사제, 공인에 이르는 계급과 직위를 정밀 분류한 현존 최선의 분류 목록',
     description: '회계 문서와 사실상 동시 출현한 어휘목록. 서기관들이 세계와 사회 질서를 단어로 분류하고 필사 연습을 하기 위해 작성되었으며, 수메르 서기관 교육의 핵심 텍스트로 1천 년 이상 토씨 하나 틀리지 않고 복제되었다.',
     preservationNotes: '서기관 학교 연습용 점토판이 지속 복제되어 다수 출토됨',
+    inscriptionBreakdown: {
+      scriptOriginal: '1. NAMEŠDA\n2. NIMGIR\n3. GAL UKKIN\n4. SANGA',
+      transliteration: '1. namešda  2. nimgir  3. gal-ukkin  4. sanga',
+      translationKo: '1. 최고 통치자(왕)  2. 전령관  3. 최고 의회장  4. 신전 최고 사제',
+      literaryContext: '129개 관직 순서가 엄격히 고정된 메소포타미아 표준 직업 계급 어휘목록.'
+    },
     sources: [
       { id: 's-dcclt-1', grade: 'A', gradeLabel: 'A: 유물 소장기관 / 코퍼스 DB', title: 'DCCLT (Digital Corpus of Cuneiform Lexical Texts)', authorOrInstitution: 'UC Berkeley', url: 'https://oracc.museum.upenn.edu/dcclt/' }
     ],
@@ -69,6 +83,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '케시 신전 찬가 (Kesh Temple Hymn)',
     titleNative: 'e2-kesh3-she3 (e₂-keš₃-še₃)',
     civilization: 'mesopotamia',
+    museumAccessionNo: 'Baghdad Museum AbS 246 / ETCSL t.4.80.2',
     script: '초기왕조 쐐기문자 (Early Dynastic III)',
     language: '수메르어',
     dateStartBCE: 2600,
@@ -100,6 +115,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '엔헤두안나 신전 찬가 집성',
     titleNative: 'Inana Hymns by Enheduanna',
     civilization: 'mesopotamia',
+    museumAccessionNo: 'Penn Museum CBS 16655 (Enheduanna Disk)',
     script: '아카드/수메르 쐐기문자',
     language: '수메르어',
     dateStartBCE: 2300,
@@ -132,6 +148,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '우르-남무 법전 (Laws of Ur-Nammu)',
     titleNative: 'Code of Ur-Nammu',
     civilization: 'mesopotamia',
+    museumAccessionNo: 'Istanbul Archaeology Museums Ni 3191',
     script: '수메르 쐐기문자',
     language: '수메르어',
     dateStartBCE: 2100,
@@ -163,6 +180,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '길가메시 서사시 표준판 (신아시리아 점토판)',
     titleNative: 'Standard Babylonian Epic of Gilgamesh (Sin-leqi-unninni)',
     civilization: 'mesopotamia',
+    museumAccessionNo: 'British Museum K.3375 (Flood Tablet XI)',
     script: '신아시리아 쐐기문자',
     language: '아카드어 (표준 바빌로니아 방언)',
     dateStartBCE: 1200,
@@ -195,6 +213,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '나보니두스 원통 비문 (Cylinder of Nabonidus)',
     titleNative: 'Nabonidus Cylinder from Sippar',
     civilization: 'mesopotamia',
+    museumAccessionNo: 'British Museum BM 91125',
     script: '신바빌로니아 쐐기문자',
     language: '아카드어',
     dateStartBCE: 555,
@@ -228,6 +247,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '아비도스 U-j 묘 상아 표찰 (Abydos Tags)',
     titleNative: 'Tomb U-j Bone and Ivory Labels',
     civilization: 'egypt',
+    museumAccessionNo: 'Cairo Egyptian Museum JE 97500 / DAIK Tomb U-j',
     script: '초기 성각문자 (Proto-Hieroglyphs)',
     language: '고대 이집트어 원형',
     dateStartBCE: 3250,
@@ -248,6 +268,12 @@ export const ARTIFACTS: ArtifactRecord[] = [
     summary: '현존하는 이집트 가장 이른 문자 자료로, 세입 물품의 원산지 도식과 왕권 수량을 표시함',
     description: '상아 판에 천공이 뚫린 소형 표찰들로, 기름과 린넨 항아리에 매달려 세입 지역(Delta, 델타 지방 등)과 수량을 나타냈다. 이집트 성각문자가 왕권 및 세금 원산지 표시와 함께 출발했음을 증명한다.',
     preservationNotes: '건조한 사막 무덤 건조 환경 덕분에 상아·뼈 표찰 완전 보존',
+    inscriptionBreakdown: {
+      scriptOriginal: '𓈋 (Mountain) + 𓇳 (Sun/King Domain)',
+      transliteration: 'Djew (Set-Hor / Delta Estate)',
+      translationKo: '동쪽 산악 영지(Delta estate) 수확 기름 항아리 표찰',
+      literaryContext: '왕실 세입 물품의 지리적 원산지와 수량을 증명하는 최초의 태그.'
+    },
     sources: [
       { id: 's-dreyer-1', grade: 'A', gradeLabel: 'A: 정식 발굴 보고서', title: 'Umm el-Qaab I: Das prädynastische Königsgrab U-j', authorOrInstitution: 'Günter Dreyer / DAIK', year: '1998' }
     ],
@@ -259,6 +285,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '나르메르 팔레트 (Narmer Palette)',
     titleNative: 'Narmer Palette from Hierakonpolis',
     civilization: 'egypt',
+    museumAccessionNo: 'Cairo Egyptian Museum JE 32169 / CG 14716',
     script: '성각문자 (Early Hieroglyphs)',
     language: '고대 이집트어',
     dateStartBCE: 3100,
@@ -275,10 +302,16 @@ export const ARTIFACTS: ArtifactRecord[] = [
     context: '히에라콘폴리스 호루스 신전 봉납 구역',
     witnessDateBCE: 'c. 3100 BCE',
     confidence: 'sure',
-    confidenceReason: '완벽하게 보원된 정품 표마 및 명문',
+    confidenceReason: '완벽하게 보존된 정품 표마 및 명문',
     summary: '상·하 이집트 통일 승리를 성각문자 성명과 회화적 도상으로 기획한 정치적 기념비',
     description: '나르메르 왕의 이름(메기+끌 상형문자)과 적을 참수하는 장면이 회화와 문자의 결합으로 표현되었다. 문자가 시각적 왕권 프로파간다와 상징적 효력으로 작동한 대표적 예시이다.',
     preservationNotes: '편암 석재 특성상 훼손 없이 완벽 보존',
+    inscriptionBreakdown: {
+      scriptOriginal: '𓈖 (N\'r = 메기) + 𓍋 (Mr = 끌)',
+      transliteration: 'N\'r-mr (Narmer)',
+      translationKo: '사나운 메기(Narmer) 왕',
+      literaryContext: '세레크(Serekh) 궁전 외벽 문양 안에 왕의 성각문자 이름 명시.'
+    },
     sources: [
       { id: 's-cairo-narmer', grade: 'A', gradeLabel: 'A: 박물관 소장 유물', title: 'The Narmer Palette JE 32169', authorOrInstitution: 'Egyptian Museum Cairo' }
     ],
@@ -290,6 +323,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '우나스 피라미드 텍스트',
     titleNative: 'Pyramid Texts of Unas at Saqqara',
     civilization: 'egypt',
+    museumAccessionNo: 'Saqqara Pyramid of Unas In Situ',
     script: '성각문자 (Old Egyptian Hieroglyphs)',
     language: '고왕국 이집트어 (Old Egyptian)',
     dateStartBCE: 2350,
@@ -322,6 +356,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '와디 알-자르프 파피루스 (메레르의 일기)',
     titleNative: 'Wadi al-Jarf Papyri (Diary of Merer)',
     civilization: 'egypt',
+    museumAccessionNo: 'Cairo Egyptian Museum Papyrus Jarf A & B',
     script: '고대 신관문자 (Hieratic)',
     language: '고왕국 이집트어',
     dateStartBCE: 2560,
@@ -353,6 +388,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '중왕국 관 텍스트 (Coffin Texts)',
     titleNative: 'Middle Kingdom Coffin Texts',
     civilization: 'egypt',
+    museumAccessionNo: 'Museo Egizio Torino Coffin B3Bo',
     script: '신관문자 / 흘림 성각문자',
     language: '중왕국 이집트어 (Middle Egyptian)',
     dateStartBCE: 2050,
@@ -384,6 +420,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '아니의 사자의 서 파피루스 (Papyrus of Ani)',
     titleNative: 'The Book of the Dead of Ani',
     civilization: 'egypt',
+    museumAccessionNo: 'British Museum EA 10470',
     script: '신관문자 및 채색 성각문자',
     language: '중-신왕국 이집트어',
     dateStartBCE: 1250,
@@ -417,6 +454,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '필로스 궁전 Linear B 행정 점토판',
     titleNative: 'Pylos Archives (Linear B Tablets)',
     civilization: 'greece',
+    museumAccessionNo: 'National Archaeological Museum Athens Pylos Py Tn 316',
     script: '선문자 B (Linear B Syllabary)',
     language: '미케네 그리스어 (Mycenaean Greek)',
     dateStartBCE: 1250,
@@ -437,6 +475,12 @@ export const ARTIFACTS: ArtifactRecord[] = [
     summary: '미케네 궁전의 농산물, 삼베, 올리브유, 청동 무기, 노예, 가축을 관리한 비밀 행정 장부',
     description: 'Linear B는 오직 궁전 경제 행정을 기록하기 위해 쓰였으며 문학, 역사, 개인 편지는 일절 없었다. BCE 1200년 궁전이 화재로 파괴될 때 점토판이 불에 구워짐으로써 역설적으로 오늘날까지 보존되었다.',
     preservationNotes: '원래 햇빛에 말린 임시 점토판이었으나 궁전 화재 파괴 시 구워져 보존됨',
+    inscriptionBreakdown: {
+      scriptOriginal: '𐀷𐀙𐀏 (wa-na-ka) 𐀈ed (do-e-ro) bed (o-li-vo)',
+      transliteration: 'wa-na-ka do-e-ro o-li-vo',
+      translationKo: '주군(Wanax)의 종들과 올리브유 수량 관리',
+      literaryContext: '미케네 궁전 서기관이 궁전 최고 통치자 와나크스(Wanax)의 관리 물품을 표기.'
+    },
     sources: [
       { id: 's-cambridge-mycep', grade: 'A', gradeLabel: 'A: 대학 연구 그룹', title: 'Mycenaean Epigraphy Group', authorOrInstitution: 'University of Cambridge', url: 'https://www.classics.cam.ac.uk/research/projects/mycep' }
     ],
@@ -448,6 +492,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '크노소스 전차/무기 Linear B 점토판',
     titleNative: 'Knossos Sd/So Chariot Tablets',
     civilization: 'greece',
+    museumAccessionNo: 'Heraklion Archaeological Museum Knossos Sd 0401',
     script: '선문자 B (Linear B)',
     language: '미케네 그리스어',
     dateStartBCE: 1375,
@@ -479,6 +524,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '디필론 암포라 비문 (Dipylon Inscription)',
     titleNative: 'Dipylon Oenochoe Inscription',
     civilization: 'greece',
+    museumAccessionNo: 'National Archaeological Museum Athens Inv. 192',
     script: '초기 아티카 그리스 알파벳 (Archaic Attic Alphabet)',
     language: '고대 그리스어 (운문 시)',
     dateStartBCE: 740,
@@ -497,8 +543,14 @@ export const ARTIFACTS: ArtifactRecord[] = [
     confidence: 'sure',
     confidenceReason: '현존 가장 이른 그리스 알파벳 비문 중 하나 (오른쪽에서 왼쪽으로 새김)',
     summary: '“가장 기깔나게 춤추는 자가 이 잔을 차지하리라”는 유희와 시적 운율이 담긴 초기 알파벳 비문',
-    description: 'Linear B 사멸 후 약 400년의 암흑기를 지나 등장한 초기 알파벳 유물. 행정 장부가 아니라, 술자리 춤 경연 승자에게 와인 잔을 주겠다는 시적 1행시(Hexrameter)로 문자가 재출현했음을 보여준다.',
+    description: 'Linear B 사멸 후 약 400년의 암흑기를 지나 등장한 초기 알파벳 유물. 행정 장부가 아니라, 술자리 춤 경연 승자에게 와인 잔을 주겠다는 시적 1행시(Hexameter)로 문자가 재출현했음을 보여준다.',
     preservationNotes: '도기 파편 주전자 부속 완전 복원',
+    inscriptionBreakdown: {
+      scriptOriginal: 'ℎος νυν ορχεστων παντων αταλωτατα παιζει του τοδε κλμιν...',
+      transliteration: 'hòs nûn orkhestôn pántôn atalṓtata paízei tôu tóde klm[in]...',
+      translationKo: '지금 모든 춤꾼들 중에서 가장 신나고 아름답게 춤추는 자가 이 잔을 차지하리라!',
+      literaryContext: '술자리(Symposium) 춤 경연 승자에게 선물로 건네진 와인 잔에 새겨진 1행 서사시 헥사메터.'
+    },
     sources: [
       { id: 's-powell-1', grade: 'B', gradeLabel: 'B: 학술 단행본', title: 'Homer and the Origin of the Greek Alphabet', authorOrInstitution: 'Barry B. Powell', year: '1991' }
     ],
@@ -510,6 +562,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '네스토르의 잔 비문 (Nestor\'s Cup)',
     titleNative: 'Nestor\'s Cup from Pithekoussai',
     civilization: 'greece',
+    museumAccessionNo: 'Pithekoussai Archaeological Museum Inv. 166785',
     script: '초기 에우보이아 알파벳 (Euboean Alphabet)',
     language: '고대 그리스어 (이오니아 방언 서사시 운율)',
     dateStartBCE: 725,
@@ -528,8 +581,14 @@ export const ARTIFACTS: ArtifactRecord[] = [
     confidence: 'sure',
     confidenceReason: '초기 알파벳 운서 및 서사시 호메로스 패러디의 완벽한 물리 증거',
     summary: '“네스토르의 잔은 마시기 좋으나, 이 잔을 마시는 자는 아프로디테의 욕망에 사로잡히리라”',
-    description: '호메로스 서사시 《일리아스》 11권에 나오는 네스토르의 황금 잔을 유화하게 비튼 3행시. 초기 알파벳이 교역항과 향연(Symposium)에서 시적 운률 및 서사시적 지식 교유의 매개체였음을 보여준다.',
+    description: '호메로스 서사시 《일리아스》 11권에 나오는 네스토르의 황금 잔을 유화하게 비튼 3행시. 초기 알파벳이 교역항과 향연(Symposium)에서 시적 운율 및 서사시적 지식 교유의 매개체였음을 보여준다.',
     preservationNotes: '도기 잔 파편 접합 복원',
+    inscriptionBreakdown: {
+      scriptOriginal: 'Νέστορός [εἰμι] εὔποτ[ον] ποτήριον·\nὃς d\' ἂν τοῦδε πίῃσι ποτηρίō,\nαὐτίκα κῆνον ἵμερος αἱρήσει καλλιστεφάνου Ἀφροδίτης.',
+      transliteration: 'Nestorós eimi eupoton potērion / hos d\' an toude piēsi potēriou / autika kēnon himeros hairēsei kallistephanou Aphroditēs.',
+      translationKo: '나는 네스토르의 마시기 편한 잔이라! 하지만 이 잔을 마시는 자는 누구든 즉각 아름다운 왕관을 쓴 아프로디테의 욕망에 사로잡히리라!',
+      literaryContext: '호메로스 일리아스 서사시 속 네스토르 잔을 패러디한 초기 그리스 알파벳 3행시.'
+    },
     sources: [
       { id: 's-papadopoulos-1', grade: 'B', gradeLabel: 'B: 논문', title: 'Early History of the Greek Alphabet: New Evidence from Eretria and Methone', authorOrInstitution: 'J.K. Papadopoulos / Antiquity', year: '2016' }
     ],
@@ -541,6 +600,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '메토네 및 에레트리아 초기 알파벳 도기 비문 코퍼스',
     titleNative: 'Methone and Eretria Early Alphabet Inscriptions',
     civilization: 'greece',
+    museumAccessionNo: 'Thessaloniki Archaeological Museum Methone Inscr. 1-191',
     script: '초기 에우보이아 / 북부 그리스 알파벳',
     language: '고대 그리스어',
     dateStartBCE: 775,
@@ -572,6 +632,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '호메로스 서사시 《일리아스》 문자화 사본 전승',
     titleNative: 'Textualization of Homeric Epics (Iliad & Odyssey)',
     civilization: 'greece',
+    museumAccessionNo: 'Biblioteca Marciana Venice Cod. Marc. Gr. 454 (Venetus A)',
     script: '이오니아-아테네 그리스 알파벳',
     language: '호메로스 그리스어 (다이얼렉트 혼합 구전 시)',
     dateStartBCE: 700,
@@ -604,6 +665,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '고르틴 법률 비문 (Gortyn Law Code)',
     titleNative: 'Great Code of Gortyn',
     civilization: 'greece',
+    museumAccessionNo: 'Gortyn Archaeological Site Wall Inscription In Situ',
     script: '도리아 그리스 알파벳 (Boustrophedon 우경좌서 체계)',
     language: '도리아 그리스어 (Doric Dialect)',
     dateStartBCE: 460,
@@ -635,6 +697,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '더베니 파피루스 (Derveni Papyrus)',
     titleNative: 'The Derveni Papyrus',
     civilization: 'greece',
+    museumAccessionNo: 'Archaeological Museum of Thessaloniki Inv. Derveni 1',
     script: '고전 아티카-이오니아 알파벳',
     language: '고대 그리스어 (오르페우스 신화 및 철학 주석)',
     dateStartBCE: 340,
@@ -668,6 +731,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '게제르 달력 (Gezer Calendar)',
     titleNative: 'Gezer Agricultural Calendar Tablet',
     civilization: 'israel-judah',
+    museumAccessionNo: 'Istanbul Archaeology Museums Inv. 2089',
     script: '고대 히브리/원시 가나안 문자 (Paleo-Hebrew / Phoenician)',
     language: '고대 히브리/가나안 방언',
     dateStartBCE: 950,
@@ -688,6 +752,12 @@ export const ARTIFACTS: ArtifactRecord[] = [
     summary: '월별 농사 작업(파종, 수확, 삼베 다듬기, 집기)을 7행의 노래나 기억용 목록으로 적은 석판',
     description: '고대 이스라엘 지역에서 문자가 농경 주기와 실용적 기억 보조 수단으로 어떻게 익숙해졌는지 보여주는 작은 석판 유물이다.',
     preservationNotes: '소형 석회암 완품 현존',
+    inscriptionBreakdown: {
+      scriptOriginal: 'ירחואסף ירחוזדע ירחלקש\nירחעצדפשת ירחקצירשערם...',
+      transliteration: 'Yrhw \'sp / Yrhw zr\' / Yrhw lqš / Yrh \'ṣd pšt / Yrh qṣr š\'rm...',
+      translationKo: '두 달은 인과 수확, 두 달은 파종, 두 달은 늦가을 파종, 한 달은 삼베 다듬기, 한 달은 보리 수확...',
+      literaryContext: '월별 농경 작업 주기를 기억하기 위한 고대 히브리 어휘 및 농경 운문 목록.'
+    },
     sources: [
       { id: 's-istanbul-gezer', grade: 'A', gradeLabel: 'A: 박물관 소장 유물', title: 'Gezer Calendar Museum Inscription', authorOrInstitution: 'Istanbul Archaeology Museums' }
     ],
@@ -699,6 +769,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '텔 단 석비 (Tel Dan Stele - "다윗의 집")',
     titleNative: 'Tel Dan House of David Stele',
     civilization: 'israel-judah',
+    museumAccessionNo: 'Israel Museum Jerusalem IAA 1995-1033',
     script: '고대 아람 문자 (Aramaic Script)',
     language: '고대 아람어',
     dateStartBCE: 840,
@@ -730,6 +801,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '실로암 터널 비문 (Siloam Inscription)',
     titleNative: 'Siloam Tunnel Waterworks Inscription',
     civilization: 'israel-judah',
+    museumAccessionNo: 'Istanbul Archaeology Museums Inv. 8193',
     script: '고대 히브리 문자 (Paleo-Hebrew)',
     language: '고대 히브리어',
     dateStartBCE: 701,
@@ -750,6 +822,12 @@ export const ARTIFACTS: ArtifactRecord[] = [
     summary: '아시리아 포위전 속에서 지하 암반 양쪽을 뚫고 들어오던 석공들이 수로 완공 순간 맞닿은 감격을 적은 토목 기념 비문',
     description: '왕의 이름을 드러내는 정형화된 공헌비와 달리, 공사 도중 도끼 소리를 들으며 곡괭이를 마주쳐 물이 터져 나온 현장의 경험을 서사적으로 묘사한 매우 드문 고대 히브리 암벽 비문이다.',
     preservationNotes: '오스만 제국기 암벽 절단 후 이스탄불 박물관으로 이송',
+    inscriptionBreakdown: {
+      scriptOriginal: 'תמה . הנקבה . וזה . היה . דבר . הנקבה . בעוד ...\nגרזן . אל . רעו . ובעוד . שלש . אמות . להנק[ב . נשמ]ע . קול . איש . קרא . אל . רעו',
+      transliteration: 'tmh h-nqbh w-zh hyh dbr h-nqbh b-\'wd h-grzn \'l r\'w...',
+      translationKo: '터널 공사가 완료되었다! 도끼를 든 석공들이 서로의 곡괭이 소리를 듣고 마침내 마주 뚫었을 때...',
+      literaryContext: '아시리아 침공 대비 지하 수로 관통 순간의 석공 감격을 서사적으로 각문.'
+    },
     sources: [
       { id: 's-istanbul-siloam', grade: 'A', gradeLabel: 'A: 박물관 소장 유물', title: 'Siloam Inscription In Situ Cut', authorOrInstitution: 'Istanbul Archaeology Museums' }
     ],
@@ -761,6 +839,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '케테프 힌놈 은제 두루마리 부적 2점',
     titleNative: 'Ketef Hinnom Silver Amulet Scrolls (KH1 & KH2)',
     civilization: 'israel-judah',
+    museumAccessionNo: 'Israel Museum Jerusalem Exh. 198069-0 (KH1 & KH2)',
     script: '고대 히브리 문자 (Paleo-Hebrew)',
     language: '고대 히브리어',
     dateStartBCE: 600,
@@ -781,10 +860,16 @@ export const ARTIFACTS: ArtifactRecord[] = [
     summary: '“야훼께서 너에게 복을 주시고 너를 지키시기를 원하며…” 민수기 축복문 구절이 새겨진 최호(最古) 은제 부적',
     description: '말아진 은판 롤을 현미경 연구로 해독한 유물. 이 텍스트는 "성서 전체의 책"이 아니라 목에 거는 사제적 개인 보호 부적(Amulet)이었으며, 성서적 구절과 신의 이름(YHW)이 바빌론 포로기 이전에 이미 히브리 문자로 개인 생활 속에서 읊어졌음을 보여준다.',
     preservationNotes: '은판을 수년 간의 박리 기술로 펼쳐 마이크로 현미경으로 읽어냄',
+    inscriptionBreakdown: {
+      scriptOriginal: 'יברכך . יהוה . וישמרך\nיאיר . יהוה . פניו . אליך . ויחנך\nישא . יהוה . פניו . אליך . וישם . לך . שלום',
+      transliteration: 'Ybrkk YHWH w-yšmrk / Y\'r YHWH pnyw \'lyk w-yḥnk / Yś\' YHWH pnyw \'lyk w-yśm lk šlwm',
+      translationKo: '야훼께서 너에게 복을 주시고 너를 지키시기를 원하며, 야훼께서 그의 얼굴을 네게 비추사 은혜 베푸시기를 원하고, 야훼께서 그 얼굴을 네게로 향하여 드사 평강 주시기를 원하노라.',
+      literaryContext: '민수기 6장 24-26절 사제 축복문 구절이 600 BCE 은제 부적 목걸이에 刻文.'
+    },
     sources: [
       { id: 's-imj-kh', grade: 'A', gradeLabel: 'A: 박물관 소장 유물', title: 'Ketef Hinnom Silver Scrolls', authorOrInstitution: 'Israel Museum Jerusalem', url: 'https://www.imj.org.il/en/collections/198069-0' }
     ],
-    imageRights: '소장: 이스탄불/이스라엘 박물관 (전시 ID 198069)',
+    imageRights: '소장: 이스라엘 박물관 (예루살렘)',
     svgGraphicType: 'silver'
   },
   {
@@ -792,6 +877,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '라기스 편지 도기 파편 코퍼스 (Lachish Ostraca)',
     titleNative: 'Lachish Letters (Ostraca 1-18)',
     civilization: 'israel-judah',
+    museumAccessionNo: 'British Museum BM 125701 / IAA Ostracon 4',
     script: '고대 히브리 붓글씨 (Paleo-Hebrew Cursive)',
     language: '고대 히브리어 (바빌론 포로기 직전 유다 방언)',
     dateStartBCE: 589,
@@ -812,6 +898,12 @@ export const ARTIFACTS: ArtifactRecord[] = [
     summary: '바빌론 군대의 예루살렘 진격 직전, "아제카의 봉화가 보이지 않는다"며 긴박하게 주고받은 유다 군사 전초기지 편지',
     description: '파피루스를 구하기 어려운 비상시 도자기 조각에 붓과 먹으로 적은 현장 군사 편지. 고대 히브리 문자가 정식 성서 편집자뿐 아니라 요새 전초기지 장교들 사이에서 즉각적인 통신 수단으로 자유롭게 쓰였음을 보여준다.',
     preservationNotes: '성문 경비실 화재 층위 덕분에 먹 글씨가 파손 없이 보존됨',
+    inscriptionBreakdown: {
+      scriptOriginal: 'כי אל משואת לכיש נחנו שמרים ככל האתת אשר נתן אדני כי לא נראה את עזקה',
+      transliteration: 'ky \'l mś\'t lkyš nḥnw šmrym k-kl h-\'tt \'šr ntn \'dny ky l\' nr\'h \'t \'zqah',
+      translationKo: '우리는 내 주께서 지시하신 모든 신호에 따라 라기스의 봉화를 주시하고 있나이다. 그러나 아제카(Azekah)의 봉화는 더 이상 보이지 않나이다!',
+      literaryContext: '예레미야서 34장 7절에 나오는 바빌론 포위 직전 라기스와 아제카 요새의 긴박한 군사 편지.'
+    },
     sources: [
       { id: 's-bm-lachish', grade: 'A', gradeLabel: 'A: 박물관 유물', title: 'Lachish Ostracon No. 4', authorOrInstitution: 'British Museum / Israel Antiquities Authority' }
     ],
@@ -823,6 +915,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '사해문서 대 이사야서 두루마리 (1QIsa^a)',
     titleNative: 'Great Isaiah Scroll (1QIsa^a)',
     civilization: 'israel-judah',
+    museumAccessionNo: 'Israel Museum Shrine of the Book 1QIsa^a / IAA DSS 1001',
     script: '사각 히브리 문자 (Square Hebrew / Aramaic Script)',
     language: '후기 고전 히브리어',
     dateStartBCE: 150,
@@ -854,6 +947,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '쿰란 율법 행위 문서 (4QMMT - Miqsat Ma\'ase ha-Torah)',
     titleNative: 'Some Precepts of the Law (4QMMT)',
     civilization: 'israel-judah',
+    museumAccessionNo: 'Israel Antiquities Authority 4Q394-399 (4QMMT a-f)',
     script: '후기 고대 히브리 사각 문자',
     language: '쿰란 히브리어 (Mishnaic-precursor Hebrew)',
     dateStartBCE: 150,
@@ -887,6 +981,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '우가리트 바알 서사시 점토판 (Baal Cycle)',
     titleNative: 'The Baal Cycle Tablets (KTU 1.1 - 1.6)',
     civilization: 'ugarit',
+    museumAccessionNo: 'Louvre Museum AO 16636 / Damascus Museum Ras Shamra 1929',
     script: '우가리트 알파벳 쐐기문자 (30개 기호)',
     language: '우가리트어 (Ugaritic - 북서 세무어)',
     dateStartBCE: 1350,
@@ -919,6 +1014,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     titleKo: '우가리트 알파벳 순서 점토판 (Ugarit Abecedary)',
     titleNative: 'Abecedary Tablet from Ras Shamra (KTU 5.6)',
     civilization: 'ugarit',
+    museumAccessionNo: 'Damascus National Museum RS 12.063 / KTU 5.6',
     script: '우가리트 알파벳 쐐기문자',
     language: '우가리트어 알파벳 음가 훈련',
     dateStartBCE: 1300,
@@ -944,5 +1040,45 @@ export const ARTIFACTS: ArtifactRecord[] = [
     ],
     imageRights: '소장: 다마스쿠스 국립박물관',
     svgGraphicType: 'tablet'
+  },
+
+  // --- CHINA INDEPENDENT INVENTION CONTROL CASE (1 item) ---
+  {
+    id: 'yinxu-oracle-bones',
+    titleKo: '은허 무정 왕대 신탁 갑골문 코퍼스',
+    titleNative: 'Yinxu Oracle Bones of King Wu Ding (殷墟卜辭)',
+    civilization: 'china',
+    museumAccessionNo: 'National Museum of China / Academia Sinica IHP Oracle Bones',
+    script: '갑골문 (Oracle Bone Script - 契文)',
+    language: '상나라 고대 한어 (Archaic Chinese)',
+    dateStartBCE: 1250,
+    dateEndBCE: 1150,
+    dateBasis: '허난성 안양 은허(殷墟) 제21대 왕 무정(武丁) 신탁 아카이브 층위',
+    material: 'oracle-bone',
+    materialLabel: '거북 복갑 & 소 어깨뼈 (우골)',
+    genre: 'divination-oracle',
+    genreLabel: '점괘·신탁',
+    textUnit: 'corpus',
+    textUnitLabel: '문서군·코퍼스',
+    extent: '안양 은허 출토 약 150,000 여 점 (4,500여 자)',
+    actors: '상나라 국왕 무정(武丁) 및 왕실 정인(貞人) 서관',
+    context: '은허 궁전 종묘 신탁 아카이브 구덩이 (YH127)',
+    witnessDateBCE: 'c. 1250–1200 BCE',
+    confidence: 'sure',
+    confidenceReason: '은허 고고학 발굴 층위 정밀 입증 및 사기(史記) 은본기 왕실 계보와 완벽 일치',
+    summary: '동아시아 독자적 문자 발명의 실증 유물로, 왕이 조상 신에게 올린 날씨·전쟁·임신 신탁 점괘',
+    description: '갑골문은 거북 배껍질이나 소 어깨뼈에 열을 가해 갈라진 틈을 해석한 뒤, 정인(貞人) 서관이 그 경과와 결과를 칼로 새겨 넣은 불멸의 신탁 아카이브이다. 문자가 동아시아에서 국왕의 정치적 주권과 조상 신과의 소통 매개체로 출현했음을 증명한다.',
+    preservationNotes: '지하 신탁 아카이브 구덩이(YH127)에 15,000여 점이 한꺼번에 묻혀 완벽 보존됨',
+    inscriptionBreakdown: {
+      scriptOriginal: '癸巳卜 殼貞 旬亡禍 王占曰 吉 𡆥乙未 允有來艱',
+      transliteration: 'Guǐsì bǔ, Ké zhēn: xún wáng huò. Wáng zhān yuē: jí. Zhaì Yǐwèi, yǔn yǒu lái jiān.',
+      translationKo: '계사일에 점치고 정인 각(殼)이 물었다: "다음 10일간 화(禍)가 없겠습니까?" 왕이 점괘를 읽고 가로되 "길(吉)하다" 하였다. 3일 뒤 을미일에 과연 곤란한 일이 닥쳐왔다.',
+      literaryContext: '무정 왕의 정인 서관이 신탁 질문(전조)-답변(점괘)-결과(응험) 3단 구조로 각문한 복사(卜辭).'
+    },
+    sources: [
+      { id: 's-china-oracle', grade: 'A', gradeLabel: 'A: 발굴 연구 아카이브', title: 'Yinxu Archaeological Excavation Reports', authorOrInstitution: 'Institute of Archaeology CASS / Academia Sinica' }
+    ],
+    imageRights: '소장: 중국 국가박물관 / 대만 중앙연구원 역사언어연구소',
+    svgGraphicType: 'oracle-bone'
   }
 ];

@@ -13,6 +13,8 @@ import { SourcesGlossaryView } from './components/SourcesGlossaryView';
 import { Footer } from './components/Footer';
 import { CivilizationId } from './types';
 
+import { InstitutionsView } from './components/InstitutionsView';
+
 export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<string>('home');
   const [activeParam, setActiveParam] = useState<string | undefined>(undefined);
@@ -79,6 +81,7 @@ export const App: React.FC = () => {
         {currentTab === 'artifacts' && (
           <ArtifactsView initialArtifactId={activeParam} />
         )}
+        {currentTab === 'institutions' && <InstitutionsView />}
         {currentTab === 'claims' && <ClaimsView />}
         {currentTab === 'themes' && (
           <ThemesView initialEssayId={activeParam} />

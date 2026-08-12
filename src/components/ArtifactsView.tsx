@@ -182,6 +182,28 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
             <text x="157" y="64" textAnchor="middle" fill="#fef3c7" fontSize="7" fontWeight="bold">Linear B 필로스</text>
           </svg>
         );
+      case 'oracle-bone':
+        return (
+          <svg viewBox="0 0 200 100" width="100%" height="100" style={{ borderRadius: '8px', overflow: 'hidden' }}>
+            <defs>
+              <linearGradient id="boneGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#fef3c7" />
+                <stop offset="50%" stopColor="#fde68a" />
+                <stop offset="100%" stopColor="#d97706" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="200" height="100" fill="var(--bg-surface-elevated)" />
+            {/* Turtle Plastron Contour */}
+            <path d="M 40 15 Q 100 5 160 15 Q 175 50 160 85 Q 100 95 40 85 Q 25 50 40 15 Z" fill="url(#boneGrad)" stroke="#b45309" strokeWidth="2" />
+            {/* Heat Cracks & Archaic Chinese Oracle Bone Script */}
+            <path d="M 70 30 L 90 45 L 85 65" fill="none" stroke="#78350f" strokeWidth="1.5" />
+            <path d="M 120 25 L 115 50 L 135 60" fill="none" stroke="#78350f" strokeWidth="1.5" />
+            <text x="75" y="40" fill="#78350f" fontSize="12" fontFamily="serif" fontWeight="bold">癸巳卜</text>
+            <text x="110" y="40" fill="#78350f" fontSize="12" fontFamily="serif" fontWeight="bold">貞旬亡禍</text>
+            <rect x="75" y="74" width="50" height="12" rx="2" fill="#78350f" />
+            <text x="100" y="83" textAnchor="middle" fill="#fef3c7" fontSize="7" fontWeight="bold">은허 갑골문</text>
+          </svg>
+        );
       default:
         return (
           <svg viewBox="0 0 200 100" width="100%" height="100" style={{ borderRadius: '8px', overflow: 'hidden' }}>
@@ -326,6 +348,7 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
 
             {/* METADATA GRID TABLE */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem', background: 'var(--bg-surface-elevated)', padding: '1rem', borderRadius: 'var(--radius-md)', marginBottom: '1.25rem', fontSize: '0.85rem' }}>
+              <div><strong>소장 고유 번호:</strong> <span style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700, color: 'var(--civ-mesopotamia)' }}>{selectedModalArtifact.museumAccessionNo || '현장 유적 In Situ'}</span></div>
               <div><strong>문자체계:</strong> {selectedModalArtifact.script}</div>
               <div><strong>언어:</strong> {selectedModalArtifact.language}</div>
               <div><strong>재료:</strong> {selectedModalArtifact.materialLabel}</div>
@@ -335,6 +358,33 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
               <div><strong>구성/성립 연대:</strong> {selectedModalArtifact.compositionDateBCE || '유물 연대와 동일'}</div>
               <div><strong>출토 맥락:</strong> {selectedModalArtifact.context}</div>
             </div>
+
+            {/* 1차 원전 비문 분석 모듈 (INSCRIPTION BREAKDOWN) */}
+            {selectedModalArtifact.inscriptionBreakdown && (
+              <div style={{ marginBottom: '1.25rem', background: 'var(--bg-surface-elevated)', padding: '1.25rem', borderLeft: '4px solid var(--civ-mesopotamia)', borderRadius: 'var(--radius-md)', boxShadow: 'var(--shadow-sm)' }}>
+                <h4 style={{ fontSize: '0.92rem', fontWeight: 700, letterSpacing: '0.05em', color: 'var(--text-muted)', marginBottom: '0.75rem', textTransform: 'uppercase' }} className="font-cinzel">
+                  📜 1차 원전 비문 분석 모듈 (Primary Inscription Breakdown)
+                </h4>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', fontSize: '0.88rem' }}>
+                  <div style={{ background: 'var(--bg-surface)', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, marginBottom: '0.25rem' }}>고대 문자 원문 (Original Script)</div>
+                    <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'pre-line' }}>{selectedModalArtifact.inscriptionBreakdown.scriptOriginal}</div>
+                  </div>
+                  <div style={{ background: 'var(--bg-surface)', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, marginBottom: '0.25rem' }}>학술 라틴어 전사 (Transliteration)</div>
+                    <div style={{ fontFamily: 'monospace', fontStyle: 'italic', color: 'var(--civ-greece)', whiteSpace: 'pre-line' }}>{selectedModalArtifact.inscriptionBreakdown.transliteration}</div>
+                  </div>
+                  <div style={{ background: 'var(--bg-surface)', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, marginBottom: '0.25rem' }}>한국어 학술 직역 (Translation)</div>
+                    <div style={{ color: 'var(--text-primary)', fontWeight: 500, whiteSpace: 'pre-line' }}>{selectedModalArtifact.inscriptionBreakdown.translationKo}</div>
+                  </div>
+                  <div style={{ background: 'var(--bg-surface)', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
+                    <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, marginBottom: '0.25rem' }}>문학적/제의적 맥락 (Context)</div>
+                    <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)' }}>{selectedModalArtifact.inscriptionBreakdown.literaryContext}</div>
+                  </div>
+                </div>
+              </div>
+            )}
 
             <div style={{ marginBottom: '1.25rem' }}>
               <h4 style={{ fontSize: '1rem', fontWeight: 700, marginBottom: '0.5rem' }}>역사적 가치 및 해설</h4>

@@ -1,7 +1,6 @@
-export type CivilizationId = 'mesopotamia' | 'egypt' | 'greece' | 'israel-judah' | 'ugarit';
+export type CivilizationId = 'mesopotamia' | 'egypt' | 'greece' | 'israel-judah' | 'ugarit' | 'china';
 
 export type ConfidenceLevel = 'sure' | 'likely' | 'debated' | 'unknown';
-// '확실' | '유력' | '논쟁 중' | '알 수 없음'
 
 export type TextUnitCategory = 
   | 'single-work'       // 단일 작품 (e.g. 일리아스)
@@ -16,7 +15,8 @@ export type GenreCategory =
   | 'religious-funerary'// 종교·장례·제의
   | 'law-codes'         // 법·규범
   | 'epic-poetry'       // 서사·시·문학
-  | 'personal-letters'; // 편지·일상·유희
+  | 'personal-letters'  // 편지·일상·유희
+  | 'divination-oracle';// 점괘·신탁 (갑골문)
 
 export type MaterialType = 
   | 'clay-tablet'       // 점토판
@@ -25,15 +25,14 @@ export type MaterialType =
   | 'parchment-leather' // 가죽·양피지
   | 'ostracon'          // 도기 파편
   | 'metal-scroll'      // 금속판·은제 두루마리
+  | 'oracle-bone'       // 갑골 (우골·갑각)
   | 'wood-wax';         // 목판·밀랍판
 
-export interface TextVector {
-  linesOrWordsCount: string;       // 현존 행·단어·문자 수
-  singleObjectExtent: string;      // 하나의 물리적 유물 분량
-  copiesCount: string;             // 동일 작품 사본 수
-  totalCorpusArtifacts: string;    // 코퍼스 전체 유물 수
-  laborEstimate: string;           // 제작에 필요한 문자 노동량
-  transmissionSpan: string;        // 전승 기간과 지리적 확산
+export interface InscriptionBreakdown {
+  scriptOriginal: string;        // 원전 문자
+  transliteration: string;       // 학술 라틴어 전사
+  translationKo: string;        // 한국어 직역
+  literaryContext: string;       // 의례/문학적 해설
 }
 
 export interface ArtifactRecord {
@@ -41,36 +40,51 @@ export interface ArtifactRecord {
   titleKo: string;
   titleNative: string;
   civilization: CivilizationId;
-  script: string;                  // e.g. "설형문자 (Cuneiform)", "히에로그리프", "Linear B", "고대 히브리 문자"
-  language: string;                // e.g. "아카드어", "고대 이집트어", "미케네 그리스어"
-  dateStartBCE: number;            // negative or positive BCE value (e.g. 3300 BCE = 3300)
+  museumAccessionNo?: string;    // 박물관 소장 고유 번호 (e.g. BM K.3375, JE 32169, 1QIsa^a)
+  script: string;
+  language: string;
+  dateStartBCE: number;
   dateEndBCE: number;
-  dateBasis: string;               // 고고학적 층위, 방사성탄소, 왕대, 고문서학
+  dateBasis: string;
   material: MaterialType;
   materialLabel: string;
   genre: GenreCategory;
   genreLabel: string;
   textUnit: TextUnitCategory;
   textUnitLabel: string;
-  extent: string;                  // 현존 규격 및 행수
-  actors: string;                  // 제작 주체 (서기관, 사제, 왕실, 주민)
-  context: string;                 // 출토 맥락 (궁전 아카이브, 무덤, 동굴, 집터)
-  compositionDateBCE?: string;     // 추정 구성 연대 (성립 시기)
-  witnessDateBCE: string;          // 해당 물리적 유물 제작 연대
+  extent: string;
+  actors: string;
+  context: string;
+  compositionDateBCE?: string;
+  witnessDateBCE: string;
   confidence: ConfidenceLevel;
   confidenceReason: string;
   summary: string;
   description: string;
-  preservationNotes: string;       // 보존 편향 특이사항
+  preservationNotes: string;
+  inscriptionBreakdown?: InscriptionBreakdown; // 1차 비문 분석 모듈
   sources: SourceReference[];
   imageRights: string;
-  svgGraphicType?: 'tablet' | 'papyrus' | 'stone' | 'silver' | 'pottery' | 'linear-b';
+  svgGraphicType?: 'tablet' | 'papyrus' | 'stone' | 'silver' | 'pottery' | 'linear-b' | 'oracle-bone';
+}
+
+export interface ScribalInstitution {
+  id: string;
+  nameKo: string;
+  nameNative: string;
+  civilization: CivilizationId;
+  periodBCE: string;
+  primaryLocation: string;
+  description: string;
+  curriculum: string[];
+  keyArtifacts: string[];
+  historicalImpact: string;
 }
 
 export interface SourceReference {
   id: string;
   grade: 'A' | 'B' | 'C' | 'D';
-  gradeLabel: string; // "A: 유물 소장기관 / 코퍼스 DB", "B: 동료평가 논문", "C: 학술 해설", "D: 참고자료"
+  gradeLabel: string;
   title: string;
   authorOrInstitution: string;
   year?: string;
@@ -98,9 +112,9 @@ export interface CivilizationInfo {
   id: CivilizationId;
   nameKo: string;
   nameEn: string;
-  accentColor: string;             // HEX or CSS variable
+  accentColor: string;
   colorClass: string;
-  scriptEmergenceBCE: number;      // 문자 출현·도입 연대 (상대연대 t=0)
+  scriptEmergenceBCE: number;
   scriptName: string;
   primaryMedia: string;
   oneSentenceSummary: string;
@@ -113,7 +127,7 @@ export interface CivilizationInfo {
   }[];
   overviewNarrative: string;
   keyDiscoveries: string[];
-  differentiator: string;          // 문명 고유의 특징
+  differentiator: string;
 }
 
 export interface ComparativeEssay {
@@ -122,7 +136,7 @@ export interface ComparativeEssay {
   title: string;
   subtitle: string;
   summary: string;
-  content: string;                 // Full academic essay text
+  content: string;
   keyTakeaways: string[];
   civilizationsDiscussed: CivilizationId[];
 }

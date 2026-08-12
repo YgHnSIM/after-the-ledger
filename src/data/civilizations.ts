@@ -5,9 +5,9 @@ export const CIVILIZATIONS: Record<string, CivilizationInfo> = {
     id: 'mesopotamia',
     nameKo: '메소포타미아',
     nameEn: 'Mesopotamia',
-    accentColor: '#c86432',
+    accentColor: '#c85a24',
     colorClass: 'civ-mesopotamia',
-    scriptEmergenceBCE: 3300, // 후기 우루크 IV (c. 3300 BCE)
+    scriptEmergenceBCE: 3300,
     scriptName: '쐐기문자 (Cuneiform)',
     primaryMedia: '점토판 (Clay Tablets)',
     oneSentenceSummary: '회계문서와 사물·직업 어휘목록이 동시 출현하여 수천 년 서기관 교육과 관료적 지식 분류체계로 발전함',
@@ -24,8 +24,8 @@ export const CIVILIZATIONS: Record<string, CivilizationInfo> = {
 
 직업목록(ED Lu A)과 사물 분류 목록은 순수한 재산 기록을 넘어 세계를 분류하고 관료제를 구조화하는 최초의 지적 기획이었다. 점토라는 물리적 매체는 화재를 통해 굳어짐으로써 인류 역사상 가장 정밀한 행정 및 교육 아카이브를 오늘날까지 남겨주었다.`,
     keyDiscoveries: [
-      '우루크 IV기 행정 점토판 5,000 여 점 출토',
-      'ED Lu A (Standard Professions List): 100여 개 직위 계급 분류',
+      '우루크 IV기 행정 점토판 5,000 여 점 출토 (CDLI)',
+      'ED Lu A (Standard Professions List): 129개 직위 계급 분류',
       '엔헤두안나(Enheduanna) 서명이 남은 최초의 인명 저술 신전 찬가 (c. 2300 BCE)',
       'DCCLT 데이터베이스에 기록된 2천 년간 지속된 어휘목록 복제 전통'
     ]
@@ -34,9 +34,9 @@ export const CIVILIZATIONS: Record<string, CivilizationInfo> = {
     id: 'egypt',
     nameKo: '이집트',
     nameEn: 'Egypt',
-    accentColor: '#1b8a90',
+    accentColor: '#107e84',
     colorClass: 'civ-egypt',
-    scriptEmergenceBCE: 3250, // 아비도스 U-j 묘 (c. 3250 BCE)
+    scriptEmergenceBCE: 3250,
     scriptName: '성각문자(Hieroglyphs) & 신관문자(Hieratic)',
     primaryMedia: '석회암 벽면 & 파피루스 (Papyrus)',
     oneSentenceSummary: '왕권 표상, 소유 상징, 장례 제의의 효력이 결합한 문자로, 석비의 공개성과 피라미드 무덤 내부의 비공개성이 대비됨',
@@ -63,9 +63,9 @@ export const CIVILIZATIONS: Record<string, CivilizationInfo> = {
     id: 'greece',
     nameKo: '그리스',
     nameEn: 'Greece',
-    accentColor: '#1d4ed8',
+    accentColor: '#1e40af',
     colorClass: 'civ-greece',
-    scriptEmergenceBCE: 1400, // Linear B 궁전 행정 (c. 1400 BCE) / Alphabet (c. 800 BCE)
+    scriptEmergenceBCE: 1400,
     scriptName: 'Linear B (선문자 B) → 그리스 알파벳',
     primaryMedia: '점토판 (궁전 단기용) & 도기·석재·파피루스',
     oneSentenceSummary: '미케네 궁전 행정 붕괴 후 백년의 문자 공백기를 거쳐, 음성학적 알파벳으로 시·유희·개인 기록이 극적으로 반등함',
@@ -83,7 +83,7 @@ export const CIVILIZATIONS: Record<string, CivilizationInfo> = {
 청동기 시대 미케네 문명의 Linear B는 오직 궁전 서기관들만의 비공개 회계 장부였으며, BCE 1200년 궁전 붕괴와 함께 완전히 사멸했다. 그러나 BCE 8세기경 페니키아 자음 문자를 도입하여 모음을 덧붙인 그리스 알파벳은 사뭇 다른 양상으로 퍼졌다. 디필론 비문과 네스토르의 잔처럼 초기 알파벳 유물은 장부나 세금 기록이 아니라 시, 노래, 술자리 유희, 개인 소유 표시로 출현했다.`,
     keyDiscoveries: [
       '필로스 및 크노소스 궁전 Linear B 점토판 (마이클 카트리스 해독)',
-      '디필론 암포라 비문 (c. 740 BCE) — "가장 흥겹게 춤추는 자에게"',
+      '디필론 암포라 비문 (c. 740 BCE) — "가장 흥겁게 춤추는 자에게"',
       '피테쿠사이 네스토르의 잔 (c. 725 BCE) — 아프로디테의 욕망을 노래하는 3행시',
       '메토네·에레트리아 초기 알파벳 도기 파편 비문'
     ]
@@ -92,9 +92,9 @@ export const CIVILIZATIONS: Record<string, CivilizationInfo> = {
     id: 'israel-judah',
     nameKo: '이스라엘·유다',
     nameEn: 'Israel & Judah',
-    accentColor: '#7e22ce',
+    accentColor: '#6b21a8',
     colorClass: 'civ-israel-judah',
-    scriptEmergenceBCE: 950, // 원시 히브리 문자 및 오스트라콘 (c. 950 BCE)
+    scriptEmergenceBCE: 950,
     scriptName: '고대 히브리 문자 (Paleo-Hebrew) & 아람 문자',
     primaryMedia: '파피루스, 가죽 두루마리, 도토기 파편 (Ostraca), 은판',
     oneSentenceSummary: '사본 생산 연대, 편집 연대, 구전 연대, 사건 연대의 4중 구조 속에, 텍스트의 유연성과 정경화 과정이 공존함',
@@ -123,7 +123,7 @@ export const CIVILIZATIONS: Record<string, CivilizationInfo> = {
     nameEn: 'Ugarit (Control Case)',
     accentColor: '#d97706',
     colorClass: 'civ-ugarit',
-    scriptEmergenceBCE: 1400, // 우가리트 알파벳 쐐기문자 (c. 1400 BCE)
+    scriptEmergenceBCE: 1400,
     scriptName: '우가리트 알파벳 쐐기문자 & 아카드 음절 쐐기문자',
     primaryMedia: '점토판 (Clay Tablets)',
     oneSentenceSummary: '동일한 점토 매체에서 알파벳 쐐기문자(현지어/서사)와 음절 쐐기문자(국제 외교)가 명확한 기능 분업을 이룬 연구 통제 사례',
@@ -133,7 +133,7 @@ export const CIVILIZATIONS: Record<string, CivilizationInfo> = {
       { stage: 1, title: '문자 출현·도입', description: '30개 쐐기 모양 부호로 구성된 고유 알파벳 쐐기문자 발명 (c. 1400 BCE)', bcePeriod: 'c. 1400 BCE' },
       { stage: 2, title: '일상적 행정 및 외교', description: '우가리트어로 현지 행정·시 기록, 아카드 음절문자로 이집트·히타이트 외교 점토판 작성', bcePeriod: 'c. 1350 BCE' },
       { stage: 3, title: '장문 문학·신의 종교 서사', description: '바알 서사시(Baal Cycle), 카르타 서사시, 아크하트 이야기 점토판 刻文', bcePeriod: 'c. 1300 BCE' },
-      { stage: 4, title: '해양 민족 침입과 멸망', description: 'BCE 1185년경 도시 파괴와 함께 점토판 아카이브가 불에 타며 완벽 보진됨', bcePeriod: 'c. 1185 BCE' },
+      { stage: 4, title: '해양 민족 침입과 멸망', description: 'BCE 1185년경 도시 파괴와 함께 점토판 아카이브가 불에 타며 완벽 보존됨', bcePeriod: 'c. 1185 BCE' },
       { stage: 5, title: '현대 고고학 발굴', description: '1929년 라스 샤므라 발굴로 레반트 종교와 성서 문학의 비교 연구 일대 혁신', bcePeriod: '1929 CE 발굴' },
     ],
     overviewNarrative: `우가리트(Ras Shamra)는 이 연구의 결론을 검증하는 매우 뛰어난 통제 사례(Control Case)이다.
@@ -144,6 +144,35 @@ export const CIVILIZATIONS: Record<string, CivilizationInfo> = {
       '우가리트 알파벳 순서(Abagad) 훈련 점토판',
       '우가리트어-아카드어-수메르어-후르리어 4개국어 어휘목록 점토판',
       'BCE 1185년 화마 속에서 구워진 국왕 및 사제 아카이브'
+    ]
+  },
+  china: {
+    id: 'china',
+    nameKo: '중국 (독립 발명 통제 사례)',
+    nameEn: 'China (Shang Dynasty Oracle Bones)',
+    accentColor: '#dc2626',
+    colorClass: 'civ-china',
+    scriptEmergenceBCE: 1250,
+    scriptName: '갑골문 (Oracle Bone Script - 契文)',
+    primaryMedia: '갑골 (거북 복갑 & 소 어깨뼈)',
+    oneSentenceSummary: '신탁 점괘(卜辭)와 조상 제의, 왕권 주권을 우골과 갑각에 칼로 칼각(契刻)한 독립 문자 발명의 대표 사례',
+    keyQuestion: '동아시아 독립 문자 발명에서 문자는 누구와의 소통을 위해 출현했는가?',
+    differentiator: '청동기 신탁 점괘 및 조상 제의 刻文 중심의 독자적 상형 체계',
+    stages: [
+      { stage: 1, title: '문자 출현·도입', description: '상나라 제21대 왕 무정(武丁) 대 은허(殷墟)에서 정형화된 갑골문 刻文 (c. 1250 BCE)', bcePeriod: 'c. 1250 BCE' },
+      { stage: 2, title: '왕실 신탁 및 제의 기록', description: '날씨, 전쟁, 수확, 조상 제사, 왕비 임신 여부를 점치는 복사(卜辭) 대량 각문', bcePeriod: 'c. 1200 BCE' },
+      { stage: 3, title: '청동기 금문(金文) 확장', description: '상-주 교체기 조상 숭배 및 공헌을 칭송하는 청동 례기 비문 刻文 (c. 1046 BCE)', bcePeriod: 'c. 1046 BCE' },
+      { stage: 4, title: '서주·춘추전국 서사 확산', description: '죽간(竹簡)과 목독(木牘) 행정 문서 및 《시경》·《서경》 전승 고정', bcePeriod: 'c. 800 BCE' },
+      { stage: 5, title: '진시황 소전(小篆) 통일', description: 'BCE 221년 제국 통합과 함께 문자의 국가적 표준화 완성', bcePeriod: 'c. 221 BCE 이후' },
+    ],
+    overviewNarrative: `중국 은허(殷墟)의 갑골문(Oracle Bone Script)은 지중해나 메소포타미아의 영향 없이 동아시아에서 독자적으로 발명된 문자 체계이다.
+
+갑골문은 주로 거북 배껍질(복갑)이나 소 어깨뼈(견갑골)에 열을 가해 갈라지는 틈을 보고 신의 뜻을 해석한 뒤, 그 신탁 결과(卜辭)를 청동 칼로 새겨 넣은 기록이다. 이는 문자가 단순한 인간 상인 간의 경제 장부를 넘어, 국왕이 신 및 조상과 소통하며 자신의 정치적 통치 정당성을 보증받는 지고의 제의 도구였음을 보여준다.`,
+    keyDiscoveries: [
+      '안양 은허 출토 15만 여 점의 갑골 파편 (약 4,500여 자)',
+      '무정(武丁) 왕대 정인(貞人) 서관 아카이브',
+      '왕순 징집 및 농경 기후 신탁 복사(卜辭)',
+      '갑골문 ➔ 금문(金文) ➔ 죽간 ➔ 소전(小篆)으로 이어진 한자 한자학(Sinology) 전승'
     ]
   }
 };

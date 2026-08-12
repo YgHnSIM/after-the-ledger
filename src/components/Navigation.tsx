@@ -1,5 +1,5 @@
 import React from 'react';
-import { Compass, Search, Moon, Sun, Scroll, BookOpen, Layers, Scale, ShieldCheck, Feather, Globe, HelpCircle } from 'lucide-react';
+import { Compass, Search, Moon, Sun, Scroll, BookOpen, Layers, Scale, ShieldCheck, Feather, Globe, HelpCircle, GraduationCap } from 'lucide-react';
 
 interface NavigationProps {
   currentTab: string;
@@ -21,6 +21,7 @@ export const Navigation: React.FC<NavigationProps> = ({
     { id: 'compare', label: '비교 타임라인', icon: Layers },
     { id: 'civilizations', label: '문명별 연구', icon: Globe },
     { id: 'artifacts', label: '유물·텍스트 DB', icon: Scroll },
+    { id: 'institutions', label: '서기관·제도', icon: GraduationCap },
     { id: 'claims', label: '학술 주장 카드', icon: ShieldCheck },
     { id: 'themes', label: '비교 에세이', icon: BookOpen },
     { id: 'greek', label: '언어·문자', icon: Feather },
