@@ -234,7 +234,8 @@ export interface GlossaryItem {
 
 export interface HomericScholarshipRecord {
   id: string;
-  category: 'oral-formulaic' | 'homeric-question' | 'neoanalysis' | 'textual-criticism';
+  category: 'oral-formulaic' | 'homeric-question' | 'neoanalysis' | 'textual-criticism' | 'evolutionary-model' | 'near-eastern-comparative' | 'mycenaean-linear-b';
+
   categoryLabel: string;
   titleKo: string;
   scholarName: string;      // e.g. "Milman Parry & Albert Lord", "F.A. Wolf", "Gregory Nagy"

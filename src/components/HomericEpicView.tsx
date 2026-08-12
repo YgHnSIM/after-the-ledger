@@ -6,7 +6,8 @@ import { BookOpen, Shield, Feather, Sparkles, Scale, GraduationCap, Globe, Libra
 
 export const HomericEpicView: React.FC = () => {
   const [activeSection, setActiveSection] = useState<'books' | 'characters' | 'concepts' | 'matrix' | 'scholarship' | 'problem'>('scholarship');
-  const [activeScholarshipTab, setActiveScholarshipTab] = useState<'all' | 'oral' | 'near-east' | 'linear-b' | 'textual'>('all');
+  const [activeScholarshipTab, setActiveScholarshipTab] = useState<'all' | 'oral' | 'question' | 'neoanalysis' | 'evolutionary' | 'near-east' | 'linear-b'>('all');
+
   const [selectedCharacterSide, setSelectedCharacterSide] = useState<'all' | 'achaean' | 'trojan' | 'god' | 'odyssey-hero' | 'odyssey-monster'>('all');
   const [selectedEpic, setSelectedEpic] = useState<'all' | 'iliad' | 'odyssey'>('all');
   const [selectedBook, setSelectedBook] = useState<number | null>(null);
@@ -395,42 +396,57 @@ export const HomericEpicView: React.FC = () => {
               className={`scholarship-subtab-btn ${activeScholarshipTab === 'all' ? 'active' : ''}`}
               onClick={() => setActiveScholarshipTab('all')}
             >
-              <Globe size={15} /> <span>전체 연구 성과 종합</span>
+              <Globe size={15} /> <span>전체 6대 연구 패러다임</span>
             </button>
             <button
               className={`scholarship-subtab-btn ${activeScholarshipTab === 'oral' ? 'active' : ''}`}
               onClick={() => setActiveScholarshipTab('oral')}
             >
-              <GraduationCap size={15} /> <span>구전 공식설 & 학쟁 (Parry-Lord)</span>
+              <GraduationCap size={15} /> <span>1. 구전 공식설 (Parry-Lord)</span>
+            </button>
+            <button
+              className={`scholarship-subtab-btn ${activeScholarshipTab === 'question' ? 'active' : ''}`}
+              onClick={() => setActiveScholarshipTab('question')}
+            >
+              <Library size={15} /> <span>2. 분석파 vs 통일파 (F.A. Wolf)</span>
+            </button>
+            <button
+              className={`scholarship-subtab-btn ${activeScholarshipTab === 'neoanalysis' ? 'active' : ''}`}
+              onClick={() => setActiveScholarshipTab('neoanalysis')}
+            >
+              <Milestone size={15} /> <span>3. 신분석학 (Kullmann)</span>
+            </button>
+            <button
+              className={`scholarship-subtab-btn ${activeScholarshipTab === 'evolutionary' ? 'active' : ''}`}
+              onClick={() => setActiveScholarshipTab('evolutionary')}
+            >
+              <Sparkles size={15} /> <span>4. 진화론 모델 (Nagy)</span>
             </button>
             <button
               className={`scholarship-subtab-btn ${activeScholarshipTab === 'near-east' ? 'active' : ''}`}
               onClick={() => setActiveScholarshipTab('near-east')}
             >
-              <Scale size={15} /> <span>동·서 지중해 근동 비교 (M.L. West)</span>
+              <Scale size={15} /> <span>5. 근동 비교학 (M.L. West)</span>
             </button>
             <button
               className={`scholarship-subtab-btn ${activeScholarshipTab === 'linear-b' ? 'active' : ''}`}
               onClick={() => setActiveScholarshipTab('linear-b')}
             >
-              <Milestone size={15} /> <span>미케네 Linear B 어휘 (Wanax)</span>
-            </button>
-            <button
-              className={`scholarship-subtab-btn ${activeScholarshipTab === 'textual' ? 'active' : ''}`}
-              onClick={() => setActiveScholarshipTab('textual')}
-            >
-              <Library size={15} /> <span>알렉산드리아 비평 & 파피루스 사본</span>
+              <BookOpen size={15} /> <span>6. 미케네 Linear B (Chadwick)</span>
             </button>
           </div>
 
-          {/* SUBTAB CONTENT 1: ORAL FORMULAIC & SCHOLARSHIP RECORDS */}
-          {(activeScholarshipTab === 'all' || activeScholarshipTab === 'oral' || activeScholarshipTab === 'textual') && (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
-              {HOMERIC_SCHOLARSHIP_RECORDS.filter(rec => {
-                if (activeScholarshipTab === 'oral') return rec.category === 'oral-formulaic' || rec.category === 'homeric-question' || rec.category === 'neoanalysis';
-                if (activeScholarshipTab === 'textual') return rec.category === 'textual-criticism';
-                return true;
-              }).map(rec => (
+          {/* SUBTAB CONTENT: HOMERIC SCHOLARSHIP RECORDS */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
+            {HOMERIC_SCHOLARSHIP_RECORDS.filter(rec => {
+              if (activeScholarshipTab === 'oral') return rec.category === 'oral-formulaic';
+              if (activeScholarshipTab === 'question') return rec.category === 'homeric-question';
+              if (activeScholarshipTab === 'neoanalysis') return rec.category === 'neoanalysis';
+              if (activeScholarshipTab === 'evolutionary') return rec.category === 'evolutionary-model';
+              if (activeScholarshipTab === 'near-east') return rec.category === 'near-eastern-comparative';
+              if (activeScholarshipTab === 'linear-b') return rec.category === 'mycenaean-linear-b';
+              return true;
+            }).map(rec => (
                 <div key={rec.id} className="scholarship-card" style={{ borderLeft: '4px solid var(--civ-greece)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.5rem' }}>
                     <div>
@@ -464,7 +480,6 @@ export const HomericEpicView: React.FC = () => {
                 </div>
               ))}
             </div>
-          )}
 
           {/* SUBTAB CONTENT 2: NEAR EASTERN PARALLELS */}
           {(activeScholarshipTab === 'all' || activeScholarshipTab === 'near-east') && (
