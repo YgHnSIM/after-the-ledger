@@ -18,7 +18,7 @@ export const ThemesView: React.FC<ThemesViewProps> = ({ initialEssayId }) => {
   return (
     <div className="main-container">
       <div style={{ marginBottom: '2rem' }}>
-        <h1 className="section-title">고대 문자문화 8대 연구 에세이</h1>
+        <h1 className="section-title">고대 문자문화 {COMPARATIVE_ESSAYS.length}대 연구 에세이</h1>
         <p className="section-subtitle">
           회계, 분류 목록, 왕권 제의, 호메로스 정서, 성서 전승, 보존 편향, 우가리트 통제 사례를 관통하는 비교 논문 집성입니다.
         </p>

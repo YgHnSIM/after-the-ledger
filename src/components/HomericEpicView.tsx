@@ -46,13 +46,13 @@ export const HomericEpicView: React.FC = () => {
             className={`btn ${activeSection === 'concepts' ? 'btn-primary' : 'btn-secondary'}`}
             onClick={() => setActiveSection('concepts')}
           >
-            <Feather size={16} /> 호메로스 6대 사상 개념어
+            <Feather size={16} /> 호메로스 {HOMERIC_CONCEPTS.length}대 사상 개념어
           </button>
           <button
             className={`btn ${activeSection === 'matrix' ? 'btn-primary' : 'btn-secondary'}`}
             onClick={() => setActiveSection('matrix')}
           >
-            <Scale size={16} /> 근동 3대 서사시 1:1 대조
+            <Scale size={16} /> 근동 비교 서사시 1:1 대조
           </button>
           <button
             className={`btn ${activeSection === 'problem' ? 'btn-primary' : 'btn-secondary'}`}
@@ -219,9 +219,9 @@ export const HomericEpicView: React.FC = () => {
       {/* SECTION 3: CORE CONCEPTS */}
       {activeSection === 'concepts' && (
         <section style={{ marginBottom: '4rem' }}>
-          <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>호메로스 6대 사상 개념어 (Core Homeric Lexicon)</h2>
+          <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>호메로스 {HOMERIC_CONCEPTS.length}대 사상 개념어 (Core Homeric Lexicon)</h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
-            《일리아스》와 《오뒷세이아》 원전의 인간관, 도덕관, 세계관을 관통하는 6개 핵심 그리스어 개념어를 정밀 분석합니다.
+            《일리아스》와 《오뒷세이아》 원전의 인간관, 도덕관, 세계관을 관통하는 {HOMERIC_CONCEPTS.length}개 핵심 그리스어 개념어를 정밀 분석합니다.
           </p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '1.25rem' }}>
@@ -252,7 +252,7 @@ export const HomericEpicView: React.FC = () => {
       {/* SECTION 4: COMPARATIVE MATRIX */}
       {activeSection === 'matrix' && (
         <section style={{ marginBottom: '4rem' }}>
-          <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>그리스 서사시 vs 근동 3대 서사시 1:1 대조 행렬 (Comparative Matrix)</h2>
+          <h2 className="section-title" style={{ marginBottom: '0.5rem' }}>그리스 서사시 vs 근동 비교 서사시 1:1 대조 행렬 (Comparative Matrix)</h2>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem', fontSize: '0.9rem' }}>
             호메로스 서사시와 메소포타미아 《길가메시 서사시》, 이집트 《사누헤 이야기》, 우가리트 《바알 서사시》를 동지중해 문화권 맥락에서 나란히 대조합니다.
           </p>
