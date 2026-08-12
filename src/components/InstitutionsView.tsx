@@ -12,9 +12,14 @@ export const InstitutionsView: React.FC = () => {
           <GraduationCap size={15} style={{ color: 'var(--civ-mesopotamia)' }} />
           <span className="font-cinzel">SCRIBAL INSTITUTIONS & KNOWLEDGE PRODUCTION</span>
         </div>
-        <h1 className="section-title">서기관 교육 및 지식 생산 제도 (Scribal Institutions)</h1>
+        <h1 className="section-title">
+          <span className="title-phrase">서기관 교육 및 </span>{' '}
+          <span className="title-phrase">지식 생산 제도 (Scribal Institutions)</span>
+        </h1>
         <p className="section-subtitle">
-          고대 문자의 쓰임새를 결정지은 것은 부호의 단순함(알파벳 여부)이 아니라, 서기관을 교육하고 관리한 <strong>국가·신전의 제도(Institutions)</strong>였습니다. 문명별 6대 기록 생산 제도를 대조합니다.
+          <span className="title-phrase">고대 문자의 쓰임새를 결정지은 것은 부호의 단순함(알파벳 여부)이 아니라, </span>{' '}
+          <span className="title-phrase">서기관을 교육하고 관리한 <strong>국가·신전의 제도(Institutions)</strong>였습니다. </span>{' '}
+          <span className="title-phrase">문명별 6대 기록 생산 제도를 대조합니다.</span>
         </p>
       </section>
 

@@ -36,11 +36,13 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
           <span className="font-cinzel">EXHIBITION ATLAS • ANCIENT COMPARATIVE EPIGRAPHY</span>
         </div>
 
-        <h1 style={{ fontSize: '3.1rem', marginBottom: '1.25rem', fontFamily: 'var(--font-serif)', maxWidth: '1000px', margin: '0 auto 1.25rem auto', letterSpacing: '-0.025em', fontWeight: 700 }}>
-          장부 이후 — 고대 문명은 무엇을 기록하기 시작했는가?
+        <h1 className="hero-title" style={{ fontSize: '3.1rem', marginBottom: '1.25rem', fontFamily: 'var(--font-serif)', maxWidth: '1020px', margin: '0 auto 1.25rem auto', letterSpacing: '-0.025em', fontWeight: 700 }}>
+          <span className="title-phrase">장부 이후 — </span>{' '}
+          <span className="title-phrase">고대 문명은 무엇을 기록하기 시작했는가?</span>
         </h1>
-        <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '820px', margin: '0 auto 2.25rem auto', lineHeight: 1.6 }}>
-          문자·권력·기억·종교·문학의 탄생을 대조하는 <strong style={{ color: 'var(--text-primary)' }}>고대 문자문화 비교 연구 아틀라스</strong>
+        <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '840px', margin: '0 auto 2.25rem auto', lineHeight: 1.6 }}>
+          <span className="title-phrase">문자·권력·기억·종교·문학의 탄생을 대조하는 </span>{' '}
+          <span className="title-phrase"><strong style={{ color: 'var(--text-primary)' }}>고대 문자문화 비교 연구 아틀라스</strong></span>
         </p>
 
         {/* MUSEUM EXHIBITION STATISTICS METRIC BANNER */}

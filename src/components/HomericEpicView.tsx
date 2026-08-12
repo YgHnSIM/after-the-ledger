@@ -18,11 +18,14 @@ export const HomericEpicView: React.FC = () => {
           <span className="font-cinzel">HOMERIC EPICS MASTERY ATLAS • ILIAD & ODYSSEY</span>
         </div>
 
-        <h1 style={{ fontSize: '2.8rem', fontFamily: 'var(--font-serif)', maxWidth: '950px', margin: '0 auto 1rem auto', letterSpacing: '-0.02em', fontWeight: 700 }}>
-          호메로스 서사시 독파 아틀라스 — 《일리아스》 & 《오뒷세이아》
+        <h1 className="hero-title" style={{ fontSize: '2.8rem', fontFamily: 'var(--font-serif)', maxWidth: '980px', margin: '0 auto 1rem auto', letterSpacing: '-0.02em', fontWeight: 700 }}>
+          <span className="title-phrase">호메로스 서사시 독파 아틀라스 — </span>{' '}
+          <span className="title-phrase">《일리아스》 & 《오뒷세이아》</span>
         </h1>
-        <p style={{ fontSize: '1.18rem', color: 'var(--text-secondary)', maxWidth: '820px', margin: '0 auto 2rem auto', lineHeight: 1.6 }}>
-          펠레우스의 아들의 <strong style={{ color: 'var(--text-primary)' }}>파멸적 분노(Mēnis)</strong>부터 20년 만의 <strong style={{ color: 'var(--text-primary)' }}>고향 귀환(Nostos)</strong>까지 — 문명사적 구전 전통과 근동 비교를 통해 호메로스 원전을 깊이 있게 독파합니다.
+        <p style={{ fontSize: '1.18rem', color: 'var(--text-secondary)', maxWidth: '840px', margin: '0 auto 2rem auto', lineHeight: 1.6 }}>
+          <span className="title-phrase">펠레우스의 아들의 <strong style={{ color: 'var(--text-primary)' }}>파멸적 분노(Mēnis)</strong>부터</span>{' '}
+          <span className="title-phrase">20년 만의 <strong style={{ color: 'var(--text-primary)' }}>고향 귀환(Nostos)</strong>까지 — </span>{' '}
+          <span className="title-phrase">문명사적 구전 전통과 근동 비교를 통해 호메로스 원전을 깊이 있게 독파합니다.</span>
         </p>
 
         {/* SUB-SECTION NAV BUTTONS */}

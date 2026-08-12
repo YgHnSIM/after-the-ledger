@@ -110,11 +110,27 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Typography Utility */
-h1, h2, h3, .font-serif {
+/* Typography Utility & Precise Line Breaking */
+h1, h2, h3, h4, h5, h6,
+.section-title,
+.hero-title,
+.card-title,
+.font-serif {
   font-family: var(--font-serif);
-  font-weight: 600;
-  letter-spacing: -0.015em;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+  text-wrap: balance;
+  overflow-wrap: break-word;
+}
+
+p, blockquote, .section-subtitle, .card-subtitle, article {
+  word-break: keep-all;
+  text-wrap: pretty;
+}
+
+.title-phrase {
+  display: inline-block;
 }
 
 .font-cinzel {
@@ -125,17 +141,17 @@ h1, h2, h3, .font-serif {
 
 h1 {
   font-size: 2.75rem;
-  line-height: 1.18;
+  line-height: 1.22;
 }
 
 h2 {
   font-size: 1.95rem;
-  line-height: 1.28;
+  line-height: 1.3;
 }
 
 h3 {
   font-size: 1.35rem;
-  line-height: 1.35;
+  line-height: 1.38;
 }
 
 p {
