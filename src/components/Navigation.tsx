@@ -39,25 +39,27 @@ export const Navigation: React.FC<NavigationProps> = ({
         </div>
       </div>
 
-      <nav>
-        <ul className="nav-links">
-          {navItems.map((item) => {
-            const Icon = item.icon;
-            const isActive = currentTab === item.id;
-            return (
-              <li key={item.id}>
-                <button
-                  className={`nav-link-btn ${isActive ? 'active' : ''}`}
-                  onClick={() => onSelectTab(item.id)}
-                >
-                  <Icon size={16} />
-                  <span>{item.label}</span>
-                </button>
-              </li>
-            );
-          })}
-        </ul>
-      </nav>
+      <div className="nav-links-track">
+        <nav>
+          <ul className="nav-links">
+            {navItems.map((item) => {
+              const Icon = item.icon;
+              const isActive = currentTab === item.id;
+              return (
+                <li key={item.id}>
+                  <button
+                    className={`nav-link-btn ${isActive ? 'active' : ''}`}
+                    onClick={() => onSelectTab(item.id)}
+                  >
+                    <Icon size={15} />
+                    <span>{item.label}</span>
+                  </button>
+                </li>
+              );
+            })}
+          </ul>
+        </nav>
+      </div>
 
       <div className="nav-controls">
         <button className="icon-btn" onClick={onOpenSearch} title="검색 (Ctrl+K)">
