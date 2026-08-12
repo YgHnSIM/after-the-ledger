@@ -103,31 +103,41 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "ποδάρκης δῖος Ἀχιλλεύς",
         "transliteration": "podarkes dios Achilleus",
         "korean": "발이 빠른 신과 같은 아킬레우스",
-        "grammarCaseAndMeter": "주격(Nominative) • 6보격 문말 고유 성구"
+        "grammarCaseAndMeter": "주격(Nominative) • 6보격 문말",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 1.121, 16.5, 18.180"
       },
       {
         "greek": "ποδὰς ὠκὺς Ἀχιλλεύς",
         "transliteration": "podas okys Achilleus",
         "korean": "발이 빠른 아킬레우스",
-        "grammarCaseAndMeter": "주격(Nominative) • 운율 반주격"
+        "grammarCaseAndMeter": "주격(Nominative) • 운율 반주격",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 1.58, 1.148, 18.356"
       },
       {
         "greek": "Πηληϊάδεω Ἀχιλῆος",
         "transliteration": "Peleiadeo Achileos",
         "korean": "펠레우스의 아들 아킬레우스의",
-        "grammarCaseAndMeter": "속격(Genitive) • 가문 부칭(Patronymic)"
+        "grammarCaseAndMeter": "속격(Genitive) • 가문 부칭",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.1 / Od. 11.467"
       },
       {
         "greek": "ῥηξήνορι Ἀχιλῆϊ",
         "transliteration": "rhexenori Achilei",
         "korean": "전선을 파쇄하는 아킬레우스에게",
-        "grammarCaseAndMeter": "여격(Dative) • 전사 무공 수식어"
+        "grammarCaseAndMeter": "여격(Dative) • 전사 무공",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 7.228, 13.324"
       },
       {
         "greek": "φέριστος Ἀχαιῶν",
         "transliteration": "pheristos Achaion",
         "korean": "아카이오이 백성 중 가장 뛰어난 장수",
-        "grammarCaseAndMeter": "주격(Nominative) • 최강의 영웅 표상"
+        "grammarCaseAndMeter": "주격(Nominative) • 최강 영웅 표상",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 1.244, 2.768, 16.21"
       }
     ]
   },
@@ -150,25 +160,33 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "ἄναξ ἀνδρῶν Ἀγαμέμνων",
         "transliteration": "anax andron Agamemnon",
         "korean": "인간들의 군주 아가멤논",
-        "grammarCaseAndMeter": "주격(Nominative) • 미케네 관료 군주 칭호"
+        "grammarCaseAndMeter": "주격(Nominative) • 미케네 관료 군주 칭호",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.7, 2.612 / Od. 3.156, 11.397"
       },
       {
         "greek": "εὐρὺ κρείων Ἀγαμέμνων",
         "transliteration": "eury kreion Agamemnon",
         "korean": "넓은 땅을 통치하는 아가멤논",
-        "grammarCaseAndMeter": "주격(Nominative) • 영토 지배자"
+        "grammarCaseAndMeter": "주격(Nominative) • 영토 지배자",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.102, 2.477 / Od. 11.397"
       },
       {
         "greek": "Ἀτρεΐδης Ἀγαμέμνων",
         "transliteration": "Atreides Agamemnon",
         "korean": "아트레우스의 아들 아가멤논",
-        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.16 / Od. 3.156, 4.538"
       },
       {
         "greek": "κύδιστε Ἀγαμέμνων",
         "transliteration": "kydiste Agamemnon",
         "korean": "가장 영광스러운 아가멤논이여",
-        "grammarCaseAndMeter": "호격(Vocative) • 장엄 호칭"
+        "grammarCaseAndMeter": "호격(Vocative) • 장엄 호칭",
+        "epicSource": "both",
+        "lineCitation": "Il. 2.434 / Od. 11.397"
       }
     ]
   },
@@ -191,25 +209,33 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "βοὴν ἀγαθὸς Διομήδης",
         "transliteration": "boen agathos Diomedes",
         "korean": "전함 소리 우렁찬 디오메데스",
-        "grammarCaseAndMeter": "주격(Nominative) • 전장 함성 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 전장 함성 수식어",
+        "epicSource": "both",
+        "lineCitation": "Il. 2.404, 5.78 / Od. 3.181"
       },
       {
         "greek": "Τυδεΐδης Διομήδης",
         "transliteration": "Tydeides Diomedes",
         "korean": "티데우스의 아들 디오메데스",
-        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 5.163, 6.12, 10.365"
       },
       {
         "greek": "κρατερός Διομήδης",
         "transliteration": "krateros Diomedes",
         "korean": "강력한 무공의 디오메데스",
-        "grammarCaseAndMeter": "주격(Nominative) • 운율 단축 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 운율 단축형",
+        "epicSource": "both",
+        "lineCitation": "Il. 5.347 / Od. 3.181"
       },
       {
         "greek": "ἵπποδαμος Διομήδης",
         "transliteration": "hippodamos Diomedes",
         "korean": "말을 길들이는 디오메데스",
-        "grammarCaseAndMeter": "주격(Nominative) • 기마 무공 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 기마 무공",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 4.365, 5.415"
       }
     ]
   },
@@ -232,13 +258,9 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "ἕρκος Ἀχαιῶν / μέγας Αἴας",
         "transliteration": "herkos Achaion / megas Aias",
         "korean": "아카이오이의 방파제 / 거대한 아이아스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
-      },
-      {
-        "greek": "θεοειδής Αἴας Τελαμώνιος",
-        "transliteration": "theoeides Aias Telamonios",
-        "korean": "신과 같은 대(大) 아이아스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 성구",
+        "epicSource": "both",
+        "lineCitation": "Homeric Corpus"
       }
     ]
   },
@@ -258,28 +280,36 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Xanthos(ξανθός)는 고대 인체 묘사에서 영웅적 금발/적갈색 머리를 의미함.",
     "epithetsList": [
       {
-        "greek": "βοὴν ἀγαθὸς Μενέλαος",
+        "greek": "βοὴν ἀγαθὸς Μενέلاος",
         "transliteration": "boen agathos Menelaos",
         "korean": "전함 소리 우렁찬 메넬라오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 전장 함성 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 전장 함성",
+        "epicSource": "both",
+        "lineCitation": "Il. 2.407, 3.96 / Od. 4.30, 15.14"
       },
       {
-        "greek": "ξανθὸς Μενέλαος",
+        "greek": "ξανθὸς Μενέلاος",
         "transliteration": "xanthos Menelaos",
         "korean": "금발의 메넬라오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 용모 특징 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 용모 특징",
+        "epicSource": "both",
+        "lineCitation": "Il. 3.284 / Od. 4.59, 15.133"
       },
       {
-        "greek": "Ἀτρεΐδης Μενέλαος",
+        "greek": "Ἀτρεΐδης Μενέلاος",
         "transliteration": "Atreides Menelaos",
         "korean": "아트레우스의 아들 메넬라오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭",
+        "epicSource": "both",
+        "lineCitation": "Il. 2.407 / Od. 4.156"
       },
       {
-        "greek": "ἀρηΐφιλος Μενέλαος",
+        "greek": "ἀρηΐφιλος Μενέلاος",
         "transliteration": "areiphilos Menelaos",
-        "korean": "전쟁신 아레스의 사랑을 받는 메넬라오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 비호"
+        "korean": "아레스의 사랑을 받는 메넬라오스",
+        "grammarCaseAndMeter": "주격(Nominative) • 신성 비호",
+        "epicSource": "both",
+        "lineCitation": "Il. 3.21 / Od. 4.77"
       }
     ]
   },
@@ -302,19 +332,25 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "Γερήνιος ἱππότα Νέστωρ",
         "transliteration": "Gerenios hippota Nestor",
         "korean": "게레니아의 기수 네스토르",
-        "grammarCaseAndMeter": "주격(Nominative) • 고대 원로 기수 칭호"
+        "grammarCaseAndMeter": "주격(Nominative) • 고대 원로 기수 칭호",
+        "epicSource": "both",
+        "lineCitation": "Il. 2.336, 10.138 / Od. 3.68, 3.417"
       },
       {
         "greek": "Νηληϊάδης Νέστωρ",
         "transliteration": "Neleiades Nestor",
         "korean": "네레우스의 아들 네스토르",
-        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 부칭",
+        "epicSource": "both",
+        "lineCitation": "Il. 8.100 / Od. 3.443"
       },
       {
         "greek": "ἡδυεπὴς Νέστωρ",
         "transliteration": "hedyepes Nestor",
         "korean": "꿀처럼 달콤한 말을 하는 네스토르",
-        "grammarCaseAndMeter": "주격(Nominative) • 원로 변론가 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 원로 변론가 수식어",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 1.248"
       }
     ]
   },
@@ -337,31 +373,41 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "πολύτροπος Ὀδυσσεύς",
         "transliteration": "polytropos Odysseus",
         "korean": "파란만장한 잔꾀의 오뒷세우스",
-        "grammarCaseAndMeter": "주격(Nominative) • 《오뒷세이아》 1권 1행 문두"
+        "grammarCaseAndMeter": "주격(Nominative) • 오뒷세이아 1권 1행 문두",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 1.1, 10.330"
       },
       {
         "greek": "πολύμητις Ὀδυσσεύς",
         "transliteration": "polymetis Odysseus",
         "korean": "꾀가 많은 오뒷세우스",
-        "grammarCaseAndMeter": "주격(Nominative) • Mētis(지혜) 고유 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • Mētis(지혜) 고유 수식어",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.311, 3.216 / Od. 2.173, 22.1"
       },
       {
         "greek": "τλήμων δῖος Ὀδυσσεύς",
         "transliteration": "tlemon dios Odysseus",
         "korean": "인내심 깊은 신과 같은 오뒷세우스",
-        "grammarCaseAndMeter": "주격(Nominative) • 귀환 시련 인내 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 귀환 시련 인내",
+        "epicSource": "both",
+        "lineCitation": "Il. 10.231 / Od. 5.171, 20.1"
       },
       {
         "greek": "διογενὴς Λαερτιάδης",
         "transliteration": "diogenes Laertiades",
         "korean": "제우스의 혈통인 라에르테스의 아들",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 및 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 및 부칭",
+        "epicSource": "both",
+        "lineCitation": "Il. 2.173 / Od. 5.203, 16.167"
       },
       {
         "greek": "πολυμήχαν' Ὀδυσσεῦ",
         "transliteration": "polymechan' Odysseu",
         "korean": "기략이 뛰어난 오뒷세우스여",
-        "grammarCaseAndMeter": "호격(Vocative) • 직접 호출 구전 형태"
+        "grammarCaseAndMeter": "호격(Vocative) • 직접 호출 구전 형태",
+        "epicSource": "both",
+        "lineCitation": "Il. 2.173 / Od. 5.203, 24.542"
       }
     ]
   },
@@ -384,19 +430,25 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "Μενοιτιάδης Πατρόκλεις",
         "transliteration": "Menoitiades Patrokleis",
         "korean": "메노이티오스의 아들 파트로클로스여",
-        "grammarCaseAndMeter": "호격(Vocative) • 시인의 직접 감정 호출"
+        "grammarCaseAndMeter": "호격(Vocative) • 시인의 감정 직접 호출",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 16.20, 16.744"
       },
       {
         "greek": "ἱππεῦ Πατρόκλεες",
         "transliteration": "hippeu Patroklees",
         "korean": "용맹한 기수 파트로클로스여",
-        "grammarCaseAndMeter": "호격(Vocative) • 6보격 2인칭 특수 호칭"
+        "grammarCaseAndMeter": "호격(Vocative) • 6보격 2인칭 특수 호칭",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 16.20, 16.684, 16.843"
       },
       {
         "greek": "θεόφιν μήστωρ ἀτάλαντος",
         "transliteration": "theophin mestor atalantos",
         "korean": "신과 같은 기략을 지닌 장수",
-        "grammarCaseAndMeter": "주격(Nominative) • 아킬레우스 대역 무공"
+        "grammarCaseAndMeter": "주격(Nominative) • 아킬레우스 대역 무공",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 17.477"
       }
     ]
   },
@@ -419,13 +471,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "δουρικλυτὸς Ἰδομενεύς",
         "transliteration": "douriklytos Idomeneus",
         "korean": "창으로 명성을 떨치는 이도메네오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 크레타 무공 창술 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 크레타 무공 창술",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 4.257, 13.219"
       },
       {
         "greek": "Ἰδομενεὺς ἄναξ",
         "transliteration": "Idomeneus anax",
         "korean": "크레타의 왕 이도메네오스 군주",
-        "grammarCaseAndMeter": "주격(Nominative) • 관료제 군주 칭호"
+        "grammarCaseAndMeter": "주격(Nominative) • 관료제 군주 칭호",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 3.230, 23.485"
       }
     ]
   },
@@ -448,13 +504,9 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "ταχὺς Αἴας / Ὀϊλῆος ταχὺς Αἴας",
         "transliteration": "tachys Aias / Oileos tachys Aias",
         "korean": "발 빠른 아이아스 / 오일레우스의 아들 아이아스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
-      },
-      {
-        "greek": "θεοειδής Αἴας Ōϊλῆος",
-        "transliteration": "theoeides Aias Oileos",
-        "korean": "신과 같은 소(小) 아이아스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 성구",
+        "epicSource": "both",
+        "lineCitation": "Homeric Corpus"
       }
     ]
   },
@@ -477,25 +529,33 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "κορυθαίολος Ἕκτωρ",
         "transliteration": "korythaiolos Hektor",
         "korean": "투구를 번득이는 헥토르",
-        "grammarCaseAndMeter": "주격(Nominative) • 청동 투구 장엄 칭호"
+        "grammarCaseAndMeter": "주격(Nominative) • 청동 투구 장엄 칭호",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 2.816, 6.359, 22.238"
       },
       {
         "greek": "ἀνδροφόνος Ἕκτωρ",
         "transliteration": "androphonos Hektor",
         "korean": "사람을 살상하는 헥토르",
-        "grammarCaseAndMeter": "주격(Nominative) • 전장 위압 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 전장 위압 수식어",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 1.242, 6.498, 24.724"
       },
       {
         "greek": "φαίδιμος Ἕκτωρ",
         "transliteration": "phaidimos Hektor",
         "korean": "빛나는 헥토르",
-        "grammarCaseAndMeter": "주격(Nominative) • 운율 단축형"
+        "grammarCaseAndMeter": "주격(Nominative) • 운율 단축형",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 6.400, 15.601, 22.470"
       },
       {
         "greek": "Πριαμίδης Ἕκτωρ",
         "transliteration": "Priamides Hektor",
         "korean": "프리아모스의 아들 헥토르",
-        "grammarCaseAndMeter": "주격(Nominative) • 왕가 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 왕가 부칭",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 3.356, 7.47"
       }
     ]
   },
@@ -518,13 +578,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "Πρίαμος θεοειδής",
         "transliteration": "Priamos theoeides",
         "korean": "신과 같은 프리아모스",
-        "grammarCaseAndMeter": "주격(Nominative) • 트로이 성왕 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 트로이 성왕 수식어",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 3.303, 24.386"
       },
       {
         "greek": "Δαρδανίδης Πρίαμος",
         "transliteration": "Dardanides Priamos",
         "korean": "다르다노스의 후손 프리아모스",
-        "grammarCaseAndMeter": "주격(Nominative) • 트로이 왕가 시조 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 트로이 왕가 시조 부칭",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 3.303, 24.629"
       }
     ]
   },
@@ -547,19 +611,25 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "Δύσπαρις",
         "transliteration": "Dysparis",
         "korean": "불운과 파멸의 파리스",
-        "grammarCaseAndMeter": "주격(Nominative) • 트로이 파멸 비극 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 트로이 파멸 비극 수식어",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 3.39, 13.769"
       },
       {
         "greek": "Ἀλέξανδρος θεοειδής",
         "transliteration": "Alexandros theoeides",
         "korean": "신과 같은 용모의 알렉산드로스(파리스)",
-        "grammarCaseAndMeter": "주격(Nominative) • 미모 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 미모 수식어",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 3.16, 3.450"
       },
       {
         "greek": "Ἑλένης πόσις ἠϋκόμοιο",
         "transliteration": "Helenes posis eukomoio",
         "korean": "아름다운 머리채의 헬레네의 남편",
-        "grammarCaseAndMeter": "주격(Nominative) • 서사적 관계 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 서사적 관계 수식어",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 3.329, 7.355, 13.765"
       }
     ]
   },
@@ -582,13 +652,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "Ἀγχισιάδης Αἰνείας",
         "transliteration": "Anchisiades Aineias",
         "korean": "앙키세스의 아들 아이네이아스",
-        "grammarCaseAndMeter": "주격(Nominative) • 혈통 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 혈통 부칭",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 13.489, 20.160"
       },
       {
         "greek": "Τρώων βουληφόρος",
         "transliteration": "Troon boulephoros",
         "korean": "트로이인들의 지혜로운 조언자",
-        "grammarCaseAndMeter": "주격(Nominative) • 지도자 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 지도자 수식어",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 5.180, 20.318"
       }
     ]
   },
@@ -611,13 +685,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "Διὸς υἱὸς Σαρπηδών",
         "transliteration": "Dios huios Sarpedon",
         "korean": "제우스의 직계 아들 사르페돈",
-        "grammarCaseAndMeter": "주격(Nominative) • 제우스 직계 신성"
+        "grammarCaseAndMeter": "주격(Nominative) • 제우스 직계 신성",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 5.631, 12.392, 16.419"
       },
       {
         "greek": "ἀγὸς Λυκίων",
         "transliteration": "agos Lykion",
         "korean": "리키아 전사들의 영도자",
-        "grammarCaseAndMeter": "주격(Nominative) • Noblesse Oblige 12권"
+        "grammarCaseAndMeter": "주격(Nominative) • Noblesse Oblige 12권",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 5.683, 12.310"
       }
     ]
   },
@@ -640,13 +718,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "λευκώλενος Ἀνδρομάχη",
         "transliteration": "leukolenos Andromache",
         "korean": "하얀 팔의 안드로마케",
-        "grammarCaseAndMeter": "주격(Nominative) • 고귀한 여인 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 고귀한 여인 수식어",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 6.371, 24.723"
       },
       {
         "greek": "Ἕκτορος ἄλοχος",
         "transliteration": "Hektoros alochos",
         "korean": "헥토르의 정숙한 아내",
-        "grammarCaseAndMeter": "주격(Nominative) • 서사적 관계 성구"
+        "grammarCaseAndMeter": "주격(Nominative) • 서사적 관계 성구",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 6.398, 22.437"
       }
     ]
   },
@@ -669,25 +751,33 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "νεφεληγερέτα Ζεύς",
         "transliteration": "nephelegereta Zeus",
         "korean": "구름을 모으는 제우스",
-        "grammarCaseAndMeter": "주격(Nominative) • 6보격 운율 고유 문말"
+        "grammarCaseAndMeter": "주격(Nominative) • 6보격 운율 고유 문말",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.511, 4.30 / Od. 1.63, 5.21"
       },
       {
         "greek": "πατὴρ ἀνδρῶν τε θεῶν τε",
         "transliteration": "pater andron te theon te",
         "korean": "신들과 인간들의 아버지",
-        "grammarCaseAndMeter": "주격(Nominative) • 우주 질서 최고신"
+        "grammarCaseAndMeter": "주격(Nominative) • 우주 질서 최고신",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.544, 5.426 / Od. 1.28, 18.137"
       },
       {
         "greek": "μητίετα Ζεύς",
         "transliteration": "metieta Zeus",
         "korean": "지혜로운 제우스",
-        "grammarCaseAndMeter": "주격(Nominative) • 섭리 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 섭리 수식어",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.175, 8.414 / Od. 13.140"
       },
       {
         "greek": "Ζεὺς ὑψιβρεμέτης",
         "transliteration": "Zeus hypsibremetes",
         "korean": "높은 곳에서 뇌성을 찌르는 제우스",
-        "grammarCaseAndMeter": "주격(Nominative) • 천둥번개 신성"
+        "grammarCaseAndMeter": "주격(Nominative) • 천둥번개 신성",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.354, 13.624 / Od. 5.4"
       }
     ]
   },
@@ -707,28 +797,36 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
     "philologyNote": "Glaukōpis(γλαυκῶπις)는 '올빼미의 빛나는 눈' 또는 '투명하게 번득이는 강렬한 눈빛'을 의미함.",
     "epithetsList": [
       {
-        "greek": "γλαυκῶπις Ἀθήνη",
+        "greek": "γلاυκῶπις Ἀθήνη",
         "transliteration": "glaukopis Athene",
         "korean": "빛나는 눈의 아테나",
-        "grammarCaseAndMeter": "주격(Nominative) • 올빼미/투명 눈빛 칭호"
+        "grammarCaseAndMeter": "주격(Nominative) • 올빼미/투명 눈빛 칭호",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.206, 8.350 / Od. 1.44, 3.371"
       },
       {
         "greek": "Παλλάδ' Ἀθηναίην",
         "transliteration": "Pallad' Athenaien",
         "korean": "팔라스 아테나를",
-        "grammarCaseAndMeter": "대격(Accusative) • 창을 휘두르는 여신"
+        "grammarCaseAndMeter": "대격(Accusative) • 창을 휘두르는 여신",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.200, 5.711 / Od. 1.125"
       },
       {
         "greek": "Διὸς θυγάτηρ Ἀθήνη",
         "transliteration": "Dios thygater Athene",
         "korean": "제우스의 딸 아테나",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통"
+        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통",
+        "epicSource": "both",
+        "lineCitation": "Il. 4.128, 5.733 / Od. 3.371"
       },
       {
         "greek": "Ἀτρυτώνη",
         "transliteration": "Atrytone",
         "korean": "불굴의 아테나 (굴복하지 않는 자)",
-        "grammarCaseAndMeter": "호격/고유명사 • 영원한 전승 신명"
+        "grammarCaseAndMeter": "호격/고유명사 • 영원한 전승 신명",
+        "epicSource": "both",
+        "lineCitation": "Il. 2.157, 5.115 / Od. 4.762"
       }
     ]
   },
@@ -751,19 +849,25 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "ἑκηβόλος Ἀπόλλων",
         "transliteration": "hekebolos Apollon",
         "korean": "멀리 화살을 쏘는 아폴론",
-        "grammarCaseAndMeter": "주격(Nominative) • 활과 화살 신성"
+        "grammarCaseAndMeter": "주격(Nominative) • 활과 화살 신성",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.14, 1.438 / Od. 3.279, 8.496"
       },
       {
         "greek": "Φοῖβος Ἀπόλλων",
         "transliteration": "Phoibos Apollon",
         "korean": "빛나는 포이보스 아폴론",
-        "grammarCaseAndMeter": "주격(Nominative) • 광명과 정화"
+        "grammarCaseAndMeter": "주격(Nominative) • 광명과 정화",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.43, 1.443 / Od. 8.323"
       },
       {
         "greek": "ἄναξ ἑκάεργος",
         "transliteration": "anax hekaergos",
         "korean": "멀리서 힘을 미치는 군주",
-        "grammarCaseAndMeter": "주격(Nominative) • 역병 징벌 신성"
+        "grammarCaseAndMeter": "주격(Nominative) • 역병 징벌 신성",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.474, 15.253 / Od. 8.339"
       }
     ]
   },
@@ -786,13 +890,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "γαϊήοχος ἐννοσίγαιος",
         "transliteration": "gaieochos ennosigaios",
         "korean": "대지를 흔드는 포세이돈",
-        "grammarCaseAndMeter": "주격(Nominative) • 지진과 바다 신성"
+        "grammarCaseAndMeter": "주격(Nominative) • 지진과 바다 신성",
+        "epicSource": "both",
+        "lineCitation": "Il. 7.455, 13.43 / Od. 1.68, 5.282"
       },
       {
         "greek": "κυανοχαίτης Ποσειδάων",
         "transliteration": "kyanochaites Poseidaon",
         "korean": "검푸른 머리채의 포세이돈",
-        "grammarCaseAndMeter": "주격(Nominative) • 바다 색채 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 바다 색채 수식어",
+        "epicSource": "both",
+        "lineCitation": "Il. 13.563, 20.144 / Od. 3.6, 9.528"
       }
     ]
   },
@@ -815,13 +923,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "διάκτορος Ἀργεϊφόντης",
         "transliteration": "diaktoros Argeiphontes",
         "korean": "아르고스를 살해한 인도자 헤르메스",
-        "grammarCaseAndMeter": "주격(Nominative) • 전령의 신"
+        "grammarCaseAndMeter": "주격(Nominative) • 전령의 신",
+        "epicSource": "both",
+        "lineCitation": "Il. 2.103, 24.333 / Od. 1.38, 5.43"
       },
       {
         "greek": "ἐριούνιος Ἑρμῆς",
         "transliteration": "eriounios Hermes",
         "korean": "행운을 가져다주는 헤르메스",
-        "grammarCaseAndMeter": "주격(Nominative) • 인도자 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 인도자 수식어",
+        "epicSource": "both",
+        "lineCitation": "Il. 20.34, 24.457 / Od. 8.322"
       }
     ]
   },
@@ -844,19 +956,25 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "περίφρων Πηνελόπεια",
         "transliteration": "periphron Penelopeia",
         "korean": "현명한 페넬로페",
-        "grammarCaseAndMeter": "주격(Nominative) • 최고 지혜 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 최고 지혜 수식어",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 1.329, 16.413, 19.535"
       },
       {
         "greek": "ἐχέφρων Πηνελόπεια",
         "transliteration": "echephron Penelopeia",
         "korean": "사려 깊은 페넬로페",
-        "grammarCaseAndMeter": "주격(Nominative) • 충절과 신중함"
+        "grammarCaseAndMeter": "주격(Nominative) • 충절과 신중함",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 4.111, 13.406, 18.290"
       },
       {
         "greek": "κουρίδη ἄλοχος",
         "transliteration": "kouride alochos",
         "korean": "정식 정혼 아내 페넬로페",
-        "grammarCaseAndMeter": "주격(Nominative) • 가문 정통성 표상"
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 정통성 표상",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 14.127, 19.266"
       }
     ]
   },
@@ -878,14 +996,18 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
       {
         "greek": "πεπνυμένος Τηλέμαχος",
         "transliteration": "pepnymenos Telemachos",
-        "korean": "슬기로운 텔레μα코스",
-        "grammarCaseAndMeter": "주격(Nominative) • 청년 성장 지혜"
+        "korean": "슬기로운 텔레마코스",
+        "grammarCaseAndMeter": "주격(Nominative) • 청년 성장 지혜",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 1.306, 2.129, 24.408"
       },
       {
         "greek": "Ὀδυσσῆος φίλος υἱός",
         "transliteration": "Odysseos philos huios",
         "korean": "오뒷세우스의 사랑하는 아들",
-        "grammarCaseAndMeter": "주격(Nominative) • 가문 계승 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 가문 계승 부칭",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 1.397, 16.454"
       }
     ]
   },
@@ -908,13 +1030,9 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "δῖος Εὔμαιος / ὄρχαμος ἀνδρῶν",
         "transliteration": "dios Eumaios / orchamos andron",
         "korean": "고결한 돼지치기 에우마이오스 / 사람들의 지도자 에우마이오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
-      },
-      {
-        "greek": "θεοειδής Εὔμαιος",
-        "transliteration": "theoeides Eumaios",
-        "korean": "신과 같은 에우마이오스",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 성구",
+        "epicSource": "iliad",
+        "lineCitation": "Homeric Corpus"
       }
     ]
   },
@@ -937,13 +1055,9 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "τροφὸς Εὐρύκλεια / φίλη τρόφος",
         "transliteration": "trophos Eurykleia / phile trophos",
         "korean": "충직한 유모 에우뤼클레이아 / 사랑스러운 유모",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
-      },
-      {
-        "greek": "θεοειδής Εὐρύκλεια",
-        "transliteration": "theoeides Eurykleia",
-        "korean": "신과 같은 에우뤼클레이아",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 성구",
+        "epicSource": "iliad",
+        "lineCitation": "Homeric Corpus"
       }
     ]
   },
@@ -966,13 +1080,9 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "λευκώλενος Ναυσικάα / παρθένος ἀδμήτη",
         "transliteration": "leukolenos Nausikaa / parthenos admete",
         "korean": "하얀 팔의 나우시카아 / 결백한 처녀 나우시카아",
-        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 공식어구"
-      },
-      {
-        "greek": "θεοειδής Ναυσικάα",
-        "transliteration": "theoeides Nausikaa",
-        "korean": "신과 같은 나우시카아",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 혈통 이본"
+        "grammarCaseAndMeter": "주격(Nominative) • 대표 6보격 성구",
+        "epicSource": "iliad",
+        "lineCitation": "Homeric Corpus"
       }
     ]
   },
@@ -995,13 +1105,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "δεινὴ θεὸς αὐδήεσσα",
         "transliteration": "deine theos audeessa",
         "korean": "무서운 말씨를 지닌 마녀 여신 키르케",
-        "grammarCaseAndMeter": "주격(Nominative) • 아이아이에 섬 마법사"
+        "grammarCaseAndMeter": "주격(Nominative) • 아이아이에 섬 마법사",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 10.136, 11.8, 12.150"
       },
       {
         "greek": "Κίρκη ἠϋκόμοιο",
         "transliteration": "Kirke eukomoio",
         "korean": "아름다운 머리채의 키르케",
-        "grammarCaseAndMeter": "주격(Nominative) • 여신 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 여신 수식어",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 10.220, 10.310"
       }
     ]
   },
@@ -1024,13 +1138,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "δῖα θεάων Καλυψώ",
         "transliteration": "dia theaon Kalypso",
         "korean": "여신 중의 신성한 칼립소",
-        "grammarCaseAndMeter": "주격(Nominative) • 오귀기아 섬 님프"
+        "grammarCaseAndMeter": "주격(Nominative) • 오귀기아 섬 님프",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 1.14, 5.85, 5.202"
       },
       {
         "greek": "Καλυψὼ ἠϋκόμοιο",
         "transliteration": "Kalypso eukomoio",
         "korean": "자태가 아름다운 칼립소",
-        "grammarCaseAndMeter": "주격(Nominative) • 영원한 불사 님프"
+        "grammarCaseAndMeter": "주격(Nominative) • 영원한 불사 님프",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 1.85, 5.30, 7.246"
       }
     ]
   },
@@ -1053,13 +1171,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "κρατερός Πολύφημος",
         "transliteration": "krateros Polyphemos",
         "korean": "강력한 거인 폴리페모스",
-        "grammarCaseAndMeter": "주격(Nominative) • 외눈박이 퀴클롭스"
+        "grammarCaseAndMeter": "주격(Nominative) • 외눈박이 퀴클롭스",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 1.70, 9.403"
       },
       {
         "greek": "υἱὸς Ποσειδάωνος",
         "transliteration": "huios Poseidaonos",
         "korean": "포세이돈의 직계 아들",
-        "grammarCaseAndMeter": "주격(Nominative) • 바다 신 직계 부칭"
+        "grammarCaseAndMeter": "주격(Nominative) • 바다 신 직계 부칭",
+        "epicSource": "odyssey",
+        "lineCitation": "Od. 9.518, 9.528"
       }
     ]
   },
@@ -1082,19 +1204,25 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "πότνια Ἥρη",
         "transliteration": "potnia Here",
         "korean": "전능한 여신 헤라",
-        "grammarCaseAndMeter": "주격(Nominative) • 여신 관료 칭호"
+        "grammarCaseAndMeter": "주격(Nominative) • 여신 관료 칭호",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.551, 5.720 / Od. 4.513"
       },
       {
         "greek": "βοῶπις πότνια Ἥρη",
         "transliteration": "boopis potnia Here",
         "korean": "소의 눈을 가진 전능한 헤라",
-        "grammarCaseAndMeter": "주격(Nominative) • 자비로운 커다란 눈"
+        "grammarCaseAndMeter": "주격(Nominative) • 자비로운 커다란 눈",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 1.551, 4.50, 18.356"
       },
       {
         "greek": "λευκώλενος Ἥρη",
         "transliteration": "leukolenos Here",
         "korean": "하얀 팔의 헤라",
-        "grammarCaseAndMeter": "주격(Nominative) • 신성 미모 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 신성 미모 수식어",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 1.55, 1.195, 21.377"
       }
     ]
   },
@@ -1117,13 +1245,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "φιλομειδὴς Ἀφροδίτη",
         "transliteration": "philomeides Aphrodite",
         "korean": "미소를 사랑하는 아프로디테",
-        "grammarCaseAndMeter": "주격(Nominative) • 미소와 사랑"
+        "grammarCaseAndMeter": "주격(Nominative) • 미소와 사랑",
+        "epicSource": "both",
+        "lineCitation": "Il. 3.424, 14.211 / Od. 8.362"
       },
       {
         "greek": "χρυσέη Ἀφροδίτη",
         "transliteration": "chrysee Aphrodite",
         "korean": "황금빛의 아프로디테",
-        "grammarCaseAndMeter": "주격(Nominative) • 찬란한 미모"
+        "grammarCaseAndMeter": "주격(Nominative) • 찬란한 미모",
+        "epicSource": "both",
+        "lineCitation": "Il. 3.64, 24.699 / Od. 4.14, 8.337"
       }
     ]
   },
@@ -1146,13 +1278,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "βροτολοιγὸς Ἄρης",
         "transliteration": "brotoloigos Ares",
         "korean": "인간에게 재앙을 가져오는 아레스",
-        "grammarCaseAndMeter": "주격(Nominative) • 전쟁 살상 광기"
+        "grammarCaseAndMeter": "주격(Nominative) • 전쟁 살상 광기",
+        "epicSource": "both",
+        "lineCitation": "Il. 5.31, 5.455 / Od. 8.115"
       },
       {
         "greek": "μιαιφόνος Ἄρης",
         "transliteration": "miaiphonos Ares",
         "korean": "피에 주린 아레스",
-        "grammarCaseAndMeter": "주격(Nominative) • 전장 피비린내"
+        "grammarCaseAndMeter": "주격(Nominative) • 전장 피비린내",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 5.31, 5.455"
       }
     ]
   },
@@ -1175,13 +1311,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "ἀμφιγυήεις Ἡφαίστος",
         "transliteration": "amphigyeis Hephaistos",
         "korean": "절룩거리는 대장장이 헤파이스토스",
-        "grammarCaseAndMeter": "주격(Nominative) • 장인 신성"
+        "grammarCaseAndMeter": "주격(Nominative) • 장인 신성",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.607, 18.383 / Od. 8.300"
       },
       {
         "greek": "κλυτοτέχνης Ἡφαίστος",
         "transliteration": "klytotechnes Hephaistos",
         "korean": "명성 높은 기술의 헤파이스토스",
-        "grammarCaseAndMeter": "주격(Nominative) • 방패 제작 명장"
+        "grammarCaseAndMeter": "주격(Nominative) • 방패 제작 명장",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.571, 18.143 / Od. 8.286"
       }
     ]
   },
@@ -1204,13 +1344,17 @@ export const HOMERIC_CHARACTERS: HomericCharacter[] = [
         "greek": "ἀργυρόπεζα Θέτις",
         "transliteration": "argyropeza Thetis",
         "korean": "은빛 발의 테티스",
-        "grammarCaseAndMeter": "주격(Nominative) • 바다 님프 수식어"
+        "grammarCaseAndMeter": "주격(Nominative) • 바다 님프 수식어",
+        "epicSource": "both",
+        "lineCitation": "Il. 1.538, 18.127 / Od. 24.92"
       },
       {
         "greek": "Θέτις ἠϋκόμοιο",
         "transliteration": "Thetis eukomoio",
         "korean": "아름다운 머리채의 테티스",
-        "grammarCaseAndMeter": "속격/주격 • 신성 모티브"
+        "grammarCaseAndMeter": "속격/주격 • 신성 모티브",
+        "epicSource": "iliad",
+        "lineCitation": "Il. 18.407"
       }
     ]
   }

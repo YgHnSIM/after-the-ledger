@@ -105,6 +105,8 @@ export interface HomericEpithetItem {
   transliteration: string;     // e.g. "podarkes dios Achilleus"
   korean: string;              // e.g. "발이 빠른 신과 같은 아킬레우스"
   grammarCaseAndMeter: string; // e.g. "주격(Nominative) • 6보격 문말(Verse-end)"
+  epicSource: 'iliad' | 'odyssey' | 'both'; // 원전 출처 구분: 'iliad' | 'odyssey' | 'both'
+  lineCitation?: string;       // e.g. "Il. 1.121" | "Od. 1.1" | "Il. 1.7 / Od. 1.28"
 }
 
 export interface HomericCharacter {

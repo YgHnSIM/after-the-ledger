@@ -289,14 +289,20 @@ export const HomericEpicView: React.FC = () => {
                     {char.epithetsList && char.epithetsList.length > 0 ? (
                       char.epithetsList.map((ep, idx) => (
                         <div key={idx} style={{ background: 'var(--bg-surface)', padding: '0.5rem 0.7rem', borderRadius: 'var(--radius-sm)', borderLeft: '3px solid var(--civ-mesopotamia)' }}>
-                          <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-                            {ep.korean}
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.3rem' }}>
+                            <div style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+                              {ep.korean}
+                            </div>
+                            <span style={{ fontSize: '0.7rem', padding: '0.15rem 0.45rem', borderRadius: '4px', background: ep.epicSource === 'iliad' ? 'rgba(30, 64, 175, 0.12)' : ep.epicSource === 'odyssey' ? 'rgba(5, 150, 105, 0.12)' : 'rgba(217, 119, 6, 0.12)', color: ep.epicSource === 'iliad' ? 'var(--civ-greece)' : ep.epicSource === 'odyssey' ? 'var(--civ-israel)' : 'var(--civ-israel-judah)', fontWeight: 600 }}>
+                              {ep.epicSource === 'iliad' ? '📖 《일리아스》' : ep.epicSource === 'odyssey' ? '⛵ 《오뒷세이아》' : '🏛️ 《일리아스》·《오뒷세이아》 공통'}
+                            </span>
                           </div>
                           <div style={{ fontSize: '0.83rem', color: 'var(--civ-mesopotamia)', fontFamily: 'serif', fontWeight: 600 }}>
                             {ep.greek} ({ep.transliteration})
                           </div>
-                          <div style={{ fontSize: '0.73rem', color: 'var(--text-muted)', fontFamily: 'var(--font-cinzel)', marginTop: '0.15rem' }}>
-                            🏷️ {ep.grammarCaseAndMeter}
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.73rem', color: 'var(--text-muted)', fontFamily: 'var(--font-cinzel)', marginTop: '0.15rem' }}>
+                            <span>🏷️ {ep.grammarCaseAndMeter}</span>
+                            {ep.lineCitation && <span style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>📍 {ep.lineCitation}</span>}
                           </div>
                         </div>
                       ))
