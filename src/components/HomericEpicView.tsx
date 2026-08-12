@@ -34,7 +34,7 @@ export const HomericEpicView: React.FC = () => {
             className={`btn ${activeSection === 'books' ? 'btn-primary' : 'btn-secondary'}`}
             onClick={() => setActiveSection('books')}
           >
-            <BookOpen size={16} /> 48개 권별 독파 요약
+            <BookOpen size={16} /> {HOMERIC_BOOKS.length}개 권별 독파 요약
           </button>
           <button
             className={`btn ${activeSection === 'characters' ? 'btn-primary' : 'btn-secondary'}`}

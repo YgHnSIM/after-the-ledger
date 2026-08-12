@@ -1,6 +1,6 @@
 # Context & Domain Model — 장부 이후 (After the Ledger)
 
-이 문서는 <장부 이후 — 고대 문자문화 비교 연구 아틀라스> 프로젝트의 핵심 도메인 용어, 분석 단위, 학술 가치 체계, 서기관 제도 및 **호메로스 서사시(일리아스·오뒷세이아) 독파 가이드와 21세기 하버드 Homer Multitext 연구 성과**를 정립하는 바운디드 컨텍스트(Bounded Context) 정의서입니다.
+이 문서는 <장부 이후 — 고대 문자문화 비교 연구 아틀라스> 프로젝트의 핵심 도메인 용어, 분석 단위, 학술 가치 체계, 서기관 제도, **호메로스 서사시(일리아스·오뒷세이아 48개 권) 완독 가이드 및 21세기 디지털 에피그래피(Digital Epigraphy)** 학술 파라다임을 정립하는 바운디드 컨텍스트(Bounded Context) 정의서입니다.
 
 ---
 
@@ -8,7 +8,7 @@
 
 | 도메인 용어 | 영어 표기 | 식별자 | 정의 및 범위 |
 |---|---|---|---|
-| **단일 작품** | Single Work | `single-work` | 《일리아스》, 《길가메시 서사시》, 《바알 서사시》처럼 하나의 통일된 저작이나 가창 이야기 단위로 인식되는 문학·신화 텍스트. |
+| **단일 작품** | Single Work | `single-work` | 《일리아스》, 《오뒷세이아》, 《길가메시 서사시》, 《바알 서사시》처럼 하나의 통일된 저작이나 가창 이야기 단위로 인식되는 문학·신화 텍스트. |
 | **문헌 집성체** | Text Collection | `text-collection` | 우나스 피라미드 텍스트, 관 텍스트, 엔헤두안나 찬가처럼 여러 독립된 주문·찬가 단위가 특정 장례/제의 목적으로 수집된 집합. |
 | **문서군·코퍼스** | Site Corpus | `corpus` | 우루크 점토판 아카이브, 필로스 Linear B 아카이브, 메토네 비문처럼 특정 장소나 출토지 문서 전체. |
 | **전승 전통** | Transmission Tradition | `tradition` | 히브리 성서 전승(사해문서~마소라), 바빌로니아 어휘목록 복제처럼 수세기에 걸친 필사, 재편집, 정경화 과정을 거친 전승 네트워크. |
@@ -52,7 +52,15 @@
 
 ---
 
-## 5. 출처 등급 체계 (Source Hierarchy)
+## 5. 21세기 첨단 디지털 에피그래피 (Digital Epigraphy & AI Reconstruction)
+
+1. **RTI (Reflectance Transformation Imaging)**: 마모되거나 침식된 석비·점토판 표면의 미세한 획 수축 각도를 360도 반사광 합성으로 복원하는 다각도 조명 비문 분석 기술.
+2. **MSI (Multi-Spectral Imaging)**: 사해문서 및 잉크 파피루스의 탄화된 표면에서 적외선/자외선 대역을 조영하여 육안으로 보이지 않는 고대 문자를 선명하게 읽어내는 다중스펙트럼 판독.
+3. **eBL AI (Electronic Babylonian Literature - LMU Munich)**: 무수한 쐐기문자 파편(Fragment)을 AI 딥러닝 알고리즘으로 자동 수색·재접합하여 잊혀진 바빌로니아 서사시 행을 자동 연결하는 21세기 디지털 비문학의 최신 혁신.
+
+---
+
+## 6. 출처 등급 체계 (Source Hierarchy)
 
 - **Grade A**: 유물 소장기관 공식 데이터베이스 (British Museum, Louvre, IMJ, IAA, CDLI, eBL, Homer Multitext Project).
 - **Grade B**: 동료평가(Peer-reviewed) 학술 저널 논문 및 대학 출판부(Cambridge, Oxford, Harvard) 단행본.

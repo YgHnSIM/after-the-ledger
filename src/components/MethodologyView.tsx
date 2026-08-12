@@ -137,6 +137,45 @@ export const MethodologyView: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* SECTION 5: 21ST CENTURY DIGITAL EPIGRAPHY */}
+      <section className="card" style={{ marginTop: '2rem', background: 'var(--bg-surface)' }}>
+        <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.5rem', marginBottom: '0.5rem' }}>
+          5. 21세기 디지털 에피그래피 (Digital Epigraphy & AI)
+        </h2>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.92rem', marginBottom: '1.25rem' }}>
+          고고학 및 문헌학 연구는 2020년대 들어 3D 조영 분석과 AI 알고리즘을 통해 마모된 비문을 정밀 복원하는 비약적 기술 혁신을 경험하고 있습니다.
+        </p>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.25rem' }}>
+          <div style={{ background: 'var(--bg-surface-elevated)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--civ-mesopotamia)' }}>
+            <div style={{ fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem', color: 'var(--text-primary)' }}>
+              1. RTI (Reflectance Transformation Imaging)
+            </div>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+              다각도 반사광 촬영 기법으로, 침식되거나 마모되어 육안으로 읽기 불가능한 석비, 파피루스, 점토판의 미세한 획 수축 각도를 3D 음영으로 재구성하여 문자를 복원합니다.
+            </p>
+          </div>
+
+          <div style={{ background: 'var(--bg-surface-elevated)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--civ-egypt)' }}>
+            <div style={{ fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem', color: 'var(--text-primary)' }}>
+              2. MSI (Multi-Spectral Imaging)
+            </div>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+              적외선·자외선 영역을 아우르는 다중스펙트럼 조영 기술로, 탄화되거나 훼손된 사해문서 및 잉크 파피루스 껍질 속 숨겨진 문자를 정밀 영상화합니다.
+            </p>
+          </div>
+
+          <div style={{ background: 'var(--bg-surface-elevated)', padding: '1.25rem', borderRadius: 'var(--radius-md)', borderLeft: '4px solid var(--civ-greece)' }}>
+            <div style={{ fontWeight: 700, fontSize: '1.05rem', marginBottom: '0.4rem', color: 'var(--text-primary)' }}>
+              3. eBL AI (Electronic Babylonian Literature - LMU Munich)
+            </div>
+            <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+              세계 주요 박물관에 흩어진 수십만 개의 쐐기문자 점토판 파편(Fragments)을 AI 알고리즘으로 자동 매칭·재접합하여 잊혀진 바빌로니아 서사시 행을 컴퓨터가 재구성합니다.
+            </p>
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
