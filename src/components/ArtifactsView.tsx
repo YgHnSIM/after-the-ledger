@@ -15,6 +15,7 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
   const [selectedModalArtifact, setSelectedModalArtifact] = useState<ArtifactRecord | null>(
     initialArtifactId ? ARTIFACTS.find((a) => a.id === initialArtifactId) || null : null
   );
+  const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
 
   const filteredArtifacts = ARTIFACTS.filter((a) => {
     if (selectedCiv !== 'all' && a.civilization !== selectedCiv) return false;
@@ -28,6 +29,7 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
     }
     return true;
   });
+
 
   // SVG Graphics generator for Artifact types
   const renderArtifactSvgGraphic = (type?: string) => {
@@ -415,6 +417,85 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
           </div>
         </div>
       )}
+
+      {/* MOBILE FLOATING FILTER BUTTON */}
+      <button className="floating-filter-btn" onClick={() => setIsMobileFilterOpen(true)}>
+        <Filter size={18} />
+        <span>유물 필터 ({filteredArtifacts.length})</span>
+      </button>
+
+      {/* MOBILE FILTER BOTTOM SHEET */}
+      {isMobileFilterOpen && (
+        <div className="mobile-sheet-overlay" onClick={() => setIsMobileFilterOpen(false)}>
+          <div className="mobile-sheet-content" onClick={(e) => e.stopPropagation()}>
+            <div className="mobile-sheet-header">
+              <div className="mobile-sheet-title">
+                <h3>유물 및 텍스트 필터</h3>
+                <p>{filteredArtifacts.length}개 유물 조건 검색 중</p>
+              </div>
+              <button className="icon-btn" onClick={() => setIsMobileFilterOpen(false)}>
+                <X size={20} />
+              </button>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              <div>
+                <label style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.35rem', display: 'block' }}>검색어 입력</label>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'var(--bg-surface-elevated)', padding: '0.6rem 0.85rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
+                  <Search size={18} style={{ color: 'var(--text-muted)' }} />
+                  <input
+                    type="text"
+                    placeholder="제목, 명문, 문자체계..."
+                    value={searchQuery}
+                    onChange={(e) => setSearchQuery(e.target.value)}
+                    style={{ flex: 1, background: 'transparent', border: 'none', outline: 'none', color: 'var(--text-primary)', fontSize: '0.9rem' }}
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.35rem', display: 'block' }}>문명 필터</label>
+                <select
+                  value={selectedCiv}
+                  onChange={(e) => setSelectedCiv(e.target.value as CivilizationId | 'all')}
+                  style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', background: 'var(--bg-surface-elevated)', color: 'var(--text-primary)', fontSize: '0.9rem' }}
+                >
+                  <option value="all">모든 문명</option>
+                  {Object.values(CIVILIZATIONS).map((c) => (
+                    <option key={c.id} value={c.id}>{c.nameKo}</option>
+                  ))}
+                </select>
+              </div>
+
+              <div>
+                <label style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-secondary)', marginBottom: '0.35rem', display: 'block' }}>기록 재료 필터</label>
+                <select
+                  value={selectedMaterial}
+                  onChange={(e) => setSelectedMaterial(e.target.value as MaterialType | 'all')}
+                  style={{ width: '100%', padding: '0.65rem 0.85rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', background: 'var(--bg-surface-elevated)', color: 'var(--text-primary)', fontSize: '0.9rem' }}
+                >
+                  <option value="all">모든 재료</option>
+                  <option value="clay-tablet">점토판 (Clay Tablet)</option>
+                  <option value="stone-monument">석비·석조 (Stone)</option>
+                  <option value="papyrus">파피루스 (Papyrus)</option>
+                  <option value="parchment-leather">가죽/양피지 (Parchment)</option>
+                  <option value="ostracon">도기 파편 (Ostracon)</option>
+                  <option value="metal-scroll">금속판/은제 (Metal)</option>
+                </select>
+              </div>
+
+              <button
+                className="btn btn-primary"
+                onClick={() => setIsMobileFilterOpen(false)}
+                style={{ width: '100%', padding: '0.85rem', marginTop: '0.5rem' }}
+              >
+                결과 보기 ({filteredArtifacts.length}건)
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
+

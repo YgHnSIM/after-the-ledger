@@ -65,3 +65,12 @@
 - **Grade A**: 유물 소장기관 공식 데이터베이스 (British Museum, Louvre, IMJ, IAA, CDLI, eBL, Homer Multitext Project).
 - **Grade B**: 동료평가(Peer-reviewed) 학술 저널 논문 및 대학 출판부(Cambridge, Oxford, Harvard) 단행본.
 - **Grade C**: 박물관 전시 해설 및 대학 학술 가이드 (UCL Digital Egypt, Penn Museum).
+
+---
+
+## 7. 디지털 아틀라스 모바일 접근성 및 반응형 체계 (Mobile Atlas UX Principles)
+
+1. **하단 엄지 영역 중심 네비게이션 (Thumb-Zone Navigation)**: 900px 이하 모바일 환경에서 주요 4개 핵심 탭과 전체 메뉴 바텀 시트를 하단에 배치하여 터치 편의성 보장.
+2. **세그먼트 탭 & 수직 카드 전환 (Segmented & Stacked Reading)**: 문명 간 다단 비교 및 4중 연대 벡터 뷰를 소형 화면에서 세그먼트 탭과 수직 스택으로 변환하여 학술 가독성 유지.
+3. **터치 타깃 표격준 (Minimum 44px Touch Standard)**: 모든 대화형 인터페이스(버튼, 필터 칩, 아이콘)는 WCAG 기준 44x44px 이상의 터치 타깃 영역 확보.
+

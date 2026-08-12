@@ -29,39 +29,42 @@ export const HomericEpicView: React.FC = () => {
         </p>
 
         {/* SUB-SECTION NAV BUTTONS */}
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
-          <button
-            className={`btn ${activeSection === 'books' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setActiveSection('books')}
-          >
-            <BookOpen size={16} /> {HOMERIC_BOOKS.length}개 권별 독파 요약
-          </button>
-          <button
-            className={`btn ${activeSection === 'characters' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setActiveSection('characters')}
-          >
-            <Shield size={16} /> 영웅 수식어구 & 인물 도감
-          </button>
-          <button
-            className={`btn ${activeSection === 'concepts' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setActiveSection('concepts')}
-          >
-            <Feather size={16} /> 호메로스 {HOMERIC_CONCEPTS.length}대 사상 개념어
-          </button>
-          <button
-            className={`btn ${activeSection === 'matrix' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setActiveSection('matrix')}
-          >
-            <Scale size={16} /> 근동 비교 서사시 1:1 대조
-          </button>
-          <button
-            className={`btn ${activeSection === 'problem' ? 'btn-primary' : 'btn-secondary'}`}
-            onClick={() => setActiveSection('problem')}
-          >
-            <Flame size={16} /> 호메로스 문제 & 정전사
-          </button>
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '0 auto', maxWidth: '960px' }}>
+          <div className="segmented-control">
+            <button
+              className={`segmented-btn ${activeSection === 'books' ? 'active' : ''}`}
+              onClick={() => setActiveSection('books')}
+            >
+              <BookOpen size={16} /> <span>{HOMERIC_BOOKS.length}개 권별 가이드</span>
+            </button>
+            <button
+              className={`segmented-btn ${activeSection === 'characters' ? 'active' : ''}`}
+              onClick={() => setActiveSection('characters')}
+            >
+              <Shield size={16} /> <span>영웅 수식어구</span>
+            </button>
+            <button
+              className={`segmented-btn ${activeSection === 'concepts' ? 'active' : ''}`}
+              onClick={() => setActiveSection('concepts')}
+            >
+              <Feather size={16} /> <span>10대 사상 개념어</span>
+            </button>
+            <button
+              className={`segmented-btn ${activeSection === 'matrix' ? 'active' : ''}`}
+              onClick={() => setActiveSection('matrix')}
+            >
+              <Scale size={16} /> <span>근동 비교 대조</span>
+            </button>
+            <button
+              className={`segmented-btn ${activeSection === 'problem' ? 'active' : ''}`}
+              onClick={() => setActiveSection('problem')}
+            >
+              <Flame size={16} /> <span>호메로스 문제</span>
+            </button>
+          </div>
         </div>
       </section>
+
 
       {/* SECTION 1: BOOKS OVERVIEW */}
       {activeSection === 'books' && (

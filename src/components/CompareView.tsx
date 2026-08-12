@@ -16,6 +16,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
   const [activeLargeTextDef, setActiveLargeTextDef] = useState<string>('single-work');
   const [showPreservationBiasOverlay, setShowPreservationBiasOverlay] = useState<boolean>(false);
   const [selectedArtifactDrawer, setSelectedArtifactDrawer] = useState<ArtifactRecord | null>(null);
+  const [activeCivTab, setActiveCivTab] = useState<string>('all');
 
   // Genre labels
   const genres: { id: GenreCategory | 'all'; label: string }[] = [
@@ -39,6 +40,11 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
   const activeDefObj = LARGE_TEXT_DEFINITIONS.find((d) => d.id === activeLargeTextDef) || LARGE_TEXT_DEFINITIONS[0];
 
   const getCivArtifacts = (civId: string) => filteredArtifacts.filter((a) => a.civilization === civId);
+
+  const displayedCivs = activeCivTab === 'all'
+    ? Object.values(CIVILIZATIONS)
+    : Object.values(CIVILIZATIONS).filter((c) => c.id === activeCivTab);
+
 
   return (
     <div className="main-container">
@@ -219,6 +225,28 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
           </span>
         </div>
 
+        {/* CIVILIZATION SEGMENTED SWITCHER */}
+        <div style={{ marginBottom: '1.25rem' }}>
+          <div className="segmented-control">
+            <button
+              className={`segmented-btn ${activeCivTab === 'all' ? 'active' : ''}`}
+              onClick={() => setActiveCivTab('all')}
+            >
+              전체 문명 레인 보기
+            </button>
+
+            {Object.values(CIVILIZATIONS).map((c) => (
+              <button
+                key={c.id}
+                className={`segmented-btn ${activeCivTab === c.id ? 'active' : ''}`}
+                onClick={() => setActiveCivTab(c.id)}
+              >
+                {c.nameKo}
+              </button>
+            ))}
+          </div>
+        </div>
+
         {/* CHRONOLOGICAL VISUAL RULER BAR */}
         <div className="card" style={{ marginBottom: '1.5rem', background: 'var(--bg-surface-elevated)', padding: '1rem 1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', fontFamily: 'var(--font-cinzel)', fontWeight: 700, color: 'var(--text-secondary)', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
@@ -234,8 +262,9 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
-          {Object.values(CIVILIZATIONS).map((civ) => {
+          {displayedCivs.map((civ) => {
             const artifacts = getCivArtifacts(civ.id);
+
             return (
               <div
                 key={civ.id}
