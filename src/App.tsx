@@ -16,9 +16,16 @@ import { CivilizationId } from './types';
 import { InstitutionsView } from './components/InstitutionsView';
 import { HomericEpicView } from './components/HomericEpicView';
 
+const parseHash = (): { tab: string; param?: string } => {
+  const raw = window.location.hash.replace(/^#\/?/, '');
+  const [tab = 'home', param] = raw.split('/');
+  return { tab, param };
+};
+
 export const App: React.FC = () => {
-  const [currentTab, setCurrentTab] = useState<string>('home');
-  const [activeParam, setActiveParam] = useState<string | undefined>(undefined);
+  const initial = parseHash();
+  const [currentTab, setCurrentTab] = useState<string>(initial.tab);
+  const [activeParam, setActiveParam] = useState<string | undefined>(initial.param);
   const [isSearchOpen, setIsSearchOpen] = useState<boolean>(false);
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
 
@@ -31,31 +38,53 @@ export const App: React.FC = () => {
     }
   }, [isDarkMode]);
 
-  // Handle Tab Switch
+  // Sync tab state from URL hash changes (back/forward, manual edit, share links)
+  useEffect(() => {
+    const handleHashChange = () => {
+      const { tab, param } = parseHash();
+      setCurrentTab(tab);
+      setActiveParam(param);
+    };
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
+  // Global Ctrl/Cmd+K shortcut to open the search modal
+  useEffect(() => {
+    const handleGlobalKeyDown = (e: KeyboardEvent) => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen((open) => !open);
+      }
+    };
+    window.addEventListener('keydown', handleGlobalKeyDown);
+    return () => window.removeEventListener('keydown', handleGlobalKeyDown);
+  }, []);
+
+  // Handle Tab Switch (persists to URL hash for shareable/back-forward state)
   const handleSelectTab = (tab: string, param?: string) => {
     setCurrentTab(tab);
     setActiveParam(param);
+    const target = param ? `#/${tab}/${encodeURIComponent(param)}` : `#/${tab}`;
+    if (window.location.hash !== target) {
+      window.location.hash = target;
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   // Handle Global Search Result Select
   const handleSearchResultSelect = (type: string, id: string) => {
     if (type === 'artifact') {
-      setCurrentTab('artifacts');
-      setActiveParam(id);
+      handleSelectTab('artifacts', id);
     } else if (type === 'claim') {
-      setCurrentTab('claims');
-      setActiveParam(id);
+      handleSelectTab('claims', id);
     } else if (type === 'essay') {
-      setCurrentTab('themes');
-      setActiveParam(id);
+      handleSelectTab('themes', id);
     } else if (type === 'civilization') {
-      setCurrentTab('civilizations');
-      setActiveParam(id);
+      handleSelectTab('civilizations', id);
     } else if (type === 'sources') {
-      setCurrentTab('sources');
+      handleSelectTab('sources');
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

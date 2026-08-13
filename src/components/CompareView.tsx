@@ -4,6 +4,7 @@ import { LARGE_TEXT_DEFINITIONS, PRESERVATION_BIAS_DATA } from '../data/essays';
 import { ArtifactRecord, GenreCategory, ConfidenceLevel } from '../types';
 import { Sliders, Filter, Eye, Layers, Scroll, ArrowRight, ShieldCheck, X, BookOpen, AlertTriangle } from 'lucide-react';
 import React, { useState } from 'react';
+import { useModalA11y } from '../hooks/useModalA11y';
 
 interface CompareViewProps {
   onSelectArtifact: (artifactId: string) => void;
@@ -19,6 +20,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
   const [activeCivTab, setActiveCivTab] = useState<string>('all');
   const [activeMilestonePin, setActiveMilestonePin] = useState<string>('all');
   const [viewMode, setViewMode] = useState<'civ-lane' | 'era-sync'>('civ-lane');
+  const artifactDrawerRef = useModalA11y(!!selectedArtifactDrawer, () => setSelectedArtifactDrawer(null));
 
   // Milestone Pins Definition
   const milestonePins = [
@@ -540,7 +542,15 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
       {/* ARTIFACT SIDE DRAWER MODAL */}
       {selectedArtifactDrawer && (
         <div className="modal-overlay" onClick={() => setSelectedArtifactDrawer(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '680px' }}>
+          <div
+            className="modal-content"
+            ref={artifactDrawerRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${selectedArtifactDrawer.titleKo} 상세 정보`}
+            onClick={(e) => e.stopPropagation()}
+            style={{ maxWidth: '680px' }}
+          >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
               <div>
                 <span className={`civ-tag civ-${selectedArtifactDrawer.civilization}`} style={{ marginBottom: '0.5rem' }}>
@@ -553,7 +563,7 @@ export const CompareView: React.FC<CompareViewProps> = ({ onSelectArtifact }) =>
                   {selectedArtifactDrawer.titleNative}
                 </div>
               </div>
-              <button className="icon-btn" onClick={() => setSelectedArtifactDrawer(null)}>
+              <button className="icon-btn" data-close-btn onClick={() => setSelectedArtifactDrawer(null)}>
                 <X size={18} />
               </button>
             </div>

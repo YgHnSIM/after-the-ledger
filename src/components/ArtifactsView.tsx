@@ -3,6 +3,7 @@ import { ARTIFACTS } from '../data/artifacts';
 import { CIVILIZATIONS } from '../data/civilizations';
 import { ArtifactRecord, CivilizationId, GenreCategory, MaterialType } from '../types';
 import { Scroll, Search, Filter, ArrowRight, ShieldCheck, X, FileText, Layers } from 'lucide-react';
+import { useModalA11y } from '../hooks/useModalA11y';
 
 interface ArtifactsViewProps {
   initialArtifactId?: string;
@@ -16,6 +17,8 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
     initialArtifactId ? ARTIFACTS.find((a) => a.id === initialArtifactId) || null : null
   );
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+  const detailModalRef = useModalA11y(!!selectedModalArtifact, () => setSelectedModalArtifact(null));
+  const filterSheetRef = useModalA11y(isMobileFilterOpen, () => setIsMobileFilterOpen(false));
 
   const filteredArtifacts = ARTIFACTS.filter((a) => {
     if (selectedCiv !== 'all' && a.civilization !== selectedCiv) return false;
@@ -52,13 +55,22 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
             <line x1="35" y1="68" x2="165" y2="68" stroke="rgba(255,255,255,0.3)" strokeWidth="1" strokeDasharray="4 2" />
             <line x1="80" y1="15" x2="80" y2="85" stroke="rgba(0,0,0,0.2)" strokeWidth="1" />
             <line x1="130" y1="15" x2="130" y2="85" stroke="rgba(0,0,0,0.2)" strokeWidth="1" />
-            <text x="55" y="24" fill="#fef3c7" fontSize="10" fontFamily="monospace">🔻► 🔻▶</text>
-            <text x="105" y="24" fill="#fef3c7" fontSize="10" fontFamily="monospace">◄🔻 ►▶</text>
-            <text x="145" y="24" fill="#fef3c7" fontSize="10" fontFamily="monospace">🔻🔻</text>
-            <text x="55" y="44" fill="#fef3c7" fontSize="10" fontFamily="monospace">►▶ 🔻►</text>
-            <text x="105" y="44" fill="#fef3c7" fontSize="10" fontFamily="monospace">🔻🔻 ◄►</text>
-            <text x="55" y="64" fill="#fef3c7" fontSize="10" fontFamily="monospace">◄▶ ►▶</text>
-            <text x="105" y="64" fill="#fef3c7" fontSize="10" fontFamily="monospace">🔻► 🔻▶</text>
+            {/* Abstract record marks (no pseudo-script glyphs) */}
+            <rect x="42" y="22" width="18" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
+            <rect x="66" y="22" width="12" height="3" rx="1.5" fill="#fef3c7" opacity="0.7" />
+            <rect x="92" y="22" width="20" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
+            <rect x="118" y="22" width="14" height="3" rx="1.5" fill="#fef3c7" opacity="0.7" />
+            <rect x="142" y="22" width="16" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
+            <rect x="42" y="42" width="16" height="3" rx="1.5" fill="#fef3c7" opacity="0.8" />
+            <rect x="64" y="42" width="22" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
+            <rect x="92" y="42" width="12" height="3" rx="1.5" fill="#fef3c7" opacity="0.7" />
+            <rect x="110" y="42" width="20" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
+            <rect x="136" y="42" width="14" height="3" rx="1.5" fill="#fef3c7" opacity="0.8" />
+            <rect x="42" y="62" width="20" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
+            <rect x="68" y="62" width="14" height="3" rx="1.5" fill="#fef3c7" opacity="0.7" />
+            <rect x="92" y="62" width="18" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
+            <rect x="116" y="62" width="12" height="3" rx="1.5" fill="#fef3c7" opacity="0.7" />
+            <rect x="134" y="62" width="20" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
             <rect x="140" y="70" width="30" height="15" rx="3" fill="#fef3c7" opacity="0.9" />
             <text x="155" y="81" textAnchor="middle" fill="#78350f" fontSize="8" fontWeight="bold">점토판</text>
           </svg>
@@ -80,16 +92,21 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
             <rect x="175" y="5" width="10" height="90" rx="3" fill="#854d0e" />
             {/* Papyrus Body */}
             <rect x="23" y="10" width="154" height="80" fill="url(#papyrusGrad)" stroke="#a16207" strokeWidth="1.5" />
-            {/* Hieroglyphic Cartouche */}
+            {/* Cartouche with abstract strokes */}
             <rect x="40" y="20" width="35" height="60" rx="15" fill="none" stroke="#854d0e" strokeWidth="1.5" />
             <line x1="40" y1="80" x2="75" y2="80" stroke="#854d0e" strokeWidth="2" />
-            <text x="57" y="42" textAnchor="middle" fill="#854d0e" fontSize="14">𓇳</text>
-            <text x="57" y="60" textAnchor="middle" fill="#854d0e" fontSize="12">𓏤 𓅓</text>
-            {/* Hieratic Column lines */}
+            <rect x="48" y="32" width="19" height="4" rx="2" fill="#854d0e" opacity="0.85" />
+            <rect x="48" y="46" width="13" height="4" rx="2" fill="#854d0e" opacity="0.6" />
+            <rect x="48" y="60" width="17" height="4" rx="2" fill="#854d0e" opacity="0.85" />
+            {/* Hieratic column strokes */}
             <line x1="90" y1="20" x2="160" y2="20" stroke="#854d0e" strokeWidth="1.2" strokeDasharray="3 2" />
             <line x1="90" y1="35" x2="160" y2="35" stroke="#854d0e" strokeWidth="1.2" strokeDasharray="3 2" />
             <line x1="90" y1="50" x2="160" y2="50" stroke="#854d0e" strokeWidth="1.2" strokeDasharray="3 2" />
             <line x1="90" y1="65" x2="160" y2="65" stroke="#854d0e" strokeWidth="1.2" strokeDasharray="3 2" />
+            <rect x="98" y="26" width="12" height="3" rx="1.5" fill="#854d0e" opacity="0.7" />
+            <rect x="116" y="26" width="18" height="3" rx="1.5" fill="#854d0e" opacity="0.5" />
+            <rect x="98" y="41" width="20" height="3" rx="1.5" fill="#854d0e" opacity="0.7" />
+            <rect x="124" y="41" width="12" height="3" rx="1.5" fill="#854d0e" opacity="0.5" />
             <rect x="125" y="72" width="40" height="14" rx="3" fill="#854d0e" opacity="0.9" />
             <text x="145" y="82" textAnchor="middle" fill="#fef08a" fontSize="8" fontWeight="bold">파피루스</text>
           </svg>
@@ -133,9 +150,13 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
             <rect x="40" y="15" width="120" height="70" rx="4" fill="url(#silverGrad)" stroke="#475569" strokeWidth="1.5" />
             <ellipse cx="40" cy="50" rx="6" ry="35" fill="#94a3b8" stroke="#334155" strokeWidth="1" />
             <ellipse cx="160" cy="50" rx="6" ry="35" fill="#e2e8f0" stroke="#334155" strokeWidth="1" />
-            {/* Micro Paleo-Hebrew Inscriptions */}
-            <text x="55" y="38" fill="#334155" fontSize="10" fontFamily="serif" fontWeight="bold">𐤉𐤄𐤅𐤄 𐤉1𐤓𐤊</text>
-            <text x="55" y="55" fill="#334155" fontSize="10" fontFamily="serif" fontWeight="bold">𐤅𐤉9𐤌𐤓𐤊 𐤔c𐤅𐤌</text>
+            {/* Micro inscription strokes */}
+            <rect x="55" y="34" width="26" height="3" rx="1.5" fill="#334155" opacity="0.85" />
+            <rect x="88" y="34" width="18" height="3" rx="1.5" fill="#334155" opacity="0.6" />
+            <rect x="113" y="34" width="22" height="3" rx="1.5" fill="#334155" opacity="0.85" />
+            <rect x="55" y="51" width="20" height="3" rx="1.5" fill="#334155" opacity="0.6" />
+            <rect x="82" y="51" width="26" height="3" rx="1.5" fill="#334155" opacity="0.85" />
+            <rect x="115" y="51" width="16" height="3" rx="1.5" fill="#334155" opacity="0.6" />
             <rect x="110" y="68" width="42" height="12" rx="2" fill="#334155" />
             <text x="131" y="77" textAnchor="middle" fill="#f8fafc" fontSize="7" fontWeight="bold">은제 부적</text>
           </svg>
@@ -154,8 +175,9 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
             <path d="M 40 20 C 70 10, 130 10, 160 20 C 180 50, 150 85, 120 90 C 80 90, 30 75, 40 20 Z" fill="url(#potteryGrad)" stroke="#1d4ed8" strokeWidth="2" />
             {/* Red Figure Artwork Lines */}
             <path d="M 60 30 Q 100 20 140 30" fill="none" stroke="#f97316" strokeWidth="2" />
-            <text x="100" y="55" textAnchor="middle" fill="#fef08a" fontSize="11" fontFamily="serif" fontStyle="italic">호메로스 춤 유희시 비문</text>
-            <text x="100" y="70" textAnchor="middle" fill="#93c5fd" fontSize="9" fontFamily="monospace">ΑΒΓΔ ΕΖΗΘ ΙΚΛΜ</text>
+            {/* Abstract band strokes */}
+            <path d="M 62 48 Q 100 44 138 48" fill="none" stroke="#fef08a" strokeWidth="2" strokeDasharray="6 4" />
+            <path d="M 70 62 Q 100 58 130 62" fill="none" stroke="#93c5fd" strokeWidth="2" strokeDasharray="6 4" />
             <rect x="75" y="78" width="50" height="10" rx="2" fill="#f97316" />
             <text x="100" y="86" textAnchor="middle" fill="#0f172a" fontSize="7" fontWeight="bold">도기 (Ostracon)</text>
           </svg>
@@ -175,11 +197,13 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
             <rect x="15" y="30" width="170" height="40" rx="6" fill="url(#linearbGrad)" stroke="#78350f" strokeWidth="2" />
             <line x1="25" y1="50" x2="175" y2="50" stroke="rgba(255,255,255,0.4)" strokeWidth="1" />
             {/* Linear B signs & Chariot Ideogram */}
-            <text x="35" y="45" fill="#fef3c7" fontSize="10" fontFamily="serif">𐀷 𐀙 𐀏</text>
-            <text x="85" y="45" fill="#fef3c7" fontSize="10" fontFamily="serif">𐀀 𐀁 𐀂</text>
+            <rect x="35" y="38" width="16" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
+            <rect x="57" y="38" width="10" height="3" rx="1.5" fill="#fef3c7" opacity="0.6" />
+            <rect x="82" y="38" width="14" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
             <circle cx="150" cy="43" r="5" fill="none" stroke="#fef3c7" strokeWidth="1.5" />
             <line x1="145" y1="43" x2="155" y2="43" stroke="#fef3c7" strokeWidth="1" />
-            <text x="35" y="63" fill="#fef3c7" fontSize="9" fontFamily="sans-serif">Chariot wheels = 2</text>
+            <rect x="35" y="57" width="18" height="3" rx="1.5" fill="#fef3c7" opacity="0.9" />
+            <rect x="59" y="57" width="12" height="3" rx="1.5" fill="#fef3c7" opacity="0.6" />
             <rect x="135" y="55" width="45" height="12" rx="2" fill="#78350f" />
             <text x="157" y="64" textAnchor="middle" fill="#fef3c7" fontSize="7" fontWeight="bold">Linear B 필로스</text>
           </svg>
@@ -197,11 +221,13 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
             <rect x="0" y="0" width="200" height="100" fill="var(--bg-surface-elevated)" />
             {/* Turtle Plastron Contour */}
             <path d="M 40 15 Q 100 5 160 15 Q 175 50 160 85 Q 100 95 40 85 Q 25 50 40 15 Z" fill="url(#boneGrad)" stroke="#b45309" strokeWidth="2" />
-            {/* Heat Cracks & Archaic Chinese Oracle Bone Script */}
+            {/* Heat Cracks & Abstract crack marks */}
             <path d="M 70 30 L 90 45 L 85 65" fill="none" stroke="#78350f" strokeWidth="1.5" />
             <path d="M 120 25 L 115 50 L 135 60" fill="none" stroke="#78350f" strokeWidth="1.5" />
-            <text x="75" y="40" fill="#78350f" fontSize="12" fontFamily="serif" fontWeight="bold">癸巳卜</text>
-            <text x="110" y="40" fill="#78350f" fontSize="12" fontFamily="serif" fontWeight="bold">貞旬亡禍</text>
+            <path d="M 78 34 L 76 42" fill="none" stroke="#78350f" strokeWidth="1.5" />
+            <path d="M 86 47 L 94 52" fill="none" stroke="#78350f" strokeWidth="1.5" />
+            <path d="M 118 34 L 126 38" fill="none" stroke="#78350f" strokeWidth="1.5" />
+            <path d="M 114 52 L 121 58" fill="none" stroke="#78350f" strokeWidth="1.5" />
             <rect x="75" y="74" width="50" height="12" rx="2" fill="#78350f" />
             <text x="100" y="83" textAnchor="middle" fill="#fef3c7" fontSize="7" fontWeight="bold">은허 갑골문</text>
           </svg>
@@ -326,7 +352,15 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
       {/* DETAIL MODAL */}
       {selectedModalArtifact && (
         <div className="modal-overlay" onClick={() => setSelectedModalArtifact(null)}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '750px' }}>
+          <div
+            className="modal-content"
+            ref={detailModalRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label={`${selectedModalArtifact.titleKo} 상세 정보`}
+            onClick={(e) => e.stopPropagation()}
+            style={{ maxWidth: '750px' }}
+          >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
               <div>
                 <span className={`civ-tag civ-${selectedModalArtifact.civilization}`} style={{ marginBottom: '0.5rem' }}>
@@ -339,7 +373,7 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
                   {selectedModalArtifact.titleNative}
                 </div>
               </div>
-              <button className="icon-btn" onClick={() => setSelectedModalArtifact(null)}>
+              <button className="icon-btn" data-close-btn onClick={() => setSelectedModalArtifact(null)}>
                 <X size={18} />
               </button>
             </div>
@@ -427,13 +461,20 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
       {/* MOBILE FILTER BOTTOM SHEET */}
       {isMobileFilterOpen && (
         <div className="mobile-sheet-overlay" onClick={() => setIsMobileFilterOpen(false)}>
-          <div className="mobile-sheet-content" onClick={(e) => e.stopPropagation()}>
+          <div
+            className="mobile-sheet-content"
+            ref={filterSheetRef}
+            role="dialog"
+            aria-modal="true"
+            aria-label="유물 필터"
+            onClick={(e) => e.stopPropagation()}
+          >
             <div className="mobile-sheet-header">
               <div className="mobile-sheet-title">
                 <h3>유물 및 텍스트 필터</h3>
                 <p>{filteredArtifacts.length}개 유물 조건 검색 중</p>
               </div>
-              <button className="icon-btn" onClick={() => setIsMobileFilterOpen(false)}>
+              <button className="icon-btn" data-close-btn onClick={() => setIsMobileFilterOpen(false)}>
                 <X size={20} />
               </button>
             </div>

@@ -41,7 +41,7 @@ const TIMELINE_DATA: CivTimeline[] = [
   {
     id: 'egypt',
     name: '이집트',
-    icon: '𓆎',
+    icon: '⚱️',
     colorVar: 'var(--civ-egypt)',
     startBCE: 3250,
     endBCE: 1250,
@@ -70,7 +70,7 @@ const TIMELINE_DATA: CivTimeline[] = [
   {
     id: 'greece',
     name: '그리스',
-    icon: '🏛️',
+    icon: '🦉',
     colorVar: 'var(--civ-greece)',
     startBCE: 1400,
     endBCE: 300,
@@ -157,13 +157,13 @@ export const UnifiedTimelineMatrix: React.FC = () => {
           🏛️ 3400 BCE 문자탄생전야
         </button>
         <button className="era-chip-btn" onClick={() => jumpToEra(2500)}>
-          𓆎 2500 BCE 피라미드·어휘목록
+          📜 2500 BCE 피라미드·어휘목록
         </button>
         <button className="era-chip-btn" onClick={() => jumpToEra(1400)}>
           ⚓ 1400 BCE 청동기/Linear B
         </button>
         <button className="era-chip-btn" onClick={() => jumpToEra(750)}>
-          🏛️ 750 BCE 알파벳 혁명
+          ✒️ 750 BCE 알파벳 혁명
         </button>
       </div>
 

@@ -1,10 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Search, X, Scroll, ShieldCheck, BookOpen, Globe, HelpCircle, ArrowRight } from 'lucide-react';
 import { ARTIFACTS } from '../data/artifacts';
 import { CLAIMS } from '../data/claims';
 import { COMPARATIVE_ESSAYS } from '../data/essays';
 import { CIVILIZATIONS } from '../data/civilizations';
 import { GLOSSARY_ITEMS } from '../data/glossary';
+import { useModalA11y } from '../hooks/useModalA11y';
 
 interface GlobalSearchModalProps {
   isOpen: boolean;
@@ -18,18 +19,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
   onSelectResult
 }) => {
   const [query, setQuery] = useState('');
-
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') onClose();
-      if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
-        e.preventDefault();
-        // Toggle modal if needed
-      }
-    };
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [onClose]);
+  const contentRef = useModalA11y(isOpen, onClose);
 
   if (!isOpen) return null;
 
@@ -89,7 +79,15 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()} style={{ maxWidth: '720px' }}>
+      <div
+        className="modal-content"
+        ref={contentRef}
+        role="dialog"
+        aria-modal="true"
+        aria-label="통합 검색"
+        onClick={(e) => e.stopPropagation()}
+        style={{ maxWidth: '720px' }}
+      >
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
           <Search size={20} style={{ color: 'var(--text-muted)' }} />
           <input
@@ -97,7 +95,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
             placeholder="유물, 학술 가설, 시인, 성서 사본, 쐐기문자, 피라미드 검색..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            autoFocus
+            data-autofocus
             style={{
               flex: 1,
               background: 'transparent',
@@ -108,7 +106,7 @@ export const GlobalSearchModal: React.FC<GlobalSearchModalProps> = ({
               fontFamily: 'var(--font-sans)'
             }}
           />
-          <button className="icon-btn" onClick={onClose}>
+          <button className="icon-btn" data-close-btn onClick={onClose}>
             <X size={18} />
           </button>
         </div>
