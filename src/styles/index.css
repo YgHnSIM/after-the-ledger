@@ -1017,19 +1017,41 @@ p:last-child {
 
 /* Home View Timeline Card & Micro-Ruler Styles */
 .home-ruler-chips {
-/* Precise Timeline Ruler & Chart Bars */
-.home-timeline-ruler {
+/* Museum Curator Timeline Exhibit Styles */
+.museum-timeline-wrapper {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
   position: relative;
-  height: 36px;
-  width: 100%;
-  border-bottom: 2px dashed var(--border-highlight);
-  margin-bottom: 1.5rem;
-  margin-top: 0.5rem;
 }
 
-.home-ruler-mark {
+.museum-ruler-container {
+  position: relative;
+  height: 52px;
+  width: 100%;
+  border-bottom: 2px solid var(--border-highlight);
+  margin-bottom: 2.25rem;
+  background: var(--bg-surface-elevated);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  padding-top: 0.6rem;
+  box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.museum-ruler-axis-line {
   position: absolute;
-  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--civ-mesopotamia) 0%, var(--civ-egypt) 25%, var(--civ-greece) 60%, var(--civ-israel) 80%, var(--civ-ugarit) 100%);
+  opacity: 0.75;
+}
+
+.museum-ruler-mark {
+  position: absolute;
+  bottom: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1040,28 +1062,78 @@ p:last-child {
   white-space: nowrap;
 }
 
-.home-ruler-tick {
+.museum-ruler-tick {
   width: 2px;
-  height: 10px;
+  height: 12px;
   background: var(--border-highlight);
   margin-top: 4px;
 }
 
-.home-timeline-card {
+.museum-curator-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 1.15rem;
+  padding: 1.25rem 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 1.15rem;
   box-shadow: var(--shadow-sm);
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
 }
 
-.home-timeline-card:hover {
+.museum-curator-card:hover {
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
   border-color: var(--border-highlight);
+}
+
+.museum-lane-track {
+  width: 100%;
+  height: 32px;
+  background: var(--bg-surface-elevated);
+  border-radius: var(--radius-sm);
+  position: relative;
+  border: 1px solid var(--border-color);
+  overflow: visible !important;
+  display: flex;
+  align-items: center;
+}
+
+.museum-lane-bar {
+  height: 100%;
+  border-radius: var(--radius-sm);
+  transition: width 0.3s ease;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.museum-artifact-badge {
+  position: absolute;
+  top: -26px;
+  transform: translateX(-50%);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-highlight);
+  color: var(--text-primary);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-sm);
+  white-space: nowrap;
+  box-shadow: var(--shadow-sm);
+  z-index: 15;
+}
+
+.museum-curator-note {
+  background: var(--bg-surface-elevated);
+  border-left: 3.5px solid var(--border-gold);
+  padding: 0.85rem 1.15rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 .home-timeline-header {
