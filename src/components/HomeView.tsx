@@ -473,6 +473,689 @@ export const UnifiedTimelineMatrix: React.FC = () => {
   );
 };
 
+// ==========================================================================
+// RELATIVE CHRONOLOGY (t=0 ELAPSED YEARS) TIMELINE MATRIX
+// ==========================================================================
+
+const relYearsToPct = (years: number): number => {
+  return Math.max(0, Math.min(100, (years / 1500) * 100));
+};
+
+const RELATIVE_RULER_MARKS = [
+  { label: 't = 0년 (도입)', years: 0 },
+  { label: 't + 100년', years: 100 },
+  { label: 't + 250년', years: 250 },
+  { label: 't + 500년', years: 500 },
+  { label: 't + 750년', years: 750 },
+  { label: 't + 1000년', years: 1000 },
+  { label: 't + 1250년', years: 1250 },
+  { label: 't + 1500년+', years: 1500 }
+];
+
+interface RelativeSpotlight {
+  id: string;
+  targetYears: number;
+  label: string;
+  badge: string;
+  title: string;
+  periodSummary: string;
+  curatorInsight: string;
+  comparisonHighlight: string;
+  keyArtifacts: string[];
+}
+
+const RELATIVE_SPOTLIGHTS: RelativeSpotlight[] = [
+  {
+    id: 'rel-greece-jump',
+    targetYears: 35,
+    label: '⚡ t+35년 그리스 문학 직행',
+    badge: '⚡ 초고속 도약',
+    title: '그리스 알파벳: 도입 35년 만의 서사·유희시 폭발',
+    periodSummary: 't+35년 (c. 740 BCE) • 페니키아 모음 수용 직후',
+    curatorInsight: 'BCE 775년 페니키아 모음 도입 후 불과 35년 만인 BCE 740년 디필론 도기 비문과 네스토르의 잔에 6보격 서사시 구절이 刻文되었습니다. 왕실 서기관의 독점 없이 귀족 연회(Symposion) 문화와 결합하여 대중적으로 폭발했습니다.',
+    comparisonHighlight: '고대 문명 중 유일하게 행정 장부 단계를 건너뛰고 개인 가창·음주 유희시로 직행한 사례',
+    keyArtifacts: ['디필론 도기 비문 (BCE 740)', '네스토르의 잔 (BCE 735)']
+  },
+  {
+    id: 'rel-meso-lexical',
+    targetYears: 0,
+    label: '📜 t+0년 수메르 어휘목록 동시출현',
+    badge: '📜 지식 분류',
+    title: '메소포타미아: 문자 탄생과 동시에 직업·어휘목록 출현',
+    periodSummary: 't=0년 (c. 3300 BCE) • 후기 우루크 IV기 층위',
+    curatorInsight: '우루크 IV기(c. 3300 BCE) 점토판 층위에서는 경제 회계 점토판(85%)뿐 아니라 서기관 교육용 직업 표준목록인 ED Lu A(어휘목록 15%)가 동시대에 출토됩니다. 문자는 탄생 순간부터 관료 양성 교육과 일체화되었습니다.',
+    comparisonHighlight: '단순 회계 장부뿐 아니라 서기관 학교 교육을 위한 표준 지식 분류 코퍼스가 t=0에 함께 탄생',
+    keyArtifacts: ['우루크 IV기 행정판 (BCE 3300)', 'ED Lu A 직업목록 (BCE 3300)']
+  },
+  {
+    id: 'rel-israel-canon',
+    targetYears: 450,
+    label: '✨ t+450년 이스라엘 포로기 경전화',
+    badge: '✨ 정체성 보존',
+    title: '이스라엘·유다: 국가 붕괴의 위기 속에서 성서 경전 집대성',
+    periodSummary: 't+450년 (c. 500 BCE) • 바빌론 포로기/페르시아기',
+    curatorInsight: '초기 게제르 달력(c. 925 BCE)의 소박한 농경 기록에서 출발하여, BCE 586년 남유다 멸망과 바빌론 유수라는 초유의 위기 속에서 국가와 성전을 잃은 공동체가 문자로써 신앙과 역사를 보존하기 위해 신명기계 역사서와 토라를 경전으로 편찬했습니다.',
+    comparisonHighlight: '농경 달력(t+25)에서 제사장 부적(t+350)을 거쳐, 바빌론 포로기(t+450)라는 망국 위기 속에서 경전화 완성',
+    keyArtifacts: ['게제르 달력 (BCE 925)', '케테프 힌놈 부적 (BCE 600)', '쿰란 사해문서 (BCE 150)']
+  },
+  {
+    id: 'rel-egypt-monument',
+    targetYears: 900,
+    label: '🏛️ t+900년 이집트 피라미드 종교문헌화',
+    badge: '🏛️ 영생 기념물',
+    title: '이집트: 900년에 걸친 왕권 기념과 영생 텍스트 집성',
+    periodSummary: 't+900년 (c. 2350 BCE) • 제5왕조 우나스 피라미드',
+    curatorInsight: '아비도스 U-j 묘의 초기 상아 꼬리표(c. 3250 BCE) 이후, 문자는 약 900년 동안 왕의 이름과 승전 도상, 신전 제의에 독점적으로 사용되다가 제5왕조 우나스 피라미드(c. 2350 BCE) 내부 전체를 성각문자 영생 주문으로 가득 채우는 기념비적 종교 텍스트로 완성되었습니다.',
+    comparisonHighlight: '초기 세무 꼬리표(t=0)에서 나르메르 팔레트(t+250)를 거쳐 거대 피라미드 매장실 주문(t+900)으로 완결',
+    keyArtifacts: ['아비도스 U-j 표찰 (BCE 3250)', '나르메르 팔레트 (BCE 3000)', '우나스 피라미드 텍스트 (BCE 2350)']
+  }
+];
+
+interface RelativeEventNode {
+  id: string;
+  elapsedYears: number;
+  title: string;
+  actualBCE: string;
+  stage: string;
+  detail: string;
+}
+
+interface RelativeCivData {
+  id: string;
+  name: string;
+  t0Origin: string;
+  icon: string;
+  colorVar: string;
+  maxElapsedYears: number;
+  events: RelativeEventNode[];
+}
+
+const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
+  {
+    id: 'greece',
+    name: '그리스 (알파벳 혁신)',
+    t0Origin: 't=0: c. 775 BCE (알파벳 도입)',
+    icon: '🏛️',
+    colorVar: 'var(--civ-greece)',
+    maxElapsedYears: 500,
+    events: [
+      {
+        id: 'gr-0',
+        elapsedYears: 0,
+        title: '알파벳 자모 체계 수용',
+        actualBCE: 'c. 775 BCE',
+        stage: 't=0 (체계 수용)',
+        detail: '페니키아 자음 전용 아브자드에서 그리스어 모음 음소를 표기하는 완전 음소 알파벳 체계 창안.'
+      },
+      {
+        id: 'gr-35',
+        elapsedYears: 35,
+        title: '디필론 비문 / 네스토르 잔',
+        actualBCE: 'c. 740 BCE',
+        stage: 't+35년 (유희시 직행)',
+        detail: '도입 불과 35년 만에 도기 위에 음주와 춤 경연을 노래하는 6보격 유희 서사시 刻文.'
+      },
+      {
+        id: 'gr-75',
+        elapsedYears: 75,
+        title: '호메로스 서사시 고정',
+        actualBCE: 'c. 700 BCE',
+        stage: 't+75년 (서사시 집대성)',
+        detail: '수백 년간 구전되던 《일리아스》와 《오뒷세이아》가 알파벳 문자로 최초 필사·고정.'
+      },
+      {
+        id: 'gr-325',
+        elapsedYears: 325,
+        title: '고전기 비극·역사 철학',
+        actualBCE: 'c. 450 BCE',
+        stage: 't+325년 (고전문학 만개)',
+        detail: '아테네 민주정의 시민 비극 경연, 헤로도토스·투키디데스의 비판적 역사 서술 및 플라톤 철학.'
+      }
+    ]
+  },
+  {
+    id: 'mesopotamia',
+    name: '메소포타미아 (수메르)',
+    t0Origin: 't=0: c. 3300 BCE (우루크 IV기)',
+    icon: '🏛️',
+    colorVar: 'var(--civ-mesopotamia)',
+    maxElapsedYears: 1500,
+    events: [
+      {
+        id: 'meso-0-econ',
+        elapsedYears: 0,
+        title: '우루크 IV기 경제 장부',
+        actualBCE: 'c. 3300 BCE',
+        stage: 't=0 (경제 회계)',
+        detail: '신전 곡물·가축·노동 수량 출납을 점토판에 부호로 기록한 원시 쐐기문자 장부.'
+      },
+      {
+        id: 'meso-0-lex',
+        elapsedYears: 0,
+        title: 'ED Lu A 직업 어휘목록',
+        actualBCE: 'c. 3300 BCE',
+        stage: 't=0 (어휘목록 동시출현)',
+        detail: '문자 탄생 순간부터 서기관 교육을 위해 120여 개 직업 위계를 표준화한 목록 동시 출토.'
+      },
+      {
+        id: 'meso-700',
+        elapsedYears: 700,
+        title: '슈루팍 잠언 (지혜문학)',
+        actualBCE: 'c. 2600 BCE',
+        stage: 't+700년 (초기 지혜문학)',
+        detail: '파라 층위에서 출토된 인류 최초의 교훈 지혜문학 단편. 부자간의 훈계 전승.'
+      },
+      {
+        id: 'meso-1200',
+        elapsedYears: 1200,
+        title: '우르남무 법전·슈기 찬가',
+        actualBCE: 'c. 2100 BCE',
+        stage: 't+1200년 (법전 및 왕실시)',
+        detail: '우르 제3왕조 시기 왕권 정당성을 선포하는 최초의 성문법전과 신격화된 왕 찬양시.'
+      },
+      {
+        id: 'meso-1500',
+        elapsedYears: 1500,
+        title: '길가메시 서사시 표준본',
+        actualBCE: 'c. 1200 BCE',
+        stage: 't+1500년+ (대서사 완결)',
+        detail: '신-레케-운닌니 사제에 의해 12개 점토판으로 집대성된 메소포타미아 불후의 영웅 서사시.'
+      }
+    ]
+  },
+  {
+    id: 'israel',
+    name: '이스라엘·유다',
+    t0Origin: 't=0: c. 950 BCE (고대 히브리 문자)',
+    icon: '📜',
+    colorVar: 'var(--civ-israel)',
+    maxElapsedYears: 850,
+    events: [
+      {
+        id: 'isr-0',
+        elapsedYears: 0,
+        title: '고대 히브리 문자 분화',
+        actualBCE: 'c. 950 BCE',
+        stage: 't=0 (알파벳 정착)',
+        detail: '페니키아 서북셈어 공통 서체에서 남부 레반트 고유의 고대 히브리 서체로 독자 분화.'
+      },
+      {
+        id: 'isr-25',
+        elapsedYears: 25,
+        title: '게제르 달력',
+        actualBCE: 'c. 925 BCE',
+        stage: 't+25년 (농경 습자판)',
+        detail: '월별 농사 주기를 기록한 석회암 판. 지방 서기관 학교의 습자 훈련용 추정.'
+      },
+      {
+        id: 'isr-350',
+        elapsedYears: 350,
+        title: '케테프 힌놈 은제 부적',
+        actualBCE: 'c. 600 BCE',
+        stage: 't+350년 (제의/호신문)',
+        detail: '민수기 제사장 축복문이 초소형 은판에 음각된 사적 부적. 현존 최고(最古)의 성서 구절.'
+      },
+      {
+        id: 'isr-450',
+        elapsedYears: 450,
+        title: '포로기 성서 본문 편집',
+        actualBCE: 'c. 500 BCE',
+        stage: 't+450년 (신학적 경전화)',
+        detail: '바빌론 유수 망국 위기 속에서 민족 정체성과 신앙을 수호하기 위한 역사서·토라 대규모 편집.'
+      },
+      {
+        id: 'isr-800',
+        elapsedYears: 800,
+        title: '쿰란 사해문서',
+        actualBCE: 'c. 150 BCE',
+        stage: 't+800년 (성서 사본 전승)',
+        detail: '사해 광야 동굴에서 발견된 히브리 성서 전권 사본과 종파 문서. 정경화의 결정적 물적 증거.'
+      }
+    ]
+  },
+  {
+    id: 'egypt',
+    name: '이집트',
+    t0Origin: 't=0: c. 3250 BCE (아비도스 U-j)',
+    icon: '🏺',
+    colorVar: 'var(--civ-egypt)',
+    maxElapsedYears: 1500,
+    events: [
+      {
+        id: 'egy-0',
+        elapsedYears: 0,
+        title: '아비도스 U-j 묘 표찰',
+        actualBCE: 'c. 3250 BCE',
+        stage: 't=0 (세무 원산지)',
+        detail: '기름 항아리에 부착된 상아 꼬리표. 왕실 조세 공납지의 명칭을 표음 기호로 표기.'
+      },
+      {
+        id: 'egy-250',
+        elapsedYears: 250,
+        title: '나르메르 팔레트',
+        actualBCE: 'c. 3000 BCE',
+        stage: 't+250년 (왕권 도상)',
+        detail: '상·하 이집트 통일 왕권의 군사적 승리와 신성한 권위를 과시하는 화장판 릴리프 비문.'
+      },
+      {
+        id: 'egy-900',
+        elapsedYears: 900,
+        title: '우나스 피라미드 텍스트',
+        actualBCE: 'c. 2350 BCE',
+        stage: 't+900년 (영생 주문 刻文)',
+        detail: '파라오의 사후 영생과 태양신 승천을 기원하는 종교 제의문이 피라미드 석벽 전체에 刻文.'
+      },
+      {
+        id: 'egy-1300',
+        elapsedYears: 1300,
+        title: '시누헤 이야기',
+        actualBCE: 'c. 1950 BCE',
+        stage: 't+1300년 (고전문학 서사)',
+        detail: '망명 관료의 고난과 파라오의 은혜로 귀환하는 자전적 문학 서사. 이집트 세속 문학의 금자탑.'
+      },
+      {
+        id: 'egy-1500',
+        elapsedYears: 1500,
+        title: '사자의 서 파피루스',
+        actualBCE: 'c. 1250 BCE',
+        stage: 't+1500년+ (파피루스 대중화)',
+        detail: '심장 무게 달기 등 사후세계 오시리스 심판을 통과하기 위한 지침서가 파피루스 롤로 상용화.'
+      }
+    ]
+  },
+  {
+    id: 'ugarit',
+    name: '우가리트 (통제 사례)',
+    t0Origin: 't=0: c. 1400 BCE (설형 알파벳)',
+    icon: '⚓',
+    colorVar: '#0ea5e9',
+    maxElapsedYears: 220,
+    events: [
+      {
+        id: 'ug-0',
+        elapsedYears: 0,
+        title: '30자 쐐기 알파벳 창안',
+        actualBCE: 'c. 1400 BCE',
+        stage: 't=0 (알파벳 발명)',
+        detail: '점토판 매체에 적합하도록 쐐기 기호로 음소 알파벳 30자를 독창적으로 고안.'
+      },
+      {
+        id: 'ug-50',
+        elapsedYears: 50,
+        title: '바알 서사시 필사',
+        actualBCE: 'c. 1350 BCE',
+        stage: 't+50년 (신화 서사시)',
+        detail: '대사제 아텐푸를라누의 지도 하에 필사자 일리밀쿠가 점토판에 기록한 카난 신화 대서사.'
+      },
+      {
+        id: 'ug-220',
+        elapsedYears: 220,
+        title: '도시 화재로 문자 소멸',
+        actualBCE: 'c. 1180 BCE',
+        stage: 't+220년 (문명 단절)',
+        detail: '바다 민족의 침공과 화재로 왕궁 아카이브 소실. 구운 점토판은 보존되었으나 문자 전통 소멸.'
+      }
+    ]
+  }
+];
+
+export const RelativeTimelineMatrix: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const tracksRef = useRef<HTMLDivElement>(null);
+  const [activeSpotlightId, setActiveSpotlightId] = useState<string | null>('rel-greece-jump');
+  const [needlePct, setNeedlePct] = useState<number | null>(relYearsToPct(35));
+  const [hoveredYears, setHoveredYears] = useState<number | null>(35);
+  const [selectedEvent, setSelectedEvent] = useState<{ civName: string; event: RelativeEventNode } | null>(null);
+
+  const activeSpotlight = RELATIVE_SPOTLIGHTS.find((s) => s.id === activeSpotlightId) || null;
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!tracksRef.current) return;
+    const rect = tracksRef.current.getBoundingClientRect();
+    if (e.clientX < rect.left) {
+      setNeedlePct(0);
+      setHoveredYears(0);
+      return;
+    }
+    const offsetX = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+    const pct = (offsetX / rect.width) * 100;
+    setNeedlePct(pct);
+
+    const years = Math.round((pct / 100) * 1500);
+    setHoveredYears(years);
+  };
+
+  const handleMouseLeave = () => {
+    if (activeSpotlight) {
+      const pct = relYearsToPct(activeSpotlight.targetYears);
+      setNeedlePct(pct);
+      setHoveredYears(activeSpotlight.targetYears);
+    } else {
+      setNeedlePct(null);
+      setHoveredYears(null);
+    }
+  };
+
+  const jumpToSpotlight = (spotlight: RelativeSpotlight) => {
+    if (activeSpotlightId === spotlight.id) {
+      setActiveSpotlightId(null);
+      setNeedlePct(null);
+      setHoveredYears(null);
+      return;
+    }
+
+    setActiveSpotlightId(spotlight.id);
+    setSelectedEvent(null);
+    const pct = relYearsToPct(spotlight.targetYears);
+    setNeedlePct(pct);
+    setHoveredYears(spotlight.targetYears);
+
+    if (!scrollRef.current) return;
+    const container = scrollRef.current;
+    const stickyHeader = container.querySelector('.matrix-civ-label-col') as HTMLElement | null;
+    const stickyWidth = stickyHeader ? stickyHeader.offsetWidth : 180;
+    
+    const totalScrollWidth = container.scrollWidth;
+    const trackWidth = Math.max(1, totalScrollWidth - stickyWidth);
+    
+    const visibleViewportWidth = Math.max(1, container.clientWidth - stickyWidth);
+    const targetScrollLeft = (pct / 100) * trackWidth - (visibleViewportWidth / 2);
+    
+    const maxScrollLeft = Math.max(0, totalScrollWidth - container.clientWidth);
+    const clampedScrollLeft = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft));
+
+    container.scrollTo({
+      left: clampedScrollLeft,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <div className="unified-timeline-wrapper">
+      {/* QUICK RELATIVE SPOTLIGHT BUTTONS BAR */}
+      <div className="era-quick-chips-bar">
+        <span style={{ fontSize: '0.8rem', fontWeight: 700, color: 'var(--text-muted)', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+          <Sparkles size={14} style={{ color: 'var(--accent-gold, #eab308)' }} />
+          <span>도입 경과속도 핵심 비교:</span>
+        </span>
+        {RELATIVE_SPOTLIGHTS.map((spot) => {
+          const isActive = activeSpotlightId === spot.id;
+          return (
+            <button
+              key={spot.id}
+              className={`era-chip-btn ${isActive ? 'active' : ''}`}
+              onClick={() => jumpToSpotlight(spot)}
+            >
+              <span>{spot.label}</span>
+            </button>
+          );
+        })}
+      </div>
+
+      {/* HORIZONTALLY SCROLLABLE RELATIVE TIMELINE CANVAS */}
+      <div className="timeline-matrix-scroll-container" ref={scrollRef}>
+        <div className="timeline-matrix-inner">
+          {/* HEADER RULER ROW */}
+          <div className="matrix-ruler-row">
+            <div className="matrix-civ-label-col">
+              <span>문명별 t=0 도입기준</span>
+            </div>
+            <div className="matrix-tracks-area">
+              <div className="matrix-ruler-ticks">
+                {RELATIVE_RULER_MARKS.map((mark) => {
+                  const pct = relYearsToPct(mark.years);
+                  return (
+                    <div
+                      key={mark.years}
+                      className="matrix-ruler-mark-item"
+                      style={{
+                        left: `${pct}%`,
+                        transform: pct === 0 ? 'translateX(0%)' : pct >= 95 ? 'translateX(-100%)' : 'translateX(-50%)'
+                      }}
+                    >
+                      <span>{mark.label}</span>
+                      <div className="matrix-ruler-tick-line" />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* MAIN TRACK MATRIX BODY */}
+          <div
+            className="matrix-lanes-wrapper"
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          >
+            {/* OVERLAYS (Grid lines, Needle) */}
+            <div className="matrix-track-interactive-overlay" ref={tracksRef}>
+              {/* VERTICAL GRID LINES */}
+              {RELATIVE_RULER_MARKS.map((mark) => (
+                <div
+                  key={`grid-rel-${mark.years}`}
+                  className="matrix-grid-line"
+                  style={{ left: `${relYearsToPct(mark.years)}%` }}
+                />
+              ))}
+
+              {/* INTERACTIVE TIME NEEDLE */}
+              {needlePct !== null && (
+                <div className="matrix-time-needle" style={{ left: `${needlePct}%` }}>
+                  <div
+                    className="matrix-time-needle-head"
+                    style={{
+                      transform:
+                        needlePct < 10
+                          ? 'translateX(0%)'
+                          : needlePct > 90
+                          ? 'translateX(-100%)'
+                          : 'translateX(-50%)'
+                    }}
+                  >
+                    {hoveredYears !== null ? `t + ${hoveredYears}년 경과` : ''}
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* CIVILIZATION LANES */}
+            {RELATIVE_TIMELINE_DATA.map((civ) => {
+              const barWidthPct = relYearsToPct(civ.maxElapsedYears);
+
+              return (
+                <div key={civ.id} className="matrix-lane-row">
+                  <div className="matrix-lane-civ-header">
+                    <div className="matrix-civ-name" style={{ color: civ.colorVar }}>
+                      <span>{civ.icon}</span>
+                      <span>{civ.name}</span>
+                    </div>
+                    <div className="matrix-civ-span" style={{ fontSize: '0.66rem' }}>{civ.t0Origin}</div>
+                  </div>
+
+                  <div className="matrix-lane-track-body">
+                    {/* SPAN BAR */}
+                    <div
+                      className="matrix-span-bar"
+                      style={{
+                        left: '0%',
+                        width: `${barWidthPct}%`,
+                        background: `linear-gradient(90deg, ${civ.colorVar} 0%, rgba(255,255,255,0.15) 100%)`
+                      }}
+                    />
+
+                    {/* EVENT CHIPS */}
+                    {civ.events.map((ev) => {
+                      const evPct = relYearsToPct(ev.elapsedYears);
+                      const isHovered = hoveredYears !== null && Math.abs(hoveredYears - ev.elapsedYears) < 40;
+                      const isSelected = selectedEvent?.event.id === ev.id;
+                      const isSpotlighted = activeSpotlight !== null && Math.abs(activeSpotlight.targetYears - ev.elapsedYears) <= 150;
+
+                      let alignClass = 'align-center';
+                      if (evPct < 12) {
+                        alignClass = 'align-left';
+                      } else if (evPct > 88) {
+                        alignClass = 'align-right';
+                      }
+
+                      return (
+                        <div
+                          key={ev.id}
+                          className={`matrix-event-chip ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
+                          style={{ left: `${evPct}%` }}
+                          onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
+                        >
+                          <div className="matrix-event-pin-dot" style={{ color: civ.colorVar }} />
+                          <div className="matrix-event-label-chip">
+                            <span className="year-badge">t+{ev.elapsedYears}년</span>
+                            <span>{ev.title}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* HOVER / SELECTED EVENT DETAILS & CROSS-CIV COMPARISON HUD */}
+      {selectedEvent ? (
+        <div className="mobile-hud-sheet">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
+            <div>
+              <span className="font-cinzel" style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', letterSpacing: '0.05em' }}>
+                {selectedEvent.civName} • {selectedEvent.event.stage} ({selectedEvent.event.actualBCE})
+              </span>
+              <h4 style={{ margin: '0.2rem 0 0 0', fontSize: '1.1rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)' }}>
+                {selectedEvent.event.title}
+              </h4>
+            </div>
+            <button
+              className="btn btn-ghost btn-sm"
+              onClick={() => setSelectedEvent(null)}
+              style={{ padding: '0.2rem 0.5rem', fontSize: '0.78rem' }}
+            >
+              ✕ 닫기
+            </button>
+          </div>
+          <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+            {selectedEvent.event.detail}
+          </p>
+        </div>
+      ) : activeSpotlight ? (
+        <div className="mobile-hud-sheet era-spotlight-hud">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.65rem' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span className="era-badge-tag">{activeSpotlight.badge}</span>
+                <span className="font-cinzel" style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)' }}>
+                  {activeSpotlight.periodSummary}
+                </span>
+              </div>
+              <h4 style={{ margin: '0.3rem 0 0 0', fontSize: '1.1rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)', fontWeight: 700 }}>
+                {activeSpotlight.title}
+              </h4>
+            </div>
+            <button
+              className="btn btn-ghost btn-sm"
+              onClick={() => {
+                setActiveSpotlightId(null);
+                setNeedlePct(null);
+                setHoveredYears(null);
+              }}
+              style={{ padding: '0.2rem 0.5rem', fontSize: '0.78rem' }}
+            >
+              ✕ 탐색 해제
+            </button>
+          </div>
+          <div style={{ marginBottom: '0.6rem', fontSize: '0.86rem', color: 'var(--accent-gold, #eab308)', fontWeight: 600 }}>
+            💡 {activeSpotlight.comparisonHighlight}
+          </div>
+          <p style={{ margin: '0 0 0.75rem 0', fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+            {activeSpotlight.curatorInsight}
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)' }}>🏛️ 핵심 실증 사료:</span>
+            {activeSpotlight.keyArtifacts.map((art, idx) => (
+              <span key={idx} className="era-key-artifact-tag">
+                {art}
+              </span>
+            ))}
+          </div>
+        </div>
+      ) : null}
+
+      {/* 4-PILLAR COMPARATIVE SYNTHESIS SUMMARY */}
+      <div style={{ marginTop: '2.5rem', borderTop: '1px solid var(--border-color)', paddingTop: '1.75rem' }}>
+        <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.25rem', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+          <Scale size={18} style={{ color: 'var(--civ-greece)' }} />
+          <span>비교 분석: 왜 문명마다 비경제 기록 출현 속도가 극적으로 다른가?</span>
+        </h3>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.88rem', margin: '0 0 1.25rem 0' }}>
+          알파벳 여부라는 단순 부호 차이를 넘어, 서기관 계급의 성격, 기록 매체의 비용, 그리고 국가·종교 제도의 요구가 경과시간의 격차를 결정지었습니다.
+        </p>
+
+        <div className="relative-summary-grid">
+          <div className="relative-summary-card" style={{ borderLeft: '4px solid var(--civ-greece)' }}>
+            <div>
+              <div className="relative-speed-badge">⚡ 초고속 (t+35년)</div>
+              <h4 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif)', marginBottom: '0.35rem' }}>그리스: 시민 연회와 가창 시가</h4>
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5, margin: '0 0 0.75rem 0' }}>
+                왕실 관료 독점 없이 24자 모음 알파벳이 귀족 심포시온(연회) 문화와 결합하여, 도입 즉시 개인 유희시 및 구전 서사시 기록으로 직행했습니다.
+              </p>
+            </div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', borderTop: '1px dashed var(--border-color)', paddingTop: '0.5rem' }}>
+              매체: 도기 파편·음각 / 독점도: 없음(대중적)
+            </div>
+          </div>
+
+          <div className="relative-summary-card" style={{ borderLeft: '4px solid var(--civ-mesopotamia)' }}>
+            <div>
+              <div className="relative-speed-badge" style={{ color: 'var(--civ-mesopotamia)', borderColor: 'var(--civ-mesopotamia)' }}>📜 동시 출현 (t=0년)</div>
+              <h4 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif)', marginBottom: '0.35rem' }}>메소포타미아: 서기관 교육 표준목록</h4>
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5, margin: '0 0 0.75rem 0' }}>
+                문자 발생과 동시에 직업 어휘목록(ED Lu A)이 탄생하여, 수백 년간 신전 관료 서기관 학교(에둡바)의 제도적 재생산 도구로 작동했습니다.
+              </p>
+            </div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', borderTop: '1px dashed var(--border-color)', paddingTop: '0.5rem' }}>
+              매체: 점토판(저렴·영구보존) / 독점도: 에둡바 전문서기
+            </div>
+          </div>
+
+          <div className="relative-summary-card" style={{ borderLeft: '4px solid var(--civ-israel)' }}>
+            <div>
+              <div className="relative-speed-badge" style={{ color: 'var(--civ-israel)', borderColor: 'var(--civ-israel)' }}>✨ 위기 속 경전화 (t+450년)</div>
+              <h4 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif)', marginBottom: '0.35rem' }}>이스라엘: 망국 위기와 성서 전승</h4>
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5, margin: '0 0 0.75rem 0' }}>
+                바빌론 유수라는 국가 붕괴 위기 속에서 물리적 신전을 대신하여 신앙과 역사를 보존하기 위해 문자로써 성서 경전을 집대성했습니다.
+              </p>
+            </div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', borderTop: '1px dashed var(--border-color)', paddingTop: '0.5rem' }}>
+              매체: 가죽/양피지 두루마리 / 독점도: 제사장·율법학자
+            </div>
+          </div>
+
+          <div className="relative-summary-card" style={{ borderLeft: '4px solid var(--civ-egypt)' }}>
+            <div>
+              <div className="relative-speed-badge" style={{ color: 'var(--civ-egypt)', borderColor: 'var(--civ-egypt)' }}>🏛️ 900년 완성 (t+900년)</div>
+              <h4 style={{ fontSize: '1.05rem', fontFamily: 'var(--font-serif)', marginBottom: '0.35rem' }}>이집트: 왕권 제의와 피라미드 영생</h4>
+              <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', lineHeight: 1.5, margin: '0 0 0.75rem 0' }}>
+                선왕조 세무 꼬리표 이후 900년간 파라오의 신성한 이름과 군사 승전 기념비에 독점되다가, 피라미드 영생 주문으로 장대하게 완결되었습니다.
+              </p>
+            </div>
+            <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', borderTop: '1px dashed var(--border-color)', paddingTop: '0.5rem' }}>
+              매체: 석비 릴리프·파피루스 / 독점도: 생명의 집(신전)
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 interface HomeViewProps {
   onNavigateTab: (tab: string, param?: string) => void;
 }
@@ -680,59 +1363,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
         {/* CHART VISUALIZATION */}
         <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
           {timeMode === 'relative' ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.92rem', fontWeight: 600 }}>
-                  <span style={{ color: 'var(--civ-mesopotamia)' }}>메소포타미아 (후기 우루크 IV기 t=0 기준)</span>
-                  <span style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700 }}>t+0 년 <span style={{ fontWeight: 400, fontSize: '0.8rem', color: 'var(--text-muted)' }}>(회계 문서 & 어휘목록 동시 출현)</span></span>
-                </div>
-                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex', border: '1px solid var(--border-color)' }}>
-                  <div style={{ width: '12%', background: 'linear-gradient(90deg, var(--civ-mesopotamia) 0%, #e66d3b 100%)', height: '100%' }}></div>
-                </div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                  우루크 IV기 행정 점토판과 직업목록(ED Lu A) 동시 출현 (DCCLT 데이터 실증)
-                </div>
-              </div>
-
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.92rem', fontWeight: 600 }}>
-                  <span style={{ color: 'var(--civ-egypt)' }}>이집트 (아비도스 U-j 묘 t=0 기준)</span>
-                  <span style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700 }}>t+900 년 <span style={{ fontWeight: 400, fontSize: '0.8rem', color: 'var(--text-muted)' }}>(피라미드 텍스트 刻文)</span></span>
-                </div>
-                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex', border: '1px solid var(--border-color)' }}>
-                  <div style={{ width: '55%', background: 'linear-gradient(90deg, var(--civ-egypt) 0%, #22b8c0 100%)', height: '100%' }}></div>
-                </div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                  선왕조 표찰(c. 3250 BCE) 후 제5왕조 우나스 피라미드 매장실 텍스트(c. 2350 BCE)
-                </div>
-              </div>
-
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.92rem', fontWeight: 600 }}>
-                  <span style={{ color: 'var(--civ-greece)' }}>그리스 (알파벳 도입 t=0 c. 775 BCE 기준)</span>
-                  <span style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700 }}>t+35 년 <span style={{ fontWeight: 400, fontSize: '0.8rem', color: 'var(--text-muted)' }}>(디필론 비문 / 네스토르의 잔 유희시)</span></span>
-                </div>
-                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex', border: '1px solid var(--border-color)' }}>
-                  <div style={{ width: '22%', background: 'linear-gradient(90deg, var(--civ-greece) 0%, #3b82f6 100%)', height: '100%' }}></div>
-                </div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                  Linear B 붕괴 후 알파벳 수용 35년 만에 시적 유희비문 극적 확산 (BCE 740년 디필론)
-                </div>
-              </div>
-
-              <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.92rem', fontWeight: 600 }}>
-                  <span style={{ color: 'var(--civ-israel)' }}>이스라엘·유다 (고대 히브리 분화 t=0 c. 950 BCE 기준)</span>
-                  <span style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700 }}>t+350 년 <span style={{ fontWeight: 400, fontSize: '0.8rem', color: 'var(--text-muted)' }}>(케테프 힌놈 부적 및 포로기 성서)</span></span>
-                </div>
-                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex', border: '1px solid var(--border-color)' }}>
-                  <div style={{ width: '40%', background: 'linear-gradient(90deg, var(--civ-israel) 0%, #a855f7 100%)', height: '100%' }}></div>
-                </div>
-                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
-                  게제르 달력(c. 925 BCE) 후 케테프 힌놈 은제 부적(c. 600 BCE) 및 쿰란 사해문서(c. 150 BCE)
-                </div>
-              </div>
-            </div>
+            <RelativeTimelineMatrix />
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               {/* UNIFIED INTERACTIVE TIMELINE MATRIX (BCE 3400 - 300) */}
