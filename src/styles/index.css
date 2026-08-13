@@ -1570,8 +1570,7 @@ p:last-child {
 .matrix-time-needle-head {
   position: absolute;
   top: -24px;
-  transform: translateX(-50%);
-  background: #eab308;
+  background: var(--accent-gold, #eab308);
   color: #000;
   font-family: var(--font-cinzel);
   font-weight: 800;
@@ -1580,6 +1579,8 @@ p:last-child {
   border-radius: var(--radius-sm);
   white-space: nowrap;
   box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease-out;
+  pointer-events: none;
 }
 
 .matrix-lane-row {

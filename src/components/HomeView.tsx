@@ -321,8 +321,22 @@ export const UnifiedTimelineMatrix: React.FC = () => {
             {/* INTERACTIVE CROSSHAIR TIME NEEDLE */}
             {needlePct !== null && (
               <div className="matrix-time-needle" style={{ left: `${needlePct}%` }}>
-                <div className="matrix-time-needle-head">
-                  {hoveredYear && hoveredYear >= 3300 ? `c. ${hoveredYear} BCE` : '문자 출현 전야'}
+                <div
+                  className="matrix-time-needle-head"
+                  style={{
+                    transform:
+                      needlePct < 10
+                        ? 'translateX(0%)'
+                        : needlePct > 90
+                        ? 'translateX(-100%)'
+                        : 'translateX(-50%)'
+                  }}
+                >
+                  {hoveredYear !== null
+                    ? hoveredYear > 3300
+                      ? `c. ${hoveredYear} BCE (문자 전야)`
+                      : `c. ${hoveredYear} BCE`
+                    : ''}
                 </div>
               </div>
             )}
