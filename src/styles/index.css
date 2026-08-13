@@ -1759,6 +1759,66 @@ p:last-child {
   font-weight: 700;
 }
 
+/* Alternating Up/Down Staggered Event Chips */
+.matrix-stagger-chip {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.1s ease;
+}
+
+.matrix-stagger-chip:hover,
+.matrix-stagger-chip.active {
+  z-index: 30;
+}
+
+.matrix-stagger-chip.pos-top {
+  transform: translate(-50%, -50%);
+}
+
+.matrix-stagger-chip.pos-top .matrix-event-label-chip {
+  margin-top: 0;
+  margin-bottom: 6px;
+  order: -1;
+}
+
+.matrix-stagger-chip.pos-bottom {
+  transform: translate(-50%, -50%);
+}
+
+.matrix-stagger-chip.pos-bottom .matrix-event-label-chip {
+  margin-top: 6px;
+  margin-bottom: 0;
+  order: 1;
+}
+
+.matrix-stagger-chip.align-left {
+  transform: translate(0, -50%) !important;
+  align-items: flex-start !important;
+}
+
+.matrix-stagger-chip.align-right {
+  transform: translate(-100%, -50%) !important;
+  align-items: flex-end !important;
+}
+
+.matrix-stagger-chip.spotlight-highlight .matrix-event-pin-dot {
+  box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.45), 0 0 12px rgba(234, 179, 8, 0.8);
+  transform: scale(1.2);
+}
+
+.matrix-stagger-chip.spotlight-highlight .matrix-event-label-chip {
+  border-color: var(--accent-gold, #eab308);
+  background: var(--bg-surface-elevated);
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.25);
+  font-weight: 700;
+}
+
 .mobile-hud-sheet {
   margin-top: 1.25rem;
   background: var(--bg-card);

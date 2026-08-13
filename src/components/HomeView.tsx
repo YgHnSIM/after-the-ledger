@@ -478,17 +478,38 @@ export const UnifiedTimelineMatrix: React.FC = () => {
 // ==========================================================================
 
 const relYearsToPct = (years: number): number => {
-  return Math.max(0, Math.min(100, (years / 1500) * 100));
+  if (years <= 0) return 0;
+  if (years <= 100) {
+    // 0 to 100 years -> 0% to 26% (gives ample breathing room for early dense milestones)
+    return (years / 100) * 26;
+  }
+  if (years <= 500) {
+    // 100 to 500 years -> 26% to 62%
+    return 26 + ((years - 100) / 400) * 36;
+  }
+  // 500 to 1500 years -> 62% to 100%
+  return Math.min(100, 62 + ((years - 500) / 1000) * 38);
+};
+
+const pctToRelYears = (pct: number): number => {
+  if (pct <= 0) return 0;
+  if (pct <= 26) {
+    return Math.round((pct / 26) * 100);
+  }
+  if (pct <= 62) {
+    return Math.round(100 + ((pct - 26) / 36) * 400);
+  }
+  return Math.round(500 + ((pct - 62) / 38) * 1000);
 };
 
 const RELATIVE_RULER_MARKS = [
-  { label: 't = 0년 (도입)', years: 0 },
+  { label: 't = 0', years: 0 },
+  { label: 't + 50년', years: 50 },
   { label: 't + 100년', years: 100 },
   { label: 't + 250년', years: 250 },
   { label: 't + 500년', years: 500 },
   { label: 't + 750년', years: 750 },
   { label: 't + 1000년', years: 1000 },
-  { label: 't + 1250년', years: 1250 },
   { label: 't + 1500년+', years: 1500 }
 ];
 
@@ -622,20 +643,12 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
     maxElapsedYears: 1500,
     events: [
       {
-        id: 'meso-0-econ',
+        id: 'meso-0',
         elapsedYears: 0,
-        title: '우루크 IV기 경제 장부',
+        title: '우루크 IV기 장부 & 직업목록(ED Lu A)',
         actualBCE: 'c. 3300 BCE',
-        stage: 't=0 (경제 회계)',
-        detail: '신전 곡물·가축·노동 수량 출납을 점토판에 부호로 기록한 원시 쐐기문자 장부.'
-      },
-      {
-        id: 'meso-0-lex',
-        elapsedYears: 0,
-        title: 'ED Lu A 직업 어휘목록',
-        actualBCE: 'c. 3300 BCE',
-        stage: 't=0 (어휘목록 동시출현)',
-        detail: '문자 탄생 순간부터 서기관 교육을 위해 120여 개 직업 위계를 표준화한 목록 동시 출토.'
+        stage: 't=0 (경제회계 & 어휘목록 동시출현)',
+        detail: '신전 곡물·가축 수량 출납 장부(85%)와 서기관 교육용 직업 위계 표준목록(ED Lu A, 15%)이 동시 출현.'
       },
       {
         id: 'meso-700',
@@ -656,7 +669,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'meso-1500',
         elapsedYears: 1500,
-        title: '길가메시 서사시 표준본',
+        title: '길가메시 서사시 완본',
         actualBCE: 'c. 1200 BCE',
         stage: 't+1500년+ (대서사 완결)',
         detail: '신-레케-운닌니 사제에 의해 12개 점토판으로 집대성된 메소포타미아 불후의 영웅 서사시.'
@@ -706,7 +719,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'isr-800',
         elapsedYears: 800,
-        title: '쿰란 사해문서',
+        title: '쿰란 사해문서 집대성',
         actualBCE: 'c. 150 BCE',
         stage: 't+800년 (성서 사본 전승)',
         detail: '사해 광야 동굴에서 발견된 히브리 성서 전권 사본과 종파 문서. 정경화의 결정적 물적 증거.'
@@ -732,7 +745,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'egy-250',
         elapsedYears: 250,
-        title: '나르메르 팔레트',
+        title: '나르메르 팔레트 (왕권 도상)',
         actualBCE: 'c. 3000 BCE',
         stage: 't+250년 (왕권 도상)',
         detail: '상·하 이집트 통일 왕권의 군사적 승리와 신성한 권위를 과시하는 화장판 릴리프 비문.'
@@ -748,7 +761,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'egy-1300',
         elapsedYears: 1300,
-        title: '시누헤 이야기',
+        title: '시누헤 이야기 (문학 서사)',
         actualBCE: 'c. 1950 BCE',
         stage: 't+1300년 (고전문학 서사)',
         detail: '망명 관료의 고난과 파라오의 은혜로 귀환하는 자전적 문학 서사. 이집트 세속 문학의 금자탑.'
@@ -821,7 +834,7 @@ export const RelativeTimelineMatrix: React.FC = () => {
     const pct = (offsetX / rect.width) * 100;
     setNeedlePct(pct);
 
-    const years = Math.round((pct / 100) * 1500);
+    const years = pctToRelYears(pct);
     setHoveredYears(years);
   };
 
@@ -964,7 +977,7 @@ export const RelativeTimelineMatrix: React.FC = () => {
               const barWidthPct = relYearsToPct(civ.maxElapsedYears);
 
               return (
-                <div key={civ.id} className="matrix-lane-row">
+                <div key={civ.id} className="matrix-lane-row" style={{ minHeight: '105px' }}>
                   <div className="matrix-lane-civ-header">
                     <div className="matrix-civ-name" style={{ color: civ.colorVar }}>
                       <span>{civ.icon}</span>
@@ -973,7 +986,7 @@ export const RelativeTimelineMatrix: React.FC = () => {
                     <div className="matrix-civ-span" style={{ fontSize: '0.66rem' }}>{civ.t0Origin}</div>
                   </div>
 
-                  <div className="matrix-lane-track-body">
+                  <div className="matrix-lane-track-body" style={{ minHeight: '105px', padding: 0 }}>
                     {/* SPAN BAR */}
                     <div
                       className="matrix-span-bar"
@@ -984,24 +997,25 @@ export const RelativeTimelineMatrix: React.FC = () => {
                       }}
                     />
 
-                    {/* EVENT CHIPS */}
-                    {civ.events.map((ev) => {
+                    {/* EVENT CHIPS (ALTERNATING STAGGER UP/DOWN) */}
+                    {civ.events.map((ev, idx) => {
                       const evPct = relYearsToPct(ev.elapsedYears);
-                      const isHovered = hoveredYears !== null && Math.abs(hoveredYears - ev.elapsedYears) < 40;
+                      const isHovered = hoveredYears !== null && Math.abs(hoveredYears - ev.elapsedYears) < 30;
                       const isSelected = selectedEvent?.event.id === ev.id;
-                      const isSpotlighted = activeSpotlight !== null && Math.abs(activeSpotlight.targetYears - ev.elapsedYears) <= 150;
+                      const isSpotlighted = activeSpotlight !== null && Math.abs(activeSpotlight.targetYears - ev.elapsedYears) <= 100;
+                      const isTop = idx % 2 === 0;
 
                       let alignClass = 'align-center';
-                      if (evPct < 12) {
+                      if (evPct < 8) {
                         alignClass = 'align-left';
-                      } else if (evPct > 88) {
+                      } else if (evPct > 92) {
                         alignClass = 'align-right';
                       }
 
                       return (
                         <div
                           key={ev.id}
-                          className={`matrix-event-chip ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
+                          className={`matrix-stagger-chip ${isTop ? 'pos-top' : 'pos-bottom'} ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
                           style={{ left: `${evPct}%` }}
                           onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
                         >
