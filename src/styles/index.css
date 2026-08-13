@@ -300,7 +300,39 @@ p:last-child {
 .nav-link-btn:hover {
   background: var(--bg-surface-elevated);
   color: var(--text-primary);
-  border-color: var(--border-color);
+  border-color: var(--border-highlight);
+}
+
+/* Category Dropdown Navigation Hover Shading & Micro-slide */
+.nav-cat-btn {
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nav-cat-btn:hover {
+  background: var(--bg-surface-elevated) !important;
+  border-color: var(--border-highlight) !important;
+  color: var(--accent-primary) !important;
+  box-shadow: var(--shadow-sm);
+  transform: translateY(-1px);
+}
+
+.nav-dropdown-item {
+  transition: all 0.18s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.nav-dropdown-item:hover {
+  background: rgba(184, 134, 11, 0.12) !important; /* Gold Tint Shading */
+  border-left: 3px solid var(--accent-primary) !important;
+  padding-left: 0.95rem !important; /* Micro-slide affordance */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .nav-dropdown-item:hover {
+  background: rgba(255, 215, 0, 0.14) !important; /* Dark Gold Glowing Shading */
+}
+
+.nav-dropdown-item:hover .nav-dropdown-title {
+  color: var(--accent-primary) !important;
 }
 
 .nav-link-btn.active {
