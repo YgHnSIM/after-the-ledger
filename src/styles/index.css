@@ -1498,6 +1498,22 @@ p:last-child {
   margin-top: 3px;
 }
 
+.matrix-lanes-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.matrix-track-interactive-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 180px;
+  right: 0;
+  pointer-events: none;
+  z-index: 12;
+  overflow: visible;
+}
+
 .matrix-grid-line {
   position: absolute;
   top: 0;
@@ -1817,6 +1833,10 @@ p:last-child {
     width: 95px !important;
     min-width: 95px !important;
     padding: 0.45rem 0.45rem !important;
+  }
+
+  .matrix-track-interactive-overlay {
+    left: 95px !important;
   }
 
   .matrix-civ-name {

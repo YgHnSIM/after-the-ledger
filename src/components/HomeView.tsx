@@ -298,48 +298,49 @@ export const UnifiedTimelineMatrix: React.FC = () => {
 
           {/* MAIN TRACK MATRIX BODY */}
           <div
-            className="matrix-tracks-area"
-            ref={tracksRef}
+            className="matrix-lanes-wrapper"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            style={{ position: 'relative' }}
           >
-            {/* PRE-SCRIPT ERA ZONE (3400~3300 BCE) */}
-            <div className="matrix-prescript-zone">
-              <span className="prescript-tag">문자 도입 전야 (Pre-script Era)</span>
-            </div>
-
-            {/* VERTICAL GRID LINES */}
-            {RULER_MARKS.map((mark) => (
-              <div
-                key={`grid-${mark.year}`}
-                className="matrix-grid-line"
-                style={{ left: `${bceToPct(mark.year)}%` }}
-              />
-            ))}
-
-            {/* INTERACTIVE CROSSHAIR TIME NEEDLE */}
-            {needlePct !== null && (
-              <div className="matrix-time-needle" style={{ left: `${needlePct}%` }}>
-                <div
-                  className="matrix-time-needle-head"
-                  style={{
-                    transform:
-                      needlePct < 10
-                        ? 'translateX(0%)'
-                        : needlePct > 90
-                        ? 'translateX(-100%)'
-                        : 'translateX(-50%)'
-                  }}
-                >
-                  {hoveredYear !== null
-                    ? hoveredYear > 3300
-                      ? `c. ${hoveredYear} BCE (문자 전야)`
-                      : `c. ${hoveredYear} BCE`
-                    : ''}
-                </div>
+            {/* OVERLAYS (Prescript zone, Vertical grid lines, Needle) */}
+            <div className="matrix-track-interactive-overlay" ref={tracksRef}>
+              {/* PRE-SCRIPT ERA ZONE (3400~3300 BCE) */}
+              <div className="matrix-prescript-zone">
+                <span className="prescript-tag">문자 도입 전야</span>
               </div>
-            )}
+
+              {/* VERTICAL GRID LINES */}
+              {RULER_MARKS.map((mark) => (
+                <div
+                  key={`grid-${mark.year}`}
+                  className="matrix-grid-line"
+                  style={{ left: `${bceToPct(mark.year)}%` }}
+                />
+              ))}
+
+              {/* INTERACTIVE CROSSHAIR TIME NEEDLE */}
+              {needlePct !== null && (
+                <div className="matrix-time-needle" style={{ left: `${needlePct}%` }}>
+                  <div
+                    className="matrix-time-needle-head"
+                    style={{
+                      transform:
+                        needlePct < 10
+                          ? 'translateX(0%)'
+                          : needlePct > 90
+                          ? 'translateX(-100%)'
+                          : 'translateX(-50%)'
+                    }}
+                  >
+                    {hoveredYear !== null
+                      ? hoveredYear > 3300
+                        ? `c. ${hoveredYear} BCE (문자 전야)`
+                        : `c. ${hoveredYear} BCE`
+                      : ''}
+                  </div>
+                </div>
+              )}
+            </div>
 
             {/* CIVILIZATION LANES */}
             {TIMELINE_DATA.map((civ) => {
