@@ -1,7 +1,317 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { CIVILIZATIONS } from '../data/civilizations';
 import { COMPARATIVE_ESSAYS } from '../data/essays';
 import { ArrowRight, Clock, ShieldCheck, Scale, Scroll, BookOpen, Sparkles, HelpCircle } from 'lucide-react';
+
+interface EventNode {
+  id: string;
+  yearBCE: number;
+  title: string;
+  detail: string;
+}
+
+interface CivTimeline {
+  id: string;
+  name: string;
+  icon: string;
+  colorVar: string;
+  startBCE: number;
+  endBCE: number;
+  spanText: string;
+  events: EventNode[];
+  curatorNote: string;
+}
+
+const TIMELINE_DATA: CivTimeline[] = [
+  {
+    id: 'mesopotamia',
+    name: '메소포타미아',
+    icon: '🏛️',
+    colorVar: 'var(--civ-mesopotamia)',
+    startBCE: 3300,
+    endBCE: 650,
+    spanText: 'c. 3300 ~ 650 BCE',
+    events: [
+      { id: 'mes-1', yearBCE: 3300, title: '우루크 IV기 점토판', detail: '인류 최초 행정 회계 기록 및 수메르 서기 지식 체계 형성 (DCCLT 데이터)' },
+      { id: 'mes-2', yearBCE: 2600, title: '어휘목록 (ED Lu A)', detail: '사물·직업 분류 표준 어휘집 및 서기관 관료 교육 코퍼스' },
+      { id: 'mes-3', yearBCE: 650, title: '길가메시 서사시 완본', detail: '아슈르바니팔 도서관 12번째 점토판 완본 서사시 전승' }
+    ],
+    curatorNote: '우루크 IV기 회계 점토판 출토와 동시에 사물·직업 분류 어휘목록이 병존하여 수천 년간 서기관 관료 교육 지식체계로 지속 발전함.'
+  },
+  {
+    id: 'egypt',
+    name: '이집트',
+    icon: '𓆎',
+    colorVar: 'var(--civ-egypt)',
+    startBCE: 3250,
+    endBCE: 1250,
+    spanText: 'c. 3250 ~ 1250 BCE',
+    events: [
+      { id: 'egy-1', yearBCE: 3250, title: '아비도스 U-j 표찰', detail: '선왕조 왕권 세입 세출 및 상징 표찰' },
+      { id: 'egy-2', yearBCE: 2350, title: '피라미드 텍스트', detail: '제5왕조 우나스 피라미드 매장실 벽면 성각문자 영혼 제의 刻文' },
+      { id: 'egy-3', yearBCE: 1250, title: '사자의 서 파피루스', detail: '신왕조 파피루스 코퍼스 및 사후세계 영혼 가이드' }
+    ],
+    curatorNote: '왕권 표상 및 영혼 제의의 비공개성이 결합하여 피라미드 매장실 벽면 刻文 및 사자의 서 파피루스 전통으로 확립됨.'
+  },
+  {
+    id: 'ugarit',
+    name: '우가리트',
+    icon: '⚓',
+    colorVar: 'var(--civ-ugarit)',
+    startBCE: 1400,
+    endBCE: 1180,
+    spanText: 'c. 1400 ~ 1180 BCE',
+    events: [
+      { id: 'uga-1', yearBCE: 1400, title: '30자 알파벳 점토판', detail: '세계 최초 알파벳 순서(Abgad) 점토판 서사시' },
+      { id: 'uga-2', yearBCE: 1180, title: '도시 화재 파괴 레이어', detail: '해양민족 침공 청동기 붕괴기 도시 멸망' }
+    ],
+    curatorNote: '동일한 점토 매체에서 현지어 서사시용 30자 알파벳과 외교통상용 음절 쐐기문자가 명확한 기능 분업을 이룬 연구 대조 사례.'
+  },
+  {
+    id: 'greece',
+    name: '그리스',
+    icon: '🏛️',
+    colorVar: 'var(--civ-greece)',
+    startBCE: 1400,
+    endBCE: 300,
+    spanText: 'c. 1400 ~ 300 BCE',
+    events: [
+      { id: 'gre-1', yearBCE: 1400, title: '미케네 Linear B 점토판', detail: '음절 문자 관료 행정 기록 (크노소스/필로스)' },
+      { id: 'gre-2', yearBCE: 750, title: '디필론 비문/네스토르 잔', detail: '알파벳 도입 후 35년 만의 서사시 및 유희시 비문' }
+    ],
+    curatorNote: '미케네 궁전 행정 붕괴 후 백년의 문자 공백기를 거쳐, 모음 표기 음성 알파벳 수용 35년 만에 유희시 비문으로 대중 확산.'
+  },
+  {
+    id: 'israel',
+    name: '이스라엘·유다',
+    icon: '✡️',
+    colorVar: 'var(--civ-israel)',
+    startBCE: 950,
+    endBCE: 150,
+    spanText: 'c. 950 ~ 150 BCE',
+    events: [
+      { id: 'isr-1', yearBCE: 925, title: '게제르 달력', detail: '고대 히브리 음설 알파벳 농경 절기 파피루스/석판' },
+      { id: 'isr-2', yearBCE: 600, title: '케테프 힌놈 은제 부적', detail: '현존 최공 히브리 성서 아론의 축복 구절 刻文' },
+      { id: 'isr-3', yearBCE: 150, title: '쿰란 사해문서 롤', detail: '히브리 성서 전승 사본 코퍼스' }
+    ],
+    curatorNote: '사본 생산 및 편집 연대, 구전 전승 인대의 4중 구조 속에서 텍스트의 유연성과 경전화 정경화 과정이 공존함.'
+  }
+];
+
+const bceToPct = (yearBCE: number): number => {
+  return ((3400 - yearBCE) / 3100) * 100;
+};
+
+const RULER_MARKS = [
+  { label: '3400 BCE', year: 3400 },
+  { label: '3000 BCE', year: 3000 },
+  { label: '2500 BCE', year: 2500 },
+  { label: '2000 BCE', year: 2000 },
+  { label: '1500 BCE', year: 1500 },
+  { label: '1000 BCE', year: 1000 },
+  { label: '500 BCE', year: 500 },
+  { label: '300 BCE', year: 300 }
+];
+
+export const UnifiedTimelineMatrix: React.FC = () => {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const tracksRef = useRef<HTMLDivElement>(null);
+  const [needlePct, setNeedlePct] = useState<number | null>(null);
+  const [hoveredYear, setHoveredYear] = useState<number | null>(null);
+  const [selectedEvent, setSelectedEvent] = useState<{ civName: string; event: EventNode } | null>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (!tracksRef.current) return;
+    const rect = tracksRef.current.getBoundingClientRect();
+    const offsetX = Math.max(0, Math.min(e.clientX - rect.left, rect.width));
+    const pct = (offsetX / rect.width) * 100;
+    setNeedlePct(pct);
+
+    const year = Math.round(3400 - (pct / 100) * 3100);
+    setHoveredYear(year);
+  };
+
+  const handleMouseLeave = () => {
+    setNeedlePct(null);
+    setHoveredYear(null);
+  };
+
+  const jumpToEra = (yearBCE: number) => {
+    if (!scrollRef.current) return;
+    const pct = bceToPct(yearBCE);
+    const scrollWidth = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
+    scrollRef.current.scrollTo({
+      left: (pct / 100) * scrollWidth,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <div className="unified-timeline-wrapper">
+      {/* MOBILE / QUICK JUMP CHIPS BAR */}
+      <div className="era-quick-chips-bar">
+        <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+          <Sparkles size={14} style={{ color: 'var(--accent-gold, #eab308)' }} /> 주요 시대 빠른 탐색:
+        </span>
+        <button className="era-chip-btn" onClick={() => jumpToEra(3400)}>
+          🏛️ 3400 BCE 문자탄생전야
+        </button>
+        <button className="era-chip-btn" onClick={() => jumpToEra(2500)}>
+          𓆎 2500 BCE 피라미드·어휘목록
+        </button>
+        <button className="era-chip-btn" onClick={() => jumpToEra(1400)}>
+          ⚓ 1400 BCE 청동기/Linear B
+        </button>
+        <button className="era-chip-btn" onClick={() => jumpToEra(750)}>
+          🏛️ 750 BCE 알파벳 혁명
+        </button>
+      </div>
+
+      {/* HORIZONTALLY SCROLLABLE TIMELINE MATRIX CANVAS */}
+      <div className="timeline-matrix-scroll-container" ref={scrollRef}>
+        <div className="timeline-matrix-inner">
+          {/* HEADER RULER ROW */}
+          <div className="matrix-ruler-row">
+            <div className="matrix-civ-label-col">
+              <span>문명 및 시대 스케일</span>
+            </div>
+            <div className="matrix-tracks-area">
+              <div className="matrix-ruler-ticks">
+                {RULER_MARKS.map((mark) => {
+                  const pct = bceToPct(mark.year);
+                  return (
+                    <div
+                      key={mark.year}
+                      className="matrix-ruler-mark-item"
+                      style={{
+                        left: `${pct}%`,
+                        transform: pct === 0 ? 'translateX(0%)' : pct === 100 ? 'translateX(-100%)' : 'translateX(-50%)'
+                      }}
+                    >
+                      <span>{mark.label}</span>
+                      <div className="matrix-ruler-tick-line" />
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+
+          {/* MAIN TRACK MATRIX BODY */}
+          <div
+            className="matrix-tracks-area"
+            ref={tracksRef}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+            style={{ position: 'relative' }}
+          >
+            {/* PRE-SCRIPT ERA ZONE (3400~3300 BCE) */}
+            <div className="matrix-prescript-zone">
+              <span className="prescript-tag">문자 도입 전야 (Pre-script Era)</span>
+            </div>
+
+            {/* VERTICAL GRID LINES */}
+            {RULER_MARKS.map((mark) => (
+              <div
+                key={`grid-${mark.year}`}
+                className="matrix-grid-line"
+                style={{ left: `${bceToPct(mark.year)}%` }}
+              />
+            ))}
+
+            {/* INTERACTIVE CROSSHAIR TIME NEEDLE */}
+            {needlePct !== null && (
+              <div className="matrix-time-needle" style={{ left: `${needlePct}%` }}>
+                <div className="matrix-time-needle-head">
+                  {hoveredYear && hoveredYear >= 3300 ? `c. ${hoveredYear} BCE` : '문자 출현 전야'}
+                </div>
+              </div>
+            )}
+
+            {/* CIVILIZATION LANES */}
+            {TIMELINE_DATA.map((civ) => {
+              const startPct = bceToPct(civ.startBCE);
+              const endPct = bceToPct(civ.endBCE);
+              const barWidthPct = endPct - startPct;
+
+              return (
+                <div key={civ.id} className="matrix-lane-row">
+                  <div className="matrix-lane-civ-header">
+                    <div className="matrix-civ-name" style={{ color: civ.colorVar }}>
+                      <span>{civ.icon}</span>
+                      <span>{civ.name}</span>
+                    </div>
+                    <div className="matrix-civ-span">{civ.spanText}</div>
+                  </div>
+
+                  <div className="matrix-lane-track-body">
+                    {/* SPAN BAR */}
+                    <div
+                      className="matrix-span-bar"
+                      style={{
+                        left: `${startPct}%`,
+                        width: `${barWidthPct}%`,
+                        background: `linear-gradient(90deg, ${civ.colorVar} 0%, rgba(255,255,255,0.15) 100%)`
+                      }}
+                    />
+
+                    {/* EVENT CHIPS */}
+                    {civ.events.map((ev) => {
+                      const evPct = bceToPct(ev.yearBCE);
+                      const isHovered = hoveredYear !== null && Math.abs(hoveredYear - ev.yearBCE) < 70;
+                      const isSelected = selectedEvent?.event.id === ev.id;
+
+                      return (
+                        <div
+                          key={ev.id}
+                          className={`matrix-event-chip ${isHovered || isSelected ? 'active' : ''}`}
+                          style={{ left: `${evPct}%` }}
+                          onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
+                        >
+                          <div className="matrix-event-pin-dot" style={{ color: civ.colorVar }} />
+                          <div className="matrix-event-label-chip">
+                            <span className="year-badge">{ev.yearBCE}BCE</span>
+                            <span>{ev.title}</span>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      {/* HOVER / SELECTED EVENT DETAILS & CROSS-CIV COMPARISON HUD */}
+      {selectedEvent && (
+        <div className="mobile-hud-sheet">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
+            <div>
+              <span className="font-cinzel" style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', letterSpacing: '0.05em' }}>
+                {selectedEvent.civName} • c. {selectedEvent.event.yearBCE} BCE
+              </span>
+              <h4 style={{ margin: '0.2rem 0 0 0', fontSize: '1.1rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)' }}>
+                {selectedEvent.event.title}
+              </h4>
+            </div>
+            <button
+              className="btn btn-ghost btn-sm"
+              onClick={() => setSelectedEvent(null)}
+              style={{ padding: '0.2rem 0.5rem', fontSize: '0.78rem' }}
+            >
+              ✕ 닫기
+            </button>
+          </div>
+          <p style={{ margin: 0, fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.5 }}>
+            {selectedEvent.event.detail}
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
 
 interface HomeViewProps {
   onNavigateTab: (tab: string, param?: string) => void;
@@ -265,186 +575,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
             </div>
           ) : (
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              {/* MUSEUM CURATOR TIMELINE EXHIBIT (BCE 3400 - 300) */}
-              <div className="museum-timeline-wrapper">
-                {/* 3,100-YEAR MUSEUM SCALE RULER TRACK */}
-                <div className="museum-ruler-container">
-                  <div className="museum-ruler-axis-line"></div>
-                  <div className="museum-ruler-mark" style={{ left: '0%', transform: 'translateX(0%)' }}>
-                    <span>3400 BCE</span>
-                    <div className="museum-ruler-tick"></div>
-                  </div>
-                  <div className="museum-ruler-mark" style={{ left: '12.9%', transform: 'translateX(-50%)' }}>
-                    <span>3000 BCE</span>
-                    <div className="museum-ruler-tick"></div>
-                  </div>
-                  <div className="museum-ruler-mark" style={{ left: '29.0%', transform: 'translateX(-50%)' }}>
-                    <span>2500 BCE</span>
-                    <div className="museum-ruler-tick"></div>
-                  </div>
-                  <div className="museum-ruler-mark" style={{ left: '45.16%', transform: 'translateX(-50%)' }}>
-                    <span>2000 BCE</span>
-                    <div className="museum-ruler-tick"></div>
-                  </div>
-                  <div className="museum-ruler-mark" style={{ left: '61.3%', transform: 'translateX(-50%)' }}>
-                    <span>1500 BCE</span>
-                    <div className="museum-ruler-tick"></div>
-                  </div>
-                  <div className="museum-ruler-mark" style={{ left: '77.4%', transform: 'translateX(-50%)' }}>
-                    <span>1000 BCE</span>
-                    <div className="museum-ruler-tick"></div>
-                  </div>
-                  <div className="museum-ruler-mark" style={{ left: '93.5%', transform: 'translateX(-50%)' }}>
-                    <span>500 BCE</span>
-                    <div className="museum-ruler-tick"></div>
-                  </div>
-                  <div className="museum-ruler-mark" style={{ left: '100%', transform: 'translateX(-100%)' }}>
-                    <span>300 BCE</span>
-                    <div className="museum-ruler-tick"></div>
-                  </div>
-                </div>
-
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                  {/* MESOPOTAMIA CARD */}
-                  <div className="museum-curator-card" style={{ borderLeft: '4px solid var(--civ-mesopotamia)' }}>
-                    <div className="home-timeline-header">
-                      <span className="home-timeline-civ-title" style={{ color: 'var(--civ-mesopotamia)', fontSize: '1.05rem' }}>
-                        🏛️ 메소포타미아 (점토판 쐐기문자 Cuneiform)
-                      </span>
-                      <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 700, fontFamily: 'var(--font-cinzel)' }}>
-                        c. 3300 ~ 650 BCE
-                      </span>
-                    </div>
-
-                    <div className="museum-lane-track">
-                      <div className="museum-lane-bar" style={{ marginLeft: '3.2%', width: '85.5%', background: 'linear-gradient(90deg, var(--civ-mesopotamia) 0%, #e66d3b 100%)' }}></div>
-                      <div className="timeline-pin-dot" style={{ left: '3.2%', color: 'var(--civ-mesopotamia)' }}>
-                        <span className="pin-tooltip">우루크 IV기 행정 점토판 (c. 3300 BCE)</span>
-                      </div>
-                      <div className="timeline-pin-dot" style={{ left: '25.8%', color: 'var(--civ-mesopotamia)' }}>
-                        <span className="pin-tooltip">수메르 직업/어휘목록 ED Lu A (c. 2600 BCE)</span>
-                      </div>
-                      <div className="timeline-pin-dot" style={{ left: '88.7%', color: 'var(--civ-mesopotamia)' }}>
-                        <span className="pin-tooltip">길가메시 서사시 니네베 표준판 (c. 650 BCE)</span>
-                      </div>
-                    </div>
-
-                    <div className="museum-curator-note">
-                      <strong>🏛️ 큐레이터 분석:</strong> 우루크 IV기 회계 점토판 출토와 동시에 사물·직업 분류 어휘목록이 병존하여 수천 년간 서기관 관료 교육 지식체계로 지속 발전함.
-                    </div>
-                  </div>
-
-                  {/* EGYPT CARD */}
-                  <div className="museum-curator-card" style={{ borderLeft: '4px solid var(--civ-egypt)' }}>
-                    <div className="home-timeline-header">
-                      <span className="home-timeline-civ-title" style={{ color: 'var(--civ-egypt)', fontSize: '1.05rem' }}>
-                        𓆎 이집트 (성각문자 Hieroglyphs & 파피루스)
-                      </span>
-                      <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 700, fontFamily: 'var(--font-cinzel)' }}>
-                        c. 3250 ~ 1200 BCE
-                      </span>
-                    </div>
-
-                    <div className="museum-lane-track">
-                      <div className="museum-lane-bar" style={{ marginLeft: '4.8%', width: '66.1%', background: 'linear-gradient(90deg, var(--civ-egypt) 0%, #22b8c0 100%)' }}></div>
-                      <div className="timeline-pin-dot" style={{ left: '4.8%', color: 'var(--civ-egypt)' }}>
-                        <span className="pin-tooltip">아비도스 U-j 묘 상아 표찰 (c. 3250 BCE)</span>
-                      </div>
-                      <div className="timeline-pin-dot" style={{ left: '33.9%', color: 'var(--civ-egypt)' }}>
-                        <span className="pin-tooltip">우나스 왕 피라미드 텍스트 刻文 (c. 2350 BCE)</span>
-                      </div>
-                      <div className="timeline-pin-dot" style={{ left: '69.35%', color: 'var(--civ-egypt)' }}>
-                        <span className="pin-tooltip">아니의 사자의 서 파피루스 코퍼스 (c. 1250 BCE)</span>
-                      </div>
-                    </div>
-
-                    <div className="museum-curator-note">
-                      <strong>𓆎 큐레이터 분석:</strong> 왕권 표상 및 영혼 제의의 비공개성이 결합하여 피라미드 매장실 벽면 刻文 및 사자의 서 파피루스 전통으로 확립됨.
-                    </div>
-                  </div>
-
-                  {/* GREECE CARD */}
-                  <div className="museum-curator-card" style={{ borderLeft: '4px solid var(--civ-greece)' }}>
-                    <div className="home-timeline-header">
-                      <span className="home-timeline-civ-title" style={{ color: 'var(--civ-greece)', fontSize: '1.05rem' }}>
-                        🏛️ 그리스 (미케네 Linear B & 음성 알파벳 Alphabet)
-                      </span>
-                      <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 700, fontFamily: 'var(--font-cinzel)' }}>
-                        c. 1400 ~ 300 BCE
-                      </span>
-                    </div>
-
-                    <div className="museum-lane-track">
-                      <div className="museum-lane-bar" style={{ marginLeft: '64.5%', width: '35.5%', background: 'linear-gradient(90deg, var(--civ-greece) 0%, #3b82f6 100%)' }}></div>
-                      <div className="timeline-pin-dot" style={{ left: '64.5%', color: 'var(--civ-greece)' }}>
-                        <span className="pin-tooltip">미케네 궁전 Linear B 점토판 (c. 1400 BCE)</span>
-                      </div>
-                      <div className="timeline-pin-dot" style={{ left: '85.5%', color: 'var(--civ-greece)' }}>
-                        <span className="pin-tooltip">디필론 비문 / 네스토르의 잔 유희시 (c. 750 BCE)</span>
-                      </div>
-                    </div>
-
-                    <div className="museum-curator-note">
-                      <strong>🏛️ 큐레이터 분석:</strong> 미케네 궁전 행정 붕괴 후 백년의 문자 공백기를 거쳐, 모음 표기 음성 알파벳 수용 35년 만에 유희시 비문으로 대중 확산.
-                    </div>
-                  </div>
-
-                  {/* ISRAEL CARD */}
-                  <div className="museum-curator-card" style={{ borderLeft: '4px solid var(--civ-israel)' }}>
-                    <div className="home-timeline-header">
-                      <span className="home-timeline-civ-title" style={{ color: 'var(--civ-israel)', fontSize: '1.05rem' }}>
-                        ✡️ 이스라엘·유다 (고대 히브리 음설 알파벳)
-                      </span>
-                      <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 700, fontFamily: 'var(--font-cinzel)' }}>
-                        c. 950 ~ 150 BCE
-                      </span>
-                    </div>
-
-                    <div className="museum-lane-track">
-                      <div className="museum-lane-bar" style={{ marginLeft: '79.0%', width: '21.0%', background: 'linear-gradient(90deg, var(--civ-israel) 0%, #a855f7 100%)' }}></div>
-                      <div className="timeline-pin-dot" style={{ left: '79.8%', color: 'var(--civ-israel)' }}>
-                        <span className="pin-tooltip">게제르 달력 (c. 925 BCE)</span>
-                      </div>
-                      <div className="timeline-pin-dot" style={{ left: '90.3%', color: 'var(--civ-israel)' }}>
-                        <span className="pin-tooltip">케테프 힌놈 은제 아론의 축복 부적 (c. 600 BCE)</span>
-                      </div>
-                      <div className="timeline-pin-dot" style={{ left: '100.0%', color: 'var(--civ-israel)' }}>
-                        <span className="pin-tooltip">쿰란 동굴 사해문서 롤 (c. 150 BCE)</span>
-                      </div>
-                    </div>
-
-                    <div className="museum-curator-note">
-                      <strong>✡️ 큐레이터 분석:</strong> 사본 생산 및 편집 연대, 구전 전승 인대의 4중 구조 속에서 텍스트의 유연성과 경전화 정경화 과정이 공존함.
-                    </div>
-                  </div>
-
-                  {/* UGARIT CARD */}
-                  <div className="museum-curator-card" style={{ borderLeft: '4px solid var(--civ-ugarit)' }}>
-                    <div className="home-timeline-header">
-                      <span className="home-timeline-civ-title" style={{ color: 'var(--civ-ugarit)', fontSize: '1.05rem' }}>
-                        ⚓ 우가리트 (알파벳 쐐기문자 Cuneiform Alphabet)
-                      </span>
-                      <span style={{ fontSize: '0.82rem', color: 'var(--text-muted)', fontWeight: 700, fontFamily: 'var(--font-cinzel)' }}>
-                        c. 1400 ~ 1180 BCE
-                      </span>
-                    </div>
-
-                    <div className="museum-lane-track">
-                      <div className="museum-lane-bar" style={{ marginLeft: '64.5%', width: '7.1%', background: 'linear-gradient(90deg, var(--civ-ugarit) 0%, #f59e0b 100%)' }}></div>
-                      <div className="timeline-pin-dot" style={{ left: '64.5%', color: 'var(--civ-ugarit)' }}>
-                        <span className="pin-tooltip">우가리트 30자 알파벳 쐐기점토판 (c. 1400 BCE)</span>
-                      </div>
-                      <div className="timeline-pin-dot" style={{ left: '71.6%', color: 'var(--civ-ugarit)' }}>
-                        <span className="pin-tooltip">해양민족 침공 도시 화재 파괴 레이어 (c. 1180 BCE)</span>
-                      </div>
-                    </div>
-
-                    <div className="museum-curator-note">
-                      <strong>⚓ 큐레이터 분석:</strong> 동일한 점토 매체에서 현지어 서사시용 30자 알파벳과 외교통상용 음절 쐐기문자가 명확한 기능 분업을 이룬 연구 대조 사례.
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/* UNIFIED INTERACTIVE TIMELINE MATRIX (BCE 3400 - 300) */}
+              <UnifiedTimelineMatrix />
             </div>
           )}
         </div>
