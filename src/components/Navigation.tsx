@@ -121,18 +121,26 @@ export const Navigation: React.FC<NavigationProps> = ({
                 const isOpen = activeDropdown === cat.id;
 
                 return (
-                  <li key={cat.id} style={{ position: 'relative' }}>
+                  <li
+                    key={cat.id}
+                    style={{ position: 'relative' }}
+                    onMouseEnter={() => setActiveDropdown(cat.id)}
+                    onMouseLeave={() => setActiveDropdown(null)}
+                  >
                     <button
                       className={`nav-cat-btn ${isCatActive ? 'active' : ''}`}
-                      onClick={() => setActiveDropdown(isOpen ? null : cat.id)}
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        setActiveDropdown(isOpen ? null : cat.id);
+                      }}
                       style={{
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '0.4rem',
-                        padding: '0.45rem 0.8rem',
+                        padding: '0.45rem 0.85rem',
                         borderRadius: 'var(--radius-md)',
                         fontSize: '0.88rem',
-                        fontWeight: isCatActive ? 700 : 500,
+                        fontWeight: isCatActive ? 700 : 600,
                         color: isCatActive ? 'var(--accent-primary)' : 'var(--text-primary)',
                         background: isCatActive ? 'var(--bg-surface-elevated)' : 'transparent',
                         border: '1px solid',
@@ -153,18 +161,19 @@ export const Navigation: React.FC<NavigationProps> = ({
                         className="nav-dropdown-menu glass-card"
                         style={{
                           position: 'absolute',
-                          top: 'calc(100% + 8px)',
+                          top: '100%',
                           left: 0,
-                          minWidth: '260px',
+                          minWidth: '270px',
                           background: 'var(--bg-surface)',
                           border: '1px solid var(--border-highlight)',
                           borderRadius: 'var(--radius-md)',
                           boxShadow: 'var(--shadow-lg)',
                           padding: '0.5rem',
-                          zIndex: 200,
+                          zIndex: 9999,
                           display: 'flex',
                           flexDirection: 'column',
-                          gap: '0.25rem'
+                          gap: '0.25rem',
+                          marginTop: '4px'
                         }}
                       >
                         {cat.items.map((item) => {
