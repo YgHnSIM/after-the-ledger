@@ -17,9 +17,27 @@ const InstitutionsView = lazy(() => import('./components/InstitutionsView').then
 const HomericEpicView = lazy(() => import('./components/HomericEpicView').then((m) => ({ default: m.HomericEpicView })));
 const SearchModal = lazy(() => import('./components/GlobalSearchModal').then((m) => ({ default: m.GlobalSearchModal })));
 
+const VALID_TABS = new Set([
+  'home',
+  'compare',
+  'homer',
+  'civilizations',
+  'artifacts',
+  'institutions',
+  'claims',
+  'themes',
+  'greek',
+  'methodology',
+  'sources',
+]);
+
 const parseHash = (): { tab: string; param?: string } => {
-  const raw = window.location.hash.replace(/^#\/?/, '');
-  const [tab = 'home', param] = raw.split('/');
+  const raw = window.location.hash.replace(/^#\/?/, '').trim();
+  if (!raw) {
+    return { tab: 'home' };
+  }
+  const [first, param] = raw.split('/');
+  const tab = first && VALID_TABS.has(first) ? first : 'home';
   return { tab, param };
 };
 
@@ -130,6 +148,7 @@ export const App: React.FC = () => {
           {currentTab === 'greek' && <GreekLanguageView />}
           {currentTab === 'methodology' && <MethodologyView />}
           {currentTab === 'sources' && <SourcesGlossaryView />}
+          {!VALID_TABS.has(currentTab) && <HomeView onNavigateTab={handleSelectTab} />}
         </Suspense>
       </main>
 
