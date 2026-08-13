@@ -128,47 +128,49 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
           </button>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: '1.5rem' }}>
           {civList.map((civ) => (
             <div
               key={civ.id}
-              className="card card-hover"
+              className="card card-hover glass-card"
               onClick={() => onNavigateTab('civilizations', civ.id)}
               style={{
                 cursor: 'pointer',
                 display: 'flex',
                 flexDirection: 'column',
                 justifyContent: 'space-between',
-                borderTop: `4px solid ${civ.accentColor}`
+                borderTop: `4px solid ${civ.accentColor}`,
+                padding: '1.5rem',
+                minHeight: '260px'
               }}
             >
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.6rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
                   <span className={`civ-tag civ-${civ.id}`}>
-                    {civ.id === 'ugarit' ? '통제 사례' : '주요 문명'}
+                    {civ.id === 'ugarit' || civ.id === 'china' ? '통제 사례' : '주요 문명'}
                   </span>
-                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 500, whiteSpace: 'nowrap' }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600, whiteSpace: 'nowrap' }}>
                     c. {civ.scriptEmergenceBCE} BCE
                   </span>
                 </div>
 
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '0.35rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)', lineHeight: 1.25 }}>
+                <h3 style={{ fontSize: '1.35rem', marginBottom: '0.45rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)', lineHeight: 1.3 }}>
                   {civ.nameKo}
                 </h3>
 
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.35rem', overflow: 'hidden' }}>
+                <div style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', marginBottom: '0.85rem', display: 'flex', alignItems: 'flex-start', gap: '0.4rem' }}>
                   <span style={{ fontWeight: 700, color: civ.accentColor, whiteSpace: 'nowrap', flexShrink: 0 }}>문자:</span>
-                  <span style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{civ.scriptName}</span>
+                  <span style={{ color: 'var(--text-primary)', fontWeight: 500 }}>{civ.scriptName}</span>
                 </div>
 
-                <p style={{ fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.5, marginBottom: '1rem' }}>
+                <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.25rem' }}>
                   {civ.oneSentenceSummary}
                 </p>
               </div>
 
-              <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '0.75rem', marginTop: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
+              <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '0.85rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.82rem', color: 'var(--text-muted)' }}>
                 <span>주 매체: {civ.primaryMedia}</span>
-                <ArrowRight size={14} style={{ color: civ.accentColor }} />
+                <ArrowRight size={15} style={{ color: civ.accentColor }} />
               </div>
             </div>
           ))}
