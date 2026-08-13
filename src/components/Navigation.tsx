@@ -190,17 +190,20 @@ export const Navigation: React.FC<NavigationProps> = ({
                                 gap: '0.65rem',
                                 padding: '0.6rem 0.75rem',
                                 borderRadius: 'var(--radius-sm)',
-                                background: isItemActive ? 'var(--bg-surface-elevated)' : 'transparent',
+                                background: 'transparent',
                                 border: 'none',
                                 textAlign: 'left',
                                 cursor: 'pointer',
                                 width: '100%',
-                                transition: 'background 0.15s ease'
+                                transition: 'all 0.15s ease'
                               }}
                             >
                               <ItemIcon size={16} style={{ color: isItemActive ? 'var(--accent-primary)' : 'var(--text-secondary)', flexShrink: 0 }} />
-                              <div>
-                                <div className="nav-dropdown-title" style={{ fontSize: '0.88rem', fontWeight: isItemActive ? 700 : 600, color: 'var(--text-primary)' }}>{item.label}</div>
+                              <div style={{ flex: 1 }}>
+                                <div className="nav-dropdown-title" style={{ fontSize: '0.88rem', fontWeight: isItemActive ? 700 : 500, color: isItemActive ? 'var(--accent-primary)' : 'var(--text-primary)' }}>
+                                  {item.label}
+                                  {isItemActive && <span style={{ marginLeft: '0.4rem', fontSize: '0.75rem', color: 'var(--accent-primary)' }}>✓</span>}
+                                </div>
                                 <div style={{ fontSize: '0.75rem', color: 'var(--text-tertiary)' }}>{item.description}</div>
                               </div>
                             </button>
