@@ -113,12 +113,79 @@ const RULER_MARKS = [
   { label: '100 BCE', year: 100 }
 ];
 
+interface EraSpotlight {
+  id: string;
+  yearBCE: number;
+  label: string;
+  badge: string;
+  title: string;
+  period: string;
+  curatorInsight: string;
+  keyArtifacts: string[];
+}
+
+const ERA_SPOTLIGHTS: EraSpotlight[] = [
+  {
+    id: 'era-3400',
+    yearBCE: 3400,
+    label: '3400 BCE 문자탄생전야',
+    badge: '🏛️ 제1기',
+    title: '문자의 발생과 회계·기록 혁명',
+    period: 'c. 3400 ~ 3100 BCE',
+    curatorInsight: '메소포타미아 우루크 IV기 점토판과 이집트 아비도스 U-j 표찰이 동시대에 출현하며, 수량 계수·세입 관리 및 왕권 상징을 위한 인류 최초의 문자 시스템이 성립된 시대입니다.',
+    keyArtifacts: ['우루크 IV기 점토판 (수메르)', '아비도스 U-j 표찰 (이집트)']
+  },
+  {
+    id: 'era-2500',
+    yearBCE: 2500,
+    label: '2500 BCE 피라미드·어휘목록',
+    badge: '📜 제2기',
+    title: '거대 문헌 집성 & 지식 분류 코퍼스',
+    period: 'c. 2600 ~ 2350 BCE',
+    curatorInsight: '수메르 슈루팍/파라 어휘목록(ED Lu A)을 통한 전문 서기관 양성과 제5왕조 우나스 피라미드 텍스트의 종교·제의 성각문자가 대규모로 축적되며 국가 관료제의 문자 독점이 완성된 시대입니다.',
+    keyArtifacts: ['어휘목록 ED Lu A (수메르)', '피라미드 텍스트 (이집트)']
+  },
+  {
+    id: 'era-1400',
+    yearBCE: 1400,
+    label: '1400 BCE 청동기/Linear B/우가리트',
+    badge: '⚓ 제3기',
+    title: '후기 청동기 국제 외교 & 음절/알파벳 분업',
+    period: 'c. 1400 ~ 1180 BCE',
+    curatorInsight: '미케네 궁전의 Linear B 음절문자 관료 행정과 우가리트의 30자 설형 알파벳 서사시·외교 점토판이 공존한 시대로, 지중해 전역의 활발한 교역과 문자 분업이 정점에 달했습니다.',
+    keyArtifacts: ['미케네 Linear B 점토판 (그리스)', '30자 알파벳 점토판 (우가리트)']
+  },
+  {
+    id: 'era-750',
+    yearBCE: 750,
+    label: '750 BCE 알파벳 혁명 & 서사시',
+    badge: '✒️ 제4기',
+    title: '음성 알파벳 확산과 서사시·유희시 비문',
+    period: 'c. 750 ~ 600 BCE',
+    curatorInsight: '모음 표기를 완성한 고대 그리스 알파벳이 디필론 비문과 네스토르 잔 등 유희·가창 서사시로 대중 확산되고, 이스라엘 은제 부적 등 사적 비문이 刻文되며 문자가 관료 독점을 탈피한 시대입니다.',
+    keyArtifacts: ['디필론 비문/네스토르 잔 (그리스)', '케테프 힌놈 은제 부적 (이스라엘)']
+  },
+  {
+    id: 'era-150',
+    yearBCE: 150,
+    label: '150 BCE 사해문서 & 경전화',
+    badge: '✡️ 제5기',
+    title: '사해문서 전승과 고대 텍스트 정경화',
+    period: 'c. 300 ~ 150 BCE',
+    curatorInsight: '쿰란 사해문서 두루마리와 알렉산드리아 도서관의 텍스트 교정 전통 속에서 히브리 성서와 호메로스 서사시가 최종 판본으로 집대성되고 정경화(Canonization)된 시대입니다.',
+    keyArtifacts: ['쿰란 사해문서 롤 (이스라엘)', '길가메시 서사시 완본 (메소포타미아)']
+  }
+];
+
 export const UnifiedTimelineMatrix: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const tracksRef = useRef<HTMLDivElement>(null);
-  const [needlePct, setNeedlePct] = useState<number | null>(null);
-  const [hoveredYear, setHoveredYear] = useState<number | null>(null);
+  const [activeEraId, setActiveEraId] = useState<string | null>('era-3400');
+  const [needlePct, setNeedlePct] = useState<number | null>(bceToPct(3400));
+  const [hoveredYear, setHoveredYear] = useState<number | null>(3400);
   const [selectedEvent, setSelectedEvent] = useState<{ civName: string; event: EventNode } | null>(null);
+
+  const activeEra = ERA_SPOTLIGHTS.find((e) => e.id === activeEraId) || null;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!tracksRef.current) return;
@@ -132,16 +199,48 @@ export const UnifiedTimelineMatrix: React.FC = () => {
   };
 
   const handleMouseLeave = () => {
-    setNeedlePct(null);
-    setHoveredYear(null);
+    if (activeEra) {
+      setNeedlePct(bceToPct(activeEra.yearBCE));
+      setHoveredYear(activeEra.yearBCE);
+    } else {
+      setNeedlePct(null);
+      setHoveredYear(null);
+    }
   };
 
-  const jumpToEra = (yearBCE: number) => {
+  const jumpToEra = (era: EraSpotlight) => {
+    if (activeEraId === era.id) {
+      // Toggle off spotlight
+      setActiveEraId(null);
+      setNeedlePct(null);
+      setHoveredYear(null);
+      return;
+    }
+
+    setActiveEraId(era.id);
+    setSelectedEvent(null);
+    const pct = bceToPct(era.yearBCE);
+    setNeedlePct(pct);
+    setHoveredYear(era.yearBCE);
+
     if (!scrollRef.current) return;
-    const pct = bceToPct(yearBCE);
-    const scrollWidth = scrollRef.current.scrollWidth - scrollRef.current.clientWidth;
-    scrollRef.current.scrollTo({
-      left: (pct / 100) * scrollWidth,
+    const container = scrollRef.current;
+    const stickyHeader = container.querySelector('.matrix-civ-label-col') as HTMLElement | null;
+    const stickyWidth = stickyHeader ? stickyHeader.offsetWidth : 180;
+    
+    // Total track width inside scroll container
+    const totalScrollWidth = container.scrollWidth;
+    const trackWidth = Math.max(1, totalScrollWidth - stickyWidth);
+    
+    // Center within visible track viewport
+    const visibleViewportWidth = Math.max(1, container.clientWidth - stickyWidth);
+    const targetScrollLeft = (pct / 100) * trackWidth - (visibleViewportWidth / 2);
+    
+    const maxScrollLeft = Math.max(0, totalScrollWidth - container.clientWidth);
+    const clampedScrollLeft = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft));
+
+    container.scrollTo({
+      left: clampedScrollLeft,
       behavior: 'smooth'
     });
   };
@@ -153,18 +252,18 @@ export const UnifiedTimelineMatrix: React.FC = () => {
         <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
           <Sparkles size={14} style={{ color: 'var(--accent-gold, #eab308)' }} /> 주요 시대 빠른 탐색:
         </span>
-        <button className="era-chip-btn" onClick={() => jumpToEra(3400)}>
-          🏛️ 3400 BCE 문자탄생전야
-        </button>
-        <button className="era-chip-btn" onClick={() => jumpToEra(2500)}>
-          📜 2500 BCE 피라미드·어휘목록
-        </button>
-        <button className="era-chip-btn" onClick={() => jumpToEra(1400)}>
-          ⚓ 1400 BCE 청동기/Linear B
-        </button>
-        <button className="era-chip-btn" onClick={() => jumpToEra(750)}>
-          ✒️ 750 BCE 알파벳 혁명
-        </button>
+        {ERA_SPOTLIGHTS.map((era) => {
+          const isActive = activeEraId === era.id;
+          return (
+            <button
+              key={era.id}
+              className={`era-chip-btn ${isActive ? 'active' : ''}`}
+              onClick={() => jumpToEra(era)}
+            >
+              <span>{era.label}</span>
+            </button>
+          );
+        })}
       </div>
 
       {/* HORIZONTALLY SCROLLABLE TIMELINE MATRIX CANVAS */}
@@ -260,6 +359,7 @@ export const UnifiedTimelineMatrix: React.FC = () => {
                       const evPct = bceToPct(ev.yearBCE);
                       const isHovered = hoveredYear !== null && Math.abs(hoveredYear - ev.yearBCE) < 70;
                       const isSelected = selectedEvent?.event.id === ev.id;
+                      const isSpotlighted = activeEra !== null && Math.abs(activeEra.yearBCE - ev.yearBCE) <= 300;
 
                       let alignClass = 'align-center';
                       if (evPct < 15) {
@@ -271,7 +371,7 @@ export const UnifiedTimelineMatrix: React.FC = () => {
                       return (
                         <div
                           key={ev.id}
-                          className={`matrix-event-chip ${alignClass} ${isHovered || isSelected ? 'active' : ''}`}
+                          className={`matrix-event-chip ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
                           style={{ left: `${evPct}%` }}
                           onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
                         >
@@ -292,7 +392,7 @@ export const UnifiedTimelineMatrix: React.FC = () => {
       </div>
 
       {/* HOVER / SELECTED EVENT DETAILS & CROSS-CIV COMPARISON HUD */}
-      {selectedEvent && (
+      {selectedEvent ? (
         <div className="mobile-hud-sheet">
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem' }}>
             <div>
@@ -315,7 +415,45 @@ export const UnifiedTimelineMatrix: React.FC = () => {
             {selectedEvent.event.detail}
           </p>
         </div>
-      )}
+      ) : activeEra ? (
+        <div className="mobile-hud-sheet era-spotlight-hud">
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.65rem' }}>
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <span className="era-badge-tag">{activeEra.badge}</span>
+                <span className="font-cinzel" style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)' }}>
+                  {activeEra.period}
+                </span>
+              </div>
+              <h4 style={{ margin: '0.3rem 0 0 0', fontSize: '1.1rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)', fontWeight: 700 }}>
+                {activeEra.title}
+              </h4>
+            </div>
+            <button
+              className="btn btn-ghost btn-sm"
+              onClick={() => {
+                setActiveEraId(null);
+                setNeedlePct(null);
+                setHoveredYear(null);
+              }}
+              style={{ padding: '0.2rem 0.5rem', fontSize: '0.78rem' }}
+            >
+              ✕ 탐색 해제
+            </button>
+          </div>
+          <p style={{ margin: '0 0 0.75rem 0', fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.55 }}>
+            {activeEra.curatorInsight}
+          </p>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--text-muted)' }}>🏛️ 동시대 대표 유물:</span>
+            {activeEra.keyArtifacts.map((art, idx) => (
+              <span key={idx} className="era-key-artifact-tag">
+                {art}
+              </span>
+            ))}
+          </div>
+        </div>
+      ) : null}
     </div>
   );
 };
