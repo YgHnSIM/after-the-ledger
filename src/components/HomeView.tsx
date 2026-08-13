@@ -271,7 +271,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                   <span>3400 BCE</span>
                   <div className="home-ruler-tick"></div>
                 </div>
-                <div className="home-ruler-mark" style={{ left: '29%', transform: 'translateX(-50%)' }}>
+                <div className="home-ruler-mark" style={{ left: '29.0%', transform: 'translateX(-50%)' }}>
                   <span>2500 BCE</span>
                   <div className="home-ruler-tick"></div>
                 </div>
@@ -301,6 +301,15 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                 </div>
                 <div className="home-timeline-bar-track">
                   <div className="home-timeline-bar-fill" style={{ marginLeft: '3.2%', width: '85.5%', background: 'linear-gradient(90deg, var(--civ-mesopotamia) 0%, #e66d3b 100%)' }}></div>
+                  <div className="timeline-pin-dot" style={{ left: '3.2%', color: 'var(--civ-mesopotamia)' }}>
+                    <span className="pin-tooltip">우루크 IV기 행정 점토판 (c. 3300 BCE)</span>
+                  </div>
+                  <div className="timeline-pin-dot" style={{ left: '25.8%', color: 'var(--civ-mesopotamia)' }}>
+                    <span className="pin-tooltip">수메르 어휘목록 ED Lu A (c. 2600 BCE)</span>
+                  </div>
+                  <div className="timeline-pin-dot" style={{ left: '88.7%', color: 'var(--civ-mesopotamia)' }}>
+                    <span className="pin-tooltip">길가메시 서사시 니네베 표준판 (c. 650 BCE)</span>
+                  </div>
                 </div>
                 <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                   <strong>우루크 회계 점토판 (c. 3300 BCE)</strong> → 수메르 어휘목록 → <strong>길가메시 서사시 니네베 표준판 (c. 650 BCE)</strong>
@@ -319,6 +328,15 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                 </div>
                 <div className="home-timeline-bar-track">
                   <div className="home-timeline-bar-fill" style={{ marginLeft: '4.8%', width: '66.1%', background: 'linear-gradient(90deg, var(--civ-egypt) 0%, #22b8c0 100%)' }}></div>
+                  <div className="timeline-pin-dot" style={{ left: '4.8%', color: 'var(--civ-egypt)' }}>
+                    <span className="pin-tooltip">아비도스 U-j 묘 상아 표찰 (c. 3250 BCE)</span>
+                  </div>
+                  <div className="timeline-pin-dot" style={{ left: '33.9%', color: 'var(--civ-egypt)' }}>
+                    <span className="pin-tooltip">우나스 왕 피라미드 텍스트 (c. 2350 BCE)</span>
+                  </div>
+                  <div className="timeline-pin-dot" style={{ left: '69.35%', color: 'var(--civ-egypt)' }}>
+                    <span className="pin-tooltip">아니의 사자의 서 파피루스 (c. 1250 BCE)</span>
+                  </div>
                 </div>
                 <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                   <strong>아비도스 U-j 묘 상아 표찰 (c. 3250 BCE)</strong> → 피라미드/관 텍스트 → <strong>아니의 사자의 서 파피루스 (c. 1250 BCE)</strong>
@@ -337,6 +355,12 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                 </div>
                 <div className="home-timeline-bar-track">
                   <div className="home-timeline-bar-fill" style={{ marginLeft: '64.5%', width: '35.5%', background: 'linear-gradient(90deg, var(--civ-greece) 0%, #3b82f6 100%)' }}></div>
+                  <div className="timeline-pin-dot" style={{ left: '64.5%', color: 'var(--civ-greece)' }}>
+                    <span className="pin-tooltip">미케네 궁전 Linear B 점토판 (c. 1400 BCE)</span>
+                  </div>
+                  <div className="timeline-pin-dot" style={{ left: '85.5%', color: 'var(--civ-greece)' }}>
+                    <span className="pin-tooltip">디필론 비문 / 네스토르의 잔 유희시 (c. 750 BCE)</span>
+                  </div>
                 </div>
                 <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                   <strong>미케네 궁전 Linear B 점토판 (c. 1400 BCE)</strong> → 디필론 비문 / 네스토르의 잔 유희시 (c. 750 BCE)
@@ -355,6 +379,15 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                 </div>
                 <div className="home-timeline-bar-track">
                   <div className="home-timeline-bar-fill" style={{ marginLeft: '79.0%', width: '21.0%', background: 'linear-gradient(90deg, var(--civ-israel) 0%, #a855f7 100%)' }}></div>
+                  <div className="timeline-pin-dot" style={{ left: '79.8%', color: 'var(--civ-israel)' }}>
+                    <span className="pin-tooltip">게제르 달력 (c. 925 BCE)</span>
+                  </div>
+                  <div className="timeline-pin-dot" style={{ left: '90.3%', color: 'var(--civ-israel)' }}>
+                    <span className="pin-tooltip">케테프 힌놈 은제 부적 (c. 600 BCE)</span>
+                  </div>
+                  <div className="timeline-pin-dot" style={{ left: '100.0%', color: 'var(--civ-israel)' }}>
+                    <span className="pin-tooltip">쿰란 사해문서 (c. 150 BCE)</span>
+                  </div>
                 </div>
                 <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                   <strong>게제르 달력 (c. 925 BCE)</strong> → 케테프 힌놈 은제 부적 (c. 600 BCE) → 쿰란 사해문서 (c. 150 BCE)
@@ -373,6 +406,12 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                 </div>
                 <div className="home-timeline-bar-track">
                   <div className="home-timeline-bar-fill" style={{ marginLeft: '64.5%', width: '7.1%', background: 'linear-gradient(90deg, var(--civ-ugarit) 0%, #f59e0b 100%)' }}></div>
+                  <div className="timeline-pin-dot" style={{ left: '64.5%', color: 'var(--civ-ugarit)' }}>
+                    <span className="pin-tooltip">우가리트 알파벳 쐐기점토판 (c. 1400 BCE)</span>
+                  </div>
+                  <div className="timeline-pin-dot" style={{ left: '71.6%', color: 'var(--civ-ugarit)' }}>
+                    <span className="pin-tooltip">해양민족 침공 도시 파괴 레이어 (c. 1180 BCE)</span>
+                  </div>
                 </div>
                 <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
                   <strong>우가리트 알파벳 쐐기점토판 (c. 1400 BCE)</strong> → 바알 서사시 및 외교문서 → 해양민족 침공 파괴 (c. 1180 BCE)
