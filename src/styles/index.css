@@ -1436,7 +1436,7 @@ p:last-child {
 }
 
 .timeline-matrix-inner {
-  min-width: 840px;
+  min-width: 980px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1517,7 +1517,7 @@ p:last-child {
   top: 0;
   bottom: 0;
   left: 0;
-  width: 3.22%;
+  width: 3.03%;
   background: repeating-linear-gradient(
     45deg,
     rgba(148, 163, 184, 0.04),
@@ -1526,8 +1526,8 @@ p:last-child {
     rgba(148, 163, 184, 0.12) 12px
   );
   border-right: 1px dashed rgba(148, 163, 184, 0.4);
-  pointer-events: auto;
-  z-index: 2;
+  pointer-events: none;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1645,19 +1645,60 @@ p:last-child {
 
 .matrix-event-chip {
   position: absolute;
-  transform: translateX(-50%);
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  align-items: center;
   cursor: pointer;
   z-index: 5;
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.1s ease;
 }
 
+.matrix-event-chip.align-center {
+  transform: translate(-50%, -50%);
+  align-items: center;
+}
+
+.matrix-event-chip.align-left {
+  transform: translate(0, -50%);
+  align-items: flex-start;
+}
+.matrix-event-chip.align-left .matrix-event-pin-dot {
+  margin-left: 4px;
+}
+.matrix-event-chip.align-left .matrix-event-label-chip {
+  margin-left: 0;
+}
+
+.matrix-event-chip.align-right {
+  transform: translate(-100%, -50%);
+  align-items: flex-end;
+}
+.matrix-event-chip.align-right .matrix-event-pin-dot {
+  margin-right: 4px;
+}
+.matrix-event-chip.align-right .matrix-event-label-chip {
+  margin-right: 0;
+}
+
 .matrix-event-chip:hover,
 .matrix-event-chip.active {
   z-index: 30;
-  transform: translateX(-50%) scale(1.08);
+}
+
+.matrix-event-chip.align-center:hover,
+.matrix-event-chip.align-center.active {
+  transform: translate(-50%, -50%) scale(1.06);
+}
+
+.matrix-event-chip.align-left:hover,
+.matrix-event-chip.align-left.active {
+  transform: translate(0, -50%) scale(1.06);
+}
+
+.matrix-event-chip.align-right:hover,
+.matrix-event-chip.align-right.active {
+  transform: translate(-100%, -50%) scale(1.06);
 }
 
 .matrix-event-pin-dot {
@@ -1683,7 +1724,7 @@ p:last-child {
   display: flex;
   align-items: center;
   gap: 0.3rem;
-  max-width: 175px;
+  max-width: 180px;
 }
 
 .matrix-event-label-chip .year-badge {

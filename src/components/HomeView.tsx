@@ -99,7 +99,7 @@ const TIMELINE_DATA: CivTimeline[] = [
 ];
 
 const bceToPct = (yearBCE: number): number => {
-  return ((3400 - yearBCE) / 3100) * 100;
+  return Math.max(0, Math.min(100, ((3400 - yearBCE) / 3300) * 100));
 };
 
 const RULER_MARKS = [
@@ -110,7 +110,7 @@ const RULER_MARKS = [
   { label: '1500 BCE', year: 1500 },
   { label: '1000 BCE', year: 1000 },
   { label: '500 BCE', year: 500 },
-  { label: '300 BCE', year: 300 }
+  { label: '100 BCE', year: 100 }
 ];
 
 export const UnifiedTimelineMatrix: React.FC = () => {
@@ -127,7 +127,7 @@ export const UnifiedTimelineMatrix: React.FC = () => {
     const pct = (offsetX / rect.width) * 100;
     setNeedlePct(pct);
 
-    const year = Math.round(3400 - (pct / 100) * 3100);
+    const year = Math.round(3400 - (pct / 100) * 3300);
     setHoveredYear(year);
   };
 
@@ -185,7 +185,7 @@ export const UnifiedTimelineMatrix: React.FC = () => {
                       className="matrix-ruler-mark-item"
                       style={{
                         left: `${pct}%`,
-                        transform: pct === 0 ? 'translateX(0%)' : pct === 100 ? 'translateX(-100%)' : 'translateX(-50%)'
+                        transform: pct === 0 ? 'translateX(0%)' : pct >= 95 ? 'translateX(-100%)' : 'translateX(-50%)'
                       }}
                     >
                       <span>{mark.label}</span>
@@ -261,10 +261,17 @@ export const UnifiedTimelineMatrix: React.FC = () => {
                       const isHovered = hoveredYear !== null && Math.abs(hoveredYear - ev.yearBCE) < 70;
                       const isSelected = selectedEvent?.event.id === ev.id;
 
+                      let alignClass = 'align-center';
+                      if (evPct < 15) {
+                        alignClass = 'align-left';
+                      } else if (evPct > 85) {
+                        alignClass = 'align-right';
+                      }
+
                       return (
                         <div
                           key={ev.id}
-                          className={`matrix-event-chip ${isHovered || isSelected ? 'active' : ''}`}
+                          className={`matrix-event-chip ${alignClass} ${isHovered || isSelected ? 'active' : ''}`}
                           style={{ left: `${evPct}%` }}
                           onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
                         >
