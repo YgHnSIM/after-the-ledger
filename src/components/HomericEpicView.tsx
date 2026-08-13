@@ -361,7 +361,7 @@ export const HomericEpicView: React.FC = () => {
           </p>
 
           {/* CONCEPT SUBTABS */}
-          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
+          <div className="scroll-fade-container" style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', paddingBottom: '0.4rem', marginBottom: '1.5rem', scrollbarWidth: 'none' }}>
             <button
               onClick={() => setActiveConceptSubTab('cards')}
               className={`btn ${activeConceptSubTab === 'cards' ? 'btn-primary' : 'btn-outline'}`}
