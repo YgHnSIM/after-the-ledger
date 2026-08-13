@@ -37,7 +37,7 @@ export const HomericEpicView: React.FC = () => {
         </p>
 
         {/* SUB-SECTION NAV BUTTONS */}
-        <div style={{ display: 'flex', justifyContent: 'center', margin: '0 auto', maxWidth: '960px' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', margin: '0 auto', maxWidth: '1080px', width: '100%' }}>
           <div className="segmented-control">
             <button
               className={`segmented-btn ${activeSection === 'scholarship' ? 'active' : ''}`}
@@ -361,7 +361,7 @@ export const HomericEpicView: React.FC = () => {
           </p>
 
           {/* CONCEPT SUBTABS */}
-          <div className="scroll-fade-container" style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', paddingBottom: '0.4rem', marginBottom: '1.5rem', scrollbarWidth: 'none' }}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
             <button
               onClick={() => setActiveConceptSubTab('cards')}
               className={`btn ${activeConceptSubTab === 'cards' ? 'btn-primary' : 'btn-outline'}`}
