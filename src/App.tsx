@@ -1,26 +1,35 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Navigation } from './components/Navigation';
 import { GlobalSearchModal } from './components/GlobalSearchModal';
 import { HomeView } from './components/HomeView';
-import { CompareView } from './components/CompareView';
-import { CivilizationDetailView } from './components/CivilizationDetailView';
-import { ArtifactsView } from './components/ArtifactsView';
-import { ClaimsView } from './components/ClaimsView';
-import { ThemesView } from './components/ThemesView';
-import { GreekLanguageView } from './components/GreekLanguageView';
-import { MethodologyView } from './components/MethodologyView';
-import { SourcesGlossaryView } from './components/SourcesGlossaryView';
 import { Footer } from './components/Footer';
 import { CivilizationId } from './types';
 
-import { InstitutionsView } from './components/InstitutionsView';
-import { HomericEpicView } from './components/HomericEpicView';
+const CompareView = lazy(() => import('./components/CompareView').then((m) => ({ default: m.CompareView })));
+const CivilizationDetailView = lazy(() => import('./components/CivilizationDetailView').then((m) => ({ default: m.CivilizationDetailView })));
+const ArtifactsView = lazy(() => import('./components/ArtifactsView').then((m) => ({ default: m.ArtifactsView })));
+const ClaimsView = lazy(() => import('./components/ClaimsView').then((m) => ({ default: m.ClaimsView })));
+const ThemesView = lazy(() => import('./components/ThemesView').then((m) => ({ default: m.ThemesView })));
+const GreekLanguageView = lazy(() => import('./components/GreekLanguageView').then((m) => ({ default: m.GreekLanguageView })));
+const MethodologyView = lazy(() => import('./components/MethodologyView').then((m) => ({ default: m.MethodologyView })));
+const SourcesGlossaryView = lazy(() => import('./components/SourcesGlossaryView').then((m) => ({ default: m.SourcesGlossaryView })));
+const InstitutionsView = lazy(() => import('./components/InstitutionsView').then((m) => ({ default: m.InstitutionsView })));
+const HomericEpicView = lazy(() => import('./components/HomericEpicView').then((m) => ({ default: m.HomericEpicView })));
+const SearchModal = lazy(() => import('./components/GlobalSearchModal').then((m) => ({ default: m.GlobalSearchModal })));
 
 const parseHash = (): { tab: string; param?: string } => {
   const raw = window.location.hash.replace(/^#\/?/, '');
   const [tab = 'home', param] = raw.split('/');
   return { tab, param };
 };
+
+const ViewFallback: React.FC = () => (
+  <div style={{ display: 'flex', justifyContent: 'center', padding: '4rem 0' }}>
+    <span className="font-cinzel" style={{ color: 'var(--text-muted)', fontSize: '0.85rem', letterSpacing: '0.08em' }}>
+      아틀라스 불러오는 중…
+    </span>
+  </div>
+);
 
 export const App: React.FC = () => {
   const initial = parseHash();
@@ -98,37 +107,41 @@ export const App: React.FC = () => {
       />
 
       <main style={{ flex: 1 }}>
-        {currentTab === 'home' && <HomeView onNavigateTab={handleSelectTab} />}
-        {currentTab === 'compare' && (
-          <CompareView onSelectArtifact={(id) => handleSelectTab('artifacts', id)} />
-        )}
-        {currentTab === 'homer' && <HomericEpicView />}
-        {currentTab === 'civilizations' && (
-          <CivilizationDetailView
-            initialCivId={activeParam as CivilizationId}
-            onNavigateArtifact={(id) => handleSelectTab('artifacts', id)}
-          />
-        )}
-        {currentTab === 'artifacts' && (
-          <ArtifactsView initialArtifactId={activeParam} />
-        )}
-        {currentTab === 'institutions' && <InstitutionsView />}
-        {currentTab === 'claims' && <ClaimsView />}
-        {currentTab === 'themes' && (
-          <ThemesView initialEssayId={activeParam} />
-        )}
-        {currentTab === 'greek' && <GreekLanguageView />}
-        {currentTab === 'methodology' && <MethodologyView />}
-        {currentTab === 'sources' && <SourcesGlossaryView />}
+        <Suspense fallback={<ViewFallback />}>
+          {currentTab === 'home' && <HomeView onNavigateTab={handleSelectTab} />}
+          {currentTab === 'compare' && (
+            <CompareView onSelectArtifact={(id) => handleSelectTab('artifacts', id)} />
+          )}
+          {currentTab === 'homer' && <HomericEpicView />}
+          {currentTab === 'civilizations' && (
+            <CivilizationDetailView
+              initialCivId={activeParam as CivilizationId}
+              onNavigateArtifact={(id) => handleSelectTab('artifacts', id)}
+            />
+          )}
+          {currentTab === 'artifacts' && (
+            <ArtifactsView initialArtifactId={activeParam} />
+          )}
+          {currentTab === 'institutions' && <InstitutionsView />}
+          {currentTab === 'claims' && <ClaimsView />}
+          {currentTab === 'themes' && (
+            <ThemesView initialEssayId={activeParam} />
+          )}
+          {currentTab === 'greek' && <GreekLanguageView />}
+          {currentTab === 'methodology' && <MethodologyView />}
+          {currentTab === 'sources' && <SourcesGlossaryView />}
+        </Suspense>
       </main>
 
       <Footer onSelectTab={handleSelectTab} />
 
-      <GlobalSearchModal
-        isOpen={isSearchOpen}
-        onClose={() => setIsSearchOpen(false)}
-        onSelectResult={handleSearchResultSelect}
-      />
+      <Suspense fallback={null}>
+        <SearchModal
+          isOpen={isSearchOpen}
+          onClose={() => setIsSearchOpen(false)}
+          onSelectResult={handleSearchResultSelect}
+        />
+      </Suspense>
     </div>
   );
 };
