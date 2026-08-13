@@ -312,7 +312,7 @@ p:last-child {
   background: transparent !important;
   color: var(--accent-primary) !important;
   font-weight: 700 !important;
-  border-color: var(--border-highlight) !important;
+  border-color: transparent !important;
 }
 
 .nav-cat-btn:hover {
