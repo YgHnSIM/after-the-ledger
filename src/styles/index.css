@@ -1017,36 +1017,51 @@ p:last-child {
 
 /* Home View Timeline Card & Micro-Ruler Styles */
 .home-ruler-chips {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.75rem;
-  font-family: var(--font-cinzel);
-  font-weight: 700;
-  color: var(--text-secondary);
-  border-bottom: 1px dashed var(--border-color);
-  padding-bottom: 0.5rem;
-  overflow-x: auto;
-  gap: 0.35rem;
+/* Precise Timeline Ruler & Chart Bars */
+.home-timeline-ruler {
+  position: relative;
+  height: 36px;
+  width: 100%;
+  border-bottom: 2px dashed var(--border-highlight);
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
 }
 
-.home-ruler-chip {
-  padding: 0.2rem 0.5rem;
-  background: var(--bg-surface-elevated);
-  border-radius: var(--radius-sm);
+.home-ruler-mark {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-cinzel);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--text-primary);
   white-space: nowrap;
+}
+
+.home-ruler-tick {
+  width: 2px;
+  height: 10px;
+  background: var(--border-highlight);
+  margin-top: 4px;
 }
 
 .home-timeline-card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-md);
-  padding: 1rem;
+  padding: 1.15rem;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
+  gap: 0.75rem;
   box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
+}
+
+.home-timeline-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-highlight);
 }
 
 .home-timeline-header {

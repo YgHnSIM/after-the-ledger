@@ -178,27 +178,29 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
       </section>
 
       {/* ELAPSED TIME COMPARISON CHART (ABSOLUTE VS RELATIVE) */}
-      <section className="card" style={{ marginBottom: '4rem', padding: '2rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
+      <section className="card glass-card" style={{ marginBottom: '4rem', marginTop: '3.5rem', padding: '2.25rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem', flexWrap: 'wrap', gap: '1.25rem' }}>
           <div>
-            <h2 className="section-title">문자 도입 후 대규모 비경제 기록 출현까지의 경과시간</h2>
-            <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.92rem' }}>
-              문자가 도입된 연대(t=0)를 동일 기준점으로 고정하거나 절대연대(BCE)로 대조할 수 있습니다.
+            <h2 className="section-title" style={{ fontSize: '1.65rem', marginBottom: '0.4rem' }}>
+              문자 도입 후 대규모 비경제 기록 출현까지의 경과시간
+            </h2>
+            <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.92rem', lineHeight: 1.5 }}>
+              문자가 도입된 연대(t=0)를 동일 출발선으로 고정하거나, 3,100년 간의 절대연대(BCE) 스케일 상에서 각 문명별 문자 발전 단계를 대조합니다.
             </p>
           </div>
 
-          <div style={{ display: 'flex', background: 'var(--bg-surface-elevated)', padding: '0.25rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)' }}>
+          <div style={{ display: 'flex', background: 'var(--bg-surface-elevated)', padding: '0.3rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', flexShrink: 0 }}>
             <button
-              className={`btn btn-sm ${timeMode === 'absolute' ? 'btn-primary' : ''}`}
+              className={`btn btn-sm ${timeMode === 'absolute' ? 'btn-primary' : 'btn-ghost'}`}
               onClick={() => setTimeMode('absolute')}
-              style={{ border: 'none' }}
+              style={{ padding: '0.4rem 0.85rem', fontSize: '0.82rem', fontWeight: timeMode === 'absolute' ? 700 : 500 }}
             >
-              절대연대 (BCE 3400-300)
+              절대연대 (BCE 3400~300)
             </button>
             <button
-              className={`btn btn-sm ${timeMode === 'relative' ? 'btn-primary' : ''}`}
+              className={`btn btn-sm ${timeMode === 'relative' ? 'btn-primary' : 'btn-ghost'}`}
               onClick={() => setTimeMode('relative')}
-              style={{ border: 'none' }}
+              style={{ padding: '0.4rem 0.85rem', fontSize: '0.82rem', fontWeight: timeMode === 'relative' ? 700 : 500 }}
             >
               상대연대 (t=0 도입 경과년수)
             </button>
@@ -206,70 +208,85 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
         </div>
 
         {/* CHART VISUALIZATION */}
-        <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', padding: '1.5rem' }}>
+        <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
           {timeMode === 'relative' ? (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem', fontSize: '0.9rem', fontWeight: 600 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.92rem', fontWeight: 600 }}>
                   <span style={{ color: 'var(--civ-mesopotamia)' }}>메소포타미아 (후기 우루크 IV기 t=0 기준)</span>
-                  <span><strong>t+0 년</strong> (회계 문서와 어휘목록 동시 출현)</span>
+                  <span style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700 }}>t+0 년 <span style={{ fontWeight: 400, fontSize: '0.8rem', color: 'var(--text-muted)' }}>(회계 문서 & 어휘목록 동시 출현)</span></span>
                 </div>
-                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex' }}>
-                  <div style={{ width: '12%', background: 'var(--civ-mesopotamia)', height: '100%' }}></div>
+                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex', border: '1px solid var(--border-color)' }}>
+                  <div style={{ width: '12%', background: 'linear-gradient(90deg, var(--civ-mesopotamia) 0%, #e66d3b 100%)', height: '100%' }}></div>
                 </div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
-                  우루크 IV기 행정 점토판과 직업목록(ED Lu A) 동시 출현 (DCCLT 데이터)
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                  우루크 IV기 행정 점토판과 직업목록(ED Lu A) 동시 출현 (DCCLT 데이터 실증)
                 </div>
               </div>
 
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem', fontSize: '0.9rem', fontWeight: 600 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.92rem', fontWeight: 600 }}>
                   <span style={{ color: 'var(--civ-egypt)' }}>이집트 (아비도스 U-j 묘 t=0 기준)</span>
-                  <span><strong>t+900 년</strong> (피라미드 텍스트 刻文)</span>
+                  <span style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700 }}>t+900 년 <span style={{ fontWeight: 400, fontSize: '0.8rem', color: 'var(--text-muted)' }}>(피라미드 텍스트 刻文)</span></span>
                 </div>
-                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex' }}>
-                  <div style={{ width: '55%', background: 'var(--civ-egypt)', height: '100%' }}></div>
+                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex', border: '1px solid var(--border-color)' }}>
+                  <div style={{ width: '55%', background: 'linear-gradient(90deg, var(--civ-egypt) 0%, #22b8c0 100%)', height: '100%' }}></div>
                 </div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
                   선왕조 표찰(c. 3250 BCE) 후 제5왕조 우나스 피라미드 매장실 텍스트(c. 2350 BCE)
                 </div>
               </div>
 
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem', fontSize: '0.9rem', fontWeight: 600 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.92rem', fontWeight: 600 }}>
                   <span style={{ color: 'var(--civ-greece)' }}>그리스 (알파벳 도입 t=0 c. 775 BCE 기준)</span>
-                  <span><strong>t+35 년</strong> (디필론 비문 / 네스토르의 잔 유희시)</span>
+                  <span style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700 }}>t+35 년 <span style={{ fontWeight: 400, fontSize: '0.8rem', color: 'var(--text-muted)' }}>(디필론 비문 / 네스토르의 잔 유희시)</span></span>
                 </div>
-                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex' }}>
-                  <div style={{ width: '22%', background: 'var(--civ-greece)', height: '100%' }}></div>
+                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex', border: '1px solid var(--border-color)' }}>
+                  <div style={{ width: '22%', background: 'linear-gradient(90deg, var(--civ-greece) 0%, #3b82f6 100%)', height: '100%' }}></div>
                 </div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
                   Linear B 붕괴 후 알파벳 수용 35년 만에 시적 유희비문 극적 확산 (BCE 740년 디필론)
                 </div>
               </div>
 
               <div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem', fontSize: '0.9rem', fontWeight: 600 }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.92rem', fontWeight: 600 }}>
                   <span style={{ color: 'var(--civ-israel)' }}>이스라엘·유다 (고대 히브리 분화 t=0 c. 950 BCE 기준)</span>
-                  <span><strong>t+350 년</strong> (케테프 힌놈 부적 및 포로기 성서 편집)</span>
+                  <span style={{ fontFamily: 'var(--font-cinzel)', fontWeight: 700 }}>t+350 년 <span style={{ fontWeight: 400, fontSize: '0.8rem', color: 'var(--text-muted)' }}>(케테프 힌놈 부적 및 포로기 성서)</span></span>
                 </div>
-                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex' }}>
-                  <div style={{ width: '40%', background: 'var(--civ-israel)', height: '100%' }}></div>
+                <div style={{ height: '16px', background: 'var(--bg-surface-elevated)', borderRadius: 'var(--radius-full)', overflow: 'hidden', display: 'flex', border: '1px solid var(--border-color)' }}>
+                  <div style={{ width: '40%', background: 'linear-gradient(90deg, var(--civ-israel) 0%, #a855f7 100%)', height: '100%' }}></div>
                 </div>
-                <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.25rem' }}>
+                <div style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
                   게제르 달력(c. 925 BCE) 후 케테프 힌놈 은제 부적(c. 600 BCE) 및 쿰란 사해문서(c. 150 BCE)
                 </div>
               </div>
             </div>
           ) : (
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {/* TOP RULER CHIPS */}
-              <div className="home-ruler-chips">
-                <span className="home-ruler-chip">3400 BCE</span>
-                <span className="home-ruler-chip">2500 BCE</span>
-                <span className="home-ruler-chip">1500 BCE</span>
-                <span className="home-ruler-chip">800 BCE</span>
-                <span className="home-ruler-chip">300 BCE</span>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              {/* MATHEMATICALLY ACCURATE RULER TICKS (3400 BCE - 300 BCE) */}
+              <div className="home-timeline-ruler">
+                <div className="home-ruler-mark" style={{ left: '0%', transform: 'translateX(0%)' }}>
+                  <span>3400 BCE</span>
+                  <div className="home-ruler-tick"></div>
+                </div>
+                <div className="home-ruler-mark" style={{ left: '29%', transform: 'translateX(-50%)' }}>
+                  <span>2500 BCE</span>
+                  <div className="home-ruler-tick"></div>
+                </div>
+                <div className="home-ruler-mark" style={{ left: '61.3%', transform: 'translateX(-50%)' }}>
+                  <span>1500 BCE</span>
+                  <div className="home-ruler-tick"></div>
+                </div>
+                <div className="home-ruler-mark" style={{ left: '83.9%', transform: 'translateX(-50%)' }}>
+                  <span>800 BCE</span>
+                  <div className="home-ruler-tick"></div>
+                </div>
+                <div className="home-ruler-mark" style={{ left: '100%', transform: 'translateX(-100%)' }}>
+                  <span>300 BCE</span>
+                  <div className="home-ruler-tick"></div>
+                </div>
               </div>
 
               {/* MESOPOTAMIA CARD */}
@@ -278,15 +295,15 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                   <span className="home-timeline-civ-title" style={{ color: 'var(--civ-mesopotamia)' }}>
                     메소포타미아 (점토판 쐐기문자)
                   </span>
-                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600, fontFamily: 'var(--font-cinzel)' }}>
                     BCE 3300 ~ 650
                   </span>
                 </div>
                 <div className="home-timeline-bar-track">
-                  <div className="home-timeline-bar-fill" style={{ width: '90%', background: 'var(--civ-mesopotamia)' }}></div>
+                  <div className="home-timeline-bar-fill" style={{ marginLeft: '3.2%', width: '85.5%', background: 'linear-gradient(90deg, var(--civ-mesopotamia) 0%, #e66d3b 100%)' }}></div>
                 </div>
-                <div className="home-timeline-desc">
-                  우루크 회계 점토판 (c. 3300 BCE) → 수메르 어휘목록 → 길가메시 서사시 니네베 표준판 (c. 650 BCE)
+                <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                  <strong>우루크 회계 점토판 (c. 3300 BCE)</strong> → 수메르 어휘목록 → <strong>길가메시 서사시 니네베 표준판 (c. 650 BCE)</strong>
                 </div>
               </div>
 
@@ -296,15 +313,15 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                   <span className="home-timeline-civ-title" style={{ color: 'var(--civ-egypt)' }}>
                     이집트 (상형문자 & 파피루스)
                   </span>
-                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600, fontFamily: 'var(--font-cinzel)' }}>
                     BCE 3250 ~ 1200
                   </span>
                 </div>
                 <div className="home-timeline-bar-track">
-                  <div className="home-timeline-bar-fill" style={{ width: '85%', marginLeft: '5%', background: 'var(--civ-egypt)' }}></div>
+                  <div className="home-timeline-bar-fill" style={{ marginLeft: '4.8%', width: '66.1%', background: 'linear-gradient(90deg, var(--civ-egypt) 0%, #22b8c0 100%)' }}></div>
                 </div>
-                <div className="home-timeline-desc">
-                  아비도스 상아 표찰 (c. 3250 BCE) → 피라미드/관 텍스트 → 아니의 사자의 서 파피루스 (c. 1250 BCE)
+                <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                  <strong>아비도스 U-j 묘 상아 표찰 (c. 3250 BCE)</strong> → 피라미드/관 텍스트 → <strong>아니의 사자의 서 파피루스 (c. 1250 BCE)</strong>
                 </div>
               </div>
 
@@ -312,17 +329,17 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
               <div className="home-timeline-card" style={{ borderLeft: '4px solid var(--civ-greece)' }}>
                 <div className="home-timeline-header">
                   <span className="home-timeline-civ-title" style={{ color: 'var(--civ-greece)' }}>
-                    그리스 (Linear B & 알파벳)
+                    그리스 (Linear B & 음성 알파벳)
                   </span>
-                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600, fontFamily: 'var(--font-cinzel)' }}>
                     BCE 1400 ~ 300
                   </span>
                 </div>
                 <div className="home-timeline-bar-track">
-                  <div className="home-timeline-bar-fill" style={{ width: '45%', marginLeft: '45%', background: 'var(--civ-greece)' }}></div>
+                  <div className="home-timeline-bar-fill" style={{ marginLeft: '64.5%', width: '35.5%', background: 'linear-gradient(90deg, var(--civ-greece) 0%, #3b82f6 100%)' }}></div>
                 </div>
-                <div className="home-timeline-desc">
-                  미케네 Linear B 점토판 (c. 1400 BCE) → 디필론/네스토르 알파벳 유희시 (c. 750 BCE)
+                <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                  <strong>미케네 궁전 Linear B 점토판 (c. 1400 BCE)</strong> → 디필론 비문 / 네스토르의 잔 유희시 (c. 750 BCE)
                 </div>
               </div>
 
@@ -332,19 +349,36 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
                   <span className="home-timeline-civ-title" style={{ color: 'var(--civ-israel)' }}>
                     이스라엘·유다 (음설 알파벳)
                   </span>
-                  <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600, fontFamily: 'var(--font-cinzel)' }}>
                     BCE 950 ~ 150
                   </span>
                 </div>
                 <div className="home-timeline-bar-track">
-                  <div className="home-timeline-bar-fill" style={{ width: '35%', marginLeft: '60%', background: 'var(--civ-israel)' }}></div>
+                  <div className="home-timeline-bar-fill" style={{ marginLeft: '79.0%', width: '21.0%', background: 'linear-gradient(90deg, var(--civ-israel) 0%, #a855f7 100%)' }}></div>
                 </div>
-                <div className="home-timeline-desc">
-                  게제르 달력 (c. 925 BCE) → 케테프 힌놈 은제 부적 (c. 600 BCE) → 쿰란 사해문서 (c. 150 BCE)
+                <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                  <strong>게제르 달력 (c. 925 BCE)</strong> → 케테프 힌놈 은제 부적 (c. 600 BCE) → 쿰란 사해문서 (c. 150 BCE)
+                </div>
+              </div>
+
+              {/* UGARIT CARD */}
+              <div className="home-timeline-card" style={{ borderLeft: '4px solid var(--civ-ugarit)' }}>
+                <div className="home-timeline-header">
+                  <span className="home-timeline-civ-title" style={{ color: 'var(--civ-ugarit)' }}>
+                    우가리트 (알파벳 쐐기문자 통제 사례)
+                  </span>
+                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: 600, fontFamily: 'var(--font-cinzel)' }}>
+                    BCE 1400 ~ 1180
+                  </span>
+                </div>
+                <div className="home-timeline-bar-track">
+                  <div className="home-timeline-bar-fill" style={{ marginLeft: '64.5%', width: '7.1%', background: 'linear-gradient(90deg, var(--civ-ugarit) 0%, #f59e0b 100%)' }}></div>
+                </div>
+                <div className="home-timeline-desc" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>
+                  <strong>우가리트 알파벳 쐐기점토판 (c. 1400 BCE)</strong> → 바알 서사시 및 외교문서 → 해양민족 침공 파괴 (c. 1180 BCE)
                 </div>
               </div>
             </div>
-
           )}
         </div>
       </section>
