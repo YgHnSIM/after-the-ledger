@@ -1721,42 +1721,101 @@ p:last-child {
   background: var(--bg-surface);
   border: 3px solid currentColor;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Event Connecting Stalk/Stem (지시선) */
+.matrix-event-stem {
+  width: 2px;
+  height: 10px;
+  background: currentColor;
+  opacity: 0.65;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.matrix-event-chip {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  z-index: 5;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.1s ease;
+}
+
+.matrix-event-chip:hover,
+.matrix-event-chip.active {
+  z-index: 30;
+}
+
+.matrix-event-chip:hover .matrix-event-pin-dot,
+.matrix-event-chip.active .matrix-event-pin-dot {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 3px currentColor, 0 0 10px currentColor;
+}
+
+.matrix-event-chip:hover .matrix-event-stem,
+.matrix-event-chip.active .matrix-event-stem {
+  height: 12px;
+  opacity: 1;
+  width: 2.5px;
 }
 
 .matrix-event-label-chip {
-  margin-top: 4px;
   background: var(--bg-surface-elevated);
-  border: 1px solid var(--border-highlight);
+  border: 1.5px solid var(--border-highlight);
   border-radius: var(--radius-sm);
-  padding: 0.2rem 0.45rem;
-  font-size: 0.72rem;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.73rem;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
-  box-shadow: var(--shadow-xs);
+  box-shadow: var(--shadow-sm);
   display: flex;
   align-items: center;
-  gap: 0.3rem;
-  max-width: 180px;
+  gap: 0.35rem;
+  max-width: 220px;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 3;
 }
 
 .matrix-event-label-chip .year-badge {
   font-family: var(--font-cinzel);
-  font-weight: 700;
-  color: var(--text-secondary);
-  font-size: 0.68rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  font-size: 0.7rem;
+  background: var(--bg-surface);
+  padding: 0.08rem 0.3rem;
+  border-radius: 3px;
+  border: 1px solid var(--border-color);
 }
 
-.matrix-event-chip.spotlight-highlight .matrix-event-pin-dot {
-  box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.45), 0 0 12px rgba(234, 179, 8, 0.8);
-  transform: scale(1.2);
+.matrix-event-chip:hover .matrix-event-label-chip,
+.matrix-event-chip.active .matrix-event-label-chip {
+  border-color: currentColor;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 8px currentColor;
+  transform: scale(1.04);
 }
 
-.matrix-event-chip.spotlight-highlight .matrix-event-label-chip {
-  border-color: var(--accent-gold, #eab308);
-  background: var(--bg-surface-elevated);
-  box-shadow: 0 0 10px rgba(234, 179, 8, 0.25);
-  font-weight: 700;
+.matrix-event-chip.align-center {
+  transform: translate(-50%, -50%);
+}
+
+.matrix-event-chip.align-left {
+  transform: translate(0, -50%);
+  align-items: flex-start;
+}
+
+.matrix-event-chip.align-right {
+  transform: translate(-100%, -50%);
+  align-items: flex-end;
 }
 
 /* Alternating Up/Down Staggered Event Chips */
@@ -1777,24 +1836,31 @@ p:last-child {
   z-index: 30;
 }
 
+.matrix-stagger-chip:hover .matrix-event-pin-dot,
+.matrix-stagger-chip.active .matrix-event-pin-dot {
+  transform: scale(1.25);
+  box-shadow: 0 0 0 3px currentColor, 0 0 10px currentColor;
+}
+
+.matrix-stagger-chip:hover .matrix-event-stem,
+.matrix-stagger-chip.active .matrix-event-stem {
+  opacity: 1;
+  width: 2.5px;
+}
+
+.matrix-stagger-chip:hover .matrix-event-label-chip,
+.matrix-stagger-chip.active .matrix-event-label-chip {
+  border-color: currentColor;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 8px currentColor;
+  transform: scale(1.04);
+}
+
 .matrix-stagger-chip.pos-top {
   transform: translate(-50%, -50%);
 }
 
-.matrix-stagger-chip.pos-top .matrix-event-label-chip {
-  margin-top: 0;
-  margin-bottom: 6px;
-  order: -1;
-}
-
 .matrix-stagger-chip.pos-bottom {
   transform: translate(-50%, -50%);
-}
-
-.matrix-stagger-chip.pos-bottom .matrix-event-label-chip {
-  margin-top: 6px;
-  margin-bottom: 0;
-  order: 1;
 }
 
 .matrix-stagger-chip.align-left {
@@ -1809,14 +1875,20 @@ p:last-child {
 
 .matrix-stagger-chip.spotlight-highlight .matrix-event-pin-dot {
   box-shadow: 0 0 0 4px rgba(234, 179, 8, 0.45), 0 0 12px rgba(234, 179, 8, 0.8);
-  transform: scale(1.2);
+  transform: scale(1.3);
 }
 
 .matrix-stagger-chip.spotlight-highlight .matrix-event-label-chip {
   border-color: var(--accent-gold, #eab308);
   background: var(--bg-surface-elevated);
-  box-shadow: 0 0 10px rgba(234, 179, 8, 0.25);
+  box-shadow: 0 0 10px rgba(234, 179, 8, 0.35);
   font-weight: 700;
+}
+
+.matrix-stagger-chip.spotlight-highlight .matrix-event-stem {
+  background: var(--accent-gold, #eab308);
+  opacity: 1;
+  width: 2.5px;
 }
 
 .mobile-hud-sheet {

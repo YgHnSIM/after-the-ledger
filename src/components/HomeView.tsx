@@ -387,10 +387,11 @@ export const UnifiedTimelineMatrix: React.FC = () => {
                         <div
                           key={ev.id}
                           className={`matrix-event-chip ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
-                          style={{ left: `${evPct}%` }}
+                          style={{ left: `${evPct}%`, color: civ.colorVar }}
                           onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
                         >
-                          <div className="matrix-event-pin-dot" style={{ color: civ.colorVar }} />
+                          <div className="matrix-event-pin-dot" />
+                          <div className="matrix-event-stem" />
                           <div className="matrix-event-label-chip">
                             <span className="year-badge">{ev.yearBCE}BCE</span>
                             <span>{ev.title}</span>
@@ -1016,14 +1017,28 @@ export const RelativeTimelineMatrix: React.FC = () => {
                         <div
                           key={ev.id}
                           className={`matrix-stagger-chip ${isTop ? 'pos-top' : 'pos-bottom'} ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
-                          style={{ left: `${evPct}%` }}
+                          style={{ left: `${evPct}%`, color: civ.colorVar }}
                           onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
                         >
-                          <div className="matrix-event-pin-dot" style={{ color: civ.colorVar }} />
-                          <div className="matrix-event-label-chip">
-                            <span className="year-badge">t+{ev.elapsedYears}년</span>
-                            <span>{ev.title}</span>
-                          </div>
+                          {isTop ? (
+                            <>
+                              <div className="matrix-event-label-chip">
+                                <span className="year-badge">t+{ev.elapsedYears}년</span>
+                                <span>{ev.title}</span>
+                              </div>
+                              <div className="matrix-event-stem" />
+                              <div className="matrix-event-pin-dot" />
+                            </>
+                          ) : (
+                            <>
+                              <div className="matrix-event-pin-dot" />
+                              <div className="matrix-event-stem" />
+                              <div className="matrix-event-label-chip">
+                                <span className="year-badge">t+{ev.elapsedYears}년</span>
+                                <span>{ev.title}</span>
+                              </div>
+                            </>
+                          )}
                         </div>
                       );
                     })}
