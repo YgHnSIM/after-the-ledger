@@ -29,12 +29,12 @@ const TIMELINE_DATA: CivTimeline[] = [
     icon: '🏛️',
     colorVar: 'var(--civ-mesopotamia)',
     startBCE: 3300,
-    endBCE: 650,
-    spanText: 'c. 3300 ~ 650 BCE',
+    endBCE: 1200,
+    spanText: 'c. 3300 ~ 1200 BCE (사본 650 BCE)',
     events: [
       { id: 'mes-1', yearBCE: 3300, title: '우루크 IV기 점토판', detail: '인류 최초 행정 회계 기록 및 수메르 서기 지식 체계 형성 (DCCLT 데이터)' },
       { id: 'mes-2', yearBCE: 2600, title: '어휘목록 (ED Lu A)', detail: '사물·직업 분류 표준 어휘집 및 서기관 관료 교육 코퍼스' },
-      { id: 'mes-3', yearBCE: 650, title: '길가메시 서사시 완본', detail: '아슈르바니팔 도서관 12번째 점토판 완본 서사시 전승' }
+      { id: 'mes-3', yearBCE: 1200, title: '길가메시 서사시 표준본', detail: '신-레케-운닌니 사제에 의해 12개 점토판 표준판으로 집대성 (현존 완본은 니네베 아슈르바니팔 도서관 사본 c. 650 BCE 전승)' }
     ],
     curatorNote: '우루크 IV기 회계 점토판 출토와 동시에 사물·직업 분류 어휘목록이 병존하여 수천 년간 서기관 관료 교육 지식체계로 지속 발전함.'
   },
@@ -173,7 +173,7 @@ const ERA_SPOTLIGHTS: EraSpotlight[] = [
     title: '사해문서 전승과 고대 텍스트 정경화',
     period: 'c. 300 ~ 150 BCE',
     curatorInsight: '쿰란 사해문서 두루마리와 알렉산드리아 도서관의 텍스트 교정 전통 속에서 히브리 성서와 호메로스 서사시가 최종 판본으로 집대성되고 정경화(Canonization)된 시대입니다.',
-    keyArtifacts: ['쿰란 사해문서 롤 (이스라엘)', '길가메시 서사시 완본 (메소포타미아)']
+    keyArtifacts: ['쿰란 사해문서 롤 (이스라엘)', '알렉산드리아 호메로스 정본 (그리스)']
   }
 ];
 
@@ -746,7 +746,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
         title: '길가메시 서사시 완본',
         actualBCE: 'c. 1200 BCE',
         stage: 't+1500년+ (대서사 완결)',
-        detail: '신-레케-운닌니 사제에 의해 12개 점토판으로 집대성된 메소포타미아 불후의 영웅 서사시.'
+        detail: '신-레케-운닌니 사제에 의해 12개 점토판 표준판으로 집대성 (현존 완본은 니네베 아슈르바니팔 도서관 사본 c. 650 BCE 전승).'
       }
     ]
   },
