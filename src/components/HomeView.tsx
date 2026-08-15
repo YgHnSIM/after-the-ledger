@@ -519,9 +519,11 @@ export const UnifiedTimelineMatrix: React.FC = () => {
                   onClick={() => jumpToEra(era)}
                   style={{ borderColor: isEraActive ? 'var(--accent-gold, #eab308)' : undefined }}
                 >
-                  <span>{era.badge}</span>
-                  <span>{era.title}</span>
-                  <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>({era.period})</span>
+                  <div className="mobile-river-era-top">
+                    <span className="era-badge-tag">{era.badge}</span>
+                    <span className="mobile-river-bce-badge">{era.period}</span>
+                  </div>
+                  <div className="mobile-river-era-title">{era.title}</div>
                 </div>
 
                 <div className="mobile-river-node-list">
@@ -1670,8 +1672,8 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
       </section>
 
       {/* ELAPSED TIME COMPARISON CHART (ABSOLUTE VS RELATIVE) */}
-      <section className="card glass-card timeline-section-card" style={{ marginBottom: '4rem', marginTop: '3.5rem', padding: '2.25rem' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem', flexWrap: 'wrap', gap: '1.25rem' }}>
+      <section className="card glass-card timeline-section-card">
+        <div className="timeline-header-flex">
           <div>
             <h2 className="section-title" style={{ fontSize: '1.65rem', marginBottom: '0.4rem' }}>
               문자 도입 후 대규모 비경제 기록 출현까지의 경과시간
@@ -1681,26 +1683,24 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
             </p>
           </div>
 
-          <div style={{ display: 'flex', background: 'var(--bg-surface-elevated)', padding: '0.3rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', flexShrink: 0 }}>
+          <div className="timeline-mode-toggle-group">
             <button
-              className={`btn btn-sm ${timeMode === 'absolute' ? 'btn-primary' : 'btn-ghost'}`}
+              className={`btn btn-sm timeline-mode-toggle-btn ${timeMode === 'absolute' ? 'btn-primary' : 'btn-ghost'}`}
               onClick={() => setTimeMode('absolute')}
-              style={{ padding: '0.4rem 0.85rem', fontSize: '0.82rem', fontWeight: timeMode === 'absolute' ? 700 : 500 }}
             >
-              절대연대 (BCE 3400~300)
+              절대연대 (BCE)
             </button>
             <button
-              className={`btn btn-sm ${timeMode === 'relative' ? 'btn-primary' : 'btn-ghost'}`}
+              className={`btn btn-sm timeline-mode-toggle-btn ${timeMode === 'relative' ? 'btn-primary' : 'btn-ghost'}`}
               onClick={() => setTimeMode('relative')}
-              style={{ padding: '0.4rem 0.85rem', fontSize: '0.82rem', fontWeight: timeMode === 'relative' ? 700 : 500 }}
             >
-              상대연대 (t=0 도입 경과년수)
+              상대연대 (t=0)
             </button>
           </div>
         </div>
 
         {/* CHART VISUALIZATION */}
-        <div style={{ background: 'var(--bg-surface)', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-lg)', padding: '1.75rem' }}>
+        <div className="timeline-chart-inner-frame">
           {timeMode === 'relative' ? (
             <RelativeTimelineMatrix />
           ) : (

@@ -1904,6 +1904,47 @@ p:last-child {
   display: none;
 }
 
+.timeline-section-card {
+  margin-bottom: 4rem;
+  margin-top: 3.5rem;
+  padding: 2.25rem;
+}
+
+.timeline-header-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+
+.timeline-mode-toggle-group {
+  display: inline-flex;
+  background: var(--bg-surface-elevated);
+  padding: 0.3rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.timeline-mode-toggle-btn {
+  padding: 0.45rem 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-align: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.timeline-chart-inner-frame {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+}
+
 @media (max-width: 768px) {
   .desktop-only-timeline {
     display: none !important;
@@ -1914,12 +1955,43 @@ p:last-child {
   }
 
   .timeline-section-card {
-    padding: 1.25rem 0.85rem !important;
+    padding: 1.1rem 0.85rem !important;
+    border-radius: var(--radius-md) !important;
+    margin-top: 1.75rem !important;
+    margin-bottom: 2.5rem !important;
+    overflow: hidden !important;
+  }
+
+  .timeline-chart-inner-frame {
+    padding: 0.75rem 0.5rem !important;
     border-radius: var(--radius-md) !important;
   }
 
+  .timeline-header-flex {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    margin-bottom: 1.25rem !important;
+  }
+
+  .timeline-mode-toggle-group {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.35rem !important;
+    padding: 0.3rem !important;
+  }
+
+  .timeline-mode-toggle-btn {
+    width: 100% !important;
+    padding: 0.5rem 0.5rem !important;
+    font-size: 0.82rem !important;
+    text-align: center !important;
+    justify-content: center !important;
+    white-space: nowrap !important;
+  }
+
   .unified-timeline-wrapper {
-    padding: 0.5rem 0;
+    padding: 0.25rem 0;
     border: none;
     background: transparent;
     box-shadow: none;
@@ -2088,20 +2160,43 @@ p:last-child {
 }
 
 .mobile-river-era-header {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.3rem;
   background: var(--bg-card);
   border: 1.5px solid var(--border-highlight);
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-full);
-  font-size: 0.76rem;
-  font-weight: 700;
-  color: var(--text-primary);
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-md);
   margin-bottom: 0.75rem;
   box-shadow: var(--shadow-xs);
   position: relative;
   z-index: 2;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mobile-river-era-header:hover,
+.mobile-river-era-header.active {
+  border-color: var(--accent-gold, #eab308);
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.2);
+}
+
+.mobile-river-era-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.mobile-river-era-title {
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.35;
+  word-break: keep-all;
 }
 
 .mobile-river-node-list {
