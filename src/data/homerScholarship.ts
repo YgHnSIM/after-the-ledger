@@ -17,7 +17,7 @@ export const HOMERIC_SCHOLARSHIP_RECORDS: HomericScholarshipRecord[] = [
     "id": "wolfian-analytic-school",
     "category": "homeric-question",
     "categoryLabel": "🔍 분석파 vs 통일파 학쟁 (The Homeric Question)",
-    "titleKo": "F.A. 沃尔프의 Prolegomena ad Homerum과 분석파(Analysts) 집성론",
+    "titleKo": "F.A. 볼프의 Prolegomena ad Homerum과 분석파(Analysts) 집성론",
     "scholarName": "Friedrich August Wolf & Karl Lachmann",
     "yearOrEra": "1795 (할레 대학 연구)",
     "coreThesis": "《일리아스》와 《오뒷세이아》는 단 한 명의 단일 시인이 처음부터 끝까지 쓴 완결작이 아니라, 여러 시대의 독립된 단편 노래들(Lieder)이 후대(아테네 기획)에 수집·집성된 텍스트 모음이다.",
@@ -33,7 +33,7 @@ export const HOMERIC_SCHOLARSHIP_RECORDS: HomericScholarshipRecord[] = [
     "scholarName": "Wolfgang Kullmann & Heinrich Pestalozzi",
     "yearOrEra": "1945 / 1960 (괴팅겐/프랑크푸르트 학파)",
     "coreThesis": "호메로스는 구전 전통 속에서 전해지던 잃어버린 서사시 순환군(Epic Cycle, 예: 《아이티오피스 Aethiopis》의 에티오피아 왕 멤논과 아킬레우스 결투)의 모티브를 자유롭게 재구성·변형(Semi-rigid Adaptation)하여 《일리아스》를 창작했다.",
-    "evidenceDescription": "파트로클로스의 죽음과 아킬레우스의 분노 구조가 《아이티오피스》에서 안티λο코스의 죽음과 멤논에 대한 복수 모티브의 서사적 이형(Doublet/Transposition)임을 입증.",
+    "evidenceDescription": "파트로클로스의 죽음과 아킬레우스의 분노 구조가 《아이티오피스》에서 안틸로코스의 죽음과 멤논에 대한 복수 모티브의 서사적 이형(Doublet/Transposition)임을 입증.",
     "impactOnHomer": "구전 시학과 전통적 문학 비평을 통합하여 호메로스의 개별적 독창성과 전통의 상호작용(Intertextuality) 해명.",
     "citation": "Wolfgang Kullmann (1960), 'Die Quellen der Ilias' (Wiesbaden); J.T. Kakridis (1949), 'Homeric Researches' (Lund)"
   },

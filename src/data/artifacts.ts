@@ -857,7 +857,7 @@ export const ARTIFACTS: ArtifactRecord[] = [
     witnessDateBCE: 'c. 600–587 BCE (바빌론 침공 직전)',
     confidence: 'sure',
     confidenceReason: '현존하는 성서적 텍스트(민수기 6:24-26 제사장 축복문) 중 가장 이른 실물 사본',
-    summary: '“야훼께서 너에게 복을 주시고 너를 지키시기를 원하며…” 민수기 축복문 구절이 새겨진 최호(最古) 은제 부적',
+    summary: '“야훼께서 너에게 복을 주시고 너를 지키시기를 원하며…” 민수기 축복문 구절이 새겨진 최고(最古) 은제 부적',
     description: '말아진 은판 롤을 현미경 연구로 해독한 유물. 이 텍스트는 "성서 전체의 책"이 아니라 목에 거는 사제적 개인 보호 부적(Amulet)이었으며, 성서적 구절과 신의 이름(YHW)이 바빌론 포로기 이전에 이미 히브리 문자로 개인 생활 속에서 읊어졌음을 보여준다.',
     preservationNotes: '은판을 수년 간의 박리 기술로 펼쳐 마이크로 현미경으로 읽어냄',
     inscriptionBreakdown: {
