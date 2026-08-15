@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { CIVILIZATIONS } from '../data/civilizations';
 import { COMPARATIVE_ESSAYS } from '../data/essays';
-import { ArrowRight, Clock, ShieldCheck, Scale, Scroll, BookOpen, Sparkles, HelpCircle } from 'lucide-react';
+import { ArrowRight, Clock, ShieldCheck, Scale, Scroll, BookOpen, Sparkles, HelpCircle, ChevronRight } from 'lucide-react';
 
 interface EventNode {
   id: string;
@@ -268,7 +268,6 @@ export const UnifiedTimelineMatrix: React.FC = () => {
 
   const jumpToEra = (era: EraSpotlight) => {
     if (activeEraId === era.id) {
-      // Toggle off spotlight
       setActiveEraId(null);
       setNeedlePct(null);
       setHoveredYear(null);
@@ -281,31 +280,38 @@ export const UnifiedTimelineMatrix: React.FC = () => {
     setNeedlePct(pct);
     setHoveredYear(era.yearBCE);
 
-    if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const stickyHeader = container.querySelector('.matrix-civ-label-col') as HTMLElement | null;
-    const stickyWidth = stickyHeader ? stickyHeader.offsetWidth : 180;
-    
-    // Total track width inside scroll container
-    const totalScrollWidth = container.scrollWidth;
-    const trackWidth = Math.max(1, totalScrollWidth - stickyWidth);
-    
-    // Center within visible track viewport
-    const visibleViewportWidth = Math.max(1, container.clientWidth - stickyWidth);
-    const targetScrollLeft = (pct / 100) * trackWidth - (visibleViewportWidth / 2);
-    
-    const maxScrollLeft = Math.max(0, totalScrollWidth - container.clientWidth);
-    const clampedScrollLeft = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft));
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const stickyHeader = container.querySelector('.matrix-civ-label-col') as HTMLElement | null;
+      const stickyWidth = stickyHeader ? stickyHeader.offsetWidth : 180;
+      
+      // Total track width inside scroll container
+      const totalScrollWidth = container.scrollWidth;
+      const trackWidth = Math.max(1, totalScrollWidth - stickyWidth);
+      
+      // Center within visible track viewport
+      const visibleViewportWidth = Math.max(1, container.clientWidth - stickyWidth);
+      const targetScrollLeft = (pct / 100) * trackWidth - (visibleViewportWidth / 2);
+      
+      const maxScrollLeft = Math.max(0, totalScrollWidth - container.clientWidth);
+      const clampedScrollLeft = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft));
 
-    container.scrollTo({
-      left: clampedScrollLeft,
-      behavior: 'smooth'
-    });
+      container.scrollTo({
+        left: clampedScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+
+    // On mobile, scroll to the corresponding era group
+    const mobileElem = document.getElementById(`mobile-${era.id}`);
+    if (mobileElem) {
+      mobileElem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   };
 
   return (
     <div className="unified-timeline-wrapper">
-      {/* MOBILE / QUICK JUMP CHIPS BAR */}
+      {/* QUICK JUMP CHIPS BAR */}
       <div className="era-quick-chips-bar">
         <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', whiteSpace: 'nowrap', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
           <Sparkles size={14} style={{ color: 'var(--accent-gold, #eab308)' }} /> 주요 시대 빠른 탐색:
@@ -324,159 +330,226 @@ export const UnifiedTimelineMatrix: React.FC = () => {
         })}
       </div>
 
-      {/* HORIZONTALLY SCROLLABLE TIMELINE MATRIX CANVAS */}
-      <div className="timeline-matrix-scroll-container" ref={scrollRef}>
-        <div className="timeline-matrix-inner">
-          {/* HEADER RULER ROW */}
-          <div className="matrix-ruler-row">
-            <div className="matrix-civ-label-col">
-              <span>문명 및 시대 스케일</span>
+      {/* 1. DESKTOP-ONLY HORIZONTALLY SCROLLABLE TIMELINE MATRIX CANVAS (≥ 769px) */}
+      <div className="desktop-only-timeline">
+        <div className="timeline-matrix-scroll-container" ref={scrollRef}>
+          <div className="timeline-matrix-inner">
+            {/* HEADER RULER ROW */}
+            <div className="matrix-ruler-row">
+              <div className="matrix-civ-label-col">
+                <span>문명 및 시대 스케일</span>
+              </div>
+              <div className="matrix-tracks-area">
+                <div className="matrix-ruler-ticks">
+                  {RULER_MARKS.map((mark) => {
+                    const pct = bceToPct(mark.year);
+                    return (
+                      <div
+                        key={mark.year}
+                        className="matrix-ruler-mark-item"
+                        style={{
+                          left: `${pct}%`,
+                          transform: pct === 0 ? 'translateX(0%)' : pct >= 95 ? 'translateX(-100%)' : 'translateX(-50%)'
+                        }}
+                      >
+                        <span>{mark.label}</span>
+                        <div className="matrix-ruler-tick-line" />
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
-            <div className="matrix-tracks-area">
-              <div className="matrix-ruler-ticks">
-                {RULER_MARKS.map((mark) => {
-                  const pct = bceToPct(mark.year);
-                  return (
+
+            {/* MAIN TRACK MATRIX BODY */}
+            <div
+              className="matrix-lanes-wrapper"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
+              {/* OVERLAYS (Prescript zone, Vertical grid lines, Needle) */}
+              <div className="matrix-track-interactive-overlay" ref={tracksRef}>
+                {/* PRE-SCRIPT ERA ZONE (3400~3300 BCE) */}
+                <div className="matrix-prescript-zone">
+                  <span className="prescript-tag">문자 도입 전야</span>
+                </div>
+
+                {/* VERTICAL GRID LINES */}
+                {RULER_MARKS.map((mark) => (
+                  <div
+                    key={`grid-${mark.year}`}
+                    className="matrix-grid-line"
+                    style={{ left: `${bceToPct(mark.year)}%` }}
+                  />
+                ))}
+
+                {/* INTERACTIVE CROSSHAIR TIME NEEDLE */}
+                {needlePct !== null && (
+                  <div className="matrix-time-needle" style={{ left: `${needlePct}%` }}>
                     <div
-                      key={mark.year}
-                      className="matrix-ruler-mark-item"
+                      className="matrix-time-needle-head"
                       style={{
-                        left: `${pct}%`,
-                        transform: pct === 0 ? 'translateX(0%)' : pct >= 95 ? 'translateX(-100%)' : 'translateX(-50%)'
+                        transform:
+                          needlePct < 10
+                            ? 'translateX(0%)'
+                            : needlePct > 90
+                            ? 'translateX(-100%)'
+                            : 'translateX(-50%)'
                       }}
                     >
-                      <span>{mark.label}</span>
-                      <div className="matrix-ruler-tick-line" />
+                      {hoveredYear !== null
+                        ? hoveredYear > 3300
+                          ? `c. ${hoveredYear} BCE (문자 전야)`
+                          : `c. ${hoveredYear} BCE`
+                        : ''}
                     </div>
-                  );
-                })}
+                  </div>
+                )}
               </div>
+
+              {/* CIVILIZATION LANES */}
+              {TIMELINE_DATA.map((civ) => {
+                const startPct = bceToPct(civ.startBCE);
+                const endPct = bceToPct(civ.endBCE);
+                const barWidthPct = endPct - startPct;
+                const tiers = computeAbsoluteEventTiers(civ.events, bceToPct);
+
+                return (
+                  <div key={civ.id} className="matrix-lane-row">
+                    <div className="matrix-lane-civ-header">
+                      <div className="matrix-civ-name" style={{ color: civ.colorVar }}>
+                        <span>{civ.icon}</span>
+                        <span>{civ.name}</span>
+                      </div>
+                      <div className="matrix-civ-span">{civ.spanText}</div>
+                    </div>
+
+                    <div className="matrix-lane-track-body">
+                      {/* SPAN BAR */}
+                      <div
+                        className="matrix-span-bar"
+                        style={{
+                          left: `${startPct}%`,
+                          width: `${barWidthPct}%`,
+                          background: `linear-gradient(90deg, ${civ.colorVar} 0%, rgba(255,255,255,0.15) 100%)`
+                        }}
+                      />
+
+                      {/* EVENT CHIPS */}
+                      {civ.events.map((ev) => {
+                        const evPct = bceToPct(ev.yearBCE);
+                        const isHovered = hoveredYear !== null && Math.abs(hoveredYear - ev.yearBCE) < 70;
+                        const isSelected = selectedEvent?.event.id === ev.id;
+                        const isSpotlighted = activeEra !== null && Math.abs(activeEra.yearBCE - ev.yearBCE) <= 300;
+                        const tierInfo = tiers.get(ev.id) || { tierClass: 'tier-top-near', isTop: true };
+
+                        let alignClass = 'align-center';
+                        if (evPct < 8) {
+                          alignClass = 'align-left';
+                        } else if (evPct > 92) {
+                          alignClass = 'align-right';
+                        }
+
+                        return (
+                          <div
+                            key={ev.id}
+                            className={`matrix-stagger-chip ${tierInfo.tierClass} ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
+                            style={{ left: `${evPct}%`, color: civ.colorVar }}
+                            onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
+                          >
+                            {tierInfo.isTop ? (
+                              <>
+                                <div className="matrix-event-label-chip">
+                                  <span className="year-badge">c. {ev.yearBCE}</span>
+                                  <span>{ev.title}</span>
+                                </div>
+                                <div className="matrix-event-stem" />
+                                <div className="matrix-event-pin-dot" />
+                              </>
+                            ) : (
+                              <>
+                                <div className="matrix-event-pin-dot" />
+                                <div className="matrix-event-stem" />
+                                <div className="matrix-event-label-chip">
+                                  <span className="year-badge">c. {ev.yearBCE}</span>
+                                  <span>{ev.title}</span>
+                                </div>
+                              </>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
+        </div>
+      </div>
 
-          {/* MAIN TRACK MATRIX BODY */}
-          <div
-            className="matrix-lanes-wrapper"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* OVERLAYS (Prescript zone, Vertical grid lines, Needle) */}
-            <div className="matrix-track-interactive-overlay" ref={tracksRef}>
-              {/* PRE-SCRIPT ERA ZONE (3400~3300 BCE) */}
-              <div className="matrix-prescript-zone">
-                <span className="prescript-tag">문자 도입 전야</span>
-              </div>
+      {/* 2. MOBILE-ONLY VERTICAL CHRONOLOGY RIVER (≤ 768px) */}
+      <div className="mobile-only-timeline">
+        <div className="mobile-river-container">
+          <div className="mobile-river-spine" />
+          {ERA_SPOTLIGHTS.map((era) => {
+            const isEraActive = activeEraId === era.id;
+            const eraEvents = TIMELINE_DATA.flatMap((c) =>
+              c.events.map((e) => ({
+                ...e,
+                civName: c.name,
+                civIcon: c.icon,
+                civColor: c.colorVar,
+                civId: c.id
+              }))
+            )
+              .filter((e) => {
+                if (era.id === 'era-3400') return e.yearBCE >= 3000;
+                if (era.id === 'era-2600') return e.yearBCE < 3000 && e.yearBCE >= 2000;
+                if (era.id === 'era-1400') return e.yearBCE < 2000 && e.yearBCE >= 1100;
+                if (era.id === 'era-750') return e.yearBCE < 1100 && e.yearBCE >= 600;
+                return e.yearBCE < 600;
+              })
+              .sort((a, b) => b.yearBCE - a.yearBCE);
 
-              {/* VERTICAL GRID LINES */}
-              {RULER_MARKS.map((mark) => (
+            return (
+              <div key={era.id} id={`mobile-${era.id}`} className="mobile-river-era-group">
                 <div
-                  key={`grid-${mark.year}`}
-                  className="matrix-grid-line"
-                  style={{ left: `${bceToPct(mark.year)}%` }}
-                />
-              ))}
-
-              {/* INTERACTIVE CROSSHAIR TIME NEEDLE */}
-              {needlePct !== null && (
-                <div className="matrix-time-needle" style={{ left: `${needlePct}%` }}>
-                  <div
-                    className="matrix-time-needle-head"
-                    style={{
-                      transform:
-                        needlePct < 10
-                          ? 'translateX(0%)'
-                          : needlePct > 90
-                          ? 'translateX(-100%)'
-                          : 'translateX(-50%)'
-                    }}
-                  >
-                    {hoveredYear !== null
-                      ? hoveredYear > 3300
-                        ? `c. ${hoveredYear} BCE (문자 전야)`
-                        : `c. ${hoveredYear} BCE`
-                      : ''}
-                  </div>
+                  className={`mobile-river-era-header ${isEraActive ? 'active' : ''}`}
+                  onClick={() => jumpToEra(era)}
+                  style={{ borderColor: isEraActive ? 'var(--accent-gold, #eab308)' : undefined }}
+                >
+                  <span>{era.badge}</span>
+                  <span>{era.title}</span>
+                  <span style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>({era.period})</span>
                 </div>
-              )}
-            </div>
 
-            {/* CIVILIZATION LANES */}
-            {TIMELINE_DATA.map((civ) => {
-              const startPct = bceToPct(civ.startBCE);
-              const endPct = bceToPct(civ.endBCE);
-              const barWidthPct = endPct - startPct;
-              const tiers = computeAbsoluteEventTiers(civ.events, bceToPct);
-
-              return (
-                <div key={civ.id} className="matrix-lane-row">
-                  <div className="matrix-lane-civ-header">
-                    <div className="matrix-civ-name" style={{ color: civ.colorVar }}>
-                      <span>{civ.icon}</span>
-                      <span>{civ.name}</span>
-                    </div>
-                    <div className="matrix-civ-span">{civ.spanText}</div>
-                  </div>
-
-                  <div className="matrix-lane-track-body">
-                    {/* SPAN BAR */}
-                    <div
-                      className="matrix-span-bar"
-                      style={{
-                        left: `${startPct}%`,
-                        width: `${barWidthPct}%`,
-                        background: `linear-gradient(90deg, ${civ.colorVar} 0%, rgba(255,255,255,0.15) 100%)`
-                      }}
-                    />
-
-                    {/* EVENT CHIPS */}
-                    {civ.events.map((ev) => {
-                      const evPct = bceToPct(ev.yearBCE);
-                      const isHovered = hoveredYear !== null && Math.abs(hoveredYear - ev.yearBCE) < 70;
-                      const isSelected = selectedEvent?.event.id === ev.id;
-                      const isSpotlighted = activeEra !== null && Math.abs(activeEra.yearBCE - ev.yearBCE) <= 300;
-                      const tierInfo = tiers.get(ev.id) || { tierClass: 'tier-top-near', isTop: true };
-
-                      let alignClass = 'align-center';
-                      if (evPct < 8) {
-                        alignClass = 'align-left';
-                      } else if (evPct > 92) {
-                        alignClass = 'align-right';
-                      }
-
-                      return (
-                        <div
-                          key={ev.id}
-                          className={`matrix-stagger-chip ${tierInfo.tierClass} ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
-                          style={{ left: `${evPct}%`, color: civ.colorVar }}
-                          onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
-                        >
-                          {tierInfo.isTop ? (
-                            <>
-                              <div className="matrix-event-label-chip">
-                                <span className="year-badge">{ev.yearBCE}BCE</span>
-                                <span>{ev.title}</span>
-                              </div>
-                              <div className="matrix-event-stem" />
-                              <div className="matrix-event-pin-dot" />
-                            </>
-                          ) : (
-                            <>
-                              <div className="matrix-event-pin-dot" />
-                              <div className="matrix-event-stem" />
-                              <div className="matrix-event-label-chip">
-                                <span className="year-badge">{ev.yearBCE}BCE</span>
-                                <span>{ev.title}</span>
-                              </div>
-                            </>
-                          )}
+                <div className="mobile-river-node-list">
+                  {eraEvents.map((ev) => {
+                    const isSelected = selectedEvent?.event.id === ev.id;
+                    return (
+                      <div
+                        key={ev.id}
+                        className={`mobile-river-node-card ${isSelected ? 'active' : ''}`}
+                        style={{ borderLeft: `3.5px solid ${ev.civColor}` }}
+                        onClick={() => setSelectedEvent({ civName: ev.civName, event: ev })}
+                      >
+                        <div className="mobile-river-node-header">
+                          <span className="mobile-river-civ-badge" style={{ color: ev.civColor }}>
+                            <span>{ev.civIcon}</span>
+                            <span>{ev.civName}</span>
+                          </span>
+                          <span className="mobile-river-bce-badge">c. {ev.yearBCE} BCE</span>
                         </div>
-                      );
-                    })}
-                  </div>
+                        <div className="mobile-river-node-title">{ev.title}</div>
+                        <div className="mobile-river-node-detail">{ev.detail}</div>
+                      </div>
+                    );
+                  })}
                 </div>
-              );
-            })}
-          </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -1004,24 +1077,37 @@ export const RelativeTimelineMatrix: React.FC = () => {
     setNeedlePct(pct);
     setHoveredYears(spotlight.targetYears);
 
-    if (!scrollRef.current) return;
-    const container = scrollRef.current;
-    const stickyHeader = container.querySelector('.matrix-civ-label-col') as HTMLElement | null;
-    const stickyWidth = stickyHeader ? stickyHeader.offsetWidth : 180;
-    
-    const totalScrollWidth = container.scrollWidth;
-    const trackWidth = Math.max(1, totalScrollWidth - stickyWidth);
-    
-    const visibleViewportWidth = Math.max(1, container.clientWidth - stickyWidth);
-    const targetScrollLeft = (pct / 100) * trackWidth - (visibleViewportWidth / 2);
-    
-    const maxScrollLeft = Math.max(0, totalScrollWidth - container.clientWidth);
-    const clampedScrollLeft = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft));
+    if (scrollRef.current) {
+      const container = scrollRef.current;
+      const stickyHeader = container.querySelector('.matrix-civ-label-col') as HTMLElement | null;
+      const stickyWidth = stickyHeader ? stickyHeader.offsetWidth : 180;
+      
+      const totalScrollWidth = container.scrollWidth;
+      const trackWidth = Math.max(1, totalScrollWidth - stickyWidth);
+      
+      const visibleViewportWidth = Math.max(1, container.clientWidth - stickyWidth);
+      const targetScrollLeft = (pct / 100) * trackWidth - (visibleViewportWidth / 2);
+      
+      const maxScrollLeft = Math.max(0, totalScrollWidth - container.clientWidth);
+      const clampedScrollLeft = Math.max(0, Math.min(maxScrollLeft, targetScrollLeft));
 
-    container.scrollTo({
-      left: clampedScrollLeft,
-      behavior: 'smooth'
-    });
+      container.scrollTo({
+        left: clampedScrollLeft,
+        behavior: 'smooth'
+      });
+    }
+
+    // On mobile, scroll to the corresponding civilization delta card
+    let targetCivId = 'greece';
+    if (spotlight.id.includes('greece')) targetCivId = 'greece';
+    else if (spotlight.id.includes('meso')) targetCivId = 'mesopotamia';
+    else if (spotlight.id.includes('israel')) targetCivId = 'israel';
+    else if (spotlight.id.includes('egypt')) targetCivId = 'egypt';
+
+    const mobileElem = document.getElementById(`mobile-rel-${targetCivId}`);
+    if (mobileElem) {
+      mobileElem.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
   };
 
   return (
@@ -1046,148 +1132,231 @@ export const RelativeTimelineMatrix: React.FC = () => {
         })}
       </div>
 
-      {/* HORIZONTALLY SCROLLABLE RELATIVE TIMELINE CANVAS */}
-      <div className="timeline-matrix-scroll-container" ref={scrollRef}>
-        <div className="timeline-matrix-inner">
-          {/* HEADER RULER ROW */}
-          <div className="matrix-ruler-row">
-            <div className="matrix-civ-label-col">
-              <span>문명별 t=0 도입기준</span>
-            </div>
-            <div className="matrix-tracks-area">
-              <div className="matrix-ruler-ticks">
-                {RELATIVE_RULER_MARKS.map((mark) => {
-                  const pct = relYearsToPct(mark.years);
-                  return (
-                    <div
-                      key={mark.years}
-                      className="matrix-ruler-mark-item"
-                      style={{
-                        left: `${pct}%`,
-                        transform: pct === 0 ? 'translateX(0%)' : pct >= 95 ? 'translateX(-100%)' : 'translateX(-50%)'
-                      }}
-                    >
-                      <span>{mark.label}</span>
-                      <div className="matrix-ruler-tick-line" />
-                    </div>
-                  );
-                })}
+      {/* 1. DESKTOP-ONLY HORIZONTALLY SCROLLABLE RELATIVE TIMELINE CANVAS (≥ 769px) */}
+      <div className="desktop-only-timeline">
+        <div className="timeline-matrix-scroll-container" ref={scrollRef}>
+          <div className="timeline-matrix-inner">
+            {/* HEADER RULER ROW */}
+            <div className="matrix-ruler-row">
+              <div className="matrix-civ-label-col">
+                <span>문명별 t=0 도입기준</span>
+              </div>
+              <div className="matrix-tracks-area">
+                <div className="matrix-ruler-ticks">
+                  {RELATIVE_RULER_MARKS.map((mark) => {
+                    const pct = relYearsToPct(mark.years);
+                    return (
+                      <div
+                        key={mark.years}
+                        className="matrix-ruler-mark-item"
+                        style={{
+                          left: `${pct}%`,
+                          transform: pct === 0 ? 'translateX(0%)' : pct >= 95 ? 'translateX(-100%)' : 'translateX(-50%)'
+                        }}
+                      >
+                        <span>{mark.label}</span>
+                        <div className="matrix-ruler-tick-line" />
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* MAIN TRACK MATRIX BODY */}
-          <div
-            className="matrix-lanes-wrapper"
-            onMouseMove={handleMouseMove}
-            onMouseLeave={handleMouseLeave}
-          >
-            {/* OVERLAYS (Grid lines, Needle) */}
-            <div className="matrix-track-interactive-overlay" ref={tracksRef}>
-              {/* VERTICAL GRID LINES */}
-              {RELATIVE_RULER_MARKS.map((mark) => (
-                <div
-                  key={`grid-rel-${mark.years}`}
-                  className="matrix-grid-line"
-                  style={{ left: `${relYearsToPct(mark.years)}%` }}
-                />
-              ))}
-
-              {/* INTERACTIVE TIME NEEDLE */}
-              {needlePct !== null && (
-                <div className="matrix-time-needle" style={{ left: `${needlePct}%` }}>
+            {/* MAIN TRACK MATRIX BODY */}
+            <div
+              className="matrix-lanes-wrapper"
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+            >
+              {/* OVERLAYS (Grid lines, Needle) */}
+              <div className="matrix-track-interactive-overlay" ref={tracksRef}>
+                {/* VERTICAL GRID LINES */}
+                {RELATIVE_RULER_MARKS.map((mark) => (
                   <div
-                    className="matrix-time-needle-head"
-                    style={{
-                      transform:
-                        needlePct < 10
-                          ? 'translateX(0%)'
-                          : needlePct > 90
-                          ? 'translateX(-100%)'
-                          : 'translateX(-50%)'
-                    }}
-                  >
-                    {hoveredYears !== null ? `t + ${hoveredYears}년 경과` : ''}
+                    key={`grid-rel-${mark.years}`}
+                    className="matrix-grid-line"
+                    style={{ left: `${relYearsToPct(mark.years)}%` }}
+                  />
+                ))}
+
+                {/* INTERACTIVE TIME NEEDLE */}
+                {needlePct !== null && (
+                  <div className="matrix-time-needle" style={{ left: `${needlePct}%` }}>
+                    <div
+                      className="matrix-time-needle-head"
+                      style={{
+                        transform:
+                          needlePct < 10
+                            ? 'translateX(0%)'
+                            : needlePct > 90
+                            ? 'translateX(-100%)'
+                            : 'translateX(-50%)'
+                      }}
+                    >
+                      {hoveredYears !== null ? `t + ${hoveredYears}년 경과` : ''}
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
+
+              {/* CIVILIZATION LANES */}
+              {RELATIVE_TIMELINE_DATA.map((civ) => {
+                const barWidthPct = relYearsToPct(civ.maxElapsedYears);
+                const tiers = computeEventTiers(civ.events, relYearsToPct);
+
+                return (
+                  <div key={civ.id} className="matrix-lane-row">
+                    <div className="matrix-lane-civ-header">
+                      <div className="matrix-civ-name" style={{ color: civ.colorVar }}>
+                        <span>{civ.icon}</span>
+                        <span>{civ.name}</span>
+                      </div>
+                      <div className="matrix-civ-span" style={{ fontSize: '0.66rem' }}>{civ.t0Origin}</div>
+                    </div>
+
+                    <div className="matrix-lane-track-body">
+                      {/* SPAN BAR */}
+                      <div
+                        className="matrix-span-bar"
+                        style={{
+                          left: '0%',
+                          width: `${barWidthPct}%`,
+                          background: `linear-gradient(90deg, ${civ.colorVar} 0%, rgba(255,255,255,0.15) 100%)`
+                        }}
+                      />
+
+                      {/* EVENT CHIPS (DYNAMIC 4-TIER SLOTTED) */}
+                      {civ.events.map((ev) => {
+                        const evPct = relYearsToPct(ev.elapsedYears);
+                        const isHovered = hoveredYears !== null && Math.abs(hoveredYears - ev.elapsedYears) < 30;
+                        const isSelected = selectedEvent?.event.id === ev.id;
+                        const isSpotlighted = activeSpotlight !== null && Math.abs(activeSpotlight.targetYears - ev.elapsedYears) <= 100;
+                        const tierInfo = tiers.get(ev.id) || { tierClass: 'tier-top-near', isTop: true };
+
+                        let alignClass = 'align-center';
+                        if (evPct < 8) {
+                          alignClass = 'align-left';
+                        } else if (evPct > 92) {
+                          alignClass = 'align-right';
+                        }
+
+                        return (
+                          <div
+                            key={ev.id}
+                            className={`matrix-stagger-chip ${tierInfo.tierClass} ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
+                            style={{ left: `${evPct}%`, color: civ.colorVar }}
+                            onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
+                          >
+                            {tierInfo.isTop ? (
+                              <>
+                                <div className="matrix-event-label-chip">
+                                  <span className="year-badge">t+{ev.elapsedYears}년</span>
+                                  <span>{ev.title}</span>
+                                </div>
+                                <div className="matrix-event-stem" />
+                                <div className="matrix-event-pin-dot" />
+                              </>
+                            ) : (
+                              <>
+                                <div className="matrix-event-pin-dot" />
+                                <div className="matrix-event-stem" />
+                                <div className="matrix-event-label-chip">
+                                  <span className="year-badge">t+{ev.elapsedYears}년</span>
+                                  <span>{ev.title}</span>
+                                </div>
+                              </>
+                            )}
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
+          </div>
+        </div>
+      </div>
 
-            {/* CIVILIZATION LANES */}
-            {RELATIVE_TIMELINE_DATA.map((civ) => {
-              const barWidthPct = relYearsToPct(civ.maxElapsedYears);
-              const tiers = computeEventTiers(civ.events, relYearsToPct);
+      {/* 2. MOBILE-ONLY COMPARATIVE DELTA DECK (≤ 768px) */}
+      <div className="mobile-only-timeline">
+        <div className="mobile-delta-deck">
+          {RELATIVE_TIMELINE_DATA.map((civ) => {
+            const isCivSpotlighted =
+              (activeSpotlightId === 'rel-greece-jump' && civ.id === 'greece') ||
+              (activeSpotlightId === 'rel-meso-lexical' && civ.id === 'mesopotamia') ||
+              (activeSpotlightId === 'rel-israel-canon' && civ.id === 'israel') ||
+              (activeSpotlightId === 'rel-egypt-monument' && civ.id === 'egypt');
 
-              return (
-                <div key={civ.id} className="matrix-lane-row">
-                  <div className="matrix-lane-civ-header">
-                    <div className="matrix-civ-name" style={{ color: civ.colorVar }}>
+            let speedBadge = '도입 진행';
+            if (civ.id === 'greece') speedBadge = '⚡ t+35년 문학 직행 (초고속)';
+            else if (civ.id === 'mesopotamia') speedBadge = '📜 t+0년 어휘목록 동시출현';
+            else if (civ.id === 'israel') speedBadge = '✨ t+450년 포로기 경전화';
+            else if (civ.id === 'egypt') speedBadge = '🏛️ t+900년 피라미드 영생문헌';
+            else if (civ.id === 'ugarit') speedBadge = '⚓ t+50년 바알 서사시 (화재 소멸)';
+
+            return (
+              <div
+                key={civ.id}
+                id={`mobile-rel-${civ.id}`}
+                className={`mobile-civ-delta-card ${isCivSpotlighted ? 'highlighted' : ''}`}
+                style={{ borderTop: `4px solid ${civ.colorVar}` }}
+              >
+                <div className="mobile-civ-card-header">
+                  <div className="mobile-civ-title-box">
+                    <h3 style={{ color: civ.colorVar }}>
                       <span>{civ.icon}</span>
                       <span>{civ.name}</span>
-                    </div>
-                    <div className="matrix-civ-span" style={{ fontSize: '0.66rem' }}>{civ.t0Origin}</div>
+                    </h3>
+                    <div className="mobile-civ-t0-label">{civ.t0Origin}</div>
                   </div>
-
-                  <div className="matrix-lane-track-body">
-                    {/* SPAN BAR */}
-                    <div
-                      className="matrix-span-bar"
-                      style={{
-                        left: '0%',
-                        width: `${barWidthPct}%`,
-                        background: `linear-gradient(90deg, ${civ.colorVar} 0%, rgba(255,255,255,0.15) 100%)`
-                      }}
-                    />
-
-                    {/* EVENT CHIPS (DYNAMIC 4-TIER SLOTTED) */}
-                    {civ.events.map((ev) => {
-                      const evPct = relYearsToPct(ev.elapsedYears);
-                      const isHovered = hoveredYears !== null && Math.abs(hoveredYears - ev.elapsedYears) < 30;
-                      const isSelected = selectedEvent?.event.id === ev.id;
-                      const isSpotlighted = activeSpotlight !== null && Math.abs(activeSpotlight.targetYears - ev.elapsedYears) <= 100;
-                      const tierInfo = tiers.get(ev.id) || { tierClass: 'tier-top-near', isTop: true };
-
-                      let alignClass = 'align-center';
-                      if (evPct < 8) {
-                        alignClass = 'align-left';
-                      } else if (evPct > 92) {
-                        alignClass = 'align-right';
-                      }
-
-                      return (
-                        <div
-                          key={ev.id}
-                          className={`matrix-stagger-chip ${tierInfo.tierClass} ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
-                          style={{ left: `${evPct}%`, color: civ.colorVar }}
-                          onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
-                        >
-                          {tierInfo.isTop ? (
-                            <>
-                              <div className="matrix-event-label-chip">
-                                <span className="year-badge">t+{ev.elapsedYears}년</span>
-                                <span>{ev.title}</span>
-                              </div>
-                              <div className="matrix-event-stem" />
-                              <div className="matrix-event-pin-dot" />
-                            </>
-                          ) : (
-                            <>
-                              <div className="matrix-event-pin-dot" />
-                              <div className="matrix-event-stem" />
-                              <div className="matrix-event-label-chip">
-                                <span className="year-badge">t+{ev.elapsedYears}년</span>
-                                <span>{ev.title}</span>
-                              </div>
-                            </>
-                          )}
-                        </div>
-                      );
-                    })}
-                  </div>
+                  <span className="relative-speed-badge" style={{ color: civ.colorVar, borderColor: civ.colorVar, margin: 0 }}>
+                    {speedBadge}
+                  </span>
                 </div>
-              );
-            })}
-          </div>
+
+                {/* Progress bar gauge showing 0 to 1500 years */}
+                <div className="mobile-delta-bar-container">
+                  <div
+                    className="mobile-delta-bar-fill"
+                    style={{
+                      width: `${relYearsToPct(civ.maxElapsedYears)}%`,
+                      background: `linear-gradient(90deg, ${civ.colorVar} 0%, rgba(234, 179, 8, 0.9) 100%)`
+                    }}
+                  />
+                </div>
+
+                {/* Milestone Chips list */}
+                <div className="mobile-milestones-flow">
+                  {civ.events.map((ev) => {
+                    const isSelected = selectedEvent?.event.id === ev.id;
+                    return (
+                      <div
+                        key={ev.id}
+                        className={`mobile-milestone-item ${isSelected ? 'active' : ''}`}
+                        style={{ color: civ.colorVar }}
+                        onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
+                      >
+                        <span className="mobile-milestone-year-badge">t+{ev.elapsedYears}년</span>
+                        <span className="mobile-milestone-title">{ev.title}</span>
+                        <ChevronRight size={14} style={{ color: 'var(--text-muted)' }} />
+                      </div>
+                    );
+                  })}
+                </div>
+
+                {/* Curator Takeaway */}
+                <div className="mobile-curator-takeaway">
+                  {civ.id === 'greece' && '💡 관료 독점 없이 24자 음성 알파벳이 귀족 연회(Symposion) 유희시로 직행하여 35년 만에 도약.'}
+                  {civ.id === 'mesopotamia' && '💡 문자 탄생과 동시에 직업 어휘목록(ED Lu A)이 출현하여 서기관 관료 학교를 통해 1500년간 전승.'}
+                  {civ.id === 'israel' && '💡 게제르 농경 달력(t+25)에서 망국과 바빌론 포로기(t+450) 위기 속에서 성서 경전으로 집대성.'}
+                  {civ.id === 'egypt' && '💡 세무 꼬리표(t=0)에서 출발해 900년에 걸쳐 파라오의 피라미드 내벽 영생 주문 텍스트로 완성.'}
+                  {civ.id === 'ugarit' && '💡 30자 알파벳으로 신화를 기록했으나, 청동기 붕괴기 화재로 문자 체계가 단절된 통제 사례.'}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
@@ -1501,7 +1670,7 @@ export const HomeView: React.FC<HomeViewProps> = ({ onNavigateTab }) => {
       </section>
 
       {/* ELAPSED TIME COMPARISON CHART (ABSOLUTE VS RELATIVE) */}
-      <section className="card glass-card" style={{ marginBottom: '4rem', marginTop: '3.5rem', padding: '2.25rem' }}>
+      <section className="card glass-card timeline-section-card" style={{ marginBottom: '4rem', marginTop: '3.5rem', padding: '2.25rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '2rem', flexWrap: 'wrap', gap: '1.25rem' }}>
           <div>
             <h2 className="section-title" style={{ fontSize: '1.65rem', marginBottom: '0.4rem' }}>
