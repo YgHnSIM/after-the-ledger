@@ -1432,7 +1432,7 @@ p:last-child {
 }
 
 .timeline-matrix-inner {
-  min-width: 980px;
+  min-width: 1140px;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -1551,10 +1551,7 @@ p:last-child {
   font-size: 0.65rem;
   font-weight: 700;
   color: var(--text-muted);
-  letter-spacing: 0.08em;
-  opacity: 0.85;
-  white-space: nowrap;
-  user-select: none;
+  letter-spacing: 0.1em;
 }
 
 .matrix-time-needle {
@@ -1588,7 +1585,7 @@ p:last-child {
 .matrix-lane-row {
   display: flex;
   border-bottom: 1px solid var(--border-color);
-  min-height: 90px;
+  min-height: 135px;
   background: var(--bg-card);
   transition: background 0.2s ease;
   position: relative;
@@ -1638,13 +1635,14 @@ p:last-child {
 .matrix-lane-track-body {
   flex-grow: 1;
   position: relative;
-  padding: 1.2rem 0;
+  min-height: 135px;
+  padding: 0;
   display: flex;
   align-items: center;
 }
 
 .matrix-span-bar {
-  height: 24px;
+  height: 20px;
   border-radius: var(--radius-sm);
   position: absolute;
   top: 50%;
@@ -1656,91 +1654,32 @@ p:last-child {
   transition: opacity 0.2s ease;
 }
 
-.matrix-event-chip {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-  z-index: 5;
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), z-index 0.1s ease;
-}
-
-.matrix-event-chip.align-center {
-  transform: translate(-50%, -50%);
-  align-items: center;
-}
-
-.matrix-event-chip.align-left {
-  transform: translate(0, -50%);
-  align-items: flex-start;
-}
-.matrix-event-chip.align-left .matrix-event-pin-dot {
-  margin-left: 4px;
-}
-.matrix-event-chip.align-left .matrix-event-label-chip {
-  margin-left: 0;
-}
-
-.matrix-event-chip.align-right {
-  transform: translate(-100%, -50%);
-  align-items: flex-end;
-}
-.matrix-event-chip.align-right .matrix-event-pin-dot {
-  margin-right: 4px;
-}
-.matrix-event-chip.align-right .matrix-event-label-chip {
-  margin-right: 0;
-}
-
-.matrix-event-chip:hover,
-.matrix-event-chip.active {
-  z-index: 30;
-}
-
-.matrix-event-chip.align-center:hover,
-.matrix-event-chip.align-center.active {
-  transform: translate(-50%, -50%) scale(1.06);
-}
-
-.matrix-event-chip.align-left:hover,
-.matrix-event-chip.align-left.active {
-  transform: translate(0, -50%) scale(1.06);
-}
-
-.matrix-event-chip.align-right:hover,
-.matrix-event-chip.align-right.active {
-  transform: translate(-100%, -50%) scale(1.06);
-}
-
 .matrix-event-pin-dot {
   width: 14px;
   height: 14px;
   border-radius: 50%;
   background: var(--bg-surface);
   border: 3px solid currentColor;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.25);
   flex-shrink: 0;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  z-index: 2;
+  z-index: 4;
 }
 
 /* Event Connecting Stalk/Stem (지시선) */
 .matrix-event-stem {
   width: 2px;
-  height: 10px;
   background: currentColor;
-  opacity: 0.65;
+  opacity: 0.75;
   transition: all 0.2s ease;
   flex-shrink: 0;
+  z-index: 3;
 }
 
 .matrix-event-chip {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1751,7 +1690,7 @@ p:last-child {
 
 .matrix-event-chip:hover,
 .matrix-event-chip.active {
-  z-index: 30;
+  z-index: 35;
 }
 
 .matrix-event-chip:hover .matrix-event-pin-dot,
@@ -1762,7 +1701,6 @@ p:last-child {
 
 .matrix-event-chip:hover .matrix-event-stem,
 .matrix-event-chip.active .matrix-event-stem {
-  height: 12px;
   opacity: 1;
   width: 2.5px;
 }
@@ -1771,8 +1709,8 @@ p:last-child {
   background: var(--bg-surface-elevated);
   border: 1.5px solid var(--border-highlight);
   border-radius: var(--radius-sm);
-  padding: 0.22rem 0.55rem;
-  font-size: 0.73rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.72rem;
   font-weight: 600;
   color: var(--text-primary);
   white-space: nowrap;
@@ -1780,17 +1718,17 @@ p:last-child {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  max-width: 220px;
+  max-width: 210px;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
-  z-index: 3;
+  z-index: 5;
 }
 
 .matrix-event-label-chip .year-badge {
   font-family: var(--font-cinzel);
   font-weight: 800;
   color: var(--text-primary);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   background: var(--bg-surface);
   padding: 0.08rem 0.3rem;
   border-radius: 3px;
@@ -1804,25 +1742,13 @@ p:last-child {
   transform: scale(1.04);
 }
 
-.matrix-event-chip.align-center {
-  transform: translate(-50%, -50%);
-}
+/* ==========================================================================
+   DYNAMIC 4-TIER EVENT CHIPS SYSTEM (TOP-NEAR, TOP-FAR, BOTTOM-NEAR, BOTTOM-FAR)
+   ========================================================================== */
 
-.matrix-event-chip.align-left {
-  transform: translate(0, -50%);
-  align-items: flex-start;
-}
-
-.matrix-event-chip.align-right {
-  transform: translate(-100%, -50%);
-  align-items: flex-end;
-}
-
-/* Alternating Up/Down Staggered Event Chips */
 .matrix-stagger-chip {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1833,7 +1759,7 @@ p:last-child {
 
 .matrix-stagger-chip:hover,
 .matrix-stagger-chip.active {
-  z-index: 30;
+  z-index: 35;
 }
 
 .matrix-stagger-chip:hover .matrix-event-pin-dot,
@@ -1846,6 +1772,7 @@ p:last-child {
 .matrix-stagger-chip.active .matrix-event-stem {
   opacity: 1;
   width: 2.5px;
+  box-shadow: 0 0 6px currentColor;
 }
 
 .matrix-stagger-chip:hover .matrix-event-label-chip,
@@ -1855,22 +1782,59 @@ p:last-child {
   transform: scale(1.04);
 }
 
-.matrix-stagger-chip.pos-top {
-  transform: translate(-50%, -50%);
+/* 1. TOP-NEAR (Stem: 8px) */
+.matrix-stagger-chip.tier-top-near {
+  transform: translate(-50%, -100%);
+  margin-top: 7px;
+}
+.matrix-stagger-chip.tier-top-near .matrix-event-stem {
+  height: 8px;
 }
 
-.matrix-stagger-chip.pos-bottom {
-  transform: translate(-50%, -50%);
+/* 2. TOP-FAR (Stem: 32px) - Higher elevation avoids collision with top-near */
+.matrix-stagger-chip.tier-top-far {
+  transform: translate(-50%, -100%);
+  margin-top: 7px;
+}
+.matrix-stagger-chip.tier-top-far .matrix-event-stem {
+  height: 32px;
 }
 
+/* 3. BOTTOM-NEAR (Stem: 8px) */
+.matrix-stagger-chip.tier-bottom-near {
+  transform: translate(-50%, 0);
+  margin-top: -7px;
+}
+.matrix-stagger-chip.tier-bottom-near .matrix-event-stem {
+  height: 8px;
+}
+
+/* 4. BOTTOM-FAR (Stem: 32px) - Lower extension avoids collision with bottom-near */
+.matrix-stagger-chip.tier-bottom-far {
+  transform: translate(-50%, 0);
+  margin-top: -7px;
+}
+.matrix-stagger-chip.tier-bottom-far .matrix-event-stem {
+  height: 32px;
+}
+
+/* Dynamic Left/Right edge alignments */
 .matrix-stagger-chip.align-left {
-  transform: translate(0, -50%) !important;
+  transform: translate(0, -100%) !important;
   align-items: flex-start !important;
+}
+.matrix-stagger-chip.align-left.tier-bottom-near,
+.matrix-stagger-chip.align-left.tier-bottom-far {
+  transform: translate(0, 0) !important;
 }
 
 .matrix-stagger-chip.align-right {
-  transform: translate(-100%, -50%) !important;
+  transform: translate(-100%, -100%) !important;
   align-items: flex-end !important;
+}
+.matrix-stagger-chip.align-right.tier-bottom-near,
+.matrix-stagger-chip.align-right.tier-bottom-far {
+  transform: translate(-100%, 0) !important;
 }
 
 .matrix-stagger-chip.spotlight-highlight .matrix-event-pin-dot {

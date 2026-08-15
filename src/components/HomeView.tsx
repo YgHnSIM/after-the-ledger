@@ -177,6 +177,64 @@ const ERA_SPOTLIGHTS: EraSpotlight[] = [
   }
 ];
 
+type EventTier = 'tier-top-near' | 'tier-top-far' | 'tier-bottom-near' | 'tier-bottom-far';
+
+const computeAbsoluteEventTiers = (
+  events: EventNode[],
+  pctCalc: (yearBCE: number) => number
+): Map<string, { tierClass: EventTier; isTop: boolean }> => {
+  const tierMap = new Map<string, { tierClass: EventTier; isTop: boolean }>();
+
+  let lastTopNearPct = -999;
+  let lastTopFarPct = -999;
+  let lastBottomNearPct = -999;
+  let lastBottomFarPct = -999;
+
+  const SAFE_GAP = 14;
+
+  events.forEach((ev, idx) => {
+    const pct = pctCalc(ev.yearBCE);
+    const preferTop = idx % 2 === 0;
+
+    let chosenTier: EventTier;
+
+    if (preferTop) {
+      if (pct - lastTopNearPct >= SAFE_GAP) {
+        chosenTier = 'tier-top-near';
+        lastTopNearPct = pct;
+      } else if (pct - lastTopFarPct >= SAFE_GAP) {
+        chosenTier = 'tier-top-far';
+        lastTopFarPct = pct;
+      } else if (pct - lastBottomNearPct >= SAFE_GAP) {
+        chosenTier = 'tier-bottom-near';
+        lastBottomNearPct = pct;
+      } else {
+        chosenTier = 'tier-bottom-far';
+        lastBottomFarPct = pct;
+      }
+    } else {
+      if (pct - lastBottomNearPct >= SAFE_GAP) {
+        chosenTier = 'tier-bottom-near';
+        lastBottomNearPct = pct;
+      } else if (pct - lastBottomFarPct >= SAFE_GAP) {
+        chosenTier = 'tier-bottom-far';
+        lastBottomFarPct = pct;
+      } else if (pct - lastTopNearPct >= SAFE_GAP) {
+        chosenTier = 'tier-top-near';
+        lastTopNearPct = pct;
+      } else {
+        chosenTier = 'tier-top-far';
+        lastTopFarPct = pct;
+      }
+    }
+
+    const isTop = chosenTier.startsWith('tier-top');
+    tierMap.set(ev.id, { tierClass: chosenTier, isTop });
+  });
+
+  return tierMap;
+};
+
 export const UnifiedTimelineMatrix: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
   const tracksRef = useRef<HTMLDivElement>(null);
@@ -347,6 +405,7 @@ export const UnifiedTimelineMatrix: React.FC = () => {
               const startPct = bceToPct(civ.startBCE);
               const endPct = bceToPct(civ.endBCE);
               const barWidthPct = endPct - startPct;
+              const tiers = computeAbsoluteEventTiers(civ.events, bceToPct);
 
               return (
                 <div key={civ.id} className="matrix-lane-row">
@@ -375,27 +434,41 @@ export const UnifiedTimelineMatrix: React.FC = () => {
                       const isHovered = hoveredYear !== null && Math.abs(hoveredYear - ev.yearBCE) < 70;
                       const isSelected = selectedEvent?.event.id === ev.id;
                       const isSpotlighted = activeEra !== null && Math.abs(activeEra.yearBCE - ev.yearBCE) <= 300;
+                      const tierInfo = tiers.get(ev.id) || { tierClass: 'tier-top-near', isTop: true };
 
                       let alignClass = 'align-center';
-                      if (evPct < 15) {
+                      if (evPct < 8) {
                         alignClass = 'align-left';
-                      } else if (evPct > 85) {
+                      } else if (evPct > 92) {
                         alignClass = 'align-right';
                       }
 
                       return (
                         <div
                           key={ev.id}
-                          className={`matrix-event-chip ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
+                          className={`matrix-stagger-chip ${tierInfo.tierClass} ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
                           style={{ left: `${evPct}%`, color: civ.colorVar }}
                           onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
                         >
-                          <div className="matrix-event-pin-dot" />
-                          <div className="matrix-event-stem" />
-                          <div className="matrix-event-label-chip">
-                            <span className="year-badge">{ev.yearBCE}BCE</span>
-                            <span>{ev.title}</span>
-                          </div>
+                          {tierInfo.isTop ? (
+                            <>
+                              <div className="matrix-event-label-chip">
+                                <span className="year-badge">{ev.yearBCE}BCE</span>
+                                <span>{ev.title}</span>
+                              </div>
+                              <div className="matrix-event-stem" />
+                              <div className="matrix-event-pin-dot" />
+                            </>
+                          ) : (
+                            <>
+                              <div className="matrix-event-pin-dot" />
+                              <div className="matrix-event-stem" />
+                              <div className="matrix-event-label-chip">
+                                <span className="year-badge">{ev.yearBCE}BCE</span>
+                                <span>{ev.title}</span>
+                              </div>
+                            </>
+                          )}
                         </div>
                       );
                     })}
@@ -604,7 +677,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'gr-0',
         elapsedYears: 0,
-        title: '알파벳 자모 체계 수용',
+        title: '알파벳 체계 수용',
         actualBCE: 'c. 775 BCE',
         stage: 't=0 (체계 수용)',
         detail: '페니키아 자음 전용 아브자드에서 그리스어 모음 음소를 표기하는 완전 음소 알파벳 체계 창안.'
@@ -612,7 +685,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'gr-35',
         elapsedYears: 35,
-        title: '디필론 비문 / 네스토르 잔',
+        title: '디필론 비문·네스토르 잔',
         actualBCE: 'c. 740 BCE',
         stage: 't+35년 (유희시 직행)',
         detail: '도입 불과 35년 만에 도기 위에 음주와 춤 경연을 노래하는 6보격 유희 서사시 刻文.'
@@ -628,7 +701,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'gr-325',
         elapsedYears: 325,
-        title: '고전기 비극·역사 철학',
+        title: '고전기 비극·철학',
         actualBCE: 'c. 450 BCE',
         stage: 't+325년 (고전문학 만개)',
         detail: '아테네 민주정의 시민 비극 경연, 헤로도토스·투키디데스의 비판적 역사 서술 및 플라톤 철학.'
@@ -646,7 +719,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'meso-0',
         elapsedYears: 0,
-        title: '우루크 IV기 장부 & 직업목록(ED Lu A)',
+        title: '우루크 장부 & 직업목록',
         actualBCE: 'c. 3300 BCE',
         stage: 't=0 (경제회계 & 어휘목록 동시출현)',
         detail: '신전 곡물·가축 수량 출납 장부(85%)와 서기관 교육용 직업 위계 표준목록(ED Lu A, 15%)이 동시 출현.'
@@ -696,7 +769,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'isr-25',
         elapsedYears: 25,
-        title: '게제르 달력',
+        title: '게제르 농경 달력',
         actualBCE: 'c. 925 BCE',
         stage: 't+25년 (농경 습자판)',
         detail: '월별 농사 주기를 기록한 석회암 판. 지방 서기관 학교의 습자 훈련용 추정.'
@@ -746,7 +819,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'egy-250',
         elapsedYears: 250,
-        title: '나르메르 팔레트 (왕권 도상)',
+        title: '나르메르 팔레트 (왕권)',
         actualBCE: 'c. 3000 BCE',
         stage: 't+250년 (왕권 도상)',
         detail: '상·하 이집트 통일 왕권의 군사적 승리와 신성한 권위를 과시하는 화장판 릴리프 비문.'
@@ -762,7 +835,7 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
       {
         id: 'egy-1300',
         elapsedYears: 1300,
-        title: '시누헤 이야기 (문학 서사)',
+        title: '시누헤 이야기 (문학)',
         actualBCE: 'c. 1950 BCE',
         stage: 't+1300년 (고전문학 서사)',
         detail: '망명 관료의 고난과 파라오의 은혜로 귀환하는 자전적 문학 서사. 이집트 세속 문학의 금자탑.'
@@ -812,6 +885,73 @@ const RELATIVE_TIMELINE_DATA: RelativeCivData[] = [
     ]
   }
 ];
+
+interface ComputedTierInfo {
+  tierClass: EventTier;
+  isTop: boolean;
+}
+
+/**
+ * Dynamic collision-aware 4-tier slotting algorithm:
+ * Inspects all events in a lane, converts their elapsedYears to horizontal percentage (pct),
+ * and assigns tiers (top-near, top-far, bottom-near, bottom-far) so that adjacent items
+ * within an 18% distance NEVER occupy the same vertical level.
+ */
+const computeEventTiers = (
+  events: RelativeEventNode[],
+  pctCalc: (years: number) => number
+): Map<string, ComputedTierInfo> => {
+  const tierMap = new Map<string, ComputedTierInfo>();
+
+  let lastTopNearPct = -999;
+  let lastTopFarPct = -999;
+  let lastBottomNearPct = -999;
+  let lastBottomFarPct = -999;
+
+  const SAFE_GAP = 18;
+
+  events.forEach((ev, idx) => {
+    const pct = pctCalc(ev.elapsedYears);
+    const preferTop = idx % 2 === 0;
+
+    let chosenTier: EventTier;
+
+    if (preferTop) {
+      if (pct - lastTopNearPct >= SAFE_GAP) {
+        chosenTier = 'tier-top-near';
+        lastTopNearPct = pct;
+      } else if (pct - lastTopFarPct >= SAFE_GAP) {
+        chosenTier = 'tier-top-far';
+        lastTopFarPct = pct;
+      } else if (pct - lastBottomNearPct >= SAFE_GAP) {
+        chosenTier = 'tier-bottom-near';
+        lastBottomNearPct = pct;
+      } else {
+        chosenTier = 'tier-bottom-far';
+        lastBottomFarPct = pct;
+      }
+    } else {
+      if (pct - lastBottomNearPct >= SAFE_GAP) {
+        chosenTier = 'tier-bottom-near';
+        lastBottomNearPct = pct;
+      } else if (pct - lastBottomFarPct >= SAFE_GAP) {
+        chosenTier = 'tier-bottom-far';
+        lastBottomFarPct = pct;
+      } else if (pct - lastTopNearPct >= SAFE_GAP) {
+        chosenTier = 'tier-top-near';
+        lastTopNearPct = pct;
+      } else {
+        chosenTier = 'tier-top-far';
+        lastTopFarPct = pct;
+      }
+    }
+
+    const isTop = chosenTier.startsWith('tier-top');
+    tierMap.set(ev.id, { tierClass: chosenTier, isTop });
+  });
+
+  return tierMap;
+};
 
 export const RelativeTimelineMatrix: React.FC = () => {
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -976,9 +1116,10 @@ export const RelativeTimelineMatrix: React.FC = () => {
             {/* CIVILIZATION LANES */}
             {RELATIVE_TIMELINE_DATA.map((civ) => {
               const barWidthPct = relYearsToPct(civ.maxElapsedYears);
+              const tiers = computeEventTiers(civ.events, relYearsToPct);
 
               return (
-                <div key={civ.id} className="matrix-lane-row" style={{ minHeight: '105px' }}>
+                <div key={civ.id} className="matrix-lane-row">
                   <div className="matrix-lane-civ-header">
                     <div className="matrix-civ-name" style={{ color: civ.colorVar }}>
                       <span>{civ.icon}</span>
@@ -987,7 +1128,7 @@ export const RelativeTimelineMatrix: React.FC = () => {
                     <div className="matrix-civ-span" style={{ fontSize: '0.66rem' }}>{civ.t0Origin}</div>
                   </div>
 
-                  <div className="matrix-lane-track-body" style={{ minHeight: '105px', padding: 0 }}>
+                  <div className="matrix-lane-track-body">
                     {/* SPAN BAR */}
                     <div
                       className="matrix-span-bar"
@@ -998,13 +1139,13 @@ export const RelativeTimelineMatrix: React.FC = () => {
                       }}
                     />
 
-                    {/* EVENT CHIPS (ALTERNATING STAGGER UP/DOWN) */}
-                    {civ.events.map((ev, idx) => {
+                    {/* EVENT CHIPS (DYNAMIC 4-TIER SLOTTED) */}
+                    {civ.events.map((ev) => {
                       const evPct = relYearsToPct(ev.elapsedYears);
                       const isHovered = hoveredYears !== null && Math.abs(hoveredYears - ev.elapsedYears) < 30;
                       const isSelected = selectedEvent?.event.id === ev.id;
                       const isSpotlighted = activeSpotlight !== null && Math.abs(activeSpotlight.targetYears - ev.elapsedYears) <= 100;
-                      const isTop = idx % 2 === 0;
+                      const tierInfo = tiers.get(ev.id) || { tierClass: 'tier-top-near', isTop: true };
 
                       let alignClass = 'align-center';
                       if (evPct < 8) {
@@ -1016,11 +1157,11 @@ export const RelativeTimelineMatrix: React.FC = () => {
                       return (
                         <div
                           key={ev.id}
-                          className={`matrix-stagger-chip ${isTop ? 'pos-top' : 'pos-bottom'} ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
+                          className={`matrix-stagger-chip ${tierInfo.tierClass} ${alignClass} ${isHovered || isSelected ? 'active' : ''} ${isSpotlighted ? 'spotlight-highlight' : ''}`}
                           style={{ left: `${evPct}%`, color: civ.colorVar }}
                           onClick={() => setSelectedEvent({ civName: civ.name, event: ev })}
                         >
-                          {isTop ? (
+                          {tierInfo.isTop ? (
                             <>
                               <div className="matrix-event-label-chip">
                                 <span className="year-badge">t+{ev.elapsedYears}년</span>
