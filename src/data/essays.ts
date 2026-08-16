@@ -46,10 +46,10 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 이 목록은 최고 권력자 혹은 대사제로 추정되는 'NAMEŠDA'(나메시다)로 시작하여, 사법관, 군사령관, 신전 행정관, 전문 장인에 이르기까지 120여 개의 직책을 엄격한 수직 서열 순서로 나열한다. 놀라운 점은 이 목록이 단순한 직책 명단이 아니라 서기관 훈련생들이 문자를 배우는 필수 교본이었다는 사실이다. 서기관들은 낱말을 배우면서 동시에 자신이 속한 도시국가의 권력 피라미드를 암기했다.`,
         originalQuote: {
-          originalScript: '𒁹 𒉆 𒅖 𒁕 \n𒁹 𒃲 𒋼 \n𒁹 𒃲 ㄿ',
-          transliteration: '1. NAMEŠDA \n2. GAL.TE \n3. GAL.SUKKAL',
-          translationKo: '1. 최고 통치자(나메시다) \n2. 신전 최고 재판관/감독관 \n3. 최고 사절/수석 행정관',
-          sourceCitation: 'W 20266,1 (CDLI P254191), ED Lu A 표제 행 발췌'
+          originalScript: '𒁹 |NAM2.ŠEŠDA|\n𒁹 GAL:TE\n𒁹 GAL:SUKKAL',
+          transliteration: '1. |NAM2.ŠEŠDA|\n2. GAL:TE\n3. GAL:SUKKAL',
+          translationKo: '1. 최고 통치자/제의적 군주 (나메시다)\n2. 신전 최고 재판관/집행관\n3. 최고 사절/수석 행정관',
+          sourceCitation: 'W 20266,1 (CDLI P254191), ED Lu A 표제 행 발췌 (Grade A)'
         }
       },
       {
@@ -57,13 +57,13 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
         order: 3,
         headingKo: '3. 수량화와 범주화: 관료제 지식 생산의 동전의 양면',
         subheadingKo: '보리 배분 장부(MSVO 3, 11)와 어휘 목록의 구조적 상호작용',
-        content: `원시 쐐기문자 행정 점토판(예: MSVO 3, 11)을 살펴보면, 서기관은 단순히 곡물 양을 적은 것이 아니라 '곡물의 종류(ŠE)', '저장고의 식별자', '수령자 관직', '배분 주기'를 2차원 그리드 격자 안에 정교하게 배치했다. 
+        content: `원시 쐐기문자 행정 점토판(예: MSVO 3, 11)을 살펴보면, 서기관은 단순히 곡물 양을 적은 것이 아니라 '토지 면적(B-system)', '작물 한정사(ŠE)', '부피 배분 용기(Š-system)', '수령 관료(SANGA)'를 2차원 그리드 격자 안에 정교하게 배치했다. 
 
 이는 어휘목록에서 사물과 직업을 범주화(Categorization)하는 지적 훈련이 없었다면 불가능한 작업이었다. 회계는 단순한 덧셈·뺄셈이 아니라, 세계에 존재하는 모든 물리적 자원(가축, 직물, 곡물, 토지)을 기호의 범주 체계 속으로 편입시키는 작업이었다. 서기관 학교(에두바)는 '계산하는 법'과 '분류하는 법'을 동일한 점토판 훈련을 통해 일체화시켰다.`,
         originalQuote: {
-          originalScript: '𒐉 𒃷 𒊺 sbParams 𒁹 𒂁 ChoiceItemLayout',
-          transliteration: '4(iku) GAN2 ŠE / 1(dug) DUG.SILA3',
-          translationKo: '4이쿠(약 1.4헥타르) 면적의 보리 수확량 / 1두그 분량의 정량 용기 배분',
+          originalScript: '[ 4(iku) GAN2 ŠE ]\n[ 1(dug) DUG.SILA3 ]\n[ SANGA ]',
+          transliteration: '4(iku) GAN2 ŠE / 1(dug) DUG.SILA3 / SANGA',
+          translationKo: '4이쿠(약 1.4헥타르) 면적의 파종용 보리 및 정량 용기 배분, 신전 재정관(SANGA) 명기',
           sourceCitation: 'MSVO 3, 11 (CDLI P005573), 우루크 IV 원시 쐐기 행정 점토판'
         }
       },
@@ -105,12 +105,12 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 3100,
           witnessDateBCE: 3200
         },
-        originalScript: '𒁹 𒉆 𒅖 𒁕 \n𒁹 𒃲 𒋼',
-        transliteration: '1. NAMEŠDA \n2. GAL:TE',
-        translationKo: '1. 최고 수장 (나메시다)\n2. 대신전 총감독관',
+        originalScript: '𒁹 |NAM2.ŠEŠDA|\n𒁹 GAL:TE\n𒁹 GAL:SUKKAL',
+        transliteration: '1. |NAM2.ŠEŠDA|\n2. GAL:TE\n3. GAL:SUKKAL',
+        translationKo: '1. 최고 통치자 / 제의적 군주 (나메시다)\n2. 대신전 총감독관 / 최고 재판관\n3. 최고 사절 / 총괄 행정관',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '3D 점토판 스캔 및 CDLI 고해상도 판독',
-        notes: '우루크 IV기 에안나 신전 복합체 출토. 120여 개 관직 서열을 고정한 인류 최초의 체계적 사회 위계 목록.'
+        epigraphyMethod: '3D 점토판 스캔 및 CDLI 고해상도 판독 (라이덴 협약 준수)',
+        notes: '우루크 IV기 에안나 신전 복합체 매립층 출토. 120여 개 관직 서열을 고정한 인류 최초의 체계적 사회 위계 목록.'
       },
       {
         id: 'src-1-2',
@@ -125,12 +125,12 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 3200,
           witnessDateBCE: 3200
         },
-        originalScript: '𒐉 𒃷 𒊺 sbParams',
-        transliteration: '4(iku) GAN2 ŠE',
-        translationKo: '4이쿠 면적의 보리 수확량 계측 및 창고 배분 기록',
+        originalScript: '[ 4(iku) GAN2 ŠE ]\n[ 1(dug) DUG.SILA3 ]\n[ SANGA ]',
+        transliteration: '4(iku) GAN2 ŠE / 1(dug) DUG.SILA3 / SANGA',
+        translationKo: '4이쿠(약 1.4헥타르) 면적의 파종용 보리 및 정량 용기 배분, 신전 재정관(SANGA) 명기',
         sourceGrade: 'Grade A',
         epigraphyMethod: 'CDLI 디지털 에피그래피 전사',
-        notes: '수량 기호와 물품 표의문자가 그리드 구획 안에 결합된 전형적 초기 행정 장부.'
+        notes: '수량 기호(B-system / Š-system)와 물품·관직 표의문자가 그리드 구획 안에 결합된 전형적 초기 행정 장부.'
       },
       {
         id: 'src-1-3',
