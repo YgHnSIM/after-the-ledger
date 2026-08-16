@@ -2298,6 +2298,134 @@ p:last-child {
   margin-bottom: 0.5rem;
 }
 
+/* ==========================================================================
+   ACADEMIC ESSAY SPLIT VIEWER & EPIGRAPHY STYLES
+   ========================================================================== */
+
+.essay-split-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.55fr) minmax(320px, 1fr);
+  gap: 2.25rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .essay-split-layout {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+.ancient-script-display {
+  font-family: 'Noto Sans Cuneiform', 'Segoe UI Historic', 'Gentium Plus', 'SBL Hebrew', 'Aegyptus', 'New Athena Unicode', serif;
+  letter-spacing: 0.04em;
+}
+
+.essay-original-script-box {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-primary);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.4rem;
+  margin: 1.5rem 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.essay-callout-box {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.essay-callout-theory-debate {
+  border-left: 4px solid #d97706;
+  background: rgba(217, 119, 6, 0.05);
+}
+
+.essay-callout-epigraphic-discovery {
+  border-left: 4px solid #107e84;
+  background: rgba(16, 126, 132, 0.05);
+}
+
+.essay-callout-comparative-insight {
+  border-left: 4px solid #6b21a8;
+  background: rgba(107, 33, 168, 0.05);
+}
+
+.essay-source-inspector-sticky {
+  position: sticky;
+  top: calc(var(--header-height, 72px) + 1.25rem);
+  max-height: calc(100vh - var(--header-height, 72px) - 2.5rem);
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+@media (max-width: 1024px) {
+  .essay-source-inspector-sticky {
+    position: static;
+    max-height: none;
+  }
+}
+
+.essay-grade-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  font-family: var(--font-cinzel);
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.essay-grade-a {
+  background: rgba(184, 134, 11, 0.15);
+  color: #b8860b;
+  border: 1px solid rgba(184, 134, 11, 0.4);
+}
+
+.essay-grade-b {
+  background: rgba(30, 64, 175, 0.12);
+  color: #2563eb;
+  border: 1px solid rgba(37, 99, 235, 0.35);
+}
+
+.essay-grade-c {
+  background: rgba(107, 114, 128, 0.12);
+  color: #6b7280;
+  border: 1px solid rgba(107, 114, 128, 0.3);
+}
+
+.toc-pill-track {
+  display: flex;
+  gap: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+}
+
+.toc-pill-btn {
+  white-space: nowrap;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.toc-pill-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--text-primary);
+}
+
+
 
 
 

@@ -143,7 +143,11 @@ export const App: React.FC = () => {
           {currentTab === 'institutions' && <InstitutionsView />}
           {currentTab === 'claims' && <ClaimsView />}
           {currentTab === 'themes' && (
-            <ThemesView initialEssayId={activeParam} />
+            <ThemesView
+              initialEssayId={activeParam}
+              onNavigateArtifact={(id) => handleSelectTab('artifacts', id)}
+              onNavigateEssay={(id) => handleSelectTab('themes', id)}
+            />
           )}
           {currentTab === 'greek' && <GreekLanguageView />}
           {currentTab === 'methodology' && <MethodologyView />}

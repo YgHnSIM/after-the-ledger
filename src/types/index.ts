@@ -219,6 +219,74 @@ export interface CivilizationInfo {
   differentiator: string;
 }
 
+export interface EssaySection {
+  id: string;
+  order: number;
+  headingKo: string;
+  subheadingKo?: string;
+  content: string;
+  originalQuote?: {
+    originalScript: string;
+    transliteration: string;
+    translationKo: string;
+    sourceCitation: string;
+  };
+  scholarlyCallout?: {
+    type: 'theory-debate' | 'epigraphic-discovery' | 'comparative-insight';
+    titleKo: string;
+    bodyKo: string;
+  };
+}
+
+export interface PrimarySourceRef {
+  id: string;
+  artifactId?: string;
+  nameKo: string;
+  nameEnOrOriginal: string;
+  catalogNo: string;
+  institution: string;
+  dateVector: {
+    eventDateBCE?: number | string;
+    compositionDateBCE?: number | string;
+    redactionDateBCE?: number | string;
+    witnessDateBCE: number | string;
+  };
+  originalScript: string;
+  transliteration: string;
+  translationKo: string;
+  sourceGrade: 'Grade A' | 'Grade B' | 'Grade C';
+  epigraphyMethod?: string;
+  notes?: string;
+}
+
+export interface ScholarlyDebate {
+  id: string;
+  topic: string;
+  thesisA: {
+    scholarOrSchool: string;
+    eraOrYear: string;
+    claimKo: string;
+    keyEvidence: string;
+  };
+  thesisB: {
+    scholarOrSchool: string;
+    eraOrYear: string;
+    claimKo: string;
+    keyEvidence: string;
+  };
+  consensusStatus: string;
+}
+
+export interface EssayCitation {
+  id: string;
+  sourceGrade: 'Grade A' | 'Grade B' | 'Grade C';
+  author: string;
+  year: number | string;
+  title: string;
+  publication: string;
+  urlOrDoi?: string;
+}
+
 export interface ComparativeEssay {
   id: string;
   order: number;
@@ -228,6 +296,13 @@ export interface ComparativeEssay {
   content: string;
   keyTakeaways: string[];
   civilizationsDiscussed: CivilizationId[];
+  sections?: EssaySection[];
+  primarySources?: PrimarySourceRef[];
+  scholarlyDebates?: ScholarlyDebate[];
+  bibliography?: EssayCitation[];
+  relatedArtifactIds?: string[];
+  crossRefEssayIds?: string[];
+  readingTimeMinutes?: number;
 }
 
 export interface LargeTextDefinitionMode {
