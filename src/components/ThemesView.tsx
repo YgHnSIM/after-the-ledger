@@ -87,49 +87,30 @@ export const ThemesView: React.FC<ThemesViewProps> = ({
         </p>
       </div>
 
-      {/* TOP ESSAY CAROUSEL SELECTOR */}
-      <div
-        className="scroll-fade-container"
-        style={{
-          display: 'flex',
-          gap: '0.75rem',
-          overflowX: 'auto',
-          paddingBottom: '1rem',
-          marginBottom: '2rem'
-        }}
-      >
+      {/* TOP ESSAY RESPONSIVE GRID SELECTOR (NO CLIPPING, ALL 8 VISIBLE) */}
+      <div className="essay-selector-grid">
         {COMPARATIVE_ESSAYS.map((essay) => {
           const isActive = essay.id === activeEssayId;
           return (
             <button
               key={essay.id}
               onClick={() => handleSelectEssay(essay.id)}
-              className={`card ${isActive ? 'card-hover' : ''}`}
-              style={{
-                minWidth: '240px',
-                maxWidth: '280px',
-                padding: '0.9rem 1.1rem',
-                textAlign: 'left',
-                cursor: 'pointer',
-                background: isActive ? 'var(--bg-surface-elevated)' : 'var(--bg-card)',
-                borderColor: isActive ? 'var(--accent-primary)' : 'var(--border-color)',
-                borderTop: isActive ? '3px solid var(--accent-primary)' : '1px solid var(--border-color)',
-                flexShrink: 0,
-                transition: 'all 0.2s ease'
-              }}
+              className={`essay-selector-card ${isActive ? 'active' : ''}`}
             >
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
-                <span className="font-cinzel" style={{ fontSize: '0.72rem', fontWeight: 700, color: isActive ? 'var(--accent-primary)' : 'var(--text-muted)' }}>
-                  ESSAY {essay.order}
-                </span>
-                <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
-                  {essay.readingTimeMinutes || 6}분 읽기
-                </span>
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem' }}>
+                  <span className="font-cinzel" style={{ fontSize: '0.72rem', fontWeight: 700, color: isActive ? 'var(--accent-primary)' : 'var(--text-muted)' }}>
+                    ESSAY {essay.order}
+                  </span>
+                  <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+                    {essay.readingTimeMinutes || 6}분 읽기
+                  </span>
+                </div>
+                <div style={{ fontWeight: isActive ? 700 : 600, fontSize: '0.92rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)', marginBottom: '0.5rem', lineHeight: 1.35 }}>
+                  {essay.title}
+                </div>
               </div>
-              <div style={{ fontWeight: isActive ? 700 : 600, fontSize: '0.92rem', fontFamily: 'var(--font-serif)', color: 'var(--text-primary)', marginBottom: '0.35rem', lineHeight: 1.3 }}>
-                {essay.title}
-              </div>
-              <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap', marginTop: 'auto' }}>
                 {essay.civilizationsDiscussed.map((cId) => (
                   <span key={cId} className={`civ-tag civ-${cId}`} style={{ fontSize: '0.65rem', padding: '0.1rem 0.4rem' }}>
                     {CIVILIZATIONS[cId]?.nameKo || cId}
@@ -465,7 +446,7 @@ export const ThemesView: React.FC<ThemesViewProps> = ({
 
             {/* SOURCE SELECTOR TABS */}
             {currentEssay.primarySources && currentEssay.primarySources.length > 0 && (
-              <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '1.25rem', overflowX: 'auto', paddingBottom: '0.25rem' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginBottom: '1.25rem' }}>
                 {currentEssay.primarySources.map((src, idx) => {
                   const isSrcActive = src.id === (activeSource?.id || currentEssay.primarySources![0].id);
                   return (
