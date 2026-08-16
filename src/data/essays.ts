@@ -380,152 +380,196 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
     id: 'essay-3-tomb-writing',
     order: 3,
     title: '3. 왕의 무덤에서 문자는 무엇을 하는가?',
-    subtitle: '공개적 기념비와 비공개적 피라미드 매장실의 이중 매체 구조',
-    summary: '이집트 성각문자는 인간 관객의 읽기를 위한 기록이 아니었다. 돌과 벽면에 새겨진 주문은 영원성과 파라오 부활을 보증하는 물리적 제의 장치였다.',
+    subtitle: '공개적 기념비와 비공개적 피라미드 매장실의 이중 매체 구조: 제의 기계와 의례 아카이브',
+    summary: '이집트 성각문자는 인간 관객의 읽기를 위한 기록이 아니었다. 돌과 벽면에 새겨진 주문은 영원성과 파라오 부활을 보증하는 물리적 제의 장치이자 장례 당일 구술 의례를 보존한 공간적 아카이브였다.',
     content: `이집트 문자의 독특함은 공개성(Publicity)과 비공개성(Secrecy)의 극단적 대조에 있다.
 
-신전 입구 석비와 팔레트에 새겨진 문자는 왕의 권력과 적에 대한 승리를 널리 선포하는 공개적 시각 매체였다. 반면, 사카라 우나스 피라미드 지하 깊은 매장실 석회암 벽면에 새겨진 피라미드 텍스트(Pyramid Texts)는 산 자의 눈에 절대 띨 수 없는 캄캄한 어둠 속 텍스트였다.
+신전 입구 석비와 팔레트에 새겨진 문자는 왕의 군사적 승리와 권력을 널리 선포하는 공개적 시각 매체였다. 반면, 사카라 우나스 피라미드 지하 깊은 매장실 석회암 벽면에 새겨진 피라미드 텍스트(Pyramid Texts)는 산 자의 눈에 절대 띨 수 없는 캄캄한 어둠 속 텍스트였다.
 
-여기서 문자는 산 자에게 정보를 전달하는 매체가 아니라, 말(Word)의 물리적 刻文을 통해 파라오가 오시리스 신과 합일하도록 작용하는 신성한 영원성의 주술 도구였다.`,
+여기서 문자는 산 자에게 정보를 전달하는 매체가 아니라, 말(Word)의 물리적 刻文을 통해 파라오가 오시리스 신 및 태양신 라(Rꜥw)와 합일하도록 작용하는 신성한 영원성의 주술 도구이자 사제의 음성 제의를 영구 보존하는 의례 아카이브였다.`,
     keyTakeaways: [
-      '이집트 성각문자는 외곽의 공개적 기념비(나르메르 팔레트)와 무덤 심장부의 비공개 제의문(피라미드 텍스트)이라는 이중 구조를 가짐',
-      '우나스 피라미드 지하 매장실의 刻文은 산 자의 독서를 위한 것이 아니라, 사후 파라오의 영혼(Ba/Ka)을 오시리스 신격으로 변환시키는 영구적 주술 장치였음',
-      '고왕국 피라미드 텍스트 ➔ 중왕국 관 텍스트 ➔ 신왕국 사자의 서로 이어지는 1,500년 장례 문헌의 매체 이동',
-      '문자 자체가 물리적 실체로서 효력을 발휘한다는 이집트 특유의 언어존재론(신성문자 = 메두 네체르, 신들의 말씀)'
+      '이집트 성각문자는 외곽 신전의 공개적 기념비(나르메르 팔레트)와 무덤 심장부의 비공개 제의문(피라미드 텍스트)이라는 제도적 데코룸(Decorum) 구조를 가짐',
+      '4왕조의 거대한 ‘건축적 무문자(無文字) 질량’ 독점에서 5왕조 말 우나스의 ‘내부 텍스트 포화’로 이어지는 패러다임 전환',
+      '우나스 피라미드 지하 刻文은 자율적 영구 기계(Allen)이자 당일 낭독된 음성 제의(ḏd-mdw)를 공간적으로 동결한 의례 아카이브(Hays)',
+      '1,500년 장례 문헌 변천(PT ➔ CT ➔ 사자의 서)은 19세기식 ‘내세의 민주화’가 아니라 지방 노마르크와 관료층의 ‘제의 권력 전유(Appropriation)’ 과정임',
+      '상형문자의 주술적 훼손(Sign Mutilation)의 3단계 diachronic 진화와 나일강 충적토의 보존 편향(Taphonomic Bias)'
     ],
     civilizationsDiscussed: ['egypt'],
-    readingTimeMinutes: 7,
+    readingTimeMinutes: 8,
     relatedArtifactIds: ['unas-pyramid-texts', 'narmer-palette', 'coffin-texts-ct', 'book-of-the-dead-ani'],
-    crossRefEssayIds: ['essay-6-orality-and-text', 'essay-7-preservation-bias'],
+    crossRefEssayIds: ['essay-6-orality-and-text', 'essay-7-preservation-bias', 'essay-8-institutions-over-script'],
     sections: [
       {
         id: 'sec-3-1',
         order: 1,
-        headingKo: '1. 누구도 읽을 수 없는 곳에 새겨진 문자',
-        subheadingKo: '사카라 우나스 피라미드 지하 매장실의 캄캄한 어둠',
+        headingKo: '1. 누구도 읽을 수 없는 곳에 새겨진 문자의 존재론',
+        subheadingKo: '사카라 우나스 피라미드 지하 매장실과 존 베인스의 데코룸',
         content: `현대인의 상식에서 글이란 누군가에게 읽히기 위해 쓰이는 소통의 매체다. 하지만 기원전 2350년경 건립된 사카라의 **우나스(Unas) 피라미드** 지하 매장실로 내려가면 이 상식은 완전히 붕괴된다.
 
-수십 미터 화강암 통로를 지나 육중한 석관이 놓인 현실(Burial Chamber) 벽면에는 바닥부터 천장까지 빈틈없이 청록색 안료가 상감된 정교한 성각문자(Hieroglyphs) 수천 행이 새겨져 있다. 그러나 파라오의 미라가 안치되고 입구가 거대한 석판으로 영구 밀봉되는 순간, 이 방에는 단 한 줄기의 빛도 들어오지 않으며 그 어떤 인간 관객도 이 글을 읽을 수 없다. 산 자의 접근이 철저히 차단된 영원한 암흑 속에 왜 그토록 막대한 노동력을 투입해 거대한 텍스트를 새겨 넣었는가?`,
+수십 미터 화강암 통로와 차단석을 지나 육중한 현무암 석관이 놓인 현실(Burial Chamber) 벽면에는 바닥부터 천장까지 빈틈없이 청록색 안료가 상감된 정교한 성각문자(Hieroglyphs) 수천 행이 새겨져 있다. 그러나 파라오의 미라가 안치되고 입구가 거대한 석판으로 영구 밀봉되는 순간, 이 방에는 단 한 줄기의 빛도 들어오지 않으며 그 어떤 인간 관객도 이 글을 읽을 수 없다. 산 자의 접근이 철저히 차단된 영원한 암흑 속에 왜 그토록 막대한 노동력을 투입해 거대한 텍스트를 새겨 넣었는가?`,
         scholarlyCallout: {
           type: 'theory-debate',
-          titleKo: '학술 쟁점: 얀 아스만의 기념비성 vs 성스러운 비공개성 이론',
-          bodyKo: '이집트학자 얀 아스만(Jan Assmann)은 이집트 문화를 \'기념비적 공공성(Monumentality)\'과 \'신성한 비공개 효력(Sacramentality)\'의 긴장으로 파악했다. 무덤 내부의 문자는 인간을 향한 메시지가 아니라 우주적 질서(마아트, Maat)를 가동하는 제의적 언어 기계였다.'
+          titleKo: '학술 쟁점: 존 베인스의 제도적 데코룸 vs 얀 아스만의 기념비성/성사성 긴장',
+          bodyKo: '옥스퍼드 이집트학자 존 베인스(John Baines)는 이집트 문화를 공개/비공개의 단순 2분법이 아닌, 위계적 권력과 우주 질서에 따라 표현 가능한 범위를 규정하는 ‘제도적 데코룸(Decorum)’으로 분석했다. 얀 아스만(Jan Assmann) 또한 무덤 내부의 텍스트가 인간과의 소통이 아닌 우주 질서(마아트, Maat)를 가동하는 제의적 언어 기계(Sacramentality)였다고 논증한다.'
         }
       },
       {
         id: 'sec-3-2',
         order: 2,
-        headingKo: '2. 피라미드 텍스트(PT 217): 파라오를 태양신으로 변환시키는 코드',
-        subheadingKo: '말의 발화(Recitation)와 영구 刻文의 합일',
-        content: `우나스 피라미드 텍스트 중 제217번 주문(Spruch 217)은 텍스트가 수행하는 마술적 변환(Transfiguration, 삭후/Sakhu)의 본질을 극적으로 보여준다.
+        headingKo: '2. 패러다임 전환: 4왕조의 ‘건축적 침묵’에서 5왕조의 ‘텍스트 포화’로',
+        subheadingKo: '쿠푸·카프레의 무문자 대피라미드와 우나스의 텍스트 혁명',
+        content: `대중적 통념과 달리, 제4왕조 최전성기 쿠푸(Khufu)와 카프레(Khafre)의 대피라미드 매장실에는 장례 비문이 단 한 글자도 음각되어 있지 않다(Mark Lehner 1997; Miroslav Bárta 2020). 당시 파라오는 수백만 톤의 ‘건축적 질량(Architectural Mass)’ 자체로 우주적 영원성을 독점했다.
 
-벽면에 새겨진 문자는 "우나스는 죽은 것이 아니라 영원히 살아있는 신으로 태어났다"고 선언하며, 파라오가 태양신 라(Ra)와 오시리스(Osiris)의 옥좌로 나아가는 길을 물리적으로 열어준다. 장례식 당일 사제가 현장에서 목소리로 외친 낭송(Recitation)은 시간이 지나면 공중으로 흩어지지만, 단단한 석회암 벽면에 음각된 성각문자는 그 사제의 목소리를 영원토록 멈추지 않는 지속적 주술로 공간에 고정시킨다.`,
-        originalQuote: {
-          originalScript: '𓇋 𓈖 𓎢 𓅱 𓈖 𓇋 𓋴 𓊪 𓅱 𓊃 𓅮 𓂋 𓏏 𓎟 \n𓈖 𓅓 𓏏 𓈖 𓅱 𓈖 𓇋 𓋴 𓅓 𓏏 𓏏 \n𓋹 𓈖 𓅱 𓈖 𓇋 𓋴 𓋹 𓏏',
-          transliteration: 'ink Wnjs pw zA R raw-nb \nn mwt.n Wnjs mwt.t \nAnx Wnjs Anx.t',
-          translationKo: '나는 우나스요, 날마다 솟아오르는 태양신 라의 아들이다.\n우나스는 죽은 것이 아니다, 결코 죽지 아니하였다.\n우나스는 영원히 살아있고, 영원히 살아 숨 쉰다!',
-          sourceCitation: '우나스 피라미드 서쪽 벽면 성각문자 刻文 (PT 217)'
-        }
+그러나 5왕조 말기에 이르러 중앙 재정이 약화되고 태양신학이 재편되면서 피라미드 규모는 축소되었고, 축소된 건축적 질량은 지하 현실 벽면 전체를 뒤덮는 정교한 ‘텍스트적 포화(Textual Saturation)’로 대체되었다. 거대한 돌의 부피가 담당하던 불멸의 보증이 벽면에 새겨진 주술 텍스트의 밀도로 전환된 것이다.`
       },
       {
         id: 'sec-3-3',
         order: 3,
-        headingKo: '3. 공개적 기념비와의 대조: 나르메르 팔레트의 시각 정치학',
-        subheadingKo: '신전 뜰의 프로파간다와 묘실 내벽의 제의적 텍스트',
-        content: `피라미드 텍스트의 극단적 비공개성은 신전 입구에 세워진 공개 기념비(Monuments)와 날카로운 대조를 이룬다.
+        headingKo: '3. 피라미드 텍스트 1차 사료 비문학적 고증: 현실 PT 213과 전실 PT 217',
+        subheadingKo: '오시리스 부활 선언과 태양신 라(Rꜥw)와의 합일',
+        content: `우나스 피라미드 내부의 텍스트 배치는 현실(Burial Chamber), 통로(Passage), 전실(Antechamber)에 따라 엄격히 분화되어 있다.
 
-기원전 3100년경의 **나르메르 팔레트(Narmer Palette)**는 신전 마당에 전시되어 모든 사제와 순례자가 볼 수 있도록 만들어진 시각 매체였다. 여기 새겨진 왕의 이름(메기 '나르' + 끌 '메르')과 패배한 적들의 시체, 승리의 행렬은 왕권의 군사적 폭력과 통일의 정당성을 인간 세계에 과시하는 공개적 정치 선전물이었다. 
-
-이집트 문명은 문자를 '바깥을 향해 권력을 선포하는 시각 표상'과 '안쪽 깊은 곳에서 신성을 가동하는 제의 코드'라는 이중의 궤도로 완벽하게 분리 운영했다.`,
+석관이 놓인 현실 남쪽 벽면의 핵심 주문인 PT 213(Sethe Pyr. § 134a)은 파라오가 죽은 것이 아니라 오시리스 신으로 영원히 살아있음을 선언한다. 이어 전실 남쪽 벽면의 PT 217(Sethe Pyr. § 152a)은 왕이 태양신 라(Rꜥw-Jtmw)의 아들로서 천상으로 승천하는 우주적 여정을 완결한다.`,
         originalQuote: {
-          originalScript: '𓐍 𓂧 𓆑 𓈖 𓂝 𓂋 𓌸 𓂋',
-          transliteration: 'NAr-mr (Narmer)',
-          translationKo: '메기(NAr)와 끌(mr)로 표상된 상·하 이집트 최초의 통일 군주 나르메르의 세레크(Serekh) 왕명',
-          sourceCitation: '나르메르 팔레트 상단 왕명틀 (JE 32169, Cairo Museum)'
+          originalScript: '𓉔 𓄿 𓃹 𓈖 𓇋 𓋴 𓈖 𓈙 𓅓 𓈖 𓎡 𓇋 𓋴 𓅓 𓅱 𓏏 𓏏 𓇋\n𓈙 𓅓 𓈖 𓎡 𓇋 𓋴 𓋹 𓈖 𓐍 𓏏 𓇋',
+          transliteration: 'hꜢ Wnjs, n šm.n.k jś mwt.tj, šm.n.k jś ꜥnḫ.tj!',
+          translationKo: '오 우나스여, 그대는 정녕 죽은 자로서 떠나간 것이 아니요, 살아 숨 쉬는 신성한 존재로서 영광 중에 나아갔도다!',
+          sourceCitation: '우나스 피라미드 현실 남쪽 벽면 刻文 (Sethe Pyr. § 134a / PT 213)'
         }
       },
       {
         id: 'sec-3-4',
         order: 4,
-        headingKo: '4. 매체의 민주화와 전승의 1,500년: 관 텍스트에서 사자의 서로',
-        subheadingKo: '석조 묘실 ➔ 목재 목관 ➔ 파피루스 두루마리로의 이동',
-        content: `고왕국이 붕괴하고 중왕국(c. 2055–1650 BCE)에 접어들면서, 오직 파라오의 무덤 벽면에만 독점되던 성각문자 주문들은 지방 귀족과 부유층의 목재 관 내벽에 새겨지기 시작했다. 이것이 **관 텍스트(Coffin Texts)**다.
+        headingKo: '4. 공개적 기념비와의 대조: 나르메르 팔레트의 시각 정치학',
+        subheadingKo: '히에라콘폴리스 신전 뜰의 프로파간다와 세레크(Serekh) 문장',
+        content: `기원전 3100년경의 **나르메르 팔레트(Narmer Palette, Cairo JE 32169)**는 히에라콘폴리스 네켄의 호루스 신전 뜰(Main Deposit)에 공개 봉헌된 시각 매체였다.
 
-이어 신왕국(c. 1550–1077 BCE)에는 파피루스 제조술의 발전과 함께 누구나 돈을 주고 공방에서 사서 미라 품에 넣을 수 있는 **《사자의 서》(Book of the Dead)** 두루마리로 대중화되었다. 석조 벽면에서 목재, 다시 휴대 가능한 파피루스로의 매체 이동은 내세 영생의 주술 텍스트가 엘리트 왕실 독점에서 시민 계층으로 확산되는 '제의 텍스트의 민주화' 과정이었다.`,
-        scholarlyCallout: {
-          type: 'comparative-insight',
-          titleKo: '매체 진화 비교: 영구적 석재(Stone)에서 휴대용 파피루스(Papyrus)로',
-          bodyKo: '피라미드 텍스트는 묘실 자체가 부활의 석조 기계였기에 이동이 불가능했으나, 사자의 서 파피루스는 망자의 몸에 직접 감겨 저승의 심판대(오시리스의 저울)까지 휴대할 수 있는 개인 맞춤형 영혼의 여권(Passport) 역할을 수행했다.'
+상단 세레크(궁전 정면) 안에 새겨진 메기(nꜥr, 𓆛)와 끌(mr, 𓍋), 그리고 참수된 적들의 시체와 승리 행렬은 왕권의 군사적 폭력과 통일의 정당성을 인간 세계에 과시하는 정치 선전물이었다. 이집트 문명은 문자를 바깥을 향한 시각적 선전과 안쪽 깊은 곳의 제의적 코드라는 이중 궤도로 분리 운영했다.`,
+        originalQuote: {
+          originalScript: '𓅃\n𓆛 𓍋\n𓊁',
+          transliteration: 'Nꜥr-mr (Horus Narmer)',
+          translationKo: '상·하 이집트 최초의 통일 파라오 호루스 나르메르의 세레크 궁전 정면 왕명',
+          sourceCitation: '나르메르 팔레트 상단 왕명틀 (JE 32169, Cairo Egyptian Museum)'
         }
       },
       {
         id: 'sec-3-5',
         order: 5,
-        headingKo: '5. 결론: 성각문자(Medu Netjer)는 우주를 작동시키는 코드였다',
-        subheadingKo: '소통 매체를 넘어선 물리적 주술 장치로서의 문자',
-        content: `이집트인들이 자신의 문자를 가리켜 부른 이름은 **메두 네체르(Medu Netjer, '신들의 말씀')**였다. 그들에게 문자는 인간의 생각을 전달하는 임의적 기호(Sign)가 아니라, 우주 만물의 원형을 담고 있는 살아있는 마술적 실체였다.
+        headingKo: '5. 1,500년 장례 문헌 매체 변천: ‘민주화’가 아닌 ‘엘리트 권력 전유’',
+        subheadingKo: '석조 묘실 ➔ 목재 목관 ➔ 파피루스 두루마리로의 이동',
+        content: `고왕국 붕괴 후 제1중간기 및 중왕국(c. 2055–1650 BCE)에 접어들면서, 파라오의 전유물이었던 성각문자 주문들은 지방 귀족(노마르크)들의 목재 관 내벽에 필사된 **관 텍스트(Coffin Texts)**로 확산되었다.
 
-무덤 벽면에 새겨진 사자(Lion)나 뱀(Viper) 모양의 상형문자가 혹시라도 살아나 망자의 미라를 해칠까 봐 뱀의 몸통을 칼로 자른 모양(𓆙)으로 刻文을 변형했던 고대 석공들의 행위는, 문자가 가졌던 무시무시한 물리적 실재감을 웅변한다. 왕의 무덤에서 문자는 읽히기 위한 글이 아니라, 영원성을 창조하는 능동적 행위(Performance)였다.`
+신왕국(c. 1550–1077 BCE)에는 파피루스 상업 공방의 발달과 함께 관료층이 맞춤 구매하는 **《사자의 서》(Book of the Dead)**로 대중화되었다. 마크 스미스(Mark Smith 2017)와 하르코 빌렘스(Harco Willems 1996)가 실증하듯, 이는 브레스티드식 근대적 ‘민주화’가 아니라, 중앙 권력 붕괴 속에서 지방 엘리트들이 왕실 제의 특권을 참칭·전유(Appropriation)한 계급적 확산이었다.`,
+        scholarlyCallout: {
+          type: 'comparative-insight',
+          titleKo: '매체 진화 비교: 영구적 석재(Stone)에서 휴대용 파피루스(Papyrus)로',
+          bodyKo: '피라미드 텍스트는 묘실 자체가 부활의 석조 기계였기에 이동이 불가능했으나, 사자의 서 파피루스는 망자의 미라에 직접 감겨 저승의 심판대(오시리스의 저울)까지 휴대할 수 있는 개인 맞춤형 영혼의 여권(Passport) 역할을 수행했다.'
+        }
+      },
+      {
+        id: 'sec-3-6',
+        order: 6,
+        headingKo: '6. 기호의 3단계 刻文 변형(Sign Mutilation)과 보존 편향(Taphonomic Bias)',
+        subheadingKo: '살아있는 기호에 대한 주술적 방호와 나일강 충적토의 착시',
+        content: `이집트인들에게 성각문자는 **메두 네체르(Medu Netjer, ‘신들의 말씀’)**로서 그 자체로 물리적 생명력을 지닌 실체였다. 6왕조 페피 1세 이후 석공들이 뿔살무사(𓆑)의 몸통을 칼로 자르고 뱀(𓆙)의 머리를 절단해 새긴 것(Pierre Lacau 1914)은 문자의 위험한 마술적 에너지를 무력화하기 위한 조치였다.
+
+한편, 오늘날 이집트가 ‘죽음에 집착한 문명’으로 오인되는 것은 사카라 석회암 사막은 텍스트를 보존한 반면 멤피스·테베의 일상 행정 파피루스는 나일강 충적토의 습기에 100% 부식되었기 때문이다(Barry Kemp 2006; Tallet 2017). 와디 알-자르프 파피루스는 고왕국 이집트가 고도의 일상 관료제 사회였음을 웅변한다.`
       }
     ],
     primarySources: [
       {
         id: 'src-3-1',
         artifactId: 'unas-pyramid-texts',
-        nameKo: '사카라 우나스 피라미드 텍스트 (PT 213-219)',
-        nameEnOrOriginal: 'Unas Pyramid Texts (PT 213-219, Burial Chamber)',
-        catalogNo: 'Saqqara Pyramid of Unas / UCL Digital Egypt',
+        nameKo: '사카라 우나스 피라미드 텍스트 (PT 213 / PT 217)',
+        nameEnOrOriginal: 'Unas Pyramid Texts (Sethe Pyr. § 134a / PT 213, Burial Chamber)',
+        catalogNo: 'Saqqara Pyramid of Unas / Sethe Pyr. § 134a–135b',
         institution: 'Egyptian Ministry of Tourism and Antiquities / Saqqara Necropolis',
         dateVector: {
           eventDateBCE: 2350,
-          compositionDateBCE: 2400,
+          compositionDateBCE: 2500,
           redactionDateBCE: 2350,
           witnessDateBCE: 2350
         },
-        originalScript: '𓇋 𓈖 𓎢 𓅱 𓈖 𓇋 𓋴 𓊪 𓅱 𓊃 𓅮 𓂋 𓏏 𓎟',
-        transliteration: 'ink Wnjs pw zA R raw-nb',
-        translationKo: '나는 우나스요, 날마다 솟아오르는 태양신 라의 아들이다.',
+        originalScript: '𓉔 𓄿 𓃹 𓈖 𓇋 𓋴 𓈖 𓈙 𓅓 𓈖 𓎡 𓇋 𓋴 𓅓 𓅱 𓏏 𓏏 𓇋\n𓈙 𓅓 𓈖 𓎡 𓇋 𓋴 𓋹 𓈖 𓐍 𓏏 𓇋',
+        transliteration: 'hꜢ Wnjs, n šm.n.k jś mwt.tj, šm.n.k jś ꜥnḫ.tj!',
+        translationKo: '오 우나스여, 그대는 정녕 죽은 자로서 떠나간 것이 아니요, 살아 숨 쉬는 신성한 존재로서 영광 중에 나아갔도다!',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '3D 현장 측량, 다각도 반사광 합성(RTI) 판독',
-        notes: '인류 역사상 가장 오래된 거대한 종교 제의 텍스트 코퍼스. 지하 묘실 벽면 전체를 음각 성각문자로 도배.'
+        epigraphyMethod: '3D 현장 측량, Sethe 표준 교감 판본 및 다각도 반사광(RTI) 판독',
+        notes: '인류 역사상 가장 오래된 종교 제의 텍스트 코퍼스. 지하 묘실 벽면 전체를 음각 성각문자로 도배하여 부활과 승천을 주조.'
       },
       {
         id: 'src-3-2',
         artifactId: 'narmer-palette',
         nameKo: '나르메르 팔레트',
-        nameEnOrOriginal: 'The Narmer Palette (JE 32169)',
-        catalogNo: 'Cairo Egyptian Museum JE 32169',
+        nameEnOrOriginal: 'The Narmer Palette (Cairo JE 32169 / CG 14716)',
+        catalogNo: 'Cairo Egyptian Museum JE 32169 / CG 14716',
         institution: 'Egyptian Museum, Cairo',
         dateVector: {
           eventDateBCE: 3100,
           compositionDateBCE: 3100,
           witnessDateBCE: 3100
         },
-        originalScript: '𓐍 𓂧 𓆑 𓈖 𓂝 𓂋 𓌸 𓂋',
-        transliteration: 'NAr-mr (Narmer)',
-        translationKo: '상·하 이집트 최초의 통일 파라오 나르메르의 세레크 문장',
+        originalScript: '𓅃\n𓆛 𓍋\n𓊁',
+        transliteration: 'Nꜥr-mr (Horus Narmer)',
+        translationKo: '상·하 이집트 최초의 통일 파라오 호루스 나르메르의 세레크 궁전 정면 왕명',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '히에라콘폴리스 호루스 신전 정밀 발굴 출토품',
-        notes: '공개적 신전 마당에 세워져 왕권의 승리와 폭력적 지배를 시각화한 기념비적 석판.'
+        epigraphyMethod: '히에라콘폴리스 호루스 신전 Main Deposit 정밀 발굴 출토품 및 비문 자형 분석',
+        notes: '공개적 신전 마당에 세워져 왕권의 승리와 폭력적 지배의 정당성을 시각화한 기념비적 석판.'
+      },
+      {
+        id: 'src-3-3',
+        artifactId: 'diary-of-merer',
+        nameKo: '와디 알-자르프 메레르의 일기 파피루스',
+        nameEnOrOriginal: 'Diary of Merer (Papyrus Jarf A–D)',
+        catalogNo: 'P. Jarf A–D / Cairo Egyptian Museum',
+        institution: 'Egyptian Museum, Cairo / IFAO',
+        dateVector: {
+          eventDateBCE: 2550,
+          compositionDateBCE: 2550,
+          witnessDateBCE: 2550
+        },
+        originalScript: '𓇋 𓏏 𓂋 𓅱 𓈖 𓈞 𓊃 𓅱',
+        transliteration: 'jtrw n Hzw (Diary of Inspector Merer)',
+        translationKo: '감독관 메레르의 쿠푸 대피라미드 투라 석회석 운송 일지 및 일일 작업 일지',
+        sourceGrade: 'Grade A',
+        epigraphyMethod: 'Pierre Tallet 발굴 보고서(2017) 및 히에라틱 고문서학 판독',
+        notes: '홍해 해안 건조 동굴에서 출토된 인류 최고(最古)의 행정 파피루스로, 4왕조 일상 관료제의 실재를 실증.'
       }
     ],
     scholarlyDebates: [
       {
         id: 'deb-3-1',
-        topic: '피라미드 텍스트의 刻文 성격: 제의의 대본(Script)인가, 영구적 주술 장치(Performative Engine)인가?',
+        topic: '피라미드 텍스트의 본질: 자율적 영구 기계(Allen)인가, 기념비적 의례 아카이브(Hays)인가?',
         thesisA: {
-          scholarOrSchool: '해롤드 M. 헤이스 (Harold M. Hays, 2012)',
-          eraOrYear: '2012',
-          claimKo: '피라미드 텍스트는 매장 당일 사제들이 낭송했던 구체적인 장례 제의 의식의 순서와 대본을 기록한 아카이브 성격이다.',
-          keyEvidence: '방과 통로의 배치 순서에 따라 제물 바치기 주문과 영혼 승천 주문이 정교하게 공간적으로 일치함.'
+          scholarOrSchool: '제임스 P. 앨런 (James P. Allen, 2005, 2013)',
+          eraOrYear: '2005–2013',
+          claimKo: '사제의 구술 행위는 일회적이며, 벽면에 영구히 음각된 성각문자 자체가 오시리스 신화를 매 순간 영원히 재생시키는 자율적 우주 기계임.',
+          keyEvidence: '빛과 관객이 완전히 차단된 암흑 속 지하 현실에 새겨진 방대한 텍스트의 공간적 완결성.'
         },
         thesisB: {
-          scholarOrSchool: '제임스 P. 앨런 (James P. Allen, 2005)',
-          eraOrYear: '2005',
-          claimKo: '사제의 인간적 행위는 일회적이며, 벽면에 영구히 음각된 글자 자체가 오시리스 신화를 매 순간 영원히 재생시키는 자율적 우주 기계다.',
-          keyEvidence: '문자 부호 중 위험한 맹수와 독충 상형문자의 몸통통을 훼손하여 무력화시키는 주술적 방호 조치들의 보편성.'
+          scholarOrSchool: '해롤드 M. 헤이스 (Harold M. Hays, 2012)',
+          eraOrYear: '2012',
+          claimKo: '피라미드 텍스트는 매장 당일 사제들이 낭송했던 구체적인 장례 제의 의식(ḏd-mdw)의 순서와 대본을 공간적으로 고정한 기념비적 아카이브임.',
+          keyEvidence: '북쪽 벽 제물 봉헌 의례에서 남쪽 벽 부활 의례로 이어지는 사제의 실제 동선과 텍스트 배치의 엄격한 일치.'
         },
-        consensusStatus: '현대 이집트학은 의식의 공간적 반영(대본)과 문자 자체의 영구적 주술 효력(기계)이라는 두 층위가 결합된 것으로 해석함.'
+        consensusStatus: '현대 이집트학은 사제들의 음성 제의 수행(대본)과 문자 자체의 영구적 주술 효력(기계)이 상호보완적으로 결합된 것으로 종합함.'
+      },
+      {
+        id: 'deb-3-2',
+        topic: '장례 문헌 1,500년 변천: 브레스티드의 ‘내세 민주화’ vs 현대의 ‘지방 엘리트 권력 전유’',
+        thesisA: {
+          scholarOrSchool: '제임스 헨리 브레스티드 (James Henry Breasted, 1912)',
+          eraOrYear: '1912',
+          claimKo: '피라미드 텍스트에서 관 텍스트, 사자의 서로의 이행은 왕실 독점에서 일반 민중으로 구원이 확산된 ‘내세의 민주화’ 과정임.',
+          keyEvidence: '중왕국 이후 비왕실 귀족 및 서민 무덤에서 장례 주문이 대량으로 출토되는 현상.'
+        },
+        thesisB: {
+          scholarOrSchool: '마크 스미스 & 하르코 빌렘스 (Mark Smith 2017, Harco Willems 1996, 2014)',
+          eraOrYear: '1996–2017',
+          claimKo: '민주화는 20세기 서구 자유주의의 시대착오적 투영이며, 실제로는 제1중간기 왕권 붕괴 속에서 지방 노마르크들이 왕실 제의 권위를 참칭하고 신왕국 관료들이 상업적으로 구매한 결과임.',
+          keyEvidence: '관 텍스트는 지방 최고위 귀족 무덤에 국한되며, 신왕국 사자의 서 역시 부유한 관료 계층의 상업적 소비에 한정됨.'
+        },
+        consensusStatus: '현대 고전 이집트학은 브레스티드의 민주화 가설을 완전히 폐기하고, 정치사회적 분열과 엘리트의 제의 권력 전유 모델을 표준 학설로 채택함.'
       }
     ],
     bibliography: [
@@ -539,11 +583,59 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
       },
       {
         id: 'bib-3-2',
+        sourceGrade: 'Grade A',
+        author: 'Hays, Harold M.',
+        year: 2012,
+        title: 'The Organization of the Pyramid Texts: Typology and Approaches',
+        publication: 'Papyrologica Bruxellensia 37, Bruxelles: Fondation Égyptologique Reine Élisabeth.'
+      },
+      {
+        id: 'bib-3-3',
+        sourceGrade: 'Grade A',
+        author: 'Baines, John',
+        year: 2007,
+        title: 'Visual and Written Culture in Ancient Egypt',
+        publication: 'Oxford: Oxford University Press.'
+      },
+      {
+        id: 'bib-3-4',
+        sourceGrade: 'Grade A',
+        author: 'Smith, Mark',
+        year: 2017,
+        title: 'Following Osiris: Perspectives on the Osirian Afterlife from Four Millennia',
+        publication: 'Oxford: Oxford University Press.'
+      },
+      {
+        id: 'bib-3-5',
+        sourceGrade: 'Grade A',
+        author: 'Willems, Harco',
+        year: 1996,
+        title: 'The Coffin of Heqata: A Case Study of Egyptian Mortuary Culture of the Middle Kingdom',
+        publication: 'Leuven: Peeters.'
+      },
+      {
+        id: 'bib-3-6',
+        sourceGrade: 'Grade A',
+        author: 'Tallet, Pierre',
+        year: 2017,
+        title: "Les papyrus de la mer Rouge I: Le 'Journal de Merer'",
+        publication: 'MIFAO 136, Cairo: IFAO.'
+      },
+      {
+        id: 'bib-3-7',
         sourceGrade: 'Grade B',
         author: 'Assmann, Jan',
         year: 2002,
         title: 'The Mind of Egypt: History and Meaning in the Time of the Pharaohs',
         publication: 'New York: Metropolitan Books.'
+      },
+      {
+        id: 'bib-3-8',
+        sourceGrade: 'Grade B',
+        author: 'Kemp, Barry J.',
+        year: 2006,
+        title: 'Ancient Egypt: Anatomy of a Civilization (2nd ed.)',
+        publication: 'London: Routledge.'
       }
     ]
   },

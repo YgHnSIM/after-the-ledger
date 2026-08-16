@@ -57,23 +57,36 @@
     "essay_title": "3. 왕의 무덤에서 문자는 무엇을 하는가?",
     "primary_sources": [
       {
-        "name": "Unas Pyramid Texts (PT 213-219, Burial Chamber)",
-        "catalog": "Saqqara Pyramid of Unas / UCL Digital Egypt",
+        "name": "Unas Pyramid Texts (Sethe Pyr. § 134a / PT 213 & PT 217)",
+        "catalog": "Saqqara Pyramid of Unas / Sethe Pyr. § 134–244",
         "target_url": "https://www.ucl.ac.uk/museums-static/digitalegypt/pyramids/unas.html",
         "tier": "Tier 1",
-        "extraction_method": "insane-search"
+        "extraction_method": "insane-search / Sethe Pyramidentexte digital corpus"
       },
       {
-        "name": "Narmer Palette",
-        "catalog": "Cairo Egyptian Museum JE 32169",
+        "name": "Narmer Palette (Horus Narmer Serekh)",
+        "catalog": "Cairo Egyptian Museum JE 32169 / CG 14716",
         "target_url": "https://www.ancient-egypt.co.uk/cairo%20museum/cm,%20narmer%20palette/index.htm",
         "tier": "Tier 1",
-        "extraction_method": "insane-search"
+        "extraction_method": "insane-search / Cairo Museum catalog"
+      },
+      {
+        "name": "Diary of Merer (Wadi al-Jarf Papyrus Jarf A–D)",
+        "catalog": "P. Jarf A–D / Cairo Egyptian Museum",
+        "target_url": "https://en.wikipedia.org/wiki/Diary_of_Merer",
+        "tier": "Tier 1",
+        "extraction_method": "Pierre Tallet (2017) MIFAO 136 extraction"
       }
     ],
     "scholarly_references": [
+      "Allen, J. P. (2005). The Ancient Egyptian Pyramid Texts. SBL Writings from the Ancient World 23.",
+      "Hays, H. M. (2012). The Organization of the Pyramid Texts. Papyrologica Bruxellensia 37.",
+      "Baines, J. (2007). Visual and Written Culture in Ancient Egypt. Oxford University Press.",
+      "Smith, M. (2017). Following Osiris: Perspectives on the Osirian Afterlife. Oxford University Press.",
+      "Willems, H. (1996). The Coffin of Heqata. Peeters.",
       "Assmann, J. (2002). The Mind of Egypt: History and Meaning in the Time of the Pharaohs.",
-      "Allen, J. P. (2005). The Ancient Egyptian Pyramid Texts. SBL Writings from the Ancient World."
+      "Tallet, P. (2017). Les papyrus de la mer Rouge I: Le 'Journal de Merer'. IFAO.",
+      "Kemp, B. J. (2006). Ancient Egypt: Anatomy of a Civilization. Routledge."
     ]
   },
   "essay-4-homer-textualization": {
