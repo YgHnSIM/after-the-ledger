@@ -250,10 +250,10 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 이 목록은 단순한 단어장이 아니었다. 지상에 존재하는 인공물에서 시작하여 자연계의 동식물을 거쳐 천상의 신성에 이르는 '우주적 질서의 거대한 위계 지도'였다.`,
         originalQuote: {
-          originalScript: '𒄑 𒈣 \t\t *e-lep-pu* \n𒄑 𒈣 ٹرز \t\t *e-lep-pu qur-bu* \n𒄑 𒈣 𒆭 𒊏 \t *e-lep-pu šá ma-ḫi-ri*',
-          transliteration: 'giš.ma2 = eleppu \ngiš.ma2.dirig = eleppu qurbu \ngiš.ma2.kar.ra = eleppu ša mahīri',
-          translationKo: '나무 배(선박) = 아카드어 [엘렙푸]\n항해선 = [엘렙푸 쿠르부]\n시장 운송선 = [엘렙푸 샤 마히리]',
-          sourceCitation: 'Ur5-ra = hubullu 점토판 4 (DCCLT P365448), 선박 어휘 목록 발췌'
+          originalScript: '1. 𒄑 𒈣 \t\t\t giš-ma2 \t\t = *e-lep-pu*\n2. 𒄑 𒈣 𒄥 𒊏 \t\t giš-ma2-gur8 \t = *ma-kur-ru*\n3. 𒄑 𒈣 𒆭 𒊏 \t\t giš-ma2-dirig \t = *e-lep-pu te-bi-tu*',
+          transliteration: '1. giš-ma2 = e-lep-pu (일반 선박)\n2. giš-ma2-gur8 = ma-kur-ru (심해 항해선)\n3. giš-ma2-dirig = e-lep-pu te-bi-tu (침수선)',
+          translationKo: '수메르어 사물 명칭과 아카드어 번역을 2열 대조로 정렬한 표준 선박 어휘 목록',
+          sourceCitation: 'Ur5-ra = hubullu 점토판 4 (DCCLT P365448 / MSL 5), 신아시리아 정본'
         }
       },
       {
@@ -282,7 +282,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           originalScript: '𒂍 \t\t *bītu* \t\t *purli* \t\t *bêt-u*',
           transliteration: 'E2 (Sumerian) \t bi-i-tu (Akkadian) \t pur-li (Hurrian) \t be-e-tu (Ugaritic)',
           translationKo: '집(신전/가옥) [수메르어] \t 집(비투) [아카드어] \t 집(푸를리) [후르리어] \t 집(베투) [우가리트어]',
-          sourceCitation: 'RS 20.123+ (Louvre AO 19936), 우가리트 4개국어 어휘목록'
+          sourceCitation: 'RS 20.123+ (Louvre AO 19936), 우가리트 4개국어 어휘목록 (Nougayrol 1968)'
         }
       },
       {
@@ -300,7 +300,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
         id: 'src-2-1',
         artifactId: 'ed-lu-a-professions',
         nameKo: '수메르-아카드 대조 어휘목록 우르라=후불루',
-        nameEnOrOriginal: 'Ur5-ra = hubullu Lexical Series',
+        nameEnOrOriginal: 'Ur5-ra = hubullu Lexical Series (MSL 5-11)',
         catalogNo: 'DCCLT / CDLI P365448',
         institution: 'British Museum / University of Pennsylvania Museum',
         dateVector: {
@@ -309,12 +309,12 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 1200,
           witnessDateBCE: 700
         },
-        originalScript: '𒄑 𒈣 \t\t *e-lep-pu*',
-        transliteration: 'giš.ma2 = e-lep-pu',
-        translationKo: '나무 선박 = [엘렙푸]',
+        originalScript: '1. 𒄑 𒈣 \t\t giš-ma2 = e-lep-pu\n2. 𒄑 𒈣 𒄥 𒊏 \t giš-ma2-gur8 = ma-kur-ru',
+        transliteration: '1. giš-ma2 = e-lep-pu\n2. giš-ma2-gur8 = ma-kur-ru',
+        translationKo: '1. 일반 선박 = [엘렙푸]\n2. 심해 항해선 / 의례선 = [마쿠루]',
         sourceGrade: 'Grade A',
-        epigraphyMethod: 'DCCLT 디지털 코퍼스 교감 및 자동 형태소 분석',
-        notes: '24개 점토판 대전집 중 제4판 선박 및 전차 목록.'
+        epigraphyMethod: 'DCCLT 디지털 코퍼스 교감 및 MSL 표준 판본 대조',
+        notes: '24개 점토판 대전집 중 제4판 선박 및 운송기구 목록.'
       },
       {
         id: 'src-2-2',
