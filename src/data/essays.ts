@@ -46,7 +46,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 이 목록은 최고 권력자 혹은 대사제로 추정되는 'NAMEŠDA'(나메시다)로 시작하여, 사법관, 군사령관, 신전 행정관, 전문 장인에 이르기까지 120여 개의 직책을 엄격한 수직 서열 순서로 나열한다. 놀라운 점은 이 목록이 단순한 직책 명단이 아니라 서기관 훈련생들이 문자를 배우는 필수 교본이었다는 사실이다. 서기관들은 낱말을 배우면서 동시에 자신이 속한 도시국가의 권력 피라미드를 암기했다.`,
         originalQuote: {
-          originalScript: '𒁹 𒉆 𒅖 𒁕\n𒁹 𒃲 𒋼\n𒁹 𒃲 ㄿ\n𒁹 𒃲 𒐉',
+          originalScript: '𒁹 𒉆 𒅖 𒁕\n𒁹 𒃲 𒋼\n𒁹 𒃲 𒈛\n𒁹 𒃲 𒋃',
           transliteration: '1. |NAM2.ŠEŠDA| (대사제/최고통치자)\n2. GAL:TE (신전 최고 재판관)\n3. GAL:SUKKAL (수석 행정관)\n4. GAL:SANGA (신전 재정관)',
           translationKo: '우루크 최고 통치자(나메시다)부터 재판관, 사절, 경리관에 이르는 120개 관직의 수직적 위계 서열',
           sourceCitation: 'W 20266,1 (CDLI P254191), ED Lu A 표제 행 발췌 (Grade A)'
@@ -61,7 +61,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 이는 어휘목록에서 사물과 직업을 범주화(Categorization)하는 지적 훈련이 없었다면 불가능한 작업이었다. 회계는 단순한 덧셈·뺄셈이 아니라, 세계에 존재하는 모든 물리적 자원(가축, 직물, 곡물, 토지)을 기호의 범주 체계 속으로 편입시키는 작업이었다. 서기관 학교(에두바)는 '계산하는 법'과 '분류하는 법'을 동일한 점토판 훈련을 통해 일체화시켰다.`,
         originalQuote: {
-          originalScript: '𒐉 𒃷 𒊺 \t 𒁹 𒂁 𒋡 \t 𒁹 𒐉',
+          originalScript: '𒐉 𒃷 𒊺 \t 𒁹 𒂁 𒋡 \t 𒁹 𒋃',
           transliteration: '4(iku) GAN2 ŠE / 1(dug) DUG.SILA3 / SANGA',
           translationKo: '4이쿠(약 1.4헥타르) 면적의 파종용 보리 및 1두그 정량 용기 배분, 신전 재정관(SANGA) 명기',
           sourceCitation: 'MSVO 3, 11 (CDLI P005573), 우루크 IV 원시 쐐기 행정 점토판'
@@ -105,7 +105,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 3100,
           witnessDateBCE: 3200
         },
-        originalScript: '𒁹 𒉆 𒅖 𒁕\n𒁹 𒃲 𒋼\n𒁹 𒃲 ㄿ\n𒁹 𒃲 𒐉',
+        originalScript: '𒁹 𒉆 𒅖 𒁕\n𒁹 𒃲 𒋼\n𒁹 𒃲 𒈛\n𒁹 𒃲 𒋃',
         transliteration: '1. |NAM2.ŠEŠDA| (대사제/최고통치자)\n2. GAL:TE (신전 최고 재판관)\n3. GAL:SUKKAL (수석 행정관)\n4. GAL:SANGA (신전 재정관)',
         translationKo: '1. 최고 통치자 / 제의적 군주 (나메시다)\n2. 대신전 총감독관 / 최고 재판관\n3. 최고 사절 / 총괄 행정관\n4. 신전 재정관',
         sourceGrade: 'Grade A',
@@ -125,7 +125,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 3200,
           witnessDateBCE: 3200
         },
-        originalScript: '𒐉 𒃷 𒊺\n𒁹 𒂁 𒋡\n𒁹 𒐉',
+        originalScript: '𒐉 𒃷 𒊺\n𒁹 𒂁 𒋡\n𒁹 𒋃',
         transliteration: '4(iku) GAN2 ŠE / 1(dug) DUG.SILA3 / SANGA',
         translationKo: '4이쿠(약 1.4헥타르) 면적의 파종용 보리 및 1두그 정량 용기 배분, 신전 재정관(SANGA) 명기',
         sourceGrade: 'Grade A',
