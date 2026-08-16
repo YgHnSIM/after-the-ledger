@@ -2317,8 +2317,12 @@ p:last-child {
 }
 
 .ancient-script-display {
-  font-family: 'Noto Sans Cuneiform', 'Segoe UI Historic', 'Gentium Plus', 'SBL Hebrew', 'Aegyptus', 'New Athena Unicode', serif;
-  letter-spacing: 0.04em;
+  font-family: 'Noto Sans Cuneiform', 'Noto Sans Egyptian Hieroglyphs', 'Noto Sans Ugaritic', 'Noto Sans Linear B', 'Noto Sans Hebrew', 'Segoe UI Historic', 'Gentium Plus', 'SBL Hebrew', 'Aegyptus', 'New Athena Unicode', serif;
+  letter-spacing: 0.08em;
+  line-height: 1.7;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 .essay-original-script-box {

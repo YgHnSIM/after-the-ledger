@@ -46,9 +46,9 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 이 목록은 최고 권력자 혹은 대사제로 추정되는 'NAMEŠDA'(나메시다)로 시작하여, 사법관, 군사령관, 신전 행정관, 전문 장인에 이르기까지 120여 개의 직책을 엄격한 수직 서열 순서로 나열한다. 놀라운 점은 이 목록이 단순한 직책 명단이 아니라 서기관 훈련생들이 문자를 배우는 필수 교본이었다는 사실이다. 서기관들은 낱말을 배우면서 동시에 자신이 속한 도시국가의 권력 피라미드를 암기했다.`,
         originalQuote: {
-          originalScript: '𒁹 |NAM2.ŠEŠDA|\n𒁹 GAL:TE\n𒁹 GAL:SUKKAL',
-          transliteration: '1. |NAM2.ŠEŠDA|\n2. GAL:TE\n3. GAL:SUKKAL',
-          translationKo: '1. 최고 통치자/제의적 군주 (나메시다)\n2. 신전 최고 재판관/집행관\n3. 최고 사절/수석 행정관',
+          originalScript: '𒁹 𒉆 𒅖 𒁕\n𒁹 𒃲 𒋼\n𒁹 𒃲 ㄿ\n𒁹 𒃲 𒐉',
+          transliteration: '1. |NAM2.ŠEŠDA| (대사제/최고통치자)\n2. GAL:TE (신전 최고 재판관)\n3. GAL:SUKKAL (수석 행정관)\n4. GAL:SANGA (신전 재정관)',
+          translationKo: '우루크 최고 통치자(나메시다)부터 재판관, 사절, 경리관에 이르는 120개 관직의 수직적 위계 서열',
           sourceCitation: 'W 20266,1 (CDLI P254191), ED Lu A 표제 행 발췌 (Grade A)'
         }
       },
@@ -61,9 +61,9 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 이는 어휘목록에서 사물과 직업을 범주화(Categorization)하는 지적 훈련이 없었다면 불가능한 작업이었다. 회계는 단순한 덧셈·뺄셈이 아니라, 세계에 존재하는 모든 물리적 자원(가축, 직물, 곡물, 토지)을 기호의 범주 체계 속으로 편입시키는 작업이었다. 서기관 학교(에두바)는 '계산하는 법'과 '분류하는 법'을 동일한 점토판 훈련을 통해 일체화시켰다.`,
         originalQuote: {
-          originalScript: '[ 4(iku) GAN2 ŠE ]\n[ 1(dug) DUG.SILA3 ]\n[ SANGA ]',
+          originalScript: '𒐉 𒃷 𒊺 \t 𒁹 𒂁 𒋡 \t 𒁹 𒐉',
           transliteration: '4(iku) GAN2 ŠE / 1(dug) DUG.SILA3 / SANGA',
-          translationKo: '4이쿠(약 1.4헥타르) 면적의 파종용 보리 및 정량 용기 배분, 신전 재정관(SANGA) 명기',
+          translationKo: '4이쿠(약 1.4헥타르) 면적의 파종용 보리 및 1두그 정량 용기 배분, 신전 재정관(SANGA) 명기',
           sourceCitation: 'MSVO 3, 11 (CDLI P005573), 우루크 IV 원시 쐐기 행정 점토판'
         }
       },
@@ -105,9 +105,9 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 3100,
           witnessDateBCE: 3200
         },
-        originalScript: '𒁹 |NAM2.ŠEŠDA|\n𒁹 GAL:TE\n𒁹 GAL:SUKKAL',
-        transliteration: '1. |NAM2.ŠEŠDA|\n2. GAL:TE\n3. GAL:SUKKAL',
-        translationKo: '1. 최고 통치자 / 제의적 군주 (나메시다)\n2. 대신전 총감독관 / 최고 재판관\n3. 최고 사절 / 총괄 행정관',
+        originalScript: '𒁹 𒉆 𒅖 𒁕\n𒁹 𒃲 𒋼\n𒁹 𒃲 ㄿ\n𒁹 𒃲 𒐉',
+        transliteration: '1. |NAM2.ŠEŠDA| (대사제/최고통치자)\n2. GAL:TE (신전 최고 재판관)\n3. GAL:SUKKAL (수석 행정관)\n4. GAL:SANGA (신전 재정관)',
+        translationKo: '1. 최고 통치자 / 제의적 군주 (나메시다)\n2. 대신전 총감독관 / 최고 재판관\n3. 최고 사절 / 총괄 행정관\n4. 신전 재정관',
         sourceGrade: 'Grade A',
         epigraphyMethod: '3D 점토판 스캔 및 CDLI 고해상도 판독 (라이덴 협약 준수)',
         notes: '우루크 IV기 에안나 신전 복합체 매립층 출토. 120여 개 관직 서열을 고정한 인류 최초의 체계적 사회 위계 목록.'
@@ -125,9 +125,9 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 3200,
           witnessDateBCE: 3200
         },
-        originalScript: '[ 4(iku) GAN2 ŠE ]\n[ 1(dug) DUG.SILA3 ]\n[ SANGA ]',
+        originalScript: '𒐉 𒃷 𒊺\n𒁹 𒂁 𒋡\n𒁹 𒐉',
         transliteration: '4(iku) GAN2 ŠE / 1(dug) DUG.SILA3 / SANGA',
-        translationKo: '4이쿠(약 1.4헥타르) 면적의 파종용 보리 및 정량 용기 배분, 신전 재정관(SANGA) 명기',
+        translationKo: '4이쿠(약 1.4헥타르) 면적의 파종용 보리 및 1두그 정량 용기 배분, 신전 재정관(SANGA) 명기',
         sourceGrade: 'Grade A',
         epigraphyMethod: 'CDLI 디지털 에피그래피 전사',
         notes: '수량 기호(B-system / Š-system)와 물품·관직 표의문자가 그리드 구획 안에 결합된 전형적 초기 행정 장부.'
@@ -1011,7 +1011,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 점토판의 정밀한 쐐기문자는 사제의 기억이 흔들리지 않도록 지탱하는 권위의 기준점이었으며, 텍스트의 생명력은 사제의 성대를 통해 신전의 공기 속으로 진동할 때 비로소 완성되었다.`,
         originalQuote: {
-          originalScript: '𒂊 𒉡 𒈠 \t 𒂊 𒇺 \t 𒆷 \t 𒈾 𒁍 \t border \t 𒊭 𒈠 𒈬',
+          originalScript: '𒂊 𒉡 𒈠 \t 𒂊 𒇺 \t 𒆷 \t 𒈾 𒁍 \t 𒌑 \t 𒊭 𒈠 𒈬',
           transliteration: 'e-nu-ma e-liš la na-bu-ú šá-ma-mu',
           translationKo: '위로 하늘의 이름이 아직 불리지 않았고, 아래로 굳건한 땅의 이름이 지어지지 않았을 때...',
           sourceCitation: '에누마 엘리시 제1점토판 표제행 (BM K.3473)'
@@ -1362,7 +1362,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 그러나 그들은 이집트 파라오 아크나톤에게 편지를 쓸 때 결코 알파벳이나 자국어를 쓰지 않았다. 그들은 메소포타미아에서 파견되었거나 현지에서 에두바 훈련을 받은 전문 서기관을 고용하여, 복잡한 아카드어 쐐기문자로 편지를 작성했다. 비록 본문 곳곳에 가나안 현지어 단어(Glosses)가 무의식적으로 튀어나왔을지라도, 국제 외교 무대에서 통용되는 합법적 공문서는 오직 아카드 쐐기문자뿐이었다.`,
         originalQuote: {
-          originalScript: '𒀀 𒈾 \t 𒈗 \t 𒁁 𒉌 𒅀 \t 𒌝 𒈠 \t 𒁹 badbreak 𒄭 𒁀 \t 𒀵 𒅗 𒈠',
+          originalScript: '𒀀 𒈾 \t 𒈗 \t 𒁁 𒉌 𒅀 \t 𒌝 𒈠 \t 𒁹 𒀵 𒄭 𒁀 \t 𒀵 𒅗 𒈠',
           transliteration: 'a-na LUGAL EN-ia um-ma 1.ARAD2-Hé-ba ARAD2-ka-ma',
           translationKo: '나의 주군이신 파라오 왕께, 당신의 종 예루살렘 왕 압디-헤바가 일곱 번, 또 일곱 번 엎드려 말씀드립니다.',
           sourceCitation: '아마르나 서신 EA 286 (VAT 1642, Vorderasiatisches Museum Berlin)'
@@ -1425,7 +1425,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           compositionDateBCE: 1350,
           witnessDateBCE: 1350
         },
-        originalScript: '𒀀 𒈾 \t 𒈗 \t 𒁁 𒉌 𒅀 \t 𒁹 badbreak 𒄭 𒁀',
+        originalScript: '𒀀 𒈾 \t 𒈗 \t 𒁁 𒉌 𒅀 \t 𒁹 𒀵 𒄭 𒁀',
         transliteration: 'a-na LUGAL EN-ia 1.ARAD2-Hé-ba',
         translationKo: '나의 주군 파라오께, 예루살렘 왕 압디-헤바가 아카드 쐐기문자로 구원군 파병을 요청하는 서한',
         sourceGrade: 'Grade A',
