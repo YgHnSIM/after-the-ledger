@@ -32,7 +32,7 @@ export const CivilizationDetailView: React.FC<CivilizationDetailViewProps> = ({
               fontWeight: activeCivId === civ.id ? 700 : 500
             }}
           >
-            {civ.nameKo} {civ.id === 'ugarit' && '(통제 사례)'}
+            {civ.nameKo}
           </button>
         ))}
       </div>
