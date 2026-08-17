@@ -1281,7 +1281,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 점토판의 정밀한 쐐기문자는 사제의 기억이 흔들리지 않도록 지탱하는 권위의 기준점이었으며, 텍스트의 생명력은 사제의 성대를 통해 신전의 공기 속으로 진동할 때 비로소 완성되었다.`,
         originalQuote: {
-          originalScript: 'ina kīṣ ūmi šešgallu ša É.SAG.ÍL Enūma eliš ultu rēšišu adi qītišu ana Bēl imannu.',
+          originalScript: '𒄿 𒈾 𒆠 𒄑 𒌓 𒈪 𒋀 𒃲 𒇻 𒊭 𒂍 𒊕 𒅍 𒂊 𒉡 𒈠 𒂊 𒇺 𒌌 𒌅 𒊕 𒅖 𒋗 𒀀 𒁲 𒌀 𒋾 𒋗 𒀀 𒈾 𒀭 𒂗 𒄿 𒌋𒌋 𒉡',
           transliteration: 'ina kīṣ ūmi šešgallu ša É.SAG.ÍL Enūma eliš ultu rēšišu adi qītišu ana Bēl imannu.',
           translationKo: '니산누월 제4일 해 질 무렵, 에사길라의 최고 대사제(셰시갈루)는 마르둑 신전 지성소에서 창조 서사시 《에누마 엘리시》를 그 첫 머리부터 맨 끝 행까지 벨(마르둑) 신상 앞에서 완창(암송)한다.',
           sourceCitation: '루브르 박물관 소장 헬레니즘기 바빌론 아키투 제의 점토판 (Louvre AO 6479, Col. IV, lines 281–283; Linssen 2004: 215)'
@@ -1369,7 +1369,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 600,
           witnessDateBCE: 250
         },
-        originalScript: 'ina kīṣ ūmi šešgallu ša É.SAG.ÍL Enūma eliš ultu rēšišu adi qītišu ana Bēl imannu.',
+        originalScript: '𒄿 𒈾 𒆠 𒄑 𒌓 𒈪 𒋀 𒃲 𒇻 𒊭 𒂍 𒊕 𒅍 𒂊 𒉡 𒈠 𒂊 𒇺 𒌌 𒌅 𒊕 𒅖 𒋗 𒀀 𒁲 𒌀 𒋾 𒋗 𒀀 𒈾 𒀭 𒂗 𒄿 𒌋𒌋 𒉡',
         transliteration: 'ina kīṣ ūmi šešgallu ša É.SAG.ÍL Enūma eliš ultu rēšišu adi qītišu ana Bēl imannu.',
         translationKo: '니산누월 제4일 해 질 무렵, 에사길라의 최고 대사제(셰시갈루)는 마르둑 신전 지성소에서 창조 서사시 《에누마 엘리시》를 그 첫 머리부터 맨 끝 행까지 벨(마르둑) 신상 앞에서 완창한다.',
         sourceGrade: 'Grade A',
@@ -1783,7 +1783,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           compositionDateBCE: -79,
           witnessDateBCE: -79
         },
-        originalScript: 'ΦΙΛΟΔΗΜΟΥ ΠΕΡΙ ΚΟΛΑΚΕΙΑΣ (Philodemou Peri Kolakeias)',
+        originalScript: 'ΦΙΛΟΔΗΜΟΥ ΠΕΡΙ ΚΟΛΑΚΕΙΑΣ',
         transliteration: 'Philodēmou Peri Kolakeias (Hellenistic Greek Uncial)',
         translationKo: '필로데모스의 에피쿠로스 학파 철학 저작 《아첨에 관하여》',
         sourceGrade: 'Grade A',
@@ -2037,7 +2037,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 살아남은 것은 왕궁에 갇혀 있던 점토 쐐기 알파벳이 아니라, 휴대 가능한 파피루스 위에 빠르게 쓸 수 있었던 페니키아 선형 알파벳이었다. 문자의 궁극적 생존은 부호의 논리적 구조뿐만 아니라 기록 매체의 이동성과 물류 경제성에 달려 있었다.`,
         originalQuote: {
-          originalScript: 'a-na LUGAL KUR a-la-shi-ia a-bi-ia qi2-bi2-ma ... a-mur ERIN2-mezh LUKUR2 i-na GIŠ.MA2-mezh il-la-ku-ni URU-mezh-ia i-na IZI-mezh i-qad-du-du',
+          originalScript: '𒀀 𒈾 𒈗 𒆳 𒀀 𒆷 𒅆 𒅀 𒀜 𒁉 𒅀 ﻘ 𒁉 𒈠 𒀀 𒄯 𒂟 𒈨𒌍 𒉽 𒄿 𒈾 𒄑 𒈣 𒈨𒌍 𒁀 𒉡 𒋾',
           transliteration: 'a-na LUGAL KUR a-la-ši-ia a-bi-ia qi2-bi2-ma ... a-mur ERIN2-meš LÚ.KÚR i-na GIŠ.MÁ-meš il-la-ku-ni URU-meš-ia i-na IZI-meš i-qad-du-du (RS 20.238)',
           translationKo: '나의 아버지, 알라시야(키프로스)의 왕이시여... 보소서, 적의 군함들이 바다에서 몰려와 내 도시들을 불태우고 내 땅에서 온갖 악행을 저질렀나이다.',
           sourceCitation: '우가리트 멸망 직전 알라시야 국왕 앞 긴급 서한 (RS 20.238 / Ugaritica V no. 24)'
@@ -2167,8 +2167,8 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 1185,
           witnessDateBCE: 1185
         },
-        originalScript: 'a-na LUGAL KUR a-la-shi-ia a-bi-ia qi2-bi2-ma ... a-mur ERIN2-mezh LUKUR2 i-na GIŠ.MA2-mezh il-la-ku-ni URU-mezh-ia i-na IZI-mezh i-qad-du-du',
-        transliteration: 'a-na LUGAL KUR a-la-ši-ia a-bi-ia qi2-bi2-ma ... a-mur ERIN2-meš LÚ.KÚR i-na GIŠ.MÁ-meš il-la-ku-ni URU-meš-ia i-na IZI-meš i-qad-du-du (RS 20.238)',
+        originalScript: '𒀀 𒈾 𒈗 𒆳 𒀀 𒆷 𒅆 𒅀 𒀜 𒁉 𒅀 ﻘ 𒁉 𒈠 𒀀 𒄯 𒂟 𒈨𒌍 𒉽 𒄿 𒈾 𒄑 𒈣 𒈨𒌍 𒁀 𒉡 𒋾',
+        transliteration: 'a-na LUGAL KUR a-la-ši-ia a-bi-ia qi2-bi2-ma ... a-mur ERIN2-meš LÚ.KÚR i-na GIŠ.MÁ-meš il-la-ku-ni (RS 20.238)',
         translationKo: '나의 아버지, 알라시야의 왕이시여... 보소서, 적의 군함들이 바다에서 몰려와 내 도시들을 불태우고 내 땅에서 온갖 악행을 저질렀나이다.',
         sourceGrade: 'Grade A',
         epigraphyMethod: '라스 샴라 가마(Kiln) 소각층 출토, 우가리트 멸망 직전 마지막 왕 암무라피의 아카드어 외교 서한',
