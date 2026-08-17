@@ -29,9 +29,9 @@ export const ARTIFACTS: ArtifactRecord[] = [
     description: '우루크 IV 층에서 출토된 이 점토판들은 단순 숫자 점토 구슬(Tokens)과 물꼬(Bulla)에서 진화하여 문자가 행정 장부로 정착되었음을 증명한다. 계수 단위와 재화 항목이 구획된 사각형 격자 안에 기록되어 있다.',
     preservationNotes: '점토라는 불멸의 재료 덕분에 화재 및 층위 속에서 수천 년간 보존됨',
     inscriptionBreakdown: {
-      scriptOriginal: '🔻▶ 5 SHEBAR 🔻 1 BAN2 KU3',
-      transliteration: '5 še-bar 1 ban2 ku3-babbar',
-      translationKo: '보리 5단 및 은 1반(Ban) 수령',
+      scriptOriginal: '𒐉 𒃷 𒊺 \t 𒁹 𒂁 𒋡 \t 𒁹 𒋃',
+      transliteration: '4(iku) GAN2 ŠE / 1(dug) DUG.SILA3 / SANGA',
+      translationKo: '4이쿠(약 1.4헥타르) 면적의 파종용 보리 및 1두그 정량 용기 배분, 신전 재정관(SANGA) 명기',
       literaryContext: '우루크 Eanna 신전 중앙 수확 창고 서기관이 작성한 수확물 세입 장부.'
     },
     sources: [
@@ -67,9 +67,9 @@ export const ARTIFACTS: ArtifactRecord[] = [
     description: '회계 문서와 사실상 동시 출현한 어휘목록. 서기관들이 세계와 사회 질서를 단어로 분류하고 필사 연습을 하기 위해 작성되었으며, 수메르 서기관 교육의 핵심 텍스트로 1천 년 이상 토씨 하나 틀리지 않고 복제되었다.',
     preservationNotes: '서기관 학교 연습용 점토판이 지속 복제되어 다수 출토됨',
     inscriptionBreakdown: {
-      scriptOriginal: '1. NAMEŠDA\n2. NIMGIR\n3. GAL UKKIN\n4. SANGA',
-      transliteration: '1. namešda  2. nimgir  3. gal-ukkin  4. sanga',
-      translationKo: '1. 최고 통치자(왕)  2. 전령관  3. 최고 의회장  4. 신전 최고 사제',
+      scriptOriginal: '1. 𒁹 𒉆 𒅖 𒁕\n2. 𒁹 𒃲 𒋼\n3. 𒁹 𒃲 𒈛\n4. 𒁹 𒃲 𒋃',
+      transliteration: '1. |NAM2.ŠEŠDA|  2. GAL:TE  3. GAL:SUKKAL  4. GAL:SANGA',
+      translationKo: '1. 최고 통치자(나메시다)  2. 신전 최고 재판관  3. 수석 행정관  4. 신전 재정관',
       literaryContext: '129개 관직 순서가 엄격히 고정된 메소포타미아 표준 직업 계급 어휘목록.'
     },
     sources: [
@@ -269,10 +269,10 @@ export const ARTIFACTS: ArtifactRecord[] = [
     description: '상아 판에 천공이 뚫린 소형 표찰들로, 기름과 린넨 항아리에 매달려 세입 지역(Delta, 델타 지방 등)과 수량을 나타냈다. 이집트 성각문자가 왕권 및 세금 원산지 표시와 함께 출발했음을 증명한다.',
     preservationNotes: '건조한 사막 무덤 건조 환경 덕분에 상아·뼈 표찰 완전 보존',
     inscriptionBreakdown: {
-      scriptOriginal: '𓈋 (Mountain) + 𓇳 (Sun/King Domain)',
-      transliteration: 'Djew (Set-Hor / Delta Estate)',
-      translationKo: '동쪽 산악 영지(Delta estate) 수확 기름 항아리 표찰',
-      literaryContext: '왕실 세입 물품의 지리적 원산지와 수량을 증명하는 최초의 태그.'
+      scriptOriginal: '𓅃 𓋹 𓈖 𓏏',
+      transliteration: 'bAst / AbDw / pr-nTr',
+      translationKo: '동쪽 바스트 신전 영지 및 아비도스 왕실 직속 납품 표찰',
+      literaryContext: '왕실 세입 물품의 지리적 원산지와 수량을 증명하는 최초의 상아 태그.'
     },
     sources: [
       { id: 's-dreyer-1', grade: 'A', gradeLabel: 'A: 정식 발굴 보고서', title: 'Umm el-Qaab I: Das prädynastische Königsgrab U-j', authorOrInstitution: 'Günter Dreyer / DAIK', year: '1998' }
@@ -307,9 +307,9 @@ export const ARTIFACTS: ArtifactRecord[] = [
     description: '나르메르 왕의 이름(메기+끌 상형문자)과 적을 참수하는 장면이 회화와 문자의 결합으로 표현되었다. 문자가 시각적 왕권 프로파간다와 상징적 효력으로 작동한 대표적 예시이다.',
     preservationNotes: '편암 석재 특성상 훼손 없이 완벽 보존',
     inscriptionBreakdown: {
-      scriptOriginal: '𓈖 (N\'r = 메기) + 𓍋 (Mr = 끌)',
-      transliteration: 'N\'r-mr (Narmer)',
-      translationKo: '사나운 메기(Narmer) 왕',
+      scriptOriginal: '𓅃 𓈖 𓂝 𓂋 𓌸 𓂋',
+      transliteration: 'NAr-mr (Narmer)',
+      translationKo: '사나운 메기(NAr)와 끌(mr)로 표상된 최초의 통일 군주 나르메르',
       literaryContext: '세레크(Serekh) 궁전 외벽 문양 안에 왕의 성각문자 이름 명시.'
     },
     sources: [
@@ -476,10 +476,10 @@ export const ARTIFACTS: ArtifactRecord[] = [
     description: 'Linear B는 오직 궁전 경제 행정을 기록하기 위해 쓰였으며 문학, 역사, 개인 편지는 일절 없었다. BCE 1200년 궁전이 화재로 파괴될 때 점토판이 불에 구워짐으로써 역설적으로 오늘날까지 보존되었다.',
     preservationNotes: '원래 햇빛에 말린 임시 점토판이었으나 궁전 화재 파괴 시 구워져 보존됨',
     inscriptionBreakdown: {
-      scriptOriginal: '𐀷𐀙𐀏 (wa-na-ka) 𐀈ed (do-e-ro) bed (o-li-vo)',
-      transliteration: 'wa-na-ka do-e-ro o-li-vo',
-      translationKo: '주군(Wanax)의 종들과 올리브유 수량 관리',
-      literaryContext: '미케네 궁전 서기관이 궁전 최고 통치자 와나크스(Wanax)의 관리 물품을 표기.'
+      scriptOriginal: '𐀃-𐀹-𐀆 𐀢-𐀐-𐀥-𐀪 𐀃-𐀳 𐀷-𐀙-𐀏 𐀳-𐀐 𐀀-𐀄-𐀐-𐀷 𐀅-𐀗-𐀒-𐀫',
+      transliteration: 'o-wi-de pu-ke-qi-ri o-te wa-na-ka te-ke au-ke-wa da-mo-ko-ro (PY Ta 711.1)',
+      translationKo: '푸케퀴리가 검열관 아우케와를 장관으로 임명할 때 와나카(국왕)가 소집한 가구 검열 목록',
+      literaryContext: '기원전 1200년 필로스 궁전 화재층에서 소성되어 기적적으로 살아남은 Linear B 회계 장부.'
     },
     sources: [
       { id: 's-cambridge-mycep', grade: 'A', gradeLabel: 'A: 대학 연구 그룹', title: 'Mycenaean Epigraphy Group', authorOrInstitution: 'University of Cambridge', url: 'https://www.classics.cam.ac.uk/research/projects/mycep' }
@@ -546,10 +546,10 @@ export const ARTIFACTS: ArtifactRecord[] = [
     description: 'Linear B 사멸 후 약 400년의 암흑기를 지나 등장한 초기 알파벳 유물. 행정 장부가 아니라, 술자리 춤 경연 승자에게 와인 잔을 주겠다는 시적 1행시(Hexameter)로 문자가 재출현했음을 보여준다.',
     preservationNotes: '도기 파편 주전자 부속 완전 복원',
     inscriptionBreakdown: {
-      scriptOriginal: 'ℎος νυν ορχεστων παντων αταλωτατα παιζει του τοδε κλμιν...',
-      transliteration: 'hòs nûn orkhestôn pántôn atalṓtata paízei tôu tóde klm[in]...',
-      translationKo: '지금 모든 춤꾼들 중에서 가장 신나고 아름답게 춤추는 자가 이 잔을 차지하리라!',
-      literaryContext: '술자리(Symposium) 춤 경연 승자에게 선물로 건네진 와인 잔에 새겨진 1행 서사시 헥사메터.'
+      scriptOriginal: 'ΗΟΣ ΝΥΝ ΟΡΧΕΣΤΟΝ ΠΑΝΤΟΝ ΑΤΑΛΟΤΑΤΑ ΠΑΙΖΕΙ ΤΟ ΤΟΔΕ ΚΑ...',
+      transliteration: 'hòs nûn orkhēstôn pántōn atalṓtata paízei, tô tóde k[aí mīn...]',
+      translationKo: '지금 모든 무용수 중 가장 활기차게 노니는 자가 이 잔을 차지하리라!',
+      literaryContext: '그리스 알파벳 최고(最古)의 6각운 시 구절 각문.'
     },
     sources: [
       { id: 's-powell-1', grade: 'B', gradeLabel: 'B: 학술 단행본', title: 'Homer and the Origin of the Greek Alphabet', authorOrInstitution: 'Barry B. Powell', year: '1991' }
@@ -584,10 +584,10 @@ export const ARTIFACTS: ArtifactRecord[] = [
     description: '호메로스 서사시 《일리아스》 11권에 나오는 네스토르의 황금 잔을 유화하게 비튼 3행시. 초기 알파벳이 교역항과 향연(Symposium)에서 시적 운율 및 서사시적 지식 교유의 매개체였음을 보여준다.',
     preservationNotes: '도기 잔 파편 접합 복원',
     inscriptionBreakdown: {
-      scriptOriginal: 'Νέστορός [εἰμι] εὔποτ[ον] ποτήριον·\nὃς d\' ἂν τοῦδε πίῃσι ποτηρίō,\nαὐτίκα κῆνον ἵμερος αἱρήσει καλλιστεφάνου Ἀφροδίτης.',
-      transliteration: 'Nestorós eimi eupoton potērion / hos d\' an toude piēsi potēriou / autika kēnon himeros hairēsei kallistephanou Aphroditēs.',
-      translationKo: '나는 네스토르의 마시기 편한 잔이라! 하지만 이 잔을 마시는 자는 누구든 즉각 아름다운 왕관을 쓴 아프로디테의 욕망에 사로잡히리라!',
-      literaryContext: '호메로스 일리아스 서사시 속 네스토르 잔을 패러디한 초기 그리스 알파벳 3행시.'
+      scriptOriginal: 'ΝΕΣΤΟΡΟΣ : [..] : ΕΥΠΟΤ[ΟΝ] : ΠΟΤΕΡΙΟΝ\nhΟΣ Δ’ ΑΝ ΤΟΔΕ ΠΙΕΣΙ : ΠΟΤΕΡΙ[Ο] : ΑΥΤΙΚΑ ΚΕΝΟΝ\nhΙΜΕΡ[ΟΣ hΑΙΡ]ΕΣΕΙ : ΚΑΛΛΙΣΤ[ΕΦΑΝ]Ο : ΑΦΡΟΔΙΤΕΣ',
+      transliteration: 'Nestoros [eimi] eupoton poterion / hos d’ an tode piesi poteriou autika kenon / himeros hairesei kallistephano Aphrodites',
+      translationKo: '나는 네스토르의 마시기 좋은 잔이라. 이 잔을 비우는 자는 아름다운 관을 쓴 아프로디테의 욕망에 사로잡히리라.',
+      literaryContext: '호메로스 서사시를 패러디한 8세기 그리스 향연 문화의 3행 시적 각문.'
     },
     sources: [
       { id: 's-papadopoulos-1', grade: 'B', gradeLabel: 'B: 논문', title: 'Early History of the Greek Alphabet: New Evidence from Eretria and Methone', authorOrInstitution: 'J.K. Papadopoulos / Antiquity', year: '2016' }

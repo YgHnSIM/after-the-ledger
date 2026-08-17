@@ -404,7 +404,7 @@ export const ArtifactsView: React.FC<ArtifactsViewProps> = ({ initialArtifactId 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '1rem', fontSize: '0.88rem' }}>
                   <div style={{ background: 'var(--bg-surface)', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, marginBottom: '0.25rem' }}>고대 문자 원문 (Original Script)</div>
-                    <div style={{ fontFamily: 'var(--font-serif)', fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-primary)', whiteSpace: 'pre-line' }}>{selectedModalArtifact.inscriptionBreakdown.scriptOriginal}</div>
+                    <div className="ancient-script-display" style={{ fontSize: '1.25rem', fontWeight: 600, color: 'var(--text-primary)', whiteSpace: 'pre-line', lineHeight: 1.6, letterSpacing: '0.06em' }}>{selectedModalArtifact.inscriptionBreakdown.scriptOriginal}</div>
                   </div>
                   <div style={{ background: 'var(--bg-surface)', padding: '0.75rem', borderRadius: 'var(--radius-sm)' }}>
                     <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 700, marginBottom: '0.25rem' }}>학술 라틴어 전사 (Transliteration)</div>

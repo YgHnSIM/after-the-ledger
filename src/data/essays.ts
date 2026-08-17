@@ -1983,7 +1983,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 그러나 예루살렘 왕 압디-헤바가 파라오 아크나톤에게 원군을 요청할 때(EA 286 / 베를린 아시아박물관 VAT 1642), 그는 결코 알파벳이나 자국어를 쓰지 않았다. 앤슨 레이니(Anson F. Rainey)의 고증에 따르면, 서기관들은 서북셈어 통사 구조(VSO)에 아카드어 어휘를 결합한 '가나안-아카드 혼성어(Canaano-Akkadian Interlanguage)'로 편지를 작성했으며, 본문 곳곳에 사선 쐐기 모양의 **글로센카일(Glossenkeil, \\)**을 찍어 현지어 발음(예: EA 286:23 \\ ṣaduq "의롭도다")을 보충 병기했다. 국제 외교 무대에서 통용되는 합법적 공문서는 오직 아카드 쐐기문자뿐이었다.`,
         originalQuote: {
-          originalScript: '1. a-na {disz}LUGAL EN-ia {disz}d.UTU-ia qi2-bi2-ma \t 2. um-ma {disz}ARAD2-khi-ba ARAD2-ka-ma',
+          originalScript: '𒀀 𒈾 𒁹 𒈗 𒂗 𒅀 𒁹 𒀭 𒌓 𒅀 ﻘ 𒁉 𒈠 \n 𒌝 𒈠 𒁹 𒀵 𒄭 𒁀 𒀵 𒅗 𒈠',
           transliteration: 'a-na LUGAL EN-ia d.UTU-ia qi2-bi2-ma / um-ma 1.ARAD2-Hé-ba ARAD2-ka-ma (EA 286:1-2)',
           translationKo: '나의 주군이신 국왕이자 나의 태양께 말씀드립니다. 당신의 종 예루살렘 왕 압디-헤바가 아뢰나이다.',
           sourceCitation: '아마르나 서신 EA 286 (VAT 1642 / CDLI P271171, Vorderasiatisches Museum Berlin)'

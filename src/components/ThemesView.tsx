@@ -39,6 +39,13 @@ export const ThemesView: React.FC<ThemesViewProps> = ({
     initialEssayId || COMPARATIVE_ESSAYS[0].id
   );
 
+  // Sync initialEssayId if passed as prop/URL param
+  useEffect(() => {
+    if (initialEssayId && COMPARATIVE_ESSAYS.some(e => e.id === initialEssayId)) {
+      setActiveEssayId(initialEssayId);
+    }
+  }, [initialEssayId]);
+
   const currentEssay: ComparativeEssay =
     COMPARATIVE_ESSAYS.find((e) => e.id === activeEssayId) || COMPARATIVE_ESSAYS[0];
 
