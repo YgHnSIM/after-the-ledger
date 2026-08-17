@@ -211,23 +211,58 @@
     "essay_title": "7. 무엇이 보존되고 무엇이 사라졌는가?",
     "primary_sources": [
       {
-        "name": "Ashurbanipal Library Cuneiform Tablets (Fired Clay)",
-        "catalog": "Nineveh Collection, British Museum",
-        "target_url": "https://www.britishmuseum.org/collection/term/x-ashurbanipal",
-        "tier": "Tier 2",
-        "extraction_method": "CloakBrowser CDP"
+        "name": "Diary of Merer (Papyrus Jarf A / JE 98115)",
+        "catalog": "Cairo Egyptian Museum JE 98115 / MIFAO 136",
+        "target_url": "https://www.ifao.egnet.net/publications/catalogue/MIFAO-136/",
+        "tier": "Tier 1",
+        "extraction_method": "Tallet 2017 MIFAO 136 / Jina Reader"
       },
       {
-        "name": "Diary of Merer (Wadi al-Jarf Papyrus)",
-        "catalog": "Cairo Egyptian Museum / French Institute Cairo",
-        "target_url": "https://en.wikipedia.org/wiki/Diary_of_Merer",
+        "name": "Pylos Linear B Tablets (PY Ta 711 / Ta 709)",
+        "catalog": "National Archaeological Museum Athens NAM / Bennett 1955",
+        "target_url": "https://www.namuseum.gr/en/collection/mycenaean-antiquities/",
         "tier": "Tier 1",
-        "extraction_method": "Jina Reader extraction"
+        "extraction_method": "Ventris & Chadwick 1973 Documents in Mycenaean Greek"
+      },
+      {
+        "name": "Nineveh Palace Dual Scribes Relief (BM 124955)",
+        "catalog": "British Museum BM 124955 / Sennacherib Southwest Palace",
+        "target_url": "https://www.britishmuseum.org/collection/object/W_1851-0902-484",
+        "tier": "Tier 2",
+        "extraction_method": "CloakBrowser CDP / British Museum Collection"
+      },
+      {
+        "name": "Vindolanda Writing Tablets (Tab. Vindol. II 291)",
+        "catalog": "British Museum / Vindolanda Trust Tab. Vindol. II 291",
+        "target_url": "http://vindolanda.csad.ox.ac.uk/4DLink2/4DACTION/WebRequestTablet?searchTerm=291",
+        "tier": "Tier 1",
+        "extraction_method": "Bowman & Thomas 1994 / Oxford CSAD"
+      },
+      {
+        "name": "City of David Clay Bulla of Gemaryahu ben Shafan",
+        "catalog": "Israel Antiquities Authority IAA 1982-1498 / Area G",
+        "target_url": "https://www.imj.org.il/en/collections/371970",
+        "tier": "Tier 1",
+        "extraction_method": "Shiloh 1986 IEJ / Shoham 2000"
+      },
+      {
+        "name": "Herculaneum Carbonized Papyri (PHerc 1044 / Philodemus)",
+        "catalog": "Biblioteca Nazionale di Napoli Officina dei Papiri PHerc 1044",
+        "target_url": "https://scrollprize.org/",
+        "tier": "Tier 1",
+        "extraction_method": "Seales et al. 2016 Science Advances / Vesuvius Challenge"
       }
     ],
     "scholarly_references": [
       "Bagnall, R. S. (2011). Everyday Writing in the Graeco-Roman East. UC Press.",
-      "Millard, A. (2000). Reading and Writing in the Time of Jesus. Sheffield Academic Press."
+      "Tallet, P. (2017). Les papyrus de la Mer Rouge I: Le Journal de Merer. MIFAO 136.",
+      "Ventris, M., & Chadwick, J. (1973). Documents in Mycenaean Greek. Cambridge.",
+      "Bowman, A. K., & Thomas, J. D. (1994). The Vindolanda Writing Tablets. British Museum.",
+      "Seales, W. B. et al. (2016). Reading the scroll from En-Gedi. Science Advances 2(9): e1601247.",
+      "Baines, J. (2007). Visual and Written Culture in Ancient Egypt. Oxford University Press.",
+      "Millard, A. (2000). Reading and Writing in the Time of Jesus. Sheffield Academic Press.",
+      "Shiloh, Y. (1986). A Group of Hebrew Bullae from the City of David. IEJ 36: 16-38.",
+      "Postgate, J. N., Wang, T., & Wilkinson, T. (1995). The Evidence for Early Writing. Antiquity 69: 459-480."
     ]
   },
   "essay-8-institutions-over-script": {
