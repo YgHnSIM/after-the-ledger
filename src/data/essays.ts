@@ -1237,148 +1237,242 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
     id: 'essay-6-orality-and-text',
     order: 6,
     title: '6. 구전은 문자화 뒤에도 계속되는가?',
-    subtitle: '문자화가 구전을 없애지 않고 새로운 상호작용을 만든 과정',
-    summary: '문자가 도입된다고 해서 기존의 구전 문화가 즉시 사라지지 않는다. 고대 사회에서 문자는 구전 기억을 돕고 낭송하는 보조 도구로 동존했다.',
-    content: `현대인들은 문자와 구전(Orality)을 완전히 대립되는 단계로 생각하지만, 고대 문명에서 문자는 오히려 구전 가창과 낭송을 돕는 촉매였다.
+    subtitle: '문서화된 구전성(Written Orality)과 신체화된 텍스트: 소리, 기억, 그리고 매체의 공진화 2,000년',
+    summary: '문자의 발명은 구전을 일거에 사멸시킨 단절적 혁명이 아니라, 구전 공연을 지탱하고 교육을 통해 인간의 신체에 텍스트를 각인시키는 ‘문서화된 구전성(Written Orality)’과 ‘신체화된 기억(Somatic Internalization)’의 2,000년 공진화 과정이었다.',
+    content: `20세기 미디어 이론이 구축한 '구전 문화(Orality)'와 '문자 문화(Literacy)'의 대립적 2분법은 고대 지중해와 근동의 실제 문자 생활을 심각하게 왜곡했다.
 
-호메로스 서사시는 문자화된 이후에도 시민 광장과 축제에서 눈으로 읽히기보다 귀로 들렸다. 메소포타미아의 찬가와 이집트의 피라미드 텍스트 역시 사제가 현장에서 목소리로 외치는 제의적 낭송과 짝을 이루었다.
+본 논문은 헬레니즘기 바빌론 에사길라 신전의 아키투(Akitu) 신년 축제 대사제 낭송 지침 점토판(Louvre AO 6479)과 《에누마 엘리시》, 플라톤의 《이온》에 나타난 랩소도스의 황홀경 낭송 및 《파이드로스》의 외재적 기억(hypomnesis) 비판, 그리고 띄어쓰기(Scriptio Continua)와 고대 낭독 관습을 둘러싼 가브릴로프(A.K. Gavrilov)와 번잇(M.F. Burnyeat)의 '암브로시우스 묵독 논쟁'(Confessiones VI.3.3)을 정밀 고증한다.
 
-문자는 구전을 대체하여 없앤 것이 아니라, 낭송자에게 정본 기준을 제시하고 기억의 오차를 교정해주는 2차적 보존 장치로 융합되었다.`,
+나아가 서기 200년 미슈나 편찬 이전까지 700년간 유지된 랍비 유대교의 구전 토라 성문화 금령(b. Gittin 60b), 고대 극장(에피다우로스)의 건축 음향학, 세이킬로스 비문 및 파피루스 악보(P.Wien G 2315)를 분석함으로써, 고대 텍스트가 눈으로 소비하는 현대적 출판물이 아니라 목소리와 신체, 공간이 결합된 살아있는 음향적 수행(Vocal Performance)의 매개체였음을 논증한다.`,
     keyTakeaways: [
-      '구전(Orality)과 문자화(Literacy)는 단절적 2분법이 아니라 수세기에 걸쳐 공존하며 서로를 고양시킨 상호보완적 관계였음',
-      '고대 세계에서 묵독(Silent Reading)은 극히 예외적이었으며, 모든 문헌은 본질적으로 소리 내어 읽는 음독(Vocal Performance)을 전제로 작성됨',
-      '바빌로니아 아키투(Akitu) 신년 축제의 창조 서사시 《에누마 엘리시》와 그리스 랩소도스의 서사시 완창은 텍스트를 대본 삼아 수행된 살아있는 구전 제의였음',
-      '월터 옹의 단순 대립 도식을 넘어 로잘린드 토마스의 \'문서화된 구전성(Written Orality)\' 모델로 진화'
+      '구전(Orality)과 문자화(Literacy)는 단절적 2분법(The Great Divide)이 아니라 수세기에 걸쳐 공존하며 서로를 고양시킨 ‘구전-문자 연속체(Oral-Literate Continuum)’였음',
+      '바빌론 아키투(Akitu) 신년 제의에서 대사제가 마르둑 신상 앞에서 《에누마 엘리시》 1,000행을 완창(Louvre AO 6479)했듯, 점토판 문자는 제의적 가창의 우주적 정본 닻이었음',
+      '그리스 랩소도스는 악보를 보고 읽는 낭독자가 아니라 신체적 황홀경 속에서 암기된 시구를 가창하는 연행자(플라톤 《이온》)였으며, 소크라테스는 문자의 외재적 기억 의존을 경계함(《파이드로스》)',
+      '고대 묵독(Silent Reading) 논쟁: 고대인은 일상적 묵독 능력을 갖추고 있었으나(가브릴로프·번잇), 글이란 마땅히 공동체 앞에서 낭독되어야 한다는 ‘청각적 사회 규범’에 따라 음독함',
+      '랍비 유대교의 이중 토라 체계(b. Gittin 60b)는 서기 200년 미슈나 성문화 이전까지 구전 토라의 필사를 엄격히 금지함으로써 기억과 텍스트의 상호 견제와 균형을 제도화함'
     ],
-    civilizationsDiscussed: ['greece', 'mesopotamia', 'egypt', 'israel-judah'],
-    readingTimeMinutes: 7,
+    civilizationsDiscussed: ['mesopotamia', 'greece', 'israel-judah', 'egypt'],
+    readingTimeMinutes: 8,
     relatedArtifactIds: ['homeric-textualization-iliad', 'kesh-temple-hymn', 'standard-epic-of-gilgamesh'],
     crossRefEssayIds: ['essay-3-tomb-writing', 'essay-4-homer-textualization', 'essay-5-biblical-four-dates'],
     sections: [
       {
         id: 'sec-6-1',
         order: 1,
-        headingKo: '1. 문자는 구전을 죽이지 않았다',
-        subheadingKo: '구전 문화와 문자 문화의 잘못된 이분법 해체',
-        content: `20세기 미디어 이론가 마샬 맥루한과 고전문헌학자 월터 옹(Walter J. Ong)은 문자의 발명이 인간의 의식을 시각 중심주의로 재편하며 원초적 구전 문화(Primary Orality)를 완전히 파괴했다고 보았다.
+        headingKo: '1. ‘거대한 분기(The Great Divide)’ 신화의 해체',
+        subheadingKo: '구전 문화와 문자 문화의 잘못된 이분법을 넘어 연속체(Continuum) 모델로',
+        content: `20세기 후반 미디어 이론을 지배한 월터 옹(Walter J. Ong 1982)과 에릭 해블록(Eric Havelock 1963)의 고전적 테제는 문자의 출현이 인류의 인지 구조를 청각 중심의 감각적·즉흥적 구전 세계에서 시각 중심의 추상적·논리적 문자 세계로 단절시켰다는 '거대한 분기론(The Great Divide)'이었다.
 
-그러나 고대 지중해와 근동의 고고학적 비문과 점토판 사료들은 정반대의 현실을 증언한다. 문자가 탄생한 지 2천 년이 지난 고전기 그리스나 헬레니즘 시대에도, 문자는 구전을 대체한 것이 아니라 구전 공연(Performance)을 조직하고, 보증하고, 표준화하는 보조적 무대 장치로 기능했다. 고대 사회는 문자가 지배하는 사회가 아니라, '문자로 강화된 구전 사회(Text-aided Oral Society)'였다.`,
+그러나 루스 피네건(Ruth Finnegan 1977, 1988), 로잘린드 토마스(Rosalind Thomas 1992), 브라이언 스톡(Brian Stock 1983)의 21세기 고전문헌학 및 역사사회학적 실증 연구는 이 도식을 근본적으로 반박한다. 고대 근동과 그리스-로마 세계에서 문자는 구전을 대체하여 파괴한 것이 아니라, 구전 낭송을 증폭하고 제의적 정확성을 통제하며 교육을 통해 신체에 체화되는 **'구전-문자 연속체(Oral-Literate Continuum)'** 속에서 작동했다.`,
         scholarlyCallout: {
           type: 'theory-debate',
-          titleKo: '학술 쟁점: 월터 옹의 단절론 vs 로잘린드 토마스의 공존 융합론',
-          bodyKo: '월터 옹은 문자가 구전을 불가역적으로 해체했다고 보았으나, 케임브리지 고전학자 로잘린드 토마스(Rosalind Thomas)는 고대 아테네에서 비문과 법률 문서가 오히려 시민 광장의 구두 연설, 증언, 종교적 구전 낭송을 증폭시키는 촉매 역할을 했음을 실증했다.'
+          titleKo: '학술 패러다임: 월터 옹의 단절론 vs 로잘린드 토마스의 문서화된 구전성(Written Orality)',
+          bodyKo: '월터 옹은 문자가 구전을 불가역적으로 파괴했다고 보았으나, 케임브리지 고전학자 로잘린드 토마스는 고대 아테네 민주정의 법령 비문 낭독과 도편추방제(Ostraka)처럼 문자가 오히려 구두 연설과 제의적 낭송을 매개·증폭하는 촉매였음을 규명했다.'
         }
       },
       {
         id: 'sec-6-2',
         order: 2,
-        headingKo: '2. 소리 내어 읽기의 문명사: 침묵의 독서 이전의 세계',
-        subheadingKo: '아우구스티누스를 경악시킨 암브로시우스의 묵독',
-        content: `현대인은 글을 읽을 때 입을 굳게 다물고 눈으로만 활자를 스캔한다. 그러나 고대 세계에서 글을 읽는다는 것은 예외 없이 **소리 내어 발성하는 행위(Reading Aloud)**를 의미했다.
+        headingKo: '2. 메소포타미아 아키투 신년제와 《에누마 엘리시》 완창의 제의학',
+        subheadingKo: '바빌론 에사길라 신전 지성소에서 대사제의 성대로 울려 퍼진 1,000행의 서사시 (Louvre AO 6479)',
+        content: `메소포타미아 서기관 문화에서 문학 점토판은 도서관 서가에 고립된 읽기용 책이 아니라 신전 제의의 장엄한 음향적 대본이었다.
 
-띄어쓰기(Scriptio Continua)와 문장부호가 전혀 없던 고대 그리스어 파피루스와 히브리어 두루마리는 눈으로만 봐서는 의미 단위를 끊어 읽을 수 없었다. 독자는 목소리를 내어 혀와 입술로 운율과 음절을 조음(Articulate)해야만 비로소 문장의 통사 구조를 파악할 수 있었다.
+매년 봄 춘분날 바빌론에서 열린 11일간의 **아키투(Akitu) 신년 축제** 제4일 저녁, 에사길라(Esagila) 신전의 최고 대사제(Šešgallu)는 마르둑(Marduk) 신상 앞에 홀로 나아가 창조 서사시 **《에누마 엘리시》(Enūma Eliš)**의 전 7개 점토판(약 1,000행) 전체를 머리부터 끝까지 목소리 높여 완창해야 했다(Louvre AO 6479, lines 279–284).
 
-기원후 4세기 교부 아우구스티누스가 밀라노의 스승 암브로시우스 주교의 방을 방문했을 때, "그는 책을 읽을 때 눈은 페이지를 훑고 마음은 의미를 파악했으나, 그의 혀는 쉬고 목소리는 전혀 나지 않았다"며 이를 기적과도 같은 기이한 장면으로 《고백록》(Confessiones)에 기록한 것은 묵독이 고대 사회에서 얼마나 희귀한 예외였는지를 극적으로 폭로한다.`,
+점토판의 정밀한 쐐기문자는 사제의 기억이 흔들리지 않도록 지탱하는 권위의 기준점이었으며, 텍스트의 생명력은 사제의 성대를 통해 신전의 공기 속으로 진동할 때 비로소 완성되었다.`,
         originalQuote: {
-          originalScript: 'sed cum legebat, oculi ducebantur per paginas et cor intellectum rimabatur, vox autem et lingua quiescebant.',
-          transliteration: 'sed cum legebat, oculi ducebantur per paginas et cor intellectum rimabatur, vox autem et lingua quiescebant.',
-          translationKo: '그러나 그가 책을 읽을 때 그의 눈은 페이지를 이끌고 마음은 의미를 꿰뚫었으나, 목소리와 혀는 완전히 고요하였다.',
-          sourceCitation: '아우구스티누스 《고백록》 제6권 3장 (Augustine, Confessiones VI.3)'
+          originalScript: 'ina kīṣ ūmi šešgallu ša É.SAG.ÍL Enūma eliš ultu rēšišu adi qītišu ana Bēl imannu.',
+          transliteration: 'ina kīṣ ūmi šešgallu ša É.SAG.ÍL Enūma eliš ultu rēšišu adi qītišu ana Bēl imannu.',
+          translationKo: '니산누월 제4일 해 질 무렵, 에사길라의 최고 대사제(셰시갈루)는 마르둑 신전 지성소에서 창조 서사시 《에누마 엘리시》를 그 첫 머리부터 맨 끝 행까지 벨(마르둑) 신상 앞에서 완창(암송)한다.',
+          sourceCitation: '루브르 박물관 소장 헬레니즘기 바빌론 아키투 제의 점토판 (Louvre AO 6479, Col. IV, lines 281–283; Linssen 2004: 215)'
         }
       },
       {
         id: 'sec-6-3',
         order: 3,
-        headingKo: '3. 아키투 신년제와 《에누마 엘리시》의 제의적 낭송',
-        subheadingKo: '바빌론 에사길라 신전에서 대사제의 목소리로 가창된 텍스트',
-        content: `메소포타미아에서도 문학 점토판은 책장에 꽂아두고 읽는 서적이 아니라, 국가 제의에서 소리로 울려 퍼지는 제전의 대본이었다.
+        headingKo: '3. 그리스 랩소도스의 낭송 지팡이와 플라톤의 《이온》·《파이드로스》',
+        subheadingKo: '호메로스 낭송가들의 신체적 황홀경(Ion 535b–e)과 외재적 기억(Phaedrus 274c–275b) 비판',
+        content: `고대 그리스의 전문 낭송가 랩소도스(Rhapsodos, '노래를 꿰매는 자')들은 리라 반주 대신 단단한 나무 지팡이(Rhabdos)로 바닥을 내리치며 6각운 박자를 맞추었다.
 
-매년 봄 춘분날 바빌론에서 열린 11일간의 **아키투(Akitu) 신년 축제** 제4일 저녁, 에사길라 신전의 최고 대사제(Šešgallu)는 마르둑(Marduk) 신상 앞에 홀로 나아가 창조 서사시 **《에누마 엘리시》(Enuma Elish)**의 전 7개 점토판(약 1,000행) 전체를 머리부터 끝까지 목소리 높여 완창해야 했다. 
+플라톤의 대화편 《이온》(Ion 535b–e)에서 랩소도스 이온은 수만 명의 관중 앞에서 서사시를 읊을 때 "눈에 눈물이 가득 차고 심장이 요동치며 머리칼이 쭈뼛 선다"고 고백한다. 랩소도스는 파피루스를 손에 들고 읽는 낭독자가 아니라 신체적 전율 속에서 텍스트를 체화하여 청중을 도취시키는 연행자였다.
 
-점토판의 정밀한 쐐기문자는 사제의 기억이 흔들리지 않도록 지탱하는 권위의 기준점이었으며, 텍스트의 생명력은 사제의 성대를 통해 신전의 공기 속으로 진동할 때 비로소 완성되었다.`,
+반면 플라톤은 《파이드로스》(Phaedrus 274c–275b) 테우트(Theuth) 신화를 통해, 문자가 인간의 내면적 기억(mneme)을 파괴하고 외재적 기호에 의존하는 허위 지혜(hypomnesis)를 낳을 것이라는 문명사적 경고를 남겼다.`,
         originalQuote: {
-          originalScript: '𒂊 𒉡 𒈠 \t 𒂊 𒇺 \t 𒆷 \t 𒈾 𒁍 \t 𒌑 \t 𒊭 𒈠 𒈬',
-          transliteration: 'e-nu-ma e-liš la na-bu-ú šá-ma-mu',
-          translationKo: '위로 하늘의 이름이 아직 불리지 않았고, 아래로 굳건한 땅의 이름이 지어지지 않았을 때...',
-          sourceCitation: '에누마 엘리시 제1점토판 표제행 (BM K.3473)'
+          originalScript: 'ὅταν γὰρ ἐλεινόν τι εἴπω, δακρύων ἐμπίπλανταί μου οἱ ὀφθαλμοί· ὅταν τε φοβερὸν ἢ δεινόν, ὀρθαὶ αἱ τρίχες ἵστανται ὑπὸ φόβου καὶ ἡ καρδία πηδᾷ.',
+          transliteration: 'hotan gar eleinon ti eipō, dakryōn empiplantai mou hoi ophthalmoi; hotan te phoberon ē deinon, orthai hai trikhes histantai hypo phobou kai hē kardia pēda.',
+          translationKo: '슬픈 대목을 읊을 때면 제 눈에는 눈물이 가득 차고, 공포스럽고 무서운 대목을 읊을 때면 머리칼이 쭈뼛 서고 심장이 요동칩니다!',
+          sourceCitation: '플라톤 대화편 《이온》 (Plato, Ion 535c)'
         }
       },
       {
         id: 'sec-6-4',
         order: 4,
-        headingKo: '4. 랩소도스의 지팡이와 악보로서의 파피루스',
-        subheadingKo: '호메로스 낭송가들의 지팡이(Rhabdos)와 텍스트의 관계',
-        content: `고대 그리스의 전문 낭송가 랩소도스(Rhapsodos, '노래를 꿰매는 자')들은 리라 반주 대신 단단한 나무 지팡이(Rhabdos)로 바닥을 내리치며 6각운 박자를 맞추었다.
+        headingKo: '4. 침묵의 독서 이전의 세계: 스크립티오 콘티누아와 고대 독서사 논쟁',
+        subheadingKo: '아우구스티누스 《고백록》(VI.3.3) 암브로시우스 묵독의 실상과 가브릴로프·번잇의 문헌학적 교감',
+        content: `고대 그리스-로마 파피루스는 단어 사이의 띄어쓰기가 전혀 없는 **스크립티오 콘티누아(Scriptio Continua)**로 작성되었다.
 
-그들의 손에 들린 호메로스 파피루스 두루마리는 현대의 독서용 책이 아니라, 음악의 **악보(Score)**와 같았다. 낭송가는 텍스트를 글자 그대로 암기하면서도, 청중의 반응과 축제의 열기에 따라 목소리의 억양(Pitch), 휴지(Pause), 표정 연기를 즉흥적으로 덧입혔다. 문자는 구전의 즉흥성을 질식시킨 것이 아니라, 광활한 제국과 폴리스 전역에서 동일한 서사시의 뼈대를 오차 없이 울려 퍼지게 만든 표준 악보였다.`,
-        scholarlyCallout: {
-          type: 'comparative-insight',
-          titleKo: '비교 통찰: 유대교 토라 칸틸레이션(Cantillation)과 그리스 낭송',
-          bodyKo: '유대교 회당에서 토라 두루마리를 읽을 때도 단순 낭독이 아닌 정교한 음악적 억양 부호인 테아밈(Te\'amim, 칸틸레이션)에 맞추어 노래하듯 읊는다. 문자는 언제나 성스러운 멜로디의 뼈대였다.'
+아우구스티누스가 《고백록》(Confessiones VI.3.3)에서 스승 암브로시우스 주교가 "눈은 페이지를 훑고 마음은 의미를 파악했으나 목소리와 혀는 쉬고 있었다"며 놀라워한 일화는 오랫동안 '고대 묵독 불능설(녹스-발로그 가설)'의 근거로 쓰였다.
+
+그러나 21세기 고전문헌학(Gavrilov 1997, Burnyeat 1997)은 고대 그리스-로마인들이 일상적 묵독 능력을 보유하고 있었음을 실증했다. 암브로시우스의 묵독은 연이은 설교로 혹사당한 성대를 보존하기 위한(vocis servandae causa) 조치였으며, 고대 사회에서 음독(Reading Aloud)이 일반적이었던 이유는 생리적 한계가 아니라 지식을 공동체와 소리 내어 공유해야 한다는 **'청각적 사회 규범(Acoustic Decorum)'** 때문이었다.`,
+        originalQuote: {
+          originalScript: 'sed cum legebat, oculi ducebantur per paginas et cor intellectum rimabatur, vox autem et lingua quiescebant.',
+          transliteration: 'sed cum legebat, oculi ducebantur per paginas et cor intellectum rimabatur, vox autem et lingua quiescebant.',
+          translationKo: '그러나 그가 글을 읽을 때 그의 눈은 페이지 위를 지나가고 그의 마음은 의미를 파헤쳤으나, 그의 목소리와 혀는 온전히 쉬고 있었다.',
+          sourceCitation: '아우구스티누스 《고백록》 제6권 3장 (Augustine, Confessiones VI.3.3)'
         }
       },
       {
         id: 'sec-6-5',
         order: 5,
-        headingKo: '5. 결론: 문자는 구전의 대체물이 아닌 기억의 외재화 증폭기였다',
-        subheadingKo: '소리와 글자의 위대한 공존이 빚어낸 고대 문명',
-        content: `고대 세계에서 문자와 구전은 승자와 패자의 관계가 아니었다. 구전은 텍스트에 감정과 생명, 현장성의 숨결을 불어넣었고, 문자는 시간과 공간의 풍화 속에서 흩어지기 쉬운 구전의 기억에 영원성과 표준성의 닻을 내렸다.
+        headingKo: '5. 고대 이스라엘의 구전 토라 금령과 랍비 서기관 문화',
+        subheadingKo: '‘기록된 토라’와 ‘구전 토라’의 상호 견제와 700년간의 성문화 금지 원칙 (b. Gittin 60b)',
+        content: `고대 이스라엘과 초기 유대교는 문자화와 구전성의 상호작용을 가장 정교한 법률 체계로 발전시켰다.
 
-우리가 오늘날 고전문헌이라 부르는 위대한 텍스트들은 모두 눈으로 읽히기 전에 수천만 번 귀로 들렸던 음성 언어의 기념비들이다. 문자를 이해하기 위해서는 언제나 그 글자 밑바닥에서 고동치는 고대인들의 생생한 육성을 함께 들어야 한다.`
+바빌로니아 탈무드 《기틴》(b. Gittin 60b)에 명시된 원칙에 따르면, 성문 토라(Torah she-bikhtav)는 회당 예배 시 반드시 두루마리를 펴고 소리 내어 낭독해야 했으며(암기 낭송 금지), 반대로 구전 토라(Torah she-be'al peh)는 스승과 제자의 구두 문답(Girsa)으로만 전승되어야 했고 책으로 필사하는 것이 엄격히 금지되었다.
+
+기원후 200년경 랍비 유다 하나시가 《미슈나》(Mishnah)를 편찬하기 전까지 700년간 유지된 이 성문화 금령은, 텍스트의 고정적 권위와 인간 기억의 유연한 해석 능력을 상호 견제시킨 독보적인 지적 제도였다.`,
+        originalQuote: {
+          originalScript: 'דברים שבכתב אי אתה רשאי לאומרן על פה, ודברים שבעל פה אי אתה רשאי לאומרן בכתב',
+          transliteration: 'Dəḇārīm še-biḵṯāḇ ʾên ʾattāh rāšay ləʾomrān ʿal peh, ū-ḏəḇārīm še-bəʿal peh ʾên ʾattāh rāšay ləʾomrān biḵṯāḇ.',
+          translationKo: '기록된 말씀(성문 토라)을 책 없이 입으로만 외워 말해서는 안 되며, 구전된 말씀(구전 토라)을 글자로 기록하여 책으로 읽어서는 안 된다.',
+          sourceCitation: '바빌로니아 탈무드 기틴 60b (Talmud Bavli, Gittin 60b)'
+        }
+      },
+      {
+        id: 'sec-6-6',
+        order: 6,
+        headingKo: '6. 매체 물질성과 음향 하드웨어: 악보 비문과 극장 음향학',
+        subheadingKo: '세이킬로스 비문(IK Ephesos 17a), 에우리피데스 악보 파피루스(P.Wien G 2315) 및 에피다우로스 극장',
+        content: `구전 공연 문화는 고도의 물질적 매체와 건축 음향학에 의해 지탱되었다.
+
+기원전 200년경의 빈 에우리피데스 파피루스(P.Wien G 2315)와 1~2세기경 소아시아의 세이킬로스 비문(Seikilos Epitaph, IK Ephesos 17a)은 고대 그리스인들이 시구 위에 정밀한 성악 음표와 리듬 기호를 직접 기록했음을 실증한다.
+
+또한 14,000석 규모의 에피다우로스(Epidaurus) 원형 극장은 다공성 석회암 좌석으로 축조되어 관객의 웅성거림과 바람 소리 같은 저주파 소음을 차단하고, 500Hz 이상의 인간 육성만을 객석 최상단까지 선명하게 전달하는 음향 하드웨어였다. 문자와 신체, 그리고 건축 공간이 삼위일체로 결합된 음향적 문명이었던 것이다.`,
+        scholarlyCallout: {
+          type: 'epigraphic-discovery',
+          titleKo: '물질 금석학: 세이킬로스 묘비명(IK Ephesos 17a)의 음악적 가치',
+          bodyKo: '현존하는 세계 최고(最古)의 완전한 악보인 세이킬로스 비문은 가사 위에 알파벳 변형 음표(Notes)와 장단 기호(Stigmē)가 완벽히 음각되어 있어, 텍스트가 고대인에게 본질적으로 노래이자 낭송이었음을 물질적으로 증명한다.'
+        }
       }
     ],
     primarySources: [
       {
         id: 'src-6-1',
         artifactId: 'standard-epic-of-gilgamesh',
-        nameKo: '에누마 엘리시 제4점토판 (아키투 신년제 가창본)',
-        nameEnOrOriginal: 'Enuma Elish Tablet IV (Babylonian Akitu Recitation)',
-        catalogNo: 'British Museum K.3473',
-        institution: 'The British Museum, London',
+        nameKo: '바빌론 아키투 신년제 제의 점토판 (에사길라 신전 프로그램)',
+        nameEnOrOriginal: 'Babylonian Akitu Ritual Tablet (Louvre AO 6479 / DT 15+)',
+        catalogNo: 'Musée du Louvre AO 6479',
+        institution: 'Musée du Louvre, Paris',
         dateVector: {
           eventDateBCE: 1800,
           compositionDateBCE: 1200,
-          redactionDateBCE: 700,
-          witnessDateBCE: 650
+          redactionDateBCE: 600,
+          witnessDateBCE: 250
         },
-        originalScript: '𒂊 𒉡 𒈠 \t 𒂊 𒇺',
-        transliteration: 'e-nu-ma e-liš',
-        translationKo: '위로 하늘의 이름이 불리지 않았을 때 (바빌론 아키투 축제 대사제 낭송 의식 본문)',
+        originalScript: 'ina kīṣ ūmi šešgallu ša É.SAG.ÍL Enūma eliš ultu rēšišu adi qītišu ana Bēl imannu.',
+        transliteration: 'ina kīṣ ūmi šešgallu ša É.SAG.ÍL Enūma eliš ultu rēšišu adi qītišu ana Bēl imannu.',
+        translationKo: '니산누월 제4일 해 질 무렵, 에사길라의 최고 대사제(셰시갈루)는 마르둑 신전 지성소에서 창조 서사시 《에누마 엘리시》를 그 첫 머리부터 맨 끝 행까지 벨(마르둑) 신상 앞에서 완창한다.',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '대영박물관 소장 점토판 고해상도 디지털 재접합 및 eBL 데이터베이스 연계',
-        notes: '신아시리아 니네베 아슈르바니팔 도서관 출토본.'
+        epigraphyMethod: '루브르 박물관 소장 셀레우코스조 쐐기문자 점토판 고해상도 판독 (Linssen 2004, Lambert 2013)',
+        notes: '아키투 신년제 4일차에 《에누마 엘리시》 1,000행 완창을 의무 규정한 1차 사료.'
+      },
+      {
+        id: 'src-6-2',
+        artifactId: 'homeric-textualization-iliad',
+        nameKo: '아우구스티누스 《고백록》 암브로시우스 독서 관찰 대목',
+        nameEnOrOriginal: 'Augustine, Confessiones VI.3.3 (Ambrose Silent Reading Locus)',
+        catalogNo: 'CCSL 27 (Corpus Christianorum Series Latina)',
+        institution: 'Biblioteca Apostolica Vaticana',
+        dateVector: {
+          eventDateBCE: 0,
+          compositionDateBCE: 0,
+          redactionDateBCE: 0,
+          witnessDateBCE: 0
+        },
+        originalScript: 'sed cum legebat, oculi ducebantur per paginas et cor intellectum rimabatur, vox autem et lingua quiescebant.',
+        transliteration: 'sed cum legebat, oculi ducebantur per paginas et cor intellectum rimabatur, vox autem et lingua quiescebant.',
+        translationKo: '그러나 그가 글을 읽을 때 그의 눈은 페이지 위를 지나가고 그의 마음은 의미를 파헤쳤으나, 그의 목소리와 혀는 온전히 쉬고 있었다.',
+        sourceGrade: 'Grade A',
+        epigraphyMethod: 'CCSL 27 라틴 교감본 및 가브릴로프(1997)·번잇(1997) 고전학 교차 검증',
+        notes: '고대 묵독 및 음독 관행 연구의 세계적 표준 텍스트.'
+      },
+      {
+        id: 'src-6-3',
+        artifactId: 'homeric-textualization-iliad',
+        nameKo: '세이킬로스 묘비명 음악 비문 (완전한 고대 그리스 악보)',
+        nameEnOrOriginal: 'Seikilos Epitaph (IK Ephesos 17a / I.Tralleis 219)',
+        catalogNo: 'Copenhagen National Museum 14897',
+        institution: 'National Museum of Denmark, Copenhagen',
+        dateVector: {
+          eventDateBCE: 0,
+          compositionDateBCE: 0,
+          redactionDateBCE: 0,
+          witnessDateBCE: 0
+        },
+        originalScript: 'Ὅσον ζῇς φαίνου, μηδὲν ὅλως σὺ λυποῦ· πρὸς ὀλίγον ἐστὶ τὸ ζῆν, τὸ τέλος ὁ χρόνος ἀπαιτεῖ.',
+        transliteration: 'Hoson zēis phainou, mēden holōs sy lypou; pros oligon esti to zēn, to telos ho khronos apaitei.',
+        translationKo: '살아있는 동안 그대 환하게 빛나라. 결코 슬퍼하지 말라. 인생은 찰나에 불과하고, 시간은 끝을 재촉하니.',
+        sourceGrade: 'Grade A',
+        epigraphyMethod: '대리석 원통형 기둥 음각 비문 실측 및 고대 그리스 악보 표기(Ionian alphabet notes) 해독',
+        notes: '가사 위에 성악 음표와 리듬 기호가 보존된 인류 최초의 완전한 악보 비문.'
       }
     ],
     scholarlyDebates: [
       {
         id: 'deb-6-1',
-        topic: '고대 사회의 문해력과 구전성의 관계: 낭송의 지배인가, 문서 행정의 지배인가?',
+        topic: '고대 구전성과 문자성의 관계: 단절적 대립(The Great Divide) vs 구전-문서 연속체(Written Orality)',
         thesisA: {
-          scholarOrSchool: '윌리엄 V. 해리스 (William V. Harris, 1989)',
-          eraOrYear: '1989',
-          claimKo: '고대 그리스와 로마 사회의 전반적 문해율은 10~15%를 결코 넘지 못했으며, 사회 대다수는 철저한 구전성에 의존했다.',
-          keyEvidence: '문자 교육 기구의 부재와 일반 농민·노예 계층의 서명 불가(Agraphoi) 기록.'
+          scholarOrSchool: '월터 J. 옹 & 에릭 해블록 (Walter J. Ong 1982; Eric Havelock 1963)',
+          eraOrYear: '1963–1982',
+          claimKo: '문자의 등장은 인간의 의식을 청각에서 시각으로 단절시켰으며, 원초적 구전 문화(Primary Orality)를 근본적으로 파괴했다.',
+          keyEvidence: '문자화 이후 분석적·추상적 철학 담론의 대두 및 구전 시가의 쇠퇴.'
         },
         thesisB: {
-          scholarOrSchool: '로잘린드 토마스 (Rosalind Thomas, 1992)',
-          eraOrYear: '1992',
-          claimKo: '문해율 통계보다 중요한 것은 비문해자조차 공공 비문과 법정 문서의 권위를 신뢰하고 구두로 활용했던 \'문서화된 구전 문화\'의 침투력이다.',
-          keyEvidence: '아테네 도편추방제 도편(Ostraka)의 대리 필사 및 민회 법령 비문 낭독 관행.'
+          scholarOrSchool: '로잘린드 토마스 & 루스 피네건 (Rosalind Thomas 1992; Ruth Finnegan 1988)',
+          eraOrYear: '1988–1992',
+          claimKo: '고대 사회에서 문자는 구전을 파괴한 것이 아니라, 공공 연설·제의 낭송·법률 포고 등 구전 활동을 매개하고 증폭하는 연속체로 공존했다.',
+          keyEvidence: '아테네 민주정의 법령 비문 낭독 관행, 도편추방제 대리 필사, 랩소도스의 텍스트 암기 공연.'
         },
-        consensusStatus: '현대 고전학계는 정량적 저문해율(Harris)을 인정하면서도 정성적인 구전-문서 융합 문화(Thomas)의 영향력을 핵심으로 파악함.'
+        consensusStatus: '현대 고전학 및 매체사는 월터 옹의 단절론을 지양하고 로잘린드 토마스의 문서화된 구전성(Written Orality)을 학계의 표준 패러다임으로 수용함.'
+      },
+      {
+        id: 'deb-6-2',
+        topic: '고대 묵독(Silent Reading)의 가능성: 인지적 불능설 vs 사회적·청각적 낭독 규범론',
+        thesisA: {
+          scholarOrSchool: '베르나르트 녹스 & 요제프 발로그 (Bernard Knox 1968; J. Balogh 1927)',
+          eraOrYear: '1927–1968',
+          claimKo: '띄어쓰기(Scriptio Continua) 부재로 인해 고대인은 묵독을 수행할 수 없었으며, 아우구스티누스는 암브로시우스의 기적적 묵독을 보고 경악했다.',
+          keyEvidence: '아우구스티누스 《고백록》(VI.3)의 충격 묘사 및 중세 이전 묵독 기록의 희소성.'
+        },
+        thesisB: {
+          scholarOrSchool: 'A.K. 가브릴로프 & M.F. 번잇 (A.K. Gavrilov 1997; M.F. Burnyeat 1997)',
+          eraOrYear: '1997',
+          claimKo: '고대 그리스-로마 지식인은 일상적으로 묵독 역량을 보유하고 있었으며, 음독은 생리적 한계가 아닌 지식을 공동체와 나누는 청각적 사회 규범(Decorum)이었다.',
+          keyEvidence: '에우리피데스 《히폴리토스》 및 아리스토파네스 희극의 묵독 묘사, 암브로시우스의 성대 보호 목적(vocis servandae causa).'
+        },
+        consensusStatus: '현대 고전문헌학계는 가브릴로프와 번잇의 논증을 받아들여 묵독 불능설을 폐기하고, 음독을 사회문화적 수행 규범으로 재정의함.'
+      },
+      {
+        id: 'deb-6-3',
+        topic: '고대 텍스트 수용의 본질: 외재적 참조 악보(Score) vs 신체화된 기억과 내면화(Somatic Internalization)',
+        thesisA: {
+          scholarOrSchool: '현대 인쇄 문화적 관점 (Print-Culture Analogy)',
+          eraOrYear: '20세기 중반',
+          claimKo: '고대 낭송가와 사제들은 현대 연주자처럼 파피루스와 점토판을 옆에 두고 보조 악보로 참조하며 공연했다.',
+          keyEvidence: '파피루스 두루마리의 악보적 비유 및 필사본 유통.'
+        },
+        thesisB: {
+          scholarOrSchool: '데이비드 M. 카 & 카렐 반 데르 토른 (David M. Carr 2005; Karel van der Toorn 2007)',
+          eraOrYear: '2005–2007',
+          claimKo: '고대 서기관과 공연자에게 텍스트는 곁눈질하는 대본이 아니라, 수십 년의 암기와 체화를 통해 ‘마음의 서판에 새겨진(Writing on the Tablets of the Heart)’ 신체화된 지식이었다.',
+          keyEvidence: '고대 근동 에두바(Eduba) 교육의 암기 필사 훈련 및 탈무드의 암송(Girsa) 체계, 플라톤 《이온》의 무대 증언.'
+        },
+        consensusStatus: '고대 근동 및 성서학계는 데이비드 카의 신체화·체화 모델을 수용하여 텍스트의 내면적 암기-수행 통합성을 표준으로 확립함.'
       }
     ],
     bibliography: [
       {
         id: 'bib-6-1',
-        sourceGrade: 'Grade B',
-        author: 'Ong, Walter J.',
-        year: 1982,
-        title: 'Orality and Literacy: The Technologizing of the Word',
-        publication: 'London: Methuen.'
-      },
-      {
-        id: 'bib-6-2',
         sourceGrade: 'Grade A',
         author: 'Thomas, Rosalind',
         year: 1992,
@@ -1386,7 +1480,79 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
         publication: 'Cambridge: Cambridge University Press.'
       },
       {
+        id: 'bib-6-2',
+        sourceGrade: 'Grade A',
+        author: 'Carr, David M.',
+        year: 2005,
+        title: 'Writing on the Tablets of the Heart: Origins of Scripture and Literature',
+        publication: 'Oxford: Oxford University Press.'
+      },
+      {
         id: 'bib-6-3',
+        sourceGrade: 'Grade A',
+        author: 'Lambert, W. G.',
+        year: 2013,
+        title: 'Babylonian Creation Myths',
+        publication: 'Mesociv 2. Winona Lake: Eisenbrauns.'
+      },
+      {
+        id: 'bib-6-4',
+        sourceGrade: 'Grade A',
+        author: 'Linssen, Marc J. H.',
+        year: 2004,
+        title: 'The Cults of Uruk and Babylon: The Temple Ritual Texts of the First Millennium BC',
+        publication: 'Cuneiform Monographs 25. Leiden: Brill.'
+      },
+      {
+        id: 'bib-6-5',
+        sourceGrade: 'Grade A',
+        author: 'Saenger, Paul',
+        year: 1997,
+        title: 'Space Between Words: The Origins of Silent Reading',
+        publication: 'Stanford: Stanford University Press.'
+      },
+      {
+        id: 'bib-6-6',
+        sourceGrade: 'Grade A',
+        author: 'Gavrilov, A. K.',
+        year: 1997,
+        title: 'Techniques of Reading in Antiquity',
+        publication: 'Classical Quarterly 47(1): 56–73.'
+      },
+      {
+        id: 'bib-6-7',
+        sourceGrade: 'Grade A',
+        author: 'Burnyeat, M. F.',
+        year: 1997,
+        title: 'Postscript on Silent Reading',
+        publication: 'Classical Quarterly 47(1): 74–76.'
+      },
+      {
+        id: 'bib-6-8',
+        sourceGrade: 'Grade A',
+        author: 'Nagy, Gregory',
+        year: 1996,
+        title: 'Poetry as Performance: Homer and Beyond',
+        publication: 'Cambridge: Cambridge University Press.'
+      },
+      {
+        id: 'bib-6-9',
+        sourceGrade: 'Grade A',
+        author: 'Van der Toorn, Karel',
+        year: 2007,
+        title: 'Scribal Culture and the Making of the Hebrew Bible',
+        publication: 'Cambridge, MA: Harvard University Press.'
+      },
+      {
+        id: 'bib-6-10',
+        sourceGrade: 'Grade B',
+        author: 'Ong, Walter J.',
+        year: 1982,
+        title: 'Orality and Literacy: The Technologizing of the Word',
+        publication: 'London: Methuen.'
+      },
+      {
+        id: 'bib-6-11',
         sourceGrade: 'Grade B',
         author: 'Harris, William V.',
         year: 1989,

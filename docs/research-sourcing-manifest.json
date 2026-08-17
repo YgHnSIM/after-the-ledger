@@ -173,16 +173,38 @@
     "essay_title": "6. 구전은 문자화 뒤에도 계속되는가?",
     "primary_sources": [
       {
-        "name": "Enuma Elish Tablet IV (Babylonian Akitu Recitation)",
-        "catalog": "British Museum K.3473",
-        "target_url": "https://www.britishmuseum.org/collection/object/W_K-3473",
-        "tier": "Tier 2",
-        "extraction_method": "British Museum Collection API / CloakBrowser"
+        "name": "Babylonian Akitu Ritual Program Tablet (AO 6479 / DT 15+)",
+        "catalog": "Musée du Louvre AO 6479",
+        "target_url": "https://collections.louvre.fr/en/ark:/53355/cl010118671",
+        "tier": "Tier 1",
+        "extraction_method": "Linssen 2004 / Lambert 2013 cuneiform collation"
+      },
+      {
+        "name": "Augustine Confessiones VI.3.3 (Ambrose Silent Reading Locus)",
+        "catalog": "CCSL 27 (Corpus Christianorum Series Latina)",
+        "target_url": "https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.02.0004",
+        "tier": "Tier 1",
+        "extraction_method": "CCSL 27 / Gavrilov 1997 Classical Quarterly"
+      },
+      {
+        "name": "Seikilos Epitaph Musical Inscription",
+        "catalog": "IK Ephesos 17a / Copenhagen National Museum 14897",
+        "target_url": "https://samlinger.natmus.dk/as/asset/17929",
+        "tier": "Tier 1",
+        "extraction_method": "Epigraphical squeeze / Pöhlmann & West 2001 Documents of Ancient Greek Music"
       }
     ],
     "scholarly_references": [
-      "Ong, W. J. (1982). Orality and Literacy: The Technologizing of the Word. Methuen.",
-      "Thomas, R. (1992). Literacy and Orality in Ancient Greece. Cambridge University Press."
+      "Thomas, R. (1992). Literacy and Orality in Ancient Greece. Cambridge University Press.",
+      "Carr, D. M. (2005). Writing on the Tablets of the Heart. Oxford University Press.",
+      "Lambert, W. G. (2013). Babylonian Creation Myths. Eisenbrauns.",
+      "Linssen, M. J. H. (2004). The Cults of Uruk and Babylon. Brill.",
+      "Saenger, P. (1997). Space Between Words: The Origins of Silent Reading. Stanford University Press.",
+      "Gavrilov, A. K. (1997). Techniques of Reading in Antiquity. Classical Quarterly 47(1): 56-73.",
+      "Burnyeat, M. F. (1997). Postscript on Silent Reading. Classical Quarterly 47(1): 74-76.",
+      "Nagy, G. (1996). Poetry as Performance: Homer and Beyond. Cambridge University Press.",
+      "Van der Toorn, K. (2007). Scribal Culture and the Making of the Hebrew Bible. Harvard University Press.",
+      "Ong, W. J. (1982). Orality and Literacy: The Technologizing of the Word. Methuen."
     ]
   },
   "essay-7-preservation-bias": {
