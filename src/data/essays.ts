@@ -643,103 +643,112 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
     id: 'essay-4-homer-textualization',
     order: 4,
     title: '4. 호메로스는 언제 텍스트가 되었는가?',
-    subtitle: '구전 운율 서사시에서 아테네 정본 텍스트로의 전환과 알파벳 가설',
-    summary: '호메로스 서사시는 한 번의 붓질로 완성된 책이 아니다. 수백 년 구전 전승이 알파벳 보급 및 아테네 파나테나이아 축제 정본 기획과 만나 비로소 고정되었다.',
-    content: `그리스 알파벳의 등장(c. 775 BCE) 이후 호메로스의 《일리아스》와 《오디세이아》가 어떤 과정을 거쳐 문헌 텍스트가 되었는지는 서양 고전학의 가장 뜨거운 논쟁이다.
+    subtitle: '구전 운율 서사시에서 아테네 축제 정본과 알렉산드리아 비평본으로: 다형성과 문자화의 800년',
+    summary: '호메로스 서사시는 한 번의 붓질로 완성된 책이 아니다. 미케네 붕괴 후 400년 구전 암흑기를 거쳐 알파벳 도입, 아테네 파나테나이아 축제 낭송 법제화, 알렉산드리아 도서관 비평 기호학이 800년에 걸쳐 유기적으로 빚어낸 다형적 결정체였다.',
+    content: `그리스 알파벳의 등장(c. 775 BCE) 이후 호메로스의 《일리아스》와 《오디세이아》가 어떤 역사적 과정을 거쳐 고정된 문헌 텍스트로 정착되었는가는 서양 고전학의 가장 중심적인 화두(The Homeric Question)이다.
 
-초기 알파벳 유물인 디필론 암포라와 네스토르의 잔은 알파벳이 초기부터 시적 운율(Hexameter) 및 향연 유희와 깊게 연결되었음을 보여준다. 그러나 수만 행에 달하는 거대한 서사시가 양피지나 파피루스 텍스트로 고정된 것은 BCE 6세기 아테네의 참주 페이시스트라토스 시대의 파나테나이아 국가 축제 낭송 기획과 결합하면서였다.
+초기 알파벳 금석문인 디필론 오이노코에와 네스토르의 잔은 알파벳이 회계 장부가 아닌 춤과 향연의 운율(아이암보스 3보격 및 6각운) 표기와 밀접히 결합되었음을 보여준다. 방대한 서사시가 국가적 텍스트로 고정된 것은 BCE 6세기 아테네 참주 페이시스트라토스의 파나테나이아 축제 랩소도스 낭송 규칙(ex hypolepseos)과 헬레니즘 알렉산드리아 도서관의 엄밀한 비평 기호학(오벨로스 등)을 통해서였다.
 
-구전 가창의 유연성과 알파벳 텍스트의 고정성이 만남으로써 비로소 Western Canon의 첫 서사시 정전이 출현했다.`,
+구전 가창의 생명력과 알파벳 텍스트의 고정성이 800년에 걸쳐 공진화함으로써 서구 문학의 영원한 정전(Canon)이 탄생했다.`,
     keyTakeaways: [
-      '미케네 Linear B 붕괴 후 400년간 이어진 구전 암흑기(Dark Ages)를 거쳐 페니키아 자음 문자를 모음화한 그리스 알파벳 재탄생',
-      '최고(最古)의 알파벳 유물(디필론 오이노코에, 네스토르의 잔)은 회계 장부가 아닌 춤 경연과 음주 향연의 6각운(Dactylic Hexameter) 시 구절을 담음',
-      '아테네 참주 페이시스트라토스(BCE 6세기)의 파나테나이아 축제 정본 기획을 통해 랩소도스 낭송 순서와 텍스트가 국가적으로 고정됨',
-      '하버드 호메로스 멀티텍스트(HMP) 프로젝트와 Venetus A 사본 연구가 밝혀낸 다형성(Multiformity)과 알렉산드리아 도서관의 비평 기호학(오벨로스 등)'
+      '미케네 Linear B 붕괴(c. 1200 BCE) 후 400년의 구전 암흑기를 거쳐 기원전 8세기 중엽 페니키아 자음을 모음화한 그리스 알파벳 탄생',
+      '최고(最古)의 알파벳 유물(디필론 오이노코에, 네스토르의 잔)은 장부가 아닌 춤 경연과 향연의 운율(아이암보스 3보격 및 6각운) 표기를 담음',
+      '배리 파월의 6각운 전용 어댑터 가설과 에우보이아 해상 무역 접촉 지대(피테쿠사이, 에레트리아, 메토네)의 다언어 교역 모델 통합',
+      '아테네 참주 페이시스트라토스의 파나테나이아 축제 낭송 규칙(ex hypolepseos)을 통한 서사시 공연 순서의 법제화',
+      '알렉산드리아 도서관학파(제노도토스, 아리스타르코스)의 비평 기호학(오벨로스, 디플레이 등)과 프톨레마이오스 ‘야생 파피루스’의 15% 잉여 행 역설',
+      '하버드 HMP 프로젝트의 Venetus A(Marcianus Graecus Z. 454)와 그레고리 나지의 5단계 진화론적 다형성(Multiformity) 패러다임'
     ],
     civilizationsDiscussed: ['greece'],
-    readingTimeMinutes: 8,
+    readingTimeMinutes: 9,
     relatedArtifactIds: ['dipylon-inscription', 'cup-of-nestor-pithekoussai', 'methone-eretrian-inscriptions', 'homeric-textualization-iliad'],
-    crossRefEssayIds: ['essay-6-orality-and-text', 'essay-8-institutions-over-script'],
+    crossRefEssayIds: ['essay-6-orality-and-text', 'essay-7-preservation-bias', 'essay-8-institutions-over-script'],
     sections: [
       {
         id: 'sec-4-1',
         order: 1,
         headingKo: '1. 문자가 없던 400년 암흑기와 그리스 알파벳의 귀환',
-        subheadingKo: '미케네 궁정 Linear B 붕괴와 구전 가인(Aoidoi)의 시대',
-        content: `기원전 1200년경 미케네 궁전 문명이 화재와 함께 붕괴하면서, 궁정 관료들이 점토판 장부에 쓰던 음절 문자 Linear B는 흔적도 없이 사라졌다. 이후 약 400년 동안 그리스 세계는 단 한 줄의 문자 기록도 남기지 않은 '문자의 암흑기(Dark Ages)'를 통과했다.
+        subheadingKo: '미케네 Linear B 붕괴와 아오이도이(Aoidoi)의 구술 공식구',
+        content: `기원전 1200년경 미케네 궁전 문명이 화재와 함께 붕괴하면서 관료들이 점토판에 쓰던 음절 문자 Linear B는 완전히 소멸했다. 이후 약 400년 동안 그리스 세계는 단 한 줄의 문자 기록도 남기지 않은 ‘문자의 암흑기(Dark Ages, c. 1100–800 BCE)’를 통과했다.
 
-그러나 트로이 전쟁과 영웅들의 이야기는 사라지지 않았다. 아오이도이(Aoidoi)라 불리는 눈먼 구전 시인들은 리라(Kithara) 현을 뜯으며 6각운(Dactylic Hexameter) 운율의 엄격한 공식구(Formula)를 타고 영웅들의 무훈을 노래했다. 그러던 기원전 8세기 중엽(c. 775–750 BCE), 레반트 무역로를 통해 페니키아 자음 문자를 수입한 그리스인들은 인류 최초로 모음(Vowels)을 표기하는 혁신적 알파벳을 완성했다.`,
+그러나 트로이 전쟁의 영웅 서사는 단절되지 않았다. 문자를 모르는 구전 가인 아오이도이(Aoidoi)들은 키타라 현을 뜯으며 6각운(Dactylic Hexameter)의 엄격한 공식구(Formula)를 타고 영웅들의 무훈을 세대에서 세대로 노래했다. 기원전 8세기 중엽(c. 775–750 BCE), 레반트 무역로를 장악한 에우보이아 상인들이 페니키아 자음 문자를 수입하여 모음(Vowels)을 창안하면서 그리스 알파벳이 탄생했다.`,
         scholarlyCallout: {
           type: 'theory-debate',
-          titleKo: '학술 쟁점: 배리 파월의 호메로스 알파벳 발명설',
-          bodyKo: '고전학자 배리 파월(Barry B. Powell)은 그리스 알파벳이 상업 거래 장부를 적기 위해 도입된 것이 아니라, 호메로스의 6각운(Hexameter) 서사시를 빠짐없이 받아 적기 위해 단 한 명의 천재적 어댑터에 의해 고안되었다는 파격적 가설을 제시했다.'
+          titleKo: '학술 쟁점: 밀먼 패리·앨버트 로드의 구전 공식구 이론',
+          bodyKo: '밀먼 패리(Milman Parry)와 앨버트 로드(Albert Lord)는 호메로스 서사시가 문자로 기록된 책이 아니라, ‘공식구(Formula)’와 ‘전형적 장면(Theme)’의 조합을 통해 매 공연마다 즉흥 재창작된 살아있는 구전 시학의 산물임을 실증했다.'
         }
       },
       {
         id: 'sec-4-2',
         order: 2,
-        headingKo: '2. 초기 알파벳 유물의 반전: 춤과 향연, 그리고 6각운 비문',
+        headingKo: '2. 초기 알파벳 유물의 반전: 춤과 향연, 그리고 운율 비문',
         subheadingKo: '디필론 오이노코에(c. 740 BCE)와 네스토르의 잔(c. 735 BCE)',
-        content: `파월의 가설을 지지하는 가장 강력한 증거는 그리스 땅과 식민지에서 출토된 최초의 알파벳 유물들이다. 오리엔트의 문자가 회계 장부로 시작했던 것과 달리, 그리스 알파벳의 최고(最古) 유물들은 놀랍게도 모두 **시(Poetry)와 향연(Symposium)**에 관한 것이었다.
+        content: `오리엔트의 문자가 회계 장부로 시작했던 것과 달리, 그리스 알파벳의 가장 이른 고고학적 유물들은 모두 **시(Poetry), 춤, 그리고 향연(Symposium)**을 담고 있다.
 
-아테네 디필론 묘지에서 출토된 **디필론 오이노코에(Dipylon Oinochoe, c. 740 BCE)** 포도주 주전자 어깨에는 "가장 활기차게 춤추는 자에게 이 잔을 주노라"라는 완벽한 6각운 시 구절이 좌횡서(Retrograde)로 긁혀 있었다. 
+아테네 디필론 묘지에서 출토된 **디필론 오이노코에(Dipylon Oinochoe, c. 740 BCE)** 포도주 주전자 어깨에는 "가장 활기차게 뛰노는 자에게 이 항아리를 주노라"라는 완벽한 6각운 시 구절이 우횡서(Retrograde)로 음각되어 있다. 
 
-또한 이탈리아 남부 이스키아 섬에서 발굴된 **네스토르의 잔(Cup of Nestor, c. 735 BCE)**에는 《일리아스》 11권에 등장하는 필로스의 왕 네스토르의 황금 잔을 패러디하며 "이 잔을 마시는 자는 아름다운 관을 쓴 아프로디테의 욕망에 사로잡히리라"는 3행의 운문이 새겨져 있었다. 그리스 알파벳은 태생부터 시적 기억을 기록하는 도구였다.`,
+또한 이탈리아 남부 이스키아 섬에서 발굴된 **네스토르의 잔(Cup of Nestor, c. 735 BCE)**에는 1행 아이암보스 3보격 표제와 2~3행 6각운으로 《일리아스》 11권의 노장 네스토르 황금 잔을 패러디한 3행의 운문이 새겨져 있었다.`,
         originalQuote: {
-          originalScript: 'ΗΟΣ ΝΥΝ ΟΡΧΕΣΤΟΝ ΠΑΝΤΟΝ ΑΤΑΛΟΤΑΤΑ ΠΑΙΖΕΙ ΤΟ ΤΟΔΕ ΚΛΜΙΝ...',
-          transliteration: 'hòs nûn orkhēstôn pántōn atalṓtata paízei, tô tóde k[aí mīn...]',
-          translationKo: '지금 모든 무용수 중 가장 활기차게 노니는 자가 이 항아리를 차지하리라!',
-          sourceCitation: '디필론 오이노코에 비문 (NAM 192, Athens, c. 740 BCE)'
+          originalScript: 'ΝΕΣΤΟΡΟΣ : [..] : ΕΥΠΟΤ[ΟΝ] : ΠΟΤΕΡΙΟΝ\nhΟΣ Δ’ ΑΝ ΤΟΔΕ ΠΙΕΣΙ : ΠΟΤΕΡΙ[Ο] : ΑΥΤΙΚΑ ΚΕΝΟΝ\nhΙΜΕΡ[ΟΣ hΑΙΡ]ΕΣΕΙ : ΚΑΛΛΙΣΤ[ΕΦΑ]ΝΟ : ΑΦΡΟΔΙΤΕΣ',
+          transliteration: "Nestoros [eimi] eupoton poterion; hos d' an tode piesi poterio, autika kenon himeros hairesei kallistephano Aphrodites.",
+          translationKo: '나는 네스토르의 마시기 좋은 잔이라. 누구든 이 잔을 비우는 자는, 그 즉시 아름다운 관을 쓴 아프로디테의 욕망에 사로잡히리라!',
+          sourceCitation: '피테쿠사이 네스토르의 잔 3행 비문 (CEG 454 / Pithekoussai 166705, c. 735 BCE)'
         }
       },
       {
         id: 'sec-4-3',
         order: 3,
-        headingKo: '3. 구전 가창에서 아테네 국가 정본으로: 페이시스트라토스 참주 기획',
-        subheadingKo: '파나테나이아 국가 대축제와 랩소도스 낭송 규칙의 법제화',
-        content: `그러나 수만 행(일리아스 15,693행, 오디세이아 12,110행)에 달하는 방대한 서사시가 술잔의 낙서를 넘어 두꺼운 양피지 두루마리 전집으로 고정된 것은 정치적 국가 기획의 결과였다.
+        headingKo: '3. 배리 파월의 가설과 에우보이아 무역 접촉 지대 모델',
+        subheadingKo: '6각운 서사시 전용 표기설과 다언어 교역망의 공진화',
+        content: `고전학자 배리 파월(Barry B. Powell 1991)은 그리스 알파벳이 상업 장부가 아니라 호메로스 6각운 서사시의 장단음 운율을 정확히 포착하기 위해 단 한 명의 어댑터에 의해 고안되었다는 가설을 제시했다.
 
-기원전 6세기 중엽, 아테네의 참주 **페이시스트라토스(Peisistratos, 재위 c. 561–527 BCE)**와 그의 아들 히파르코스는 4년마다 열리는 아테네 최대의 국가 축제인 파나테나이아(Panathenaia) 대축제를 개혁했다. 그는 그리스 전역에서 모여든 전문 낭송가 랩소도스(Rhapsodes)들이 각자 자기 식대로 건너뛰며 부르던 서사시를 금지하고, 아테네 국가가 공인한 정본(State Text)에 따라 "한 사람이 멈춘 지점에서 다음 사람이 이어받아 순서대로(ex hypolepseos)" 완창하도록 법제화했다. 이 '페이시스트라토스 정서(Peisistratean Recension)'를 통해 호메로스는 범그리스(Panhellenic) 국가 정전으로 등극했다.`,
-        scholarlyCallout: {
-          type: 'epigraphic-discovery',
-          titleKo: '사료 증언: 키케로와 플라톤의 기록',
-          bodyKo: '로마의 철학자 키케로는 《변론가론》(De Oratore)에서 "이전까지 혼란스럽게 흩어져 있던 호메로스의 서사시 책들을 최초로 오늘날의 순서대로 정렬하고 엮어낸 인물은 바로 페이시스트라토스였다"고 명확히 증언했다.'
-        }
+21세기 고전학(Roger Woodard 1997; Irad Malkin 1998)은 파월의 단선론을 넘어, 에우보이아 상인들의 지중해 해상 무역 네트워크(피테쿠사이, 에레트리아, 메토네)라는 다언어 접촉 지대(Contact Zone) 속에서 알파벳이 상업 신용, 소유권 표기, 그리고 엘리트 향연 문화와 결합되어 급속히 확산되었음을 논증한다.`
       },
       {
         id: 'sec-4-4',
         order: 4,
-        headingKo: '4. 알렉산드리아 도서관과 비평 기호학: 다형성(Multiformity)의 발견',
-        subheadingKo: '제노도토스, 아리스토파네스, 아리스타르코스의 오벨로스(—) 비평',
-        content: `헬레니즘 시대 기원전 3~2세기, 이집트 알렉산드리아 왕립 도서관의 총서지관들(제노도토스, 비잔티움의 아리스토파네스, 사모트라케의 아리스타르코스)은 지중해 전역에서 사들인 수백 종의 호메로스 사본(도시별 이본: 마살리아본, 시노페본, 키프로스본 등)을 대조하기 시작했다.
+        headingKo: '4. 구전 가창에서 아테네 축제 정본으로: 페이시스트라토스 참주 기획',
+        subheadingKo: '파나테나이아 제전과 랩소도스 릴레이 낭송(ex hypolepseos) 법제화',
+        content: `수만 행의 방대한 서사시가 국가적 텍스트로 고정된 것은 기원전 6세기 아테네 참주 **페이시스트라토스(Peisistratos, 재위 c. 561–527 BCE)**의 정치적 결단에 의해서였다.
 
-그들은 단 하나의 완벽한 원본이 존재하지 않는다는 사실을 깨닫고, 본문을 함부로 삭제하는 대신 본문 옆 여백(Marginalia)에 **비평 기호(Critical Signs)**를 달았다.
-- **오벨로스 (Obelos, —)**: 후대 랩소도스가 삽입한 위작 행 의심 표시
-- **아스테리스코스 (Asteriskos, *)**: 올바른 구절이 엉뚱한 자리에 중복된 행
-- **디플레이 (Diple, >)**: 언어학적·신화학적 주목 구절
-
-하버드 대학의 **호메로스 멀티텍스트(Homer Multitext, HMP)** 프로젝트는 베네치아 산마르코 도서관의 10세기 사본인 **Venetus A(Marcianus Graecus 454)**를 디지털 분석하여, 호메로스 텍스트가 고정된 모놀리스가 아니라 수세기 동안 공존했던 유기적 변이형들(Multiforms)의 바다였음을 현대에 완벽히 복원해냈다.`,
-        originalQuote: {
-          originalScript: '— Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος \n> οὐλομένην, ἣ μυρί\' Ἀχαιοῖς ἄλγε\' ἔθηκε',
-          transliteration: 'Mênin áeide theà Pēlēïádeō Akhilêos \nouloménēn, hḕ myrí\' Akhaioîs álge\' éthēke',
-          translationKo: '— [오벨로스 비평 기호] 노래하소서, 여신이여! 펠레우스의 아들 아킬레우스의 파괴적인 분노를!\n> [디플레이 기호] 아카이오이족에게 무수한 고통을 안겨준 그 거룩한 분노를!',
-          sourceCitation: 'Venetus A (Marcianus Graecus 454) Folio 12r, 일리아스 1권 1-2행 여백 주석'
+그는 4년마다 열리는 파나테나이아 대축제에서 낭송가 랩소도스(Rhapsodes)들이 각자 임의로 건너뛰며 부르던 관행을 금지하고, 아테네 공인 대본에 따라 "앞 사람이 멈춘 곳에서 이어받아 순서대로(ex hypolepseos ephexes)" 완창하도록 법제화했다([Plato] *Hipparchus* 228b). 이를 통해 호메로스는 범그리스 민족 정전으로 우뚝 섰다.`,
+        scholarlyCallout: {
+          type: 'epigraphic-discovery',
+          titleKo: '사료 증언: 키케로의 기록',
+          bodyKo: '로마의 키케로는 《변론가론》(De Oratore 3.137)에서 "이전까지 흩어져 있던 호메로스의 책들을 최초로 오늘날의 순서대로 정렬하고 엮어낸 인물은 바로 페이시스트라토스였다"고 증언했다.'
         }
       },
       {
         id: 'sec-4-5',
         order: 5,
-        headingKo: '5. 결론: 호메로스는 한 명의 저작이 아니라 노래와 문자의 공진화였다',
-        subheadingKo: '구전의 유연성과 문자의 보존성이 낳은 서구 문학의 기원',
-        content: `그레고리 나지(Gregory Nagy)의 5단계 진화 모델(Evolutionary Model)이 보여주듯, 호메로스는 한 명의 저자가 책상에 앉아 집필한 책이 아니다.
+        headingKo: '5. 알렉산드리아 도서관과 비평 기호학: 야생 파피루스와 다형성',
+        subheadingKo: '아리스타르코스의 오벨로스(—) 비평과 프톨레마이오스조 파피루스의 잉여 행',
+        content: `헬레니즘 시대 기원전 3~2세기, 알렉산드리아 왕립 도서관의 학자들(제노도토스, 아리스토파네스, 아리스타르코스)은 지중해 전역의 도시별 판본(hai kata poleis)을 대조 교감했다.
 
-1. 기원전 2천년기 미케네부터 이어진 '유동적 구전 가창의 시대'
-2. 기원전 8세기 알파벳 도입과 '범그리스적 서사시 정형화'
-3. 기원전 6세기 아테네 참주정에 의한 '국가 축제 낭송 텍스트 고정'
-4. 기원전 3~2세기 알렉산드리아 비평가들의 '교감 정본(Critical Edition) 수립'
-5. 중세 비잔티움 필사본을 거쳐 오늘날로 이어지는 '필사 전승'
+아리스타르코스는 의심스러운 행이라도 본문에서 칼로 지우지 않고 본문을 보존한 채 여백에 비평 기호(오벨로스 —, 디플레이 > 등)를 달았다(*Aristarchus non delevit sed obelo notavit*). 기원전 150년 이전 프톨레마이오스 파피루스(P.Hibeh 19–22 등)에 10~15% 이상의 잉여 행(Plus-verses)이 만연했던 사실은 호메로스 텍스트가 오랜 세월 다형성(Multiformity)의 상태로 공존했음을 실증한다.`,
+        originalQuote: {
+          originalScript: '— Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος \n> οὐλομένην, ἣ μυρί\' Ἀχαιοῖς ἄلγε\' ἔθηκε',
+          transliteration: "Mênin áeide theà Pēlēïádeō Akhilêos / ouloménēn, hḕ myrí' Akhaioîs álge' éthēke",
+          translationKo: '— [오벨로스 기호: 위작 의심] 노래하소서, 여신이여! 펠레우스의 아들 아킬레우스의 분노를!\n> [디플레이 기호: 주목 구절] 아카이오이족에게 무수한 고통을 안겨준 그 파멸적 분노를!',
+          sourceCitation: 'Venetus A (Marcianus Graecus Z. 454) Folio 12r, 일리아스 1권 1-2행 여백 주석'
+        }
+      },
+      {
+        id: 'sec-4-6',
+        order: 6,
+        headingKo: '6. 베네투스 A 사본과 그레고리 나지의 5단계 진화 모델',
+        subheadingKo: '10세기 마르키아누스 코덱스와 4인 주석가 집성본(Viermännerwerk)',
+        content: `하버드 대학의 **Homer Multitext(HMP)** 프로젝트가 디지털 분석한 10세기 사본 **Venetus A(Marcianus Graecus Z. 454 = 822)**는 헬레니즘-로마 4대 학자(*Viermännerwerk*: 아리스토니코스, 디디모스, 헤로디아노스, 니카노르)의 주석을 완벽히 보존하고 있다.
 
-호메로스는 구전의 살아 숨 쉬는 생명력과 문자의 냉철한 보존성이 수백 년에 걸쳐 서로를 끌어당기며 빚어낸 인류 문명사 최고의 합작품이었다.`
+그레고리 나지(Gregory Nagy)는 호메로스의 텍스트화를 (1) 구전 가창기, (2) 범그리스 결정화기, (3) 아테네 제전 정서기, (4) 알렉산드리아 학술 교감기, (5) 기원전 2세기 중엽 불가타(Vulgate) 안정화기로 이어지는 5단계 진화 모델로 정립했다.`
+      },
+      {
+        id: 'sec-4-7',
+        order: 7,
+        headingKo: '7. 보존 편향(Taphonomic Bias): 도자기의 생존과 유실된 파피루스',
+        subheadingKo: '그리스 산성 토양의 유기물 부식과 이집트 사막 쓰레기장의 기적',
+        content: `오늘날 우리가 호메로스의 기원을 도자기 파편에서 찾는 것은 고대 그리스 지질학이 낳은 도자기 보존 편향(Ceramic Preservation Bias)이다(Barry Kemp 2006; Rosalind Thomas 1992).
+
+구운 점토(Terracotta)는 산성 토양에서도 영구히 보존되지만, 당시 사용된 목재 서판(*pinakes*), 가죽 두루마리(*diphtherai*), 수입 파피루스는 그리스 본토의 습한 토양에서 100% 부식되었다. 수천 점의 호메로스 파피루스가 이집트(옥시린쿠스, 파이윰)에서만 출토되는 것은 극건조 사막 미기후 덕분이며, 그리스 본토의 유일한 고전기 파피루스는 탄화된 **데르베니 파피루스(P.Derveni, c. 340 BCE)**뿐이다.`
       }
     ],
     primarySources: [
@@ -747,26 +756,26 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
         id: 'src-4-1',
         artifactId: 'dipylon-inscription',
         nameKo: '아테네 디필론 오이노코에 비문',
-        nameEnOrOriginal: 'Dipylon Oinochoe Inscription (NAM 192)',
-        catalogNo: 'Athens National Archaeological Museum NAM 192 / IG I³ 1150',
+        nameEnOrOriginal: 'Dipylon Oinochoe Inscription (NAM 192 / IG I³ 1150 / CEG 432)',
+        catalogNo: 'Athens National Archaeological Museum NAM 192 / IG I³ 1150 / CEG 432',
         institution: 'National Archaeological Museum, Athens',
         dateVector: {
           eventDateBCE: 740,
           compositionDateBCE: 740,
           witnessDateBCE: 740
         },
-        originalScript: 'ΗΟΣ ΝΥΝ ΟΡΧΕΣΤΟΝ ΠΑΝΤΟΝ ΑΤΑΛΟΤΑΤΑ ΠΑΙΖΕΙ...',
-        transliteration: 'hòs nûn orkhēstôn pántōn atalṓtata paízei...',
-        translationKo: '지금 모든 무용수 중 가장 활기차게 노니는 자가 이 잔을 차지하리라!',
+        originalScript: 'ΗΟΣ ΝΥΝ ΟΡΧΕΣΤΟΝ ΠΑΝΤΟΝ ΑΤΑΛΟΤΑΤΑ ΠΑΙΖΕΙ ΤΟ ΤΟΔΕ ΚΑ...',
+        transliteration: 'hòs nûn orkhēstôn pántōn atalṓtata paízei, tô tóde ka[---]',
+        translationKo: '지금 모든 무용수들 가운데 가장 활기차게 뛰노는 자가, 이 항아리를 (상으로 받으리라)...',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '그리스 비문 데이터베이스(PHI Greek Inscriptions) 전사',
+        epigraphyMethod: '고졸기 아티카 우횡서(Retrograde) 실측, CEG 432 및 Jeffery LSAG 교감',
         notes: '인류 역사상 가장 오래된 그리스 알파벳 6각운(Dactylic Hexameter) 시 구절 각문.'
       },
       {
         id: 'src-4-2',
         artifactId: 'cup-of-nestor-pithekoussai',
         nameKo: '피테쿠사이 네스토르의 잔',
-        nameEnOrOriginal: "Nestor's Cup of Pithekoussai",
+        nameEnOrOriginal: "Nestor's Cup of Pithekoussai (CEG 454 / Pithekoussai Inv. 166705)",
         catalogNo: 'Museo Archeologico di Pithecusae 166705 / CEG 454',
         institution: 'Museo Archeologico di Pithecusae, Ischia, Italy',
         dateVector: {
@@ -774,18 +783,18 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           compositionDateBCE: 735,
           witnessDateBCE: 735
         },
-        originalScript: 'ΝΕΣΤΟΡΟΣ : Ε[ΙΜΙ] : ΕΥΠΟΤ[ΟΝ] : ΠΟΤΕΡΙΟΝ...',
-        transliteration: 'Nestoros eimi eupoton poterion...',
-        translationKo: '나는 네스토르의 마시기 좋은 잔이라. 이 잔을 비우는 자는 아프로디테의 욕망에 사로잡히리라.',
+        originalScript: 'ΝΕΣΤΟΡΟΣ : [..] : ΕΥΠΟΤ[ΟΝ] : ΠΟΤΕΡΙΟΝ\nhΟΣ Δ’ ΑΝ ΤΟΔΕ ΠΙΕΣΙ : ΠΟΤΕΡΙ[Ο] : ΑΥΤΙΚΑ ΚΕΝΟΝ\nhΙΜΕΡ[ΟΣ hΑΙΡ]ΕΣΕΙ : ΚΑΛΛΙΣΤ[ΕΦΑ]ΝΟ : ΑΦΡΟΔΙΤΕΣ',
+        transliteration: "Nestoros [eimi] eupoton poterion; hos d' an tode piesi poterio, autika kenon himeros hairesei kallistephano Aphrodites.",
+        translationKo: '나는 네스토르의 마시기 좋은 잔이라. 누구든 이 잔을 비우는 자는 즉시 아름다운 관을 쓴 아프로디테의 욕망에 사로잡히리라!',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '피테쿠사이 고분 발굴 원문 및 에우보이아 알파벳 자형 분석',
-        notes: '호메로스 서사시의 영웅 네스토르를 패러디한 최고(最古)의 3행 시적 비문.'
+        epigraphyMethod: '에우보이아 붉은 알파벳 자형 분석, 삼점 구획자(:) 및 1행 아이암보스 3보격 + 2~3행 6각운 교감',
+        notes: '일리아스 11권 네스토르의 황금 잔을 패러디한 최고(最古)의 3행 운율 비문.'
       },
       {
         id: 'src-4-3',
         artifactId: 'homeric-textualization-iliad',
         nameKo: '베네투스 A 사본과 알렉산드리아 비평 스콜리아',
-        nameEnOrOriginal: 'Venetus A Manuscript (Marcianus Graecus 454) with Scholia A',
+        nameEnOrOriginal: 'Venetus A Manuscript (Marcianus Graecus Z. 454 = 822) with Scholia A',
         catalogNo: 'Biblioteca Nazionale Marciana Marc. Gr. Z. 454 (= 822)',
         institution: 'Biblioteca Nazionale Marciana, Venice / Harvard Homer Multitext',
         dateVector: {
@@ -794,31 +803,48 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 150,
           witnessDateBCE: 'CE 950 (10세기 사본)'
         },
-        originalScript: '— Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος',
-        transliteration: 'Mênin áeide theà Pēlēïádeō Akhilêos',
-        translationKo: '오벨로스(—) 기호가 부기된 일리아스 1권 표제행과 고대 알렉산드리아 학자들의 여백 주석',
+        originalScript: '— Μῆνιν ἄειδε θεὰ Πηληϊάδεω Ἀχιλῆος \n> οὐλομένην, ἣ μυρί\' Ἀχαιοῖς ἄلγε\' ἔθηκε',
+        transliteration: "Mênin áeide theà Pēlēïádeō Akhilêos / ouloménēn, hḕ myrí' Akhaioîs álge' éthēke",
+        translationKo: '오벨로스(—)와 디플레이(>) 기호가 부기된 일리아스 1권 표제행과 고대 알렉산드리아 학자들의 여백 주석',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '하버드 HMP 디지털 다중스펙트럼 IIIF 고해상도 아카이브',
-        notes: '알렉산드리아 도서관장들의 비평 기호 체계와 고대 스콜리아(주석)가 온전히 보존된 유일무이한 최상급 사본.'
+        epigraphyMethod: '하버드 HMP 디지털 다중스펙트럼 IIIF 고해상도 아카이브 및 Erbse 스콜리아 교감',
+        notes: '알렉산드리아 도서관장들의 비평 기호 체계와 4인 주석가(Viermännerwerk) 스콜리아가 온전히 보존된 최고 사본.'
       }
     ],
     scholarlyDebates: [
       {
         id: 'deb-4-1',
-        topic: '호메로스 서사시의 성립 과정: 단일 천재 저작설 vs 구전 공식설 vs 5단계 진화 모델',
+        topic: '호메로스 서사시의 성립 과정: 8세기 단일 구술-필기론(West/Janko) vs 5단계 진화 및 다형성 모델(Nagy/HMP)',
         thesisA: {
-          scholarOrSchool: '밀먼 패리 & 앨버트 로드 (Milman Parry & Albert Lord, 1930–1960)',
-          eraOrYear: '1930–1960',
-          claimKo: '서사시는 문자가 전혀 없는 순수 구전 가인(Guslar)의 공식구(Formula)와 주제(Theme) 조합에 의해 매 공연마다 즉흥 재창작되었다.',
-          keyEvidence: '20세기 유고슬라비아 구전 가창 현장 채록 비교 및 서사시 내 반복 공식구 통계.'
+          scholarOrSchool: '마틴 L. 웨스트 & 리처드 얀코 (M.L. West 2001, Richard Janko 1982)',
+          eraOrYear: '1982–2001',
+          claimKo: '호메로스는 기원전 8세기 단 한 명의 위대한 시인이 알파벳 서기관에게 서사시 전편을 구술하여 탄생시킨 기념비적 텍스트(Monumental Dictation)이다.',
+          keyEvidence: '서사시 내 고졸기 이오니아·아이올리스 방언 지층 통계 및 디감마(ϝ) 화석화 현상.'
         },
         thesisB: {
-          scholarOrSchool: '그레고리 나지 (Gregory Nagy, 1996, 2004)',
+          scholarOrSchool: '그레고리 나지 & 하버드 HMP (Gregory Nagy 1996, 2004, Casey Dué 2010)',
           eraOrYear: '1996–현재',
-          claimKo: '호메로스는 단일 시점의 받아쓰기가 아니라, 구전 유동성에서 아테네 참주정 국가 축제와 알렉산드리아 도서관 비평을 거치며 점진적으로 결정화(Crystallization)된 다형성(Multiformity)의 산물이다.',
-          keyEvidence: 'Venetus A 사본의 알렉산드리아 비평 기호 및 프톨레마이오스 파피루스 이본들의 광범위한 다형성.'
+          claimKo: '단일 저자 원형(Urtext)은 존재하지 않으며, 구전 유동성에서 아테네 파나테나이아 축제 낭송 규칙과 알렉산드리아 도서관 비평을 거치며 800년간 점진적으로 결정화된 다형성(Multiformity)의 산물이다.',
+          keyEvidence: 'Venetus A 사본의 알렉산드리아 비평 기호 및 프톨레마이오스 파피루스들의 15% 잉여 행(Plus-verses).'
         },
-        consensusStatus: '현대 고전학계는 나지의 진화 모델과 하버드 HMP 프로젝트의 다형성 패러다임을 서사시 성립사의 표준 틀로 광범위하게 수용함.'
+        consensusStatus: '현대 고전학계는 얀코의 언어 지층 연구와 나지의 제전 진화 모델을 변증법적으로 통합하여, 구전성과 문자성의 상보적 공생(Written Orality)으로 해석함.'
+      },
+      {
+        id: 'deb-4-2',
+        topic: '그리스 알파벳 발명 동기: 6각운 서사시 전용 표기설(Powell) vs 다언어 무역 접촉 지대 모델(Woodard/Malkin)',
+        thesisA: {
+          scholarOrSchool: '배리 파월 (Barry B. Powell, 1991)',
+          eraOrYear: '1991',
+          claimKo: '그리스 알파벳의 모음 체계는 상업 장부가 아니라 호메로스 6각운 서사시의 장단음 운율을 완벽히 표기하기 위해 고안되었다.',
+          keyEvidence: '가장 이른 알파벳 유물들(디필론, 네스토르의 잔)이 모두 운문 시 구절을 담고 있는 현상.'
+        },
+        thesisB: {
+          scholarOrSchool: '로저 우다드 & 이라드 말킨 (Roger Woodard 1997, Irad Malkin 1998)',
+          eraOrYear: '1997–2016',
+          claimKo: '알파벳은 에우보이아-페니키아 해상 교역망의 다언어 접촉 지대에서 상업 신용, 소유권 표기, 향연 유희가 결합되어 자연발생적으로 어댑테이션되었다.',
+          keyEvidence: '피테쿠사이, 에레트리아, 메토네 등 다언어 무역항에서 출토된 다양한 상업 및 소유자 명문.'
+        },
+        consensusStatus: '현대 학계는 모음 체계의 운율 적합성을 인정하면서도, 알파벳 확산의 사회경제적 배경으로 에우보이아 해상 교역망 모델을 광범위하게 수용함.'
       }
     ],
     bibliography: [
@@ -833,6 +859,30 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
       },
       {
         id: 'bib-4-2',
+        sourceGrade: 'Grade A',
+        author: 'West, M. L.',
+        year: 2001,
+        title: 'Studies in the Text and Transmission of the Iliad',
+        publication: 'München: K.G. Saur.'
+      },
+      {
+        id: 'bib-4-3',
+        sourceGrade: 'Grade A',
+        author: 'Janko, Richard',
+        year: 1982,
+        title: 'Homer, Hesiod and the Hymns: Diachronic Development in Epic Diction',
+        publication: 'Cambridge: Cambridge University Press.'
+      },
+      {
+        id: 'bib-4-4',
+        sourceGrade: 'Grade A',
+        author: 'Dué, Casey & Ebbott, Mary',
+        year: 2010,
+        title: 'Iliad 10 and the Poetics of Ambush: A Multitext Edition with Essays and Commentary',
+        publication: 'Washington, DC: Center for Hellenic Studies.'
+      },
+      {
+        id: 'bib-4-5',
         sourceGrade: 'Grade B',
         author: 'Powell, Barry B.',
         year: 1991,
@@ -840,12 +890,20 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
         publication: 'Cambridge: Cambridge University Press.'
       },
       {
-        id: 'bib-4-3',
+        id: 'bib-4-6',
         sourceGrade: 'Grade B',
         author: 'Lord, Albert B.',
         year: 1960,
         title: 'The Singer of Tales',
         publication: 'Cambridge, MA: Harvard University Press.'
+      },
+      {
+        id: 'bib-4-7',
+        sourceGrade: 'Grade B',
+        author: 'Thomas, Rosalind',
+        year: 1992,
+        title: 'Literacy and Orality in Ancient Greece',
+        publication: 'Cambridge: Cambridge University Press.'
       }
     ]
   },

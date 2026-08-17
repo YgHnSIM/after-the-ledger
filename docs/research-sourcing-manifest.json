@@ -94,30 +94,35 @@
     "primary_sources": [
       {
         "name": "Dipylon Oinochoe Inscription",
-        "catalog": "Athens National Archaeological Museum NAM 192",
+        "catalog": "Athens National Archaeological Museum NAM 192 / IG I³ 1150 / CEG 432",
         "target_url": "https://epigraphy.packhum.org/text/22",
         "tier": "Tier 1",
-        "extraction_method": "PHI Greek Inscriptions"
+        "extraction_method": "PHI Greek Inscriptions / CEG 432 transcription"
       },
       {
         "name": "Nestor's Cup of Pithekoussai",
-        "catalog": "Museo Archeologico di Pithecusae 166705",
+        "catalog": "Museo Archeologico di Pithecusae 166705 / CEG 454 / SEG 26:1144",
         "target_url": "https://epigraphy.packhum.org/text/321946",
         "tier": "Tier 1",
-        "extraction_method": "PHI Greek Inscriptions"
+        "extraction_method": "PHI Greek Inscriptions / CEG 454 transcription"
       },
       {
-        "name": "Venetus A Manuscript (Marcianus Graecus 454) with Scholia A",
+        "name": "Venetus A Manuscript (Marcianus Graecus Z. 454 = 822) with Scholia A",
         "catalog": "Biblioteca Nazionale Marciana / Harvard Homer Multitext",
         "target_url": "https://www.homermultitext.org/facsimiles/venetus-a/",
         "tier": "Tier 1.5",
-        "extraction_method": "HMP IIIF Endpoint & GitHub repo"
+        "extraction_method": "HMP IIIF Endpoint & Erbse Scholia Graeca"
       }
     ],
     "scholarly_references": [
+      "Nagy, G. (1996). Poetry as Performance: Homer and Beyond. Cambridge University Press.",
       "Nagy, G. (2004). Homer's Text and Language. University of Illinois Press.",
-      "Parry, M. (1971). The Making of Homeric Verse: The Collected Papers. Oxford.",
-      "Lord, A. B. (1960). The Singer of Tales. Harvard University Press."
+      "Dué, C. & Ebbott, M. (2010). Iliad 10 and the Poetics of Ambush: A Multitext Edition with Essays and Commentary. Center for Hellenic Studies.",
+      "West, M. L. (2001). Studies in the Text and Transmission of the Iliad. K.G. Saur.",
+      "Janko, R. (1982). Homer, Hesiod and the Hymns: Diachronic Development in Epic Diction. Cambridge University Press.",
+      "Powell, B. B. (1991). Homer and the Origin of the Greek Alphabet. Cambridge University Press.",
+      "Lord, A. B. (1960). The Singer of Tales. Harvard University Press.",
+      "Thomas, R. (1992). Literacy and Orality in Ancient Greece. Cambridge University Press."
     ]
   },
   "essay-5-biblical-four-dates": {
