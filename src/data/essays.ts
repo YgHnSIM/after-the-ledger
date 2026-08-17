@@ -250,9 +250,9 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 이 목록은 단순한 단어장이 아니었다. 지상에 존재하는 인공물에서 시작하여 자연계의 동식물을 거쳐 천상의 신성에 이르는 '우주적 질서의 거대한 위계 지도'였다.`,
         originalQuote: {
-          originalScript: '1. 𒄑 𒈣 \t\t\t giš-ma2 \t\t = *e-lep-pu*\n2. 𒄑 𒈣 𒄥 𒊏 \t\t giš-ma2-gur8 \t = *ma-kur-ru*\n3. 𒄑 𒈣 𒆭 𒊏 \t\t giš-ma2-dirig \t = *e-lep-pu te-bi-tu*',
+          originalScript: '1. 𒄑 𒈣 ፡ 𒂊 𒇷 𒅁 𒁍\n2. 𒄑 𒈣 𒄥 𒊏 ፡ 𒈠 𒆪 𒌨 𒊒\n3. 𒄑 𒈣 𒆭 𒊏 ፡ 𒂊 𒇷 𒅁 𒁍 𒋼 𒁉 𒌈',
           transliteration: '1. giš-ma2 = e-lep-pu (일반 선박)\n2. giš-ma2-gur8 = ma-kur-ru (심해 항해선)\n3. giš-ma2-dirig = e-lep-pu te-bi-tu (침수선)',
-          translationKo: '수메르어 사물 명칭과 아카드어 번역을 2열 대조로 정렬한 표준 선박 어휘 목록',
+          translationKo: '수메르어 사물 명칭(왼쪽)과 아카드어 번역(오른쪽)을 나란히 배열한 2열 대조 표준 선박 어휘 목록',
           sourceCitation: 'Ur5-ra = hubullu 점토판 4 (DCCLT P365448 / MSL 5), 신아시리아 정본'
         }
       },
@@ -279,9 +279,9 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
 
 서기관들은 점토판을 4개의 세로 열(Column)로 나누어, 제1열에 고대 성스러운 학술어인 수메르어, 제2열에 국제 외교 공용어인 아카드어, 제3열에 북부 히타이트 및 미탄니 영향권의 후르리어(Hurrian), 제4열에 현지 셈어 방언인 우가리트어(Ugaritic)를 쐐기문자로 나란히 새겨 넣었다. 이 목록은 동지중해와 메소포타미아, 아나톨리아가 교차하는 국제 도시에서 외교관과 통역관을 양성하는 첨단 지식 번역 엔진이었다.`,
         originalQuote: {
-          originalScript: '𒂍 \t\t *bītu* \t\t *purli* \t\t *bêt-u*',
-          transliteration: 'E2 (Sumerian) \t bi-i-tu (Akkadian) \t pur-li (Hurrian) \t be-e-tu (Ugaritic)',
-          translationKo: '집(신전/가옥) [수메르어] \t 집(비투) [아카드어] \t 집(푸를리) [후르리어] \t 집(베투) [우가리트어]',
+          originalScript: '𒂍 ፡ 𒁉 𒄿 𒌅 ፡ 𒁍 ⵓ 𒌨 𒇷 ፡ 𒁁 𒂊 𒌅',
+          transliteration: 'É [수메르어] | bi-i-tu [아카드어] | pu-ur-li [후르리어] | be-e-tu [우가리트어]',
+          translationKo: '집(신전/가옥) [수메르어] | 집(비투) [아카드어] | 집(푸를리) [후르리어] | 집(베투) [우가리트어]',
           sourceCitation: 'RS 20.123+ (Louvre AO 19936), 우가리트 4개국어 어휘목록 (Nougayrol 1968)'
         }
       },
@@ -309,9 +309,9 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 1200,
           witnessDateBCE: 700
         },
-        originalScript: '1. 𒄑 𒈣 \t\t giš-ma2 = e-lep-pu\n2. 𒄑 𒈣 𒄥 𒊏 \t giš-ma2-gur8 = ma-kur-ru',
-        transliteration: '1. giš-ma2 = e-lep-pu\n2. giš-ma2-gur8 = ma-kur-ru',
-        translationKo: '1. 일반 선박 = [엘렙푸]\n2. 심해 항해선 / 의례선 = [마쿠루]',
+        originalScript: '1. 𒄑 𒈣 ፡ 𒂊 𒇷 𒅁 𒁍\n2. 𒄑 𒈣 𒄥 𒊏 ፡ 𒈠 𒆪 𒌨 𒊒\n3. 𒄑 𒈣 𒆭 𒊏 ፡ 𒂊 𒇷 𒅁 𒁍 𒋼 𒁉 𒌈',
+        transliteration: '1. giš-ma2 = e-lep-pu\n2. giš-ma2-gur8 = ma-kur-ru\n3. giš-ma2-dirig = e-lep-pu te-bi-tu',
+        translationKo: '1. 일반 선박 = [엘렙푸]\n2. 심해 항해선 / 의례선 = [마쿠루]\n3. 침수선 = [엘렙푸 테비투]',
         sourceGrade: 'Grade A',
         epigraphyMethod: 'DCCLT 디지털 코퍼스 교감 및 MSL 표준 판본 대조',
         notes: '24개 점토판 대전집 중 제4판 선박 및 운송기구 목록.'
@@ -329,8 +329,8 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 1300,
           witnessDateBCE: 1250
         },
-        originalScript: '𒂍 \t *bi-i-tu* \t *pur-li* \t *be-e-tu*',
-        transliteration: 'E2 / bītu / purli / bêtu',
+        originalScript: '𒂍 ፡ 𒁉 𒄿 𒌅 ፡ 𒁍 ⵓ 𒌨 𒇷 ፡ 𒁁 𒂊 𒌅',
+        transliteration: 'É (Sumerian) | bi-i-tu (Akkadian) | pu-ur-li (Hurrian) | be-e-tu (Ugaritic)',
         translationKo: '집(건물/가옥)의 4개 언어 대조 전사',
         sourceGrade: 'Grade A',
         epigraphyMethod: '루브르 박물관 고해상도 매크로 촬영 및 비문 자형 분석',
@@ -1726,7 +1726,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           compositionDateBCE: 700,
           witnessDateBCE: 700
         },
-        originalScript: 'ṭupšarru (Cuneiform Clay) & sepiru (Aramaic Leather/Papyrus)',
+        originalScript: '𒁾 𒊬 𒊏 ፡ ספר',
         transliteration: 'LÚ.ŠID / ṭupšarru (clay stylus) & LÚ.A.BA / sepiru (ink brush scroll)',
         translationKo: '전리품을 나란히 집계하는 쐐기문자 점토판 서기관과 아람어 가죽 서기관',
         sourceGrade: 'Grade A',
@@ -1764,7 +1764,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           compositionDateBCE: 586,
           witnessDateBCE: 586
         },
-        originalScript: 'לגמריהו בן שפן (lgmryhw bn špn)',
+        originalScript: 'לגמריהו בן שפן',
         transliteration: 'li-Gəmaryāhū ben Šāp̄ān (Paleo-Hebrew Script)',
         translationKo: '샤반의 아들 그마랴후에게 속함 (예레미야 36:10)',
         sourceGrade: 'Grade A',
@@ -2107,7 +2107,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 1350,
           witnessDateBCE: 1350
         },
-        originalScript: '1. a-na {disz}LUGAL EN-ia {disz}d.UTU-ia qi2-bi2-ma \t 2. um-ma {disz}ARAD2-khi-ba ARAD2-ka-ma',
+        originalScript: '𒀀 𒈾 𒁹 𒈗 𒂗 𒅀 𒁹 𒀭 𒌓 𒅀 ﻘ 𒁉 𒈠 \n 𒌝 𒈠 𒁹 𒀵 𒄭 𒁀 𒀵 𒅗 𒈠',
         transliteration: 'a-na LUGAL EN-ia d.UTU-ia qi2-bi2-ma / um-ma 1.ARAD2-Hé-ba ARAD2-ka-ma (EA 286:1-2)',
         translationKo: '나의 주군이신 국왕이자 나의 태양께 말씀드립니다. 당신의 종 예루살렘 왕 압디-헤바가 아뢰나이다.',
         sourceGrade: 'Grade A',
@@ -2147,7 +2147,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
           redactionDateBCE: 1250,
           witnessDateBCE: 1200
         },
-        originalScript: 'GU4 \t al-pu \t al-te \t a-la-ap-u2',
+        originalScript: '𒄞 ፡ 𒀠 𒁍 ፡ 𒀠 𒋼 ፡ 𒀀 𒆷 𒀊 𒌑',
         transliteration: 'Col I: GU4 / Col II: al-pu / Col III: al-te / Col IV: a-la-ap-ú (/ʾalpu/)',
         translationKo: '제1열 수메르어(GU4) - 제2열 아카드어(alpu) - 제3열 후르리어(alte) - 제4열 음절 우가리트어(alapu) 4단 대조',
         sourceGrade: 'Grade A',
