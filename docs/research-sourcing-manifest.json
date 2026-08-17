@@ -133,19 +133,40 @@
         "catalog": "Israel Museum Jerusalem 80.1/1-2",
         "target_url": "https://www.imj.org.il/en/collections/372772",
         "tier": "Tier 2",
-        "extraction_method": "CloakBrowser CDP snapshot"
+        "extraction_method": "CloakBrowser CDP snapshot / Barkay 2004 BASOR 334"
       },
       {
-        "name": "Great Isaiah Scroll (1QIsa-a) & 4QSam-a",
-        "catalog": "The Digital Dead Sea Scrolls (IMJ / IAA)",
+        "name": "Qumran Samuel Scroll (4Q51 / 4QSam-a Col. X)",
+        "catalog": "IAA / Rockefeller Museum 4Q51 (DJD XVII)",
+        "target_url": "https://www.deadseascrolls.org.il/explore-the-archive/artifact/4Q51",
+        "tier": "Tier 1.5",
+        "extraction_method": "IAA IIIF Endpoint & DJD XVII cross-check"
+      },
+      {
+        "name": "The Great Isaiah Scroll (1QIsa-a)",
+        "catalog": "The Digital Dead Sea Scrolls (IMJ Shrine of the Book)",
         "target_url": "http://dss.collections.imj.org.il/isaiah",
-        "tier": "Tier 2",
-        "extraction_method": "CloakBrowser CDP / IAA IIIF Manifest"
+        "tier": "Tier 1",
+        "extraction_method": "IMJ IIIF Endpoint / Plene Orthography transcript"
+      },
+      {
+        "name": "En-Gedi Virtual Unwrapped Leviticus Scroll",
+        "catalog": "IAA En-Gedi Scroll / Seales 2016 Science Advances",
+        "target_url": "https://www.science.org/doi/10.1126/sciadv.1601247",
+        "tier": "Tier 1",
+        "extraction_method": "Micro-CT 3D volume reconstruction extraction"
       }
     ],
     "scholarly_references": [
-      "Tov, E. (2012). Textual Criticism of the Hebrew Bible (3rd Ed.). Fortress Press.",
-      "Cross, F. M. (1975). Qumran and the History of the Biblical Text. Harvard University Press."
+      "Tov, E. (2012). Textual Criticism of the Hebrew Bible (3rd Revised Ed.). Fortress Press.",
+      "Barkay, G. et al. (2004). The Amulets from Ketef Hinnom: A New Edition and Evaluation. BASOR 334: 41-71.",
+      "Cross, F. M. et al. (2005). Qumran Cave 4.XII: 1-2 Samuel. DJD XVII. Oxford: Clarendon Press.",
+      "Tov, E. (1997). Qumran Cave 4.X: The Prophets. DJD XV. Oxford: Clarendon Press.",
+      "Ulrich, E. (1999). The Dead Sea Scrolls and the Origins of the Bible. Eerdmans.",
+      "Seales, W. B. et al. (2016). Reading the scroll from En-Gedi. Science Advances 2(9): e1601247.",
+      "Van der Toorn, K. (2007). Scribal Culture and the Making of the Hebrew Bible. Harvard University Press.",
+      "Carr, D. M. (2005). Writing on the Tablets of the Heart. Oxford University Press.",
+      "Lewis, J. P. (1992). Jamnia Revisited. In The Canon Debate, Hendrickson, pp. 146-162."
     ]
   },
   "essay-6-orality-and-text": {

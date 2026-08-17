@@ -911,102 +911,127 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
     id: 'essay-5-biblical-four-dates',
     order: 5,
     title: '5. 성서의 “원본”은 존재하는가?',
-    subtitle: '사공편집 4가지 연대 벡터와 사해문서가 보여주는 유연한 텍스트 전승',
-    summary: '히브리 성서는 하나의 시점에 완성된 원본 책이 아니다. 사건 연대, 구전 연대, 편집 연대, 현존 사본 연대의 4중 구조와 사해문서의 다원적 텍스트가 이를 증명한다.',
-    content: `히브리 성서 연구에서 가장 필수적인 학술 원칙은 4가지 연대 벡터의 분리다.
+    subtitle: '6중 연대 층위와 사해문서가 보여주는 텍스트 다형성: 다중 문학 판본과 사본 물질성의 문명사',
+    summary: '단 하나의 무오한 친필 원본(Urtext)이란 근대적 환상이다. 6중 연대 층위, 사해문서 4대 텍스트 군집, 4QSam-a 및 4QJer-b/d 다중 문학 판본, 그리고 사해 지구대 타포노미 보존 편향이 이를 증명한다.',
+    content: `히브리 성서 연구에서 가장 필수적인 학술 원칙은 사건 지평에서 마소라 수렴까지 이어지는 6중 연대 층위의 분리다.
 
-1. 사건 연대: 텍스트가 서술하는 역사적 사건의 시대 (e.g. 출애굽, 다윗 왕대)
-2. 구성/구전 연대: 시나 전승이 oral tradition으로 읊어지기 시작한 시기
-3. 편집 연대: 신명기 사학자나 오경 사제들이 다양한 전승을 편집·합친 시기 (e.g. 바빌론 포로기 BCE 6세기)
-4. 현존 사본 연대: 오늘날 우리가 직접 만질 수 있는 물품의 제작 시기 (e.g. 케테프 힌놈 c. 600 BCE, 사해문서 c. 150 BCE)
+기원전 600년경 케테프 힌놈(KH2) 은제 부적의 축약된 축복문과 쿰란 동굴의 4QSam-a, 4QJer-b/d 사본은 고대 성서 전승이 닫힌 화석이 아니라 능동적인 텍스트 다형성(Pluriformity)의 생태계였음을 보여준다.
 
-쿰란 동굴에서 발견된 230여 점의 성서 사본은 오늘날 우리가 가진 마소라 본문(MT) 외에도 칠십인역(LXX) 원형, 삼마리아 오경 계통 등 다양한 텍스트 이본이 평화롭게 공존했음을 입증한다. 고대 이스라엘에서 "단 하나의 고정된 성서 원본"은 존재하지 않았으며, 전승과 재해석의 살아있는 과정이 존재했다.`,
+19세기 '얌니아 공의회' 신화와 달리, 기원후 1세기 말 마소라 본문(MT)으로의 표준화는 로마의 제2성전 파괴(70 CE)와 바르 코크바 항쟁(132–135 CE)으로 인한 라이벌 분파 절멸의 비극적 역사 생태학적 결과였다.`,
     keyTakeaways: [
-      '사건 연대, 구성(구전) 연대, 편집(정본) 연대, 현존 사본 연대의 엄격한 4중 연대 벡터 분리가 필수적임',
-      '기원전 600년경 케테프 힌놈 은제 부적(KH2)은 민수기 제사장 축복문을 담은 최고(最古)의 물리적 성서 본문이나, 성서 책 전체의 존재를 뜻하지 않음',
-      '사해문서(쿰란 4QSam-a, 1QIsa-a)는 기원전 2~1세기까지 마소라 본문(MT), 칠십인역 희랍어 원본(Vorlage), 사마리아 오경 계통이 자유롭게 공존했던 텍스트 다형성(Pluriformity)을 입증함',
-      '단일한 원본(Urtext)이란 후대 종교적 구성물이며, 고대 성서는 신앙 공동체의 끊임없는 재해석과 편집의 살아있는 전승이었음'
+      '사건 지평 ➔ 고대 구전 시가 ➔ 왕정기/Dtr1 ➔ 포로기/사제문서(P) ➔ 헬레니즘 판본 ➔ 마소라 수렴으로 이어지는 6중 연대 층위 확립',
+      '케테프 힌놈 2호(KH2) 은제 부적은 민수기 6장 MT 3행과 달리 은혜 문구가 생략된 2행 병행 축약문으로, 당대 널리 쓰이던 호신용 액막이 제의문(Apotropaic Amulet)이었음',
+      '사해문서 4QSam-a(4Q51)와 4QJer-b/d(DJD XV)는 단순 이문이 아니라 유진 울리히가 정립한 ‘다중 문학 판본(Multiple Literary Editions)’의 실재를 증명함',
+      '19세기 하인리히 그레츠의 ‘얌니아 회의(Council of Jamnia, c. 90 CE)’ 가설을 폐기하고, 서기 70년 성전 파괴 및 132–135년 바르 코크바 항쟁이 낳은 생존 분파 독점(무라바아트/나할헤베르 100% MT 일치)으로 표준화 메커니즘을 재정립',
+      '사해 지구대(-400m MSL)의 극건조 미기후와 예루살렘 고원지대(600mm 우기)의 타포노미 보존 편향(Taphonomic Bias), 다윗성 불라 섬유흔, 엔-게디 탄화 두루마리 마이크로 CT 가상 전개의 문명사적 함의'
     ],
     civilizationsDiscussed: ['israel-judah'],
-    readingTimeMinutes: 8,
-    relatedArtifactIds: ['ketef-hinnom-silver-scrolls', 'tel-dan-stele', 'siloam-tunnel-inscription', 'dead-sea-scrolls-isaiah', 'dead-sea-scrolls-samuel'],
-    crossRefEssayIds: ['essay-4-homer-textualization', 'essay-6-orality-and-text', 'essay-7-preservation-bias'],
+    readingTimeMinutes: 9,
+    relatedArtifactIds: ['ketef-hinnom-silver-scrolls', 'dead-sea-scrolls-1qisa', 'tel-dan-stele', 'siloam-tunnel-inscription', 'lachish-letters-ostraca'],
+    crossRefEssayIds: ['essay-4-homer-textualization', 'essay-6-orality-and-text', 'essay-7-preservation-bias', 'essay-8-institutions-over-script'],
     sections: [
       {
         id: 'sec-5-1',
         order: 1,
-        headingKo: '1. ‘단 하나의 무오한 원본’이라는 근대적 환상',
-        subheadingKo: '인쇄술 이전 고대 필사본 전승의 본질적 조건',
-        content: `오늘날 독자들은 서점에 가면 표지가 깔끔하게 인쇄된 단 한 권의 성경책을 마주한다. 이로 인해 많은 이들은 고대 어딘가에 모세나 다윗, 이사야가 양피지 위에 최초로 적어 내려간 '단 하나의 친필 원본(Original Autograph)'이 존재했고, 후대 필사자들은 그것을 오차 없이 베끼기만 했다는 환상을 품기 쉽다.
+        headingKo: '1. ‘단 하나의 무오한 친필 원본’이라는 근대적 환상과 그 해체',
+        subheadingKo: '폴 드 라가르드의 우르텍스트(Urtext) 계통수 가설과 사해문서의 충격',
+        content: `오늘날 대다수의 독자들은 서점에서 표지가 완벽히 정제된 단 한 권의 성경책을 마주하며, 고대 어딘가에 모세나 다윗, 이사야가 양피지 위에 최초로 적어 내려간 무결한 '친필 원본(Original Autograph)'이 존재했고 후대 필사자들은 그것을 복제하기만 했다는 가정을 무의식적으로 품는다.
 
-그러나 20세기 중반 사해문서(Dead Sea Scrolls)의 발견과 현대 본문비평학(Textual Criticism)은 이 관념을 근본적으로 해체했다. 성서는 한 시점에 하늘에서 뚝 떨어진 책이 아니라, 서로 다른 역사적 위기(예루살렘 함락, 바빌론 유배, 제2성전 재건) 속에서 수백 년에 걸쳐 덧붙여지고, 편집되고, 재해석된 '살아있는 문서 집성체'였다.`,
+19세기 독일의 본문비평가 폴 드 라가르드(Paul de Lagarde, 1827–1891)는 현존하는 모든 사본의 계통수(Stemma)를 거슬러 올라가면 단 하나의 단일 원본(Urtext)에 도달할 수 있다는 '단일 계통수 가설'을 수립했다. 라가르드는 기원후 2세기 랍비 유대교가 단 하나의 표준 사본을 채택하여 모든 이본을 파괴했다고 보았으며, 20세기 중반까지 성서학계는 현존 사본들의 차이를 원본에서 퇴색된 '필사 오류(scribal errors)'로만 간주했다.
+
+그러나 1947년 이후 유다 광야 쿰란 11개 동굴에서 쏟아져 나온 230여 점의 성서 사본들은 이 단선적 도식을 근본적으로 무너뜨렸다. 쿰란의 가죽 두루마리들은 기원전 3세기부터 기원후 1세기까지 고대 유대교 사회에 '단 하나의 표준 성서'란 존재하지 않았으며, 서로 다른 문학적 편집 층위와 번역 대본들이 동등한 종교적 권위를 누리며 공존했던 **'텍스트 다형성의 생태계(Pluriformity Ecosystem)'**가 실재했음을 입증했다.`,
         scholarlyCallout: {
           type: 'theory-debate',
-          titleKo: '학술 쟁점: 폴 라가르드의 단일 원본설 vs 에마누엘 토브의 텍스트 다형성론',
+          titleKo: '학술 쟁점: 폴 드 라가르드의 단일 원본설 vs 에마누엘 토브의 텍스트 다형성론',
           bodyKo: '19세기 폴 드 라가르드(Paul de Lagarde)는 모든 이본을 거슬러 올라가면 단 하나의 성서 원본(Urtext)에 도달할 수 있다고 믿었다. 반면 사해문서 본문비평의 최고 권위자 에마누엘 토브(Emanuel Tov)는 고대 유대교에 다양한 전승 이본들이 동등한 권위로 공존했던 텍스트 다원성(Textual Pluriformity)이 실재했음을 입증했다.'
         }
       },
       {
         id: 'sec-5-2',
         order: 2,
-        headingKo: '2. 4중 연대 벡터의 엄격한 분리',
-        subheadingKo: '사건, 구성, 편집, 사본 연대가 충돌할 때 발생하는 역사적 착시',
-        content: `성서 문헌을 학술적으로 분석할 때 가장 치명적인 오류는 '이야기 속 사건의 연대'와 '실제 물리적 사본의 연대'를 혼동하는 것이다. <장부 이후> 아틀라스는 이를 방지하기 위해 모든 텍스트에 **4중 연대 벡터(4-Dates Vector)**를 엄격히 적용한다.
+        headingKo: '2. 6중 연대 층위(Multi-Strata Date Vector)의 방법론적 정립',
+        subheadingKo: '사건 지평에서 구전 시가, 포로기 편찬실, 헬레니즘 판본, 마소라 수렴까지',
+        content: `성서 문헌을 학술적으로 다룰 때 이야기 속 사건의 연대와 실제 사본의 물리적 제작 연대를 혼동하는 것은 치명적 오류다. 성서는 수백 년에 걸친 역사적 격변 속에서 형성된 복합적 문서 집성체이므로, <장부 이후> 아틀라스는 텍스트를 6개의 독립된 연대 층위로 정밀 분리한다.
 
-1. **사건 연대 (Event Date, c. 1250 BCE)**: 모세의 출애굽, 여호수아의 가나안 정복 등 텍스트가 묘사하는 역사적 사건의 무대.
-2. **구성/구전 연대 (Composition Date, c. 1100–800 BCE)**: 《드보라의 노래》(사사기 5장)처럼 고대 시적 운율로 구전되기 시작한 시기.
-3. **편집 연대 (Redaction Date, c. 586–450 BCE)**: 바빌론 유배기 예루살렘 사제들과 신명기 학파가 다양한 북왕국·남왕국 전승을 하나의 오경(Torah)과 역사서로 통합 편찬한 시기.
-4. **현존 사본 연대 (Witness Date, c. 150 BCE–CE 1008)**: 쿰란 동굴의 실제 가죽 두루마리(BCE 150) 혹은 완전한 히브리어 마소라 필사본인 레닌그라드 사본(CE 1008)의 고고학적 제작 시기.
-
-이 4가지 연대를 혼동하지 않을 때 비로소 텍스트가 거쳐온 천 년의 형성과정이 시야에 들어온다.`,
+1. **사건 지평 (Event Horizon, c. 1250–1000 BCE)**: 청동기 말-철기 I기 역사적 배경 (출애굽, 가나안 정착, 사사 시대).
+2. **고대 구전 시가 퇴적기 (Archaic Oral Poetry, c. 1100–800 BCE)**: 문자가 없거나 극히 희소했던 시기의 제의적 가창 (《드보라의 노래》 사사기 5장, 《바다의 노래》 출애굽기 15장).
+3. **왕정기 기록 및 신명기 1차 편집 (Monarchic & Dtr1, c. 720–620 BCE)**: 북이스라엘 멸망(722 BCE) 후 히스기야·요시야 시대 유다의 지적 결집과 초기 연대기·예언 전승 수집.
+4. **바빌론 포로기 및 페르시아기 사제 문서 편집 (Exilic & P/Dtr2, c. 586–400 BCE)**: 제1성전 파괴(586 BCE)와 유배지 정체성 위기 속에서 사제 문서(P) 편찬 및 에스라-느헤미야의 토라 통합.
+5. **헬레니즘기 다중 문학 판본 및 번역 (Hellenistic Editions & LXX, c. 300–100 BCE)**: 알렉산드리아 칠십인역(LXX) 그리스어 번역, 다니엘서(c. 164 BCE) 편입, 쿰란 4QJer-b/d 다중 판본 공존.
+6. **현존 사본 증언 및 마소라 수렴 (Witness Manuscripts, c. 150 BCE–CE 1008)**: 쿰란 사본(BCE 150–CE 68) ➔ 바르 코크바 사본(CE 132–135) ➔ 레닌그라드 사본(Codex B19a, CE 1008).`,
         scholarlyCallout: {
           type: 'comparative-insight',
-          titleKo: '연대 벡터 대조: 호메로스 서사시와 히브리 성서의 평행성',
-          bodyKo: '호메로스 역시 트로이 함락 사건(c. 1200 BCE), 구전 가창(c. 750 BCE), 아테네 참주 편집(c. 530 BCE), 현존 Venetus A 사본(CE 950)이라는 동일한 4중 연대 격차를 가진다. 고대 대서사 텍스트의 형성은 동서양을 막론하고 이 4중 벡터의 궤적을 따른다.'
+          titleKo: '연대 벡터 비교: 호메로스 서사시와 히브리 성서의 문명사적 평행성',
+          bodyKo: '호메로스 역시 미케네 사건(c. 1200 BCE), 구전 암흑기(c. 1100–800 BCE), 알파벳 도입(c. 750 BCE), 아테네 제전 정서(c. 530 BCE), 알렉산드리아 비평(c. 200 BCE), 중세 Venetus A(CE 950)라는 동일한 다층적 연대 층위를 가진다. 고대 대서사 텍스트의 형성은 동서양을 막론하고 이 다층적 궤적을 따른다.'
         }
       },
       {
         id: 'sec-5-3',
         order: 3,
-        headingKo: '3. 최고(最古)의 성서 비문: 케테프 힌놈 은제 부적(KH2)',
-        subheadingKo: '제1성전 시대 예루살렘 무덤에서 출토된 제사장 축복문',
-        content: `성서 구절이 물리적으로 기록된 가장 오래된 실물 유물은 1979년 예루살렘 힌놈 골짜기 제24호 암굴 무덤에서 가브리엘 바르카이(Gabriel Barkay) 교수에 의해 발굴된 **케테프 힌놈 은제 두루마리 부적(Ketef Hinnom Silver Scrolls, KH1/KH2)**이다.
+        headingKo: '3. 최고(最古)의 성서 비문: 케테프 힌놈 은제 부적 (KH2, c. 600 BCE) 정밀 고증',
+        subheadingKo: '예루살렘 제24호 무덤 출토 은제 두루마리와 축약된 제사장 축복문',
+        content: `1979년 예루살렘 힌놈 골짜기 제24호 암굴 무덤에서 가브리엘 바르카이(Gabriel Barkay) 교수에 의해 발굴된 **케테프 힌놈 은제 두루마리 부적(Ketef Hinnom Silver Scrolls, KH1/KH2)**은 성서 구절이 물리적으로 기록된 인류 역사상 가장 오래된 유물이다.
 
-기원전 600년경(바빌론 군대에 의해 제1성전이 파괴되기 직전) 얇은 은판을 돌돌 말아 목걸이 부적으로 만든 이 손가락 크기의 유물에는 고대 히브리 문자(Paleo-Hebrew)로 민수기 6장 24-26절의 '아론의 제사장 축복문'이 미세하게 음각되어 있었다. 
+순도 99%의 얇은 은판(9.7 × 2.7 cm)을 돌돌 말아 목걸이 부적으로 만든 KH2는 바빌론 군대에 의해 제1성전이 파괴되기 직전인 철기 IIB–C기 전환기(c. 650–587 BCE) 유물이다.
 
-그러나 이 유물이 성서 '민수기' 책 전체가 기원전 600년에 이미 완성되어 있었다는 증거는 아니다. 그것은 축복과 보호의 제의적 기도문구가 당대 유다인들의 일상 신앙 속에 강력한 주술적 부적으로 유통되고 있었음을 보여주는 사료다.`,
+가브리엘 바르카이 팀의 고해상도 다중스펙트럼(MSI) 정밀 판독(Barkay et al. 2004)에 따르면, KH2는 민수기 6장 24–26절의 표준 마소라 본문(MT)과 달리 **제2행 후반부(*wiyḥunnekā*)를 생략하고 25행과 26행을 하나로 축약한 2행 병행 구조(Bi-colon formula)**를 띤다. 이는 민수기 책 전체가 존재했다는 증거가 아니라, 제사장 축복 기도문이 성서 책 편찬 수백 년 전부터 당대 유다인들의 일상 신앙 속에 강력한 호신용 액막이 부적(Apotropaic Amulet)으로 유통되고 있었음을 보여준다.`,
         originalQuote: {
-          originalScript: 'יברכך יהוה וישמרך \nיאר יהוה פניו אליך ויחנך \nישא יהוה פניו אליך וישם לך שלום',
-          transliteration: 'yəbārekəkā YHWH wəyišmərəkā \nyāʾēr YHWH pānāw ʾēlekā wiyḥunnekā \nyiśśāʾ YHWH pānāw ʾēlekā wəyāśēm ləkā šālôm',
-          translationKo: '야훼께서 너에게 복을 주시고 너를 지키시기를!\n야훼께서 그의 얼굴을 너에게 비추사 은혜 베푸시기를!\n야훼께서 그의 얼굴을 너에게로 향하여 드사 평강 주시기를!',
-          sourceCitation: '케테프 힌놈 제2호 은제 부적 (KH2, Israel Museum 80.1/2), 민수기 6:24-26'
+          originalScript: '[י]ברכ יהוה [ו][י]שמרכ יאר יהוה פני[ו אליכ ו][ישמ ל]כ שלם',
+          transliteration: '[y]brk . yhwh . [w][y]šmrk . yʾr . yhwh . pny[w . ʾlyk . w][yśm . l]k . šlm',
+          translationKo: '야훼께서 그대에게 복을 주시고 그대를 지키시기를! 야훼께서 그분의 얼굴을 [그대에게] 비추사 [그대에게] 평강을 [주시기를]! (민수기 6:24-26 축약 제의문)',
+          sourceCitation: '케테프 힌놈 제2호 은제 부적 5–12행 (KH2, Israel Museum 80.1/2; Barkay et al. 2004: 61, BASOR 334)'
         }
       },
       {
         id: 'sec-5-4',
         order: 4,
-        headingKo: '4. 사해문서가 폭로한 텍스트 다형성(Pluriformity)',
-        subheadingKo: '마소라(MT), 칠십인역 원형(LXX), 사마리아 오경(SP)의 평화로운 공존',
-        content: `1947년부터 유다 광야 쿰란 11개 동굴에서 쏟아져 나온 230여 점의 성서 사본들은 성서학계를 충격에 빠뜨렸다. 
+        headingKo: '4. 사해문서와 텍스트 다형성(Pluriformity): 3대 핵심 사본 비교 고증',
+        subheadingKo: '4QSam-a(사무엘기), 4QJer-b/d(예레미야서), 1QIsa-a(대이사야서)의 증언',
+        content: `쿰란 11개 동굴에서 출토된 230여 점의 성서 사본 중 기원후 10세기 유대교 표준 정본인 마소라 본문(MT)과 일치하는 사본은 약 45~50%에 불과했다. 희랍어 구약 칠십인역(LXX)의 모태가 된 히브리어 이본(10~15%), 사마리아 오경(SP) 계통(15%), 그리고 독자적인 비정렬 독립 계열(20~25%)이 같은 동굴 안에서 평화롭게 공존했다.
 
-기원후 10세기 유대교 마소라 학자들에 의해 모음 부호가 붙여져 표준 정본이 된 **마소라 본문(Masoretic Text, MT)**과 정확히 일치하는 사본은 쿰란 텍스트의 약 40~50%에 불과했다. 놀랍게도 기원전 3세기 알렉산드리아에서 번역된 희랍어 구약 **칠십인역(Septuagint, LXX)**의 바탕이 되었던 히브리어 이본(4QSam-a, 4QJer-b)과 **사마리아 오경(Samaritan Pentateuch)** 계통의 사본들이 같은 동굴 안에서 아무런 배척 없이 나란히 보관되어 있었다.
-
-특히 사무엘기 사본인 **4QSam-a**는 오늘날 우리가 읽는 마소라 성서 본문에서 탈락된 거인 나하스의 잔혹 행위에 관한 결정적 문단(사무엘상 10장 말미)을 온전히 보존하고 있었다. 고대 유대교 사회에서 성서는 닫힌 정본이 아니라, 서로 다른 전승들이 상호 대화하며 생명력을 유지하던 '열린 텍스트의 바다'였다.`,
+1. **4QSam-a (4Q51 / DJD XVII)**: 제10열(Col. X)에 마소라 성서(삼상 10장 말미)에서 탈락된 암몬 왕 나하스의 잔혹 행위 단락을 온전히 보존하여 칠십인역 및 요세푸스 《유대고대사》(6.68–71)와 정확히 일치함.
+2. **4QJer-b / 4QJer-d (DJD XV)**: 마소라 본문보다 1/7이 짧고 이방 신탁 배치가 다른 칠십인역 예레미야서의 히브리어 원형(Vorlage)을 보존함으로써 유진 울리히의 '다중 문학 판본(Multiple Literary Editions)'을 실증함.
+3. **대이사야 두루마리 (1QIsa-a)**: 모음 보조 자음(*matres lectionis*)을 대폭 늘린 완전철자법(Plene Orthography)으로 당대 음운 체계에 맞춘 언어적 현대화(Linguistic Modernization)를 보여줌.`,
         originalQuote: {
-          originalScript: 'ונחש מלך בני עמון הוא לחץ את בני גד ואת בני ראובן בחזקה ונקר להם כל עין ימין...',
-          transliteration: 'wə-nāḥāš melek bənê-ʿammôn hûʾ lōḥēṣ ʾet-bənê-gād wə-ʾet-bənê rəʾûbēn bə-ḥāzqāh...',
-          translationKo: '암몬 자손의 왕 나하스는 갓 자손과 르우벤 자손을 심히 압제하였으며, 그들의 오른쪽 눈을 모조리 후벼 파내어...',
-          sourceCitation: '쿰란 제4동굴 사무엘기 사본 (4QSam-a, Col. XII), 마소라 본문에서 탈락된 구절'
+          originalScript: '[ונח]ש מלך בני עמון הוא לחץ את בני גד ואת בני ראובן בחזקה ונקר להם כ[ול עין ימ]ין...',
+          transliteration: '[wnḥ]š mlk bny ʿmwn hwʾ lḥṣ ʾt bny gd wʾt bny rʾwbn bḥzqh wnqr lhm k[wl ʿyn ym]yn...',
+          translationKo: '암몬 자손의 왕 [나하]스는 갓 자손과 르우벤 자손을 심히 압제하였으며, 그들의 [오른쪽 눈]을 모[두] 후벼 파내어...',
+          sourceCitation: '쿰란 제4동굴 사무엘기 사본 제10열 (4Q51 / 4QSam-a Col. X, DJD XVII: 80–84, Cross et al. 2005)'
         }
       },
       {
         id: 'sec-5-5',
         order: 5,
-        headingKo: '5. 결론: 성서 정전은 고정된 화석이 아니라 대화의 전승이었다',
-        subheadingKo: '살아있는 해석 공동체와 텍스트의 역사',
-        content: `성서의 '원본'을 찾는 탐정 놀이는 이제 종언을 고했다. 성서의 위대함은 어느 한 시점에 진공 상태에서 완성된 무결한 원본에 있는 것이 아니라, 숱한 역사적 파국과 디아스포라의 시련 속에서도 공동체가 텍스트를 끊임없이 다시 베끼고, 해석하고, 삶에 적용하며 전승해온 그 '과정 자체'에 있다.
+        headingKo: '5. 타포노미(Taphonomy)와 물질 보존 편향: 사막의 침묵과 도심의 부식',
+        subheadingKo: '사해 지구대 극건조 미기후, 다윗성 점토 불라 섬유흔, 엔-게디 탄화 두루마리 마이크로 CT',
+        content: `쿰란 동굴 사본의 잔존 통계를 고대 유대 사회 전체의 문자 유통 실태로 단순 일반화하는 것은 퇴적보존학(Taphonomy)을 무시한 생존 편향(Survival Bias)이다.
 
-케테프 힌놈의 은판에서 쿰란 동굴의 가죽 두루마리, 알렉산드리아의 파피루스, 그리고 중세의 거대한 코덱스에 이르기까지, 성서는 고정된 돌비석이 아니라 끊임없이 살아 움직이는 대화의 강물이었다.`
+해수면 아래 400m(-400m MSL)의 극건조 사해 지구대 석회암 동굴은 유기물 파피루스와 가죽을 2,000년간 완벽히 보존한 반면, 연 강우량 550~650mm의 혹독한 겨울 우기가 내리는 예루살렘과 사마리아 고원지대에서는 모든 파피루스와 양피지 두루마리가 미생물에 의해 100% 부식 소멸되었다.
+
+그러나 다윗성 발굴지(Area G)에서 출토된 수백 점의 기원전 7~6세기 점토 불라(Bulla) 뒷면에 선명히 찍힌 파피루스 결속 끈과 섬유흔은, 도심에 수천수만 점의 두루마리가 존재했음을 증명한다. 또한 엔-게디(En-Gedi) 회당 화재층에서 발견된 숯덩이가 첨단 마이크로 CT 비파괴 가상 전개(Virtual Unwrapping, Seales et al. 2016)를 통해 마소라 본문과 100% 일치하는 《레위기》 1–2장으로 복원된 것은 사료의 침묵을 문해의 부재로 오판해서는 안 됨을 보여준다.`,
+        scholarlyCallout: {
+          type: 'epigraphic-discovery',
+          titleKo: '디지털 비문학 혁신: 엔-게디 탄화 두루마리 가상 전개 (Seales et al. 2016)',
+          bodyKo: '켄터키 대학 브렌트 실스(W. Brent Seales) 연구팀은 탄화된 숯덩이 상태의 엔-게디 두루마리를 비파괴 마이크로 CT 3D 스캔하여 컴퓨터 상에서 가상으로 펴내 레위기 1–2장의 완벽한 히브리어 텍스트를 읽어내는 데 성공했다.'
+        }
+      },
+      {
+        id: 'sec-5-6',
+        order: 6,
+        headingKo: '6. 서기 70년 성전 파괴, 바르 코크바 항쟁, 그리고 마소라 본문의 배타적 수렴',
+        subheadingKo: '19세기 ‘얌니아 회의’ 신화의 폐기와 와디 무라바아트 사본의 100% 마소라 일치',
+        content: `텍스트 다형성의 바다가 어떻게 단 하나의 마소라 본문(MT) 독점으로 수렴되었는가?
+
+1871년 하인리히 그레츠가 주장했던 '얌니아 회의(Council of Jamnia, c. 90 CE)' 가설은 현대 성서학(Jack P. Lewis 1992; Timothy Lim 2010)에 의해 허구로 판명되었다. 얌니아 학당은 정전을 결의한 기독교식 공의회가 아니었다.
+
+실제 표준화의 동력은 **서기 70년 로마의 제2성전 파괴와 132–135년 바르 코크바 항쟁(Bar Kokhba Revolt)**이라는 지정학적 파멸이었다. 사두개파, 쿰란 에세네파, 헬레니즘 디아스포라 유대교 등 독자적 이본을 보존하던 라이벌 분파들이 물리적으로 절멸하고, 오직 성전 보관용 정본(Proto-MT)을 간직했던 바리새파-랍비 유대교만이 유일하게 살아남았다.
+
+바르 코크바 항쟁군이 피신했던 **와디 무라바아트(Mur 88)와 나할 헤베르 사본이 쿰란과 달리 현대 마소라 본문과 100% 완벽한 일치도**를 보이는 것은, 성서의 단일화가 학술 회의의 합의가 아닌 생존 분파의 제도적 독점 결과였음을 고고학적으로 웅변한다.`,
+        scholarlyCallout: {
+          type: 'theory-debate',
+          titleKo: '학술 쟁점: 얌니아 공의회 신화 폐기와 바르 코크바 사본의 100% 일치',
+          bodyKo: '19세기 역사실증주의가 상정한 얌니아 공의회는 존재하지 않았다. 쿰란의 극심한 다형성에서 와디 무라바아트(Mur 88)의 100% 마소라 일치로의 급격한 수렴은 로마와의 두 차례 유대 전쟁(70 CE, 132–135 CE)으로 인한 라이벌 분파들의 물리적 절멸이 낳은 역사 생태학적 결과였다.'
+        }
       }
     ],
     primarySources: [
@@ -1014,59 +1039,114 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
         id: 'src-5-1',
         artifactId: 'ketef-hinnom-silver-scrolls',
         nameKo: '케테프 힌놈 은제 부적 (KH2)',
-        nameEnOrOriginal: 'Ketef Hinnom Silver Amulets (KH2)',
+        nameEnOrOriginal: 'Ketef Hinnom Silver Amulets (KH2 / Israel Museum 80.1/2)',
         catalogNo: 'Israel Museum Jerusalem 80.1/2',
         institution: 'The Israel Museum, Jerusalem',
         dateVector: {
           eventDateBCE: 600,
           compositionDateBCE: 700,
+          redactionDateBCE: 600,
           witnessDateBCE: 600
         },
-        originalScript: 'יברכך יהוה וישמרך',
-        transliteration: 'yəbārekəkā YHWH wəyišmərəkā',
-        translationKo: '야훼께서 너를 축복하시고 너를 지키시기를 (민수기 6:24 축복문)',
+        originalScript: '[י]ברכ יהוה [ו][י]שמרכ יאר יהוה פני[ו אליכ ו][ישמ ל]כ שלם',
+        transliteration: '[y]brk . yhwh . [w][y]šmrk . yʾr . yhwh . pny[w . ʾlyk . w][yśm . l]k . šlm',
+        translationKo: '야훼께서 그대에게 복을 주시고 그대를 지키시기를! 야훼께서 그분의 얼굴을 [그대에게] 비추사 [그대에게] 평강을 [주시기를]! (민수기 6:24-26 축약 제의문)',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '다중스펙트럼 적외선 촬영(MSI) 및 실물 롤링 해체 판독',
-        notes: '성서 본문이 기록된 인류 역사상 가장 오래된 물리적 사본 유물.'
+        epigraphyMethod: '다중스펙트럼 적외선 촬영(MSI) 및 실물 롤링 해체 판독 (Barkay et al. 2004, BASOR 334)',
+        notes: '성서 본문이 기록된 인류 역사상 가장 오래된 물리적 유물. 3행 MT와 달리 은혜 문구가 생략된 2행 병행 축약문으로 당대 널리 쓰이던 호신용 액막이 제의문(Apotropaic Amulet)이었음.'
       },
       {
         id: 'src-5-2',
         artifactId: 'dead-sea-scrolls-samuel',
-        nameKo: '쿰란 제4동굴 사무엘기 사본 (4QSam-a)',
-        nameEnOrOriginal: 'Qumran Cave 4 Samuel Scroll (4Q51 / 4QSam-a)',
-        catalogNo: 'IAA / Rockefeller Museum 4Q51',
+        nameKo: '쿰란 제4동굴 사무엘기 사본 (4QSam-a / 4Q51)',
+        nameEnOrOriginal: 'Qumran Cave 4 Samuel Scroll (4Q51 / 4QSam-a, Col. X)',
+        catalogNo: 'IAA / Rockefeller Museum 4Q51 (DJD XVII)',
         institution: 'Israel Antiquities Authority / Shrine of the Book',
         dateVector: {
           eventDateBCE: 1000,
           compositionDateBCE: 600,
           redactionDateBCE: 400,
-          witnessDateBCE: 100
+          witnessDateBCE: 50
         },
-        originalScript: 'ונחש מלך בני עמון הוא לחץ',
-        transliteration: 'wə-nāḥāš melek bənê-ʿammôn...',
-        translationKo: '마소라 본문에는 없고 칠십인역(LXX) 및 요세푸스에 보존된 암몬 왕 나하스의 단락을 보존한 가죽 사본',
+        originalScript: '[ונח]ש מלך בני עמון הוא לחץ את בני גד ואת בני ראובן בחזקה ונקר להם כ[ול עין ימ]ין...',
+        transliteration: '[wnḥ]š mlk bny ʿmwn hwʾ lḥṣ ʾt bny gd wʾt bny rʾwbn bḥzqh wnqr lhm k[wl ʿyn ym]yn...',
+        translationKo: '암몬 자손의 왕 [나하]스는 갓 자손과 르우벤 자손을 심히 압제하였으며, 그들의 [오른쪽 눈]을 모[두] 후벼 파내어... (마소라 성서에서 탈락된 구절 보존)',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '디지털 사해문서 아카이브 IIIF 초고해상도 적외선 스캔',
-        notes: '히브리 성서 본문비평학의 패러다임을 바꾼 대표적 다형성(Pluriformity) 사본.'
+        epigraphyMethod: '디지털 사해문서 아카이브 IIIF 초고해상도 적외선 스캔 및 DJD XVII 표준 교감 판본 (Cross et al. 2005)',
+        notes: '마소라 본문에는 없고 칠십인역(LXX) 및 요세푸스 《유대고대사》(6.68–71)에 보존된 암몬 왕 나하스의 단락을 보존한 대표적 다형성(Pluriformity) 사본.'
+      },
+      {
+        id: 'src-5-3',
+        artifactId: 'dead-sea-scrolls-1qisa',
+        nameKo: '대이사야 두루마리 (1QIsa-a)',
+        nameEnOrOriginal: 'The Great Isaiah Scroll (1QIsa-a)',
+        catalogNo: 'The Israel Museum Jerusalem, Shrine of the Book (1QIsa-a)',
+        institution: 'The Israel Museum, Jerusalem',
+        dateVector: {
+          eventDateBCE: 700,
+          compositionDateBCE: 600,
+          redactionDateBCE: 400,
+          witnessDateBCE: 125
+        },
+        originalScript: 'ישושום מדבר וציה ותגל ערבה ותפרח כחבצלת: פרוח תפרח ותגל אף גילת ורנן...',
+        transliteration: 'yśwśw-m mdbr wṣyh wtgl ʿrbh wtprḥ k-ḥbṣlt: prwḥ tprḥ wtgl ʾp gylt w-rnn...',
+        translationKo: '광야와 메마른 땅이 기뻐하며 사막이 백합화 같이 피어 즐거워하리라... (이사야 35:1–2)',
+        sourceGrade: 'Grade A',
+        epigraphyMethod: '사해문서 디지털 컬렉션 고해상도 초분광 이미징 및 완전철자법(Plene Orthography) 대조',
+        notes: '54열 7.34m 완본 두루마리로, 모음 보조 자음(waw, yod, he)이 대폭 증대된 제2성전기 구어적 완전철자법과 언어적 현대화(Linguistic Modernization)를 보여줌.'
       }
     ],
     scholarlyDebates: [
       {
         id: 'deb-5-1',
-        topic: '고대 성서 본문의 성격: 단일 원본(Urtext) 수렴 모델 vs 다형성(Pluriformity) 공존 모델',
+        topic: '고대 성서 본문의 성격: 단일 원본(Urtext) 수렴 모델 vs 텍스트 다형성(Pluriformity) 및 다중 문학 판본(Multiple Editions)',
         thesisA: {
-          scholarOrSchool: '프랭크 무어 크로스 (Frank Moore Cross, 1975)',
-          eraOrYear: '1975',
-          claimKo: '성서는 팔레스타인, 이집트(칠십인역), 바빌로니아(마소라)라는 3대 지역적 텍스트 가계(Local Texts Theory)로 분기되었다가 수렴되었다.',
-          keyEvidence: '쿰란 사본들에서 나타나는 3대 지리적 이본 계열의 언어학적 특징 대조.'
+          scholarOrSchool: '폴 드 라가르드 & 프랭크 무어 크로스 (Paul de Lagarde 1871; Frank Moore Cross 1975)',
+          eraOrYear: '1871–1975',
+          claimKo: '모든 이문은 단 하나의 원본에서 분기된 오염이며, 지리적 3대 텍스트 가계(바빌로니아 MT, 팔레스타인 SP, 이집트 LXX)로 분기되었다가 수렴되었다.',
+          keyEvidence: '사본 간의 이문들을 계통수로 배열할 수 있다는 19세기 문헌학적 가정 및 3대 지리적 이본 특징.'
         },
         thesisB: {
-          scholarOrSchool: '에마누엘 토브 (Emanuel Tov, 2012)',
+          scholarOrSchool: '에마누엘 토브 & 유진 울리히 (Emanuel Tov 1992, 2012; Eugene Ulrich 1999)',
           eraOrYear: '1992–2012',
-          claimKo: '지리적 3분설은 도식적이며, 쿰란에는 마소라계, 칠십인역계, 비정렬 독립계 등 수많은 텍스트가 권위의 위계 없이 자유롭게 공존하던 다원적 생태계가 존재했다.',
-          keyEvidence: '단일 동굴(4번 동굴) 내에서 서로 다른 계통의 성서 사본 수십 점이 평화롭게 동시 보관된 고고학적 맥락.'
+          claimKo: '쿰란 단일 동굴 안에서 4대 계통이 모두 출토되듯 고대 유대교에는 텍스트 다원성(Pluriformity)이 실재했으며, 4QJer-b/d 등은 단순 오차가 아닌 서기관의 합법적 ‘다중 문학 판본(Multiple Literary Editions)’임.',
+          keyEvidence: '쿰란 4번 동굴 내 4대 텍스트 군집의 평화로운 동시 보관 및 칠십인역과 일치하는 히브리어 단축 판본(4QJer-b)의 물리적 출토.'
         },
-        consensusStatus: '현대 성서학 본문비평은 토브의 텍스트 다원성 및 열린 정경(Open Canon) 모델을 학계의 표준 패러다임으로 확립함.'
+        consensusStatus: '현대 성서학 본문비평은 토브의 텍스트 다형성과 울리히의 다중 문학 판본 모델을 학계의 표준 패러다임으로 확립함.'
+      },
+      {
+        id: 'deb-5-2',
+        topic: '4QSam-a 나하스 단락의 본질: 마소라의 동음탈락(Haplography) vs 서기관의 미드라시적 확장(Midrashic Expansion)',
+        thesisA: {
+          scholarOrSchool: 'P. 카일 맥카터 & 프랭크 무어 크로스 (P. Kyle McCarter 1980; F. M. Cross 2005)',
+          eraOrYear: '1980–2005',
+          claimKo: '마소라 본문 필사자가 유사한 어구 사이에서 눈이 건너뛰는 동음탈락(Homoioteleuton) 실수를 범하여 단락을 누락시켰으며, 4QSam-a가 원래의 원초적 본문을 보존함.',
+          keyEvidence: '삼상 10:27 말미의 ויהי כמחריש와 11:1 서두 ויהי כמו חדש 사이의 어간 유사성 및 요세푸스 《유대고대사》(6.68–71)와의 일치.'
+        },
+        thesisB: {
+          scholarOrSchool: '도미니크 바르텔레미 & 알렉산더 로페 (Dominique Barthélemy 1982; Alexander Rofé 2010)',
+          eraOrYear: '1982–2010',
+          claimKo: '삼상 11:2에서 나하스가 왜 갑자기 오른쪽 눈을 뽑겠다고 위협하는지 설명하기 위해 고대 서기관이 2차적으로 삽입한 해설적·조화적 미드라시 증보(Midrashic expansion)임.',
+          keyEvidence: '짧은 본문이 원형에 가깝다는 본문비평 공리(Lectio brevior potior) 및 고대 서기관들의 능동적 내적 성서 주해(Inner-Biblical Exegesis) 관행.'
+        },
+        consensusStatus: '현대 학계는 4QSam-a의 단락이 고대 지식인들에게 널리 통용되던 권위 있는 전승 텍스트였음을 인정하되, 원초적 본문 보존설과 미드라시 증보설의 양 가능성을 모두 개방적으로 검토함.'
+      },
+      {
+        id: 'deb-5-3',
+        topic: '마소라 본문 단일 표준화의 동력: 얌니아 공의회의 학술 결의 vs 로마 제국과의 유대 전쟁 및 생존 분파 독점',
+        thesisA: {
+          scholarOrSchool: '하인리히 그레츠 (Heinrich Graetz 1871)',
+          eraOrYear: '1871–1970년대',
+          claimKo: '기원후 90년경 얌니아(야브네)에서 랍비들이 공의회를 열어 성서 정전 39권을 최종 확정하고 표준 마소라 본문을 채택 결의함.',
+          keyEvidence: '탈무드 미슈나 야다임(Yadayim 3:5)에 기록된 성서 책들의 성결성 논쟁.'
+        },
+        thesisB: {
+          scholarOrSchool: '잭 P. 루이스, 샤예 코헨, 티모시 림 (Jack P. Lewis 1992; Shaye Cohen 1984; Timothy Lim 2010)',
+          eraOrYear: '1984–2012',
+          claimKo: '얌니아 공의회는 19세기가 날조한 신화이며, 실제 표준화는 서기 70년 제2성전 파괴와 132–135년 바르 코크바 항쟁으로 비바리새 라이벌 분파들이 절멸한 결과임.',
+          keyEvidence: '공의회 기록의 부재 및 와디 무라바아트(Mur 88)와 나할 헤베르 사본에서 나타나는 100% 완전한 마소라 본문 일치도.'
+        },
+        consensusStatus: '현대 성서학계는 얌니아 공의회 신화를 완전히 폐기하고, 두 차례 유대 전쟁으로 인한 역사적·사회적 텍스트 수렴 모델을 표준으로 수용함.'
       }
     ],
     bibliography: [
@@ -1075,7 +1155,7 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
         sourceGrade: 'Grade A',
         author: 'Tov, Emanuel',
         year: 2012,
-        title: 'Textual Criticism of the Hebrew Bible (3rd Revised Ed.)',
+        title: 'Textual Criticism of the Hebrew Bible (3rd Revised and Expanded Ed.)',
         publication: 'Minneapolis: Fortress Press.',
         urlOrDoi: 'http://dss.collections.imj.org.il/'
       },
@@ -1085,10 +1165,66 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
         author: 'Barkay, Gabriel et al.',
         year: 2004,
         title: 'The Amulets from Ketef Hinnom: A New Edition and Evaluation',
-        publication: 'Bulletin of the American Schools of Oriental Research 334: 41-71.'
+        publication: 'Bulletin of the American Schools of Oriental Research (BASOR) 334: 41–71.'
       },
       {
         id: 'bib-5-3',
+        sourceGrade: 'Grade A',
+        author: 'Cross, Frank Moore, Donald W. Parry, Richard J. Saley, and Eugene Ulrich',
+        year: 2005,
+        title: 'Qumran Cave 4.XII: 1–2 Samuel (DJD XVII)',
+        publication: 'Oxford: Clarendon Press.'
+      },
+      {
+        id: 'bib-5-4',
+        sourceGrade: 'Grade A',
+        author: 'Tov, Emanuel',
+        year: 1997,
+        title: 'Qumran Cave 4.X: The Prophets (DJD XV)',
+        publication: 'Oxford: Clarendon Press.'
+      },
+      {
+        id: 'bib-5-5',
+        sourceGrade: 'Grade A',
+        author: 'Ulrich, Eugene',
+        year: 1999,
+        title: 'The Dead Sea Scrolls and the Origins of the Bible',
+        publication: 'Grand Rapids: Eerdmans.'
+      },
+      {
+        id: 'bib-5-6',
+        sourceGrade: 'Grade A',
+        author: 'Seales, W. Brent et al.',
+        year: 2016,
+        title: 'From damage to discovery via virtual unwrapping: Reading the scroll from En-Gedi',
+        publication: 'Science Advances 2(9): e1601247.'
+      },
+      {
+        id: 'bib-5-7',
+        sourceGrade: 'Grade A',
+        author: 'Van der Toorn, Karel',
+        year: 2007,
+        title: 'Scribal Culture and the Making of the Hebrew Bible',
+        publication: 'Cambridge, MA: Harvard University Press.'
+      },
+      {
+        id: 'bib-5-8',
+        sourceGrade: 'Grade A',
+        author: 'Carr, David M.',
+        year: 2005,
+        title: 'Writing on the Tablets of the Heart: Origins of Scripture and Literature',
+        publication: 'Oxford: Oxford University Press.'
+      },
+      {
+        id: 'bib-5-9',
+        sourceGrade: 'Grade A',
+        author: 'Lewis, Jack P.',
+        year: 1992,
+        title: 'Jamnia Revisited',
+        publication: 'In The Canon Debate (ed. McDonald & Sanders), Peabody: Hendrickson, pp. 146–162.'
+      },
+      {
+        id: 'bib-5-10',
         sourceGrade: 'Grade B',
         author: 'Cross, Frank Moore',
         year: 1975,
