@@ -1915,32 +1915,33 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
     id: 'essay-8-institutions-over-script',
     order: 8,
     title: '8. 문자 구조보다 제도가 더 중요했는가?',
-    subtitle: '우가리트 통제 사례가 입증하는 언어·외교·서기관 제도의 수렴 법칙',
-    summary: '쉬운 알파벳이 출현했다고 해서 자동으로 서기관 전통이 대체되지 않는다. 우가리트는 알파벳 쐐기문자와 아카드 복합 쐐기문자의 기능적 분업을 유지했다.',
-    content: `문자학의 오랜 고정관념 중 하나는 "단순하고 쉬운 알파벳 문자가 등장하면 복잡한 표어-음절 문자(상형문자, 쐐기문자)는 곧바로 퇴출되고 보편 문해 사회가 도래한다"는 문자 결정론이다.
+    subtitle: '우가리트 통제 사례와 고대 레반트 문자 생태계가 입증하는 언어·외교·서기관 제도의 수렴과 공진화 법칙',
+    summary: '쉬운 알파벳이 출현했다고 해서 자동으로 서기관 전통이 대체되지 않는다. 우가리트는 알파벳 쐐기문자와 아카드 복합 쐐기문자의 기능적 분업(양층문자)을 160년 이상 유지했으며, 문자의 성패는 제도적 인프라와 매체 물질성의 공진화에 의해 결정되었다.',
+    content: `19~20세기 서구 문자학의 오랜 고정관념 중 하나는 "단순하고 적은 수의 자모를 가진 알파벳이 발명되면 복잡한 표어-음절 문자(이집트 상형문자, 메소포타미아 쐐기문자)는 곧바로 퇴출되고 보편 문해 사회와 민주주의가 도래한다"는 잭 구디(Jack Goody) 식의 기술 결정론이다.
 
-우가리트(Ras Shamra) 출토 유물은 이 결정론을 완벽히 반박한다. BCE 1400년 우가리트 서기관들은 단 30개 기호의 혁신적인 알파벳 쐐기문자를 발명했지만, 이 문자를 외교 문서나 국제 협정에는 결코 쓰지 않았다. 국제 외교 문서는 여전히 수백 개의 기호를 외워야 하는 아카드 음절 쐐기문자로 작성되었다.
+그러나 후기 청동기 시대(c. 1400–1185 BCE) 시리아 해안의 국제 무역 제국 **우가리트(Ras Shamra)**와 아마르나 외교 서간(Amarna Letters)의 고고학적 발굴은 이 결정론을 완벽히 반박한다. 우가리트 서기관들은 단 30개 기호의 혁신적인 알파벳 쐐기문자를 발명했음에도 불구하고, 국제 외교 문서와 조약 체결에는 수백 개의 기호를 외워야 하는 바빌로니아 아카드어 음절 쐐기문자를 160년 이상 엄격히 독점 유지했다.
 
-알파벳은 현지어 신화(바알 서사시)와 내정 장부에만 쓰였다. 텍스트의 장르와 쓰임새를 결정하는 것은 문자 부호의 형태적 구조가 아니라, 국제 정치 체제, 서기관 공방의 교육 제도, 그리고 외교 네트워크였다.`,
+알파벳은 토착 제의 신화(《바알 서사시》)와 국내 내정 장부에만 쓰였다. 텍스트의 장르와 쓰임새를 결정하는 것은 문자 부호의 형태적 단순성이 아니라, 국가 간 외교 네트워크, 서기관 교육 제도, 그리고 사회적 권력 관계였다. 나아가 기원전 1185년 청동기 붕괴 시 점토판에 결박된 우가리트 알파벳이 절멸한 반면, 휴대용 잉크-파피루스 매체와 결합한 페니키아 선형 알파벳이 살아남아 그리스 폴리스의 시민 제도와 공진화한 역사는 문자 기술과 사회 제도의 변증법적 상호작용을 증명한다.`,
     keyTakeaways: [
-      '쉬운 30개 자음 알파벳 쐐기문자가 발명되었음에도 복잡한 수백 자의 아카드 표어-음절 쐐기문자가 폐기되지 않고 기능적으로 공존함',
-      '국제 외교 서신(아마르나 서신)과 통상 조약은 여전히 아카드어로, 국내 행정과 신화(바알 서사시)는 현지 우가리트 알파벳어로 이원화 분업',
-      '문자의 성공과 선택을 결정하는 것은 문자 부호의 기술적 단순성이 아니라, 국가 간 외교 네트워크, 서기관 교육 기관, 사회적 권력 제도임',
-      '기술 결정론적 알파벳 민주화 신화를 비판하고 세스 샌더스·존 베인스의 서기관 제도 중심 모델 확립'
+      '단 30개의 혁신적 알파벳 쐐기문자가 발명되었음에도 600여 자의 아카드 표어-음절 쐐기문자가 폐기되지 않고 엄격한 양층문자(Digraphia) 기능적 분업을 유지함',
+      '국제 외교 서신(아마르나 EA 286)과 통상 조약은 아카드어로, 국내 행정과 토착 신화(바알 서사시 KTU 1.2 IV)는 우가리트 알파벳어로 이원화 분업',
+      '라스 샴라 4개 언어 대조 어휘집(RS 20.123+)이 증명하듯 우가리트 서기관들은 수메르·아카드·후르리·우가리트어를 넘나드는 통합 다중언어 엘리트 관료였음',
+      '기원전 1185년 청동기 붕괴(RS 20.238) 시 중량 점토판 인프라에 결박된 우가리트 쐐기 알파벳은 사멸했으나, 경량 잉크-파피루스 매체의 페니키아 선형 알파벳은 자율 생존함',
+      '기술 결정론과 단일 제도론을 넘어, 낮은 인지 부하의 문자 구조(기술적 조건)와 개방적 시민 공화정(제도적 조건)이 결합한 그리스 폴리스의 변증법적 공진화 모델 정립'
     ],
-    civilizationsDiscussed: ['ugarit', 'mesopotamia', 'greece'],
-    readingTimeMinutes: 8,
+    civilizationsDiscussed: ['ugarit', 'mesopotamia', 'egypt', 'israel-judah', 'greece'],
+    readingTimeMinutes: 14,
     relatedArtifactIds: ['ugarit-baal-cycle', 'amarna-letters-canaan', 'ugarit-abecedary', 'gortyn-law-code'],
-    crossRefEssayIds: ['essay-1-accounting-first', 'essay-2-lexical-lists', 'essay-4-homer-textualization'],
+    crossRefEssayIds: ['essay-1-accounting-first', 'essay-2-lexical-lists', 'essay-4-homer-textualization', 'essay-5-biblical-four-dates', 'essay-7-preservation-bias'],
     sections: [
       {
         id: 'sec-8-1',
         order: 1,
         headingKo: '1. ‘쉬운 알파벳이 문명을 바꾼다’는 기술 결정론의 함정',
-        subheadingKo: '부호 체계의 단순성이 곧 보편 문해 사회를 낳는다는 착각',
-        content: `19~20세기 서구 문자학에는 뿌리 깊은 '알파벳 우월주의'와 기술 결정론이 자리 잡고 있었다. "수백 개의 기호를 외워야 하는 복잡한 표어-음절 문자(이집트 상형문자, 메소포타미아 쐐기문자)는 소수 사제와 서기관 계급의 지식 독점 도구였으며, 단 20~30자의 단순한 알파벳이 발명되자마자 문자는 만인에게 개방되어 민주주의와 과학이 태동했다"는 서사다.
+        subheadingKo: '잭 구디의 알파벳 민주화 신화와 21세기 비교문자학의 반박',
+        content: `19~20세기 서구 문자학에는 뿌리 깊은 '알파벳 우월주의'와 기술 결정론이 자리 잡고 있었다. "수백 개의 기호를 외워야 하는 복잡한 표어-음절 문자는 소수 사제와 서기관 계급의 지식 독점 도구였으며, 단 20~30자의 단순한 알파벳이 발명되자마자 문자는 만인에게 개방되어 민주주의와 과학이 태동했다"는 잭 구디(Jack Goody)와 에릭 해블록(Eric Havelock)의 서사다.
 
-그러나 후기 청동기 시대(Late Bronze Age, c. 1400–1200 BCE)의 번영하던 지중해 항구 도시 **우가리트(Ras Shamra)**의 고고학적 발굴은 이 환상을 산산조각 냈다. 우가리트의 서기관들은 인류 역사상 최초로 쐐기문자 형태를 띤 완벽한 30개 자음의 알파벳 체계(Ugaritic Cuneiform Alphabet)를 발명했음에도 불구하고, 결코 기존의 복잡한 아카드어 쐐기문자를 폐기하지 않았다.`,
+그러나 후기 청동기 시대(Late Bronze Age, c. 1400–1185 BCE)의 번영하던 지중해 항구 도시 **우가리트(Ras Shamra)**의 고고학적 발굴은 이 환상을 산산조각 냈다. 우가리트의 서기관들은 인류 역사상 최초로 쐐기문자 형태를 띤 완벽한 30개 자음·모음 결합 알파벳 체계(Ugaritic Cuneiform Alphabet)를 발명했음에도 불구하고, 결코 기존의 복잡한 아카드어 쐐기문자를 폐기하지 않았다. 문자의 성공과 선택을 결정한 것은 부호의 단순성이 아니라 국가 권력과 외교 질서라는 제도적 인프라였다.`,
         scholarlyCallout: {
           type: 'theory-debate',
           titleKo: '학술 쟁점: 잭 구디의 기술 결정론 vs 세스 샌더스의 정치 제도론',
@@ -1950,106 +1951,228 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
       {
         id: 'sec-8-2',
         order: 2,
-        headingKo: '2. 우가리트의 경이로운 이중 체제: 30개 알파벳과 아카드 쐐기문자의 공존',
-        subheadingKo: '국내 행정·신화는 우가리트 알파벳, 국제 외교는 아카드 복합 쐐기문자',
-        content: `우가리트의 대사제 일리밀쿠(Ilimilku)와 왕실 서기관 공방에서 출토된 수천 점의 점토판들은 매우 엄격하고 정교한 **기능적 분업(Functional Diglossia & Biscriptalism)**을 보여준다.
+        headingKo: '2. 우가리트의 이중 체제: 30자 알파벳 쐐기문자와 아카드 복합 쐐기문자의 공존',
+        subheadingKo: '토착 제의는 우가리트 알파벳, 국제 외교는 아카드 쐐기문자의 엄격한 양층문자 분업',
+        content: `우가리트의 대사제 관저 공방(Maison du Grand-Prêtre)에서 출토된 수천 점의 점토판들은 매우 엄격하고 정교한 **기능적 분업(Functional Diglossia & Digraphia)**을 보여준다.
 
 1. **우가리트 30자 알파벳 쐐기문자**:
+   - 자모표(RS 12.063 / KTU 5.6): 27개 기본 자음에 모음 결합 알레프 2종(ʾi, ʾu)과 비(非)셈어계 후르리어 전용 문자 s̀(š₂)를 증보한 고도의 언어공학적 산물.
    - 용도: 현지어 신화 서사시(《바알 서사시》, 《키르타 서사시》), 왕실 부동산 매매 및 국내 세무 장부, 종교 제의 희생제물 목록.
-   - 대상: 우가리트 현지 백성과 국내 관료 공동체.
+   - 대상: 우가리트 국왕과 현지 관료 및 종교 공동체.
 
-2. **전통 바빌로니아 아카드 음절 쐐기문자 (수백 자)**:
+2. **전통 바빌로니아 아카드 음절 쐐기문자 (600여 자)**:
    - 용도: 히타이트 대제국과의 종주권 조약, 이집트 파라오와의 외교 서한, 국제 무역 소송 판결문.
-   - 대상: 고대 근동 전역의 국제 외교 네트워크(International Diplomatic Network).
+   - 대상: 고대 근동 전역의 국제 외교 네트워크(Amarna System).
 
-만약 알파벳이 단순히 '배우기 쉽기 때문에' 모든 문자를 대체해야 했다면, 우가리트 서기관들은 왜 수년간 피땀 흘려 수백 개의 복잡한 아카드어 기호와 수메르어 어휘목록을 계속 암기했겠는가? 국제 질서가 요구하는 언어와 서기관 제도의 규범이 기술적 단순성보다 훨씬 더 강력했기 때문이다.`,
+만약 알파벳이 단순히 '배우기 쉽기 때문에' 모든 문자를 대체해야 했다면, 우가리트 서기관들은 왜 수년간 피땀 흘려 수백 개의 복잡한 아카드어 기호와 수메르어 어휘목록을 계속 암기했겠는가? 국제 질서가 요구하는 외교 규범과 서기관 제도가 기술적 단순성보다 훨씬 더 강력했기 때문이다.`,
         originalQuote: {
-          originalScript: '𐎁𐎏𐎍 \t 𐎊𐎎 \t 𐎚𐎔𐎉 \t 𐎐𐎅𐎗',
-          transliteration: 'b-ʿ-l // ym // ṯpṭ nhr (KTU 1.2 IV)',
-          translationKo: '바알 신이 바다(얌)와 강(나하르)의 통치자 신에게 맞서 곤봉을 치켜들다!',
-          sourceCitation: '우가리트 바알 서사시 제2점토판 (KTU 1.2 / Louvre AO 16636)'
+          originalScript: '𐎁𐎏𐎍𐎆𐎊𐎎𐎆𐎚𐎔𐎉𐎆𐎐𐎅𐎗𐎆𐎊𐎔𐎍𐎆𐎍𐎀𐎗𐎕𐎆𐎚𐎐𐎙𐎕𐎐𐎆𐎔𐎐𐎎',
+          transliteration: 'bʿl-m ym [w-]ṯpṭ nhr / y-pl l-ảrṣ w-tngṣn pnm (KTU 1.2 IV 32-34)',
+          translationKo: '바알이 바다의 신 얌과 강의 통치자 나하르를 내리치니, 얌이 땅바닥으로 쓰러지고 그의 얼굴이 경련을 일으키도다!',
+          sourceCitation: '우가리트 바알 서사시 제2점토판 (KTU 1.2 IV / RS 2.[008]+ / Louvre AO 16636)'
         }
       },
       {
         id: 'sec-8-3',
         order: 3,
         headingKo: '3. 아마르나 서신(EA 286)의 증언: 가나안 왕들이 아카드어로 글을 쓴 이유',
-        subheadingKo: '예루살렘 왕 압디-헤바가 이집트 파라오에게 보낸 쐐기문자 점토판',
+        subheadingKo: '예루살렘 왕 압디-헤바가 파라오에게 보낸 쐐기문자 서한과 가나안-아카드어 혼성 문법',
         content: `기원전 14세기 이집트 아마르나 유적에서 발견된 380여 점의 외교 서한인 **아마르나 문서(Amarna Letters)**는 이 국제 서기관 제도의 위력을 가장 생생하게 입증한다.
 
-당시 가나안(팔레스타인) 지역의 도시국가 왕들—예루살렘 왕 압디-헤바(Abdi-Heba), 세켐 왕 라바유, 비블로스 왕 립-하다—은 일상에서 서북셈어 방언(초기 히브리어/페니키아어와 유사한 언어)을 썼으며, 이미 시나이 반도와 레반트에는 초기 원시 알파벳(Proto-Sinaitic)이 존재하고 있었다. 
+당시 가나안(팔레스타인) 지역의 도시국가 왕들—예루살렘 왕 압디-헤바(Abdi-Heba), 세켐 왕 라바유, 비블로스 왕 립-하다—은 일상에서 서북셈어 방언(초기 히브리어/가나안어)을 썼으며, 이미 시나이 반도와 레반트에는 초기 원시 알파벳(Proto-Sinaitic)이 존재하고 있었다. 
 
-그러나 그들은 이집트 파라오 아크나톤에게 편지를 쓸 때 결코 알파벳이나 자국어를 쓰지 않았다. 그들은 메소포타미아에서 파견되었거나 현지에서 에두바 훈련을 받은 전문 서기관을 고용하여, 복잡한 아카드어 쐐기문자로 편지를 작성했다. 비록 본문 곳곳에 가나안 현지어 단어(Glosses)가 무의식적으로 튀어나왔을지라도, 국제 외교 무대에서 통용되는 합법적 공문서는 오직 아카드 쐐기문자뿐이었다.`,
+그러나 예루살렘 왕 압디-헤바가 파라오 아크나톤에게 원군을 요청할 때(EA 286 / 베를린 아시아박물관 VAT 1642), 그는 결코 알파벳이나 자국어를 쓰지 않았다. 앤슨 레이니(Anson F. Rainey)의 고증에 따르면, 서기관들은 서북셈어 통사 구조(VSO)에 아카드어 어휘를 결합한 '가나안-아카드 혼성어(Canaano-Akkadian Interlanguage)'로 편지를 작성했으며, 본문 곳곳에 사선 쐐기 모양의 **글로센카일(Glossenkeil, \\)**을 찍어 현지어 발음(예: EA 286:23 \\ ṣaduq "의롭도다")을 보충 병기했다. 국제 외교 무대에서 통용되는 합법적 공문서는 오직 아카드 쐐기문자뿐이었다.`,
         originalQuote: {
-          originalScript: '𒀀 𒈾 \t 𒈗 \t 𒁁 𒉌 𒅀 \t 𒌝 𒈠 \t 𒁹 𒀵 𒄭 𒁀 \t 𒀵 𒅗 𒈠',
-          transliteration: 'a-na LUGAL EN-ia um-ma 1.ARAD2-Hé-ba ARAD2-ka-ma',
-          translationKo: '나의 주군이신 파라오 왕께, 당신의 종 예루살렘 왕 압디-헤바가 일곱 번, 또 일곱 번 엎드려 말씀드립니다.',
-          sourceCitation: '아마르나 서신 EA 286 (VAT 1642, Vorderasiatisches Museum Berlin)'
+          originalScript: '1. a-na {disz}LUGAL EN-ia {disz}d.UTU-ia qi2-bi2-ma \t 2. um-ma {disz}ARAD2-khi-ba ARAD2-ka-ma',
+          transliteration: 'a-na LUGAL EN-ia d.UTU-ia qi2-bi2-ma / um-ma 1.ARAD2-Hé-ba ARAD2-ka-ma (EA 286:1-2)',
+          translationKo: '나의 주군이신 국왕이자 나의 태양께 말씀드립니다. 당신의 종 예루살렘 왕 압디-헤바가 아뢰나이다.',
+          sourceCitation: '아마르나 서신 EA 286 (VAT 1642 / CDLI P271171, Vorderasiatisches Museum Berlin)'
         }
       },
       {
         id: 'sec-8-4',
         order: 4,
-        headingKo: '4. 서기관 길드와 외교 네트워크: 문자의 운명을 결정한 제도',
-        subheadingKo: '존 베인스의 고대 이집트-근동 관료 제도론',
-        content: `옥스퍼드대 이집트학자 존 베인스(John Baines)가 지적하듯, 고대 사회에서 문자 체계의 채택과 유지는 단순히 '사용자의 편의성'에 의해 결정되지 않는다. 그것은 서기관 계급의 사회적 재생산 기구, 왕권의 지배 정당성 표상, 그리고 제국 간의 국제 조약 네트워크라는 견고한 **제도(Institutions)**에 의해 지탱된다.
+        headingKo: '4. 라스 샴라 4개 언어 대조 어휘집(RS 20.123+): 통합된 다중언어 서기관 엘리트 교육',
+        subheadingKo: '수메르어·아카드어·후르리어·우가리트어를 아우르는 엘리트 커리큘럼',
+        content: `문자 결정론자들은 알파벳 서기관과 쐐기문자 서기관이 서로 다른 계급이었거나 구조적 적대 관계에 있었다고 상상한다. 그러나 라스 샴라의 고위 관료 라프아누의 저택(House of Rapʾanu)에서 출토된 **4개 언어 대조 어휘집(RS 20.123+ / Louvre AO 19936 / Ugaritica V no. 130)**은 이 환상을 완벽히 깨뜨린다.
 
-우가리트가 기원전 1180년경 '바다 민족(Sea Peoples)'의 침략으로 멸망하고 지중해 국제 청동기 무역망이 붕괴했을 때, 놀랍게도 복잡한 아카드 쐐기문자뿐 아니라 혁신적이었던 우가리트 30자 알파벳 쐐기문자 역시 점토판과 함께 완전히 자취를 감추었다. 문자를 지탱하던 왕궁과 서기관 학교라는 '제도'가 붕괴하자, 문자 체계 자체도 사멸한 것이다.`,
+이 점토판은 하나의 점토판 표면에 4개의 평행한 열을 파고, 수메르어(GU₄) - 표준 아카드어(al-pu) - 후르리어(al-te) - 음절 우가리트어(a-la-ap-ú / /ʾalpu/ "황소")를 나란히 배치하여 교육하던 '종합 다중문해(Multiliteracy) 교육 커리큘럼'의 실물이다.
+
+우가리트 서기관들은 알파벳을 몰라서 아카드어를 쓴 것이 아니었다. 그들은 4개 언어와 다중 문자 체계를 자유자재로 넘나드는 고도의 다중언어 엘리트 관료였으며, 장르와 외교적 맥락에 따라 최적의 상징 자본(Symbolic Capital)을 전략적으로 선택하여 구사했던 것이다.`,
         scholarlyCallout: {
-          type: 'comparative-insight',
-          titleKo: '페니키아 선형 알파벳의 승리 요인: 유연한 잉크 매체와 해상 네트워크',
-          bodyKo: '살아남은 것은 점토판 쐐기 알파벳이 아니라, 파피루스와 가죽, 도기 표면에 붓과 먹으로 빠르게 쓸 수 있었던 페니키아 22자 선형 알파벳(Linear Alphabet)이었다. 문자의 생존은 부호 형태뿐 아니라 휴대 가능한 필기 매체와 해상 무역 네트워크라는 제도적 결합에 달려 있었다.'
+          type: 'epigraphic-discovery',
+          titleKo: '비문학적 발견: 우가리트 서기관의 다중문해성(Multiliteracy)',
+          bodyKo: '라스 샴라 유적에서는 8개 언어(수메르어, 아카드어, 우가리트어, 후르리어, 히타이트어, 루비아어, 이집트어, 키프로-미노아어)와 5개 문자 체계가 동시에 출토되었다. 우가리트 서기관들은 고립된 문해자가 아니라 국제적 교섭망의 중심에 선 다중언어 전문가였다.'
         }
       },
       {
         id: 'sec-8-5',
         order: 5,
-        headingKo: '5. 결론: 기술보다 제도가 문자의 운명을 지배한다',
-        subheadingKo: '21세기 디지털 문자문화에 던지는 비교 문자학의 교훈',
-        content: `우가리트와 아마르나의 교훈은 명확하다. 표기 체계의 기술적 단순함이 저절로 문명의 형태를 바꾸는 것이 아니다. 새로운 문자가 사회에 뿌리내리고 기존의 낡은 체계를 대체하기 위해서는, 그것을 가르치는 교육 제도, 그것으로 문서를 작성하는 사법 및 행정 체제, 그리고 공동체의 정체성을 인정하는 정치적 결단이 반드시 뒷받침되어야 한다.
+        headingKo: '5. 21세기 사회학적 패러다임: 세스 샌더스의 토착어 정치학과 부르디외의 상징 자본',
+        subheadingKo: '제국의 보편어에 맞선 토착어 정치 공동체 창출과 서기관 계급 재생산',
+        content: `시카고대 세스 샌더스(Seth L. Sanders, 《The Invention of Hebrew》, 2009) 교수는 우가리트 쐐기 알파벳의 등장을 '국가 주도 토착어화(State-sponsored Vernacularization)'의 관점에서 재해석했다. 
 
-문자 부호(Script)는 씨앗에 불과하며, 그 씨앗이 싹트고 자라는 토양은 언제나 인간이 구축한 사회적 제도(Institution)와 문화적 네트워크였다.`
+제국 통치자들은 아카드어나 이집트 성각문자 같은 '초국가적 보편어'를 통해 지배력을 과시했다. 반면 우가리트 국왕은 역사상 최초로 자신이 다스리는 백성의 일상 언어로 국가 신화(바알 서사시)와 제의를 문자화함으로써, 제국의 헤게모니와 구별되는 **'토착적 정치 공동체(a vernacular political public)'**의 정체성을 구축했다. 우가리트 알파벳은 기술적 편의의 산물이 아니라, 지역 왕권이 독자적인 정치 신학을 수립하기 위해 발명한 고도의 제도적 무기였다.
+
+동시에 피에르 부르디외(Pierre Bourdieu)의 이론대로, 600여 개의 복잡한 쐐기문자는 서기관 길드가 자신들의 사회경제적 특권을 독점하고 세습하기 위한 '폐쇄적 상징 자본'으로 기능했다. 왕궁 제도가 살아있는 한 복합 문자는 서기관 계급의 생존을 위해 결코 포기될 수 없었다.`,
+        scholarlyCallout: {
+          type: 'comparative-insight',
+          titleKo: '비교 통찰: 토착어화(Vernacularization)와 성서 히브리어 국가 형성',
+          bodyKo: '세스 샌더스는 우가리트에서 시작된 토착어 서사시 기록 전통이 철기 시대 고대 이스라엘과 모압, 암몬 등 레반트 민족국가들의 토착어 국가 비문(메샤 석비, 실로암 비문, 성서 히브리어 서사)으로 계승 및 발전되었음을 논증했다.'
+        }
+      },
+      {
+        id: 'sec-8-6',
+        order: 6,
+        headingKo: '6. 기원전 1185년 청동기 붕괴와 매체 물질성(Media Materiality)의 역설',
+        subheadingKo: '암무라피 왕의 최후 서한(RS 20.238)과 점토 쐐기 알파벳의 절멸',
+        content: `기원전 1185년경, '바다 민족(Sea Peoples)'의 침략과 함께 후기 청동기 국제 무역망과 왕궁들이 불타 무너졌다. 라스 샴라의 가마 바닥에서 발견된 우가리트 마지막 왕 암무라피(Ammurapi)의 긴급 서한 **RS 20.238 (*Ugaritica* V no. 24)**은 "적선들이 바다에서 몰려와 도시들을 불태우고 악행을 저질렀나이다"라는 절규를 전한다.
+
+이 파국적 붕괴는 문자의 생존을 결정하는 또 다른 변수인 **'매체의 물리적 물질성(Media Materiality)과 물류 경제학'**을 드러낸다.
+
+1. **우가리트 30자 쐐기 알파벳 (점토판 매체)**:
+   - 무거운 점토판과 왕궁의 가마 및 서기관 학교 인프라에 결박되어 있었기에, 기원전 1185년 왕궁이 파괴되자마자 즉시 완전 사멸함.
+2. **페니키아 22자 선형 알파벳 (잉크-파피루스 매체)**:
+   - 가벼운 파피루스, 가죽, 도기 파편(오스트라콘)에 붓과 먹물로 쓸 수 있어, 왕궁 인프라 없이도 상인과 장인 집단에 의해 자율적으로 전승됨.
+
+살아남은 것은 왕궁에 갇혀 있던 점토 쐐기 알파벳이 아니라, 휴대 가능한 파피루스 위에 빠르게 쓸 수 있었던 페니키아 선형 알파벳이었다. 문자의 궁극적 생존은 부호의 논리적 구조뿐만 아니라 기록 매체의 이동성과 물류 경제성에 달려 있었다.`,
+        originalQuote: {
+          originalScript: 'a-na LUGAL KUR a-la-shi-ia a-bi-ia qi2-bi2-ma ... a-mur ERIN2-mezh LUKUR2 i-na GIŠ.MA2-mezh il-la-ku-ni URU-mezh-ia i-na IZI-mezh i-qad-du-du',
+          transliteration: 'a-na LUGAL KUR a-la-ši-ia a-bi-ia qi2-bi2-ma ... a-mur ERIN2-meš LÚ.KÚR i-na GIŠ.MÁ-meš il-la-ku-ni URU-meš-ia i-na IZI-meš i-qad-du-du (RS 20.238)',
+          translationKo: '나의 아버지, 알라시야(키프로스)의 왕이시여... 보소서, 적의 군함들이 바다에서 몰려와 내 도시들을 불태우고 내 땅에서 온갖 악행을 저질렀나이다.',
+          sourceCitation: '우가리트 멸망 직전 알라시야 국왕 앞 긴급 서한 (RS 20.238 / Ugaritica V no. 24)'
+        }
+      },
+      {
+        id: 'sec-8-7',
+        order: 7,
+        headingKo: '7. 변증법적 총괄: 문자 구조(기술)와 사회 제도(권력)의 공진화 법칙',
+        subheadingKo: '인지적 가능조건과 개방적 시민 제도가 결합한 그리스 폴리스의 역사적 종합',
+        content: `단일제도결정론과 기술결정론은 둘 다 극복되어야 한다. 역사적 진실은 변증법적 3단계 공진화 모델에 있다:
+
+1. **테제 1 (인지적 가능조건 / 기술)**: 스타니스라스 드앤(Stanislas Dehaene, 《Reading in the Brain》)의 신경 재활용론대로 22~30자의 음소 알파벳은 뇌 시각 피질의 인지 부하를 혁명적으로 감축시켰다. 이 단순성은 왕궁 제도가 붕괴하더라도 문자가 민간에서 자생적으로 전승될 수 있는 '탈제도적 회복력(Resilience)'의 기술적 기반이 되었다.
+2. **안티테제 2 (사회적 선택과 통제 / 제도)**: 우가리트와 아마르나가 증명하듯, 문자 기술의 형태적 단순성이 곧바로 사회적 채택을 보장하지 않는다. 문자의 공적 효력을 결정하는 것은 국가의 외교 네트워크와 지배 권력의 제도다.
+3. **종합 3 (변증법적 공진화 / 시민적 종합)**: 진정한 문해 혁명은 '낮은 인지 문턱의 선형 알파벳(기술적 요건)'이 '공개적 법률 비석과 시민 참여를 요구하는 폴리스 공화정(제도적 요건)'과 결합했을 때 비로소 완성되었다.
+
+기원전 5세기 크레타의 **고르틴 법전(IC IV 72)**과 아테네 아고라의 **도편추방제 오스트라콘(Ostraka)**은 문자가 왕궁 깊숙한 아카이브를 벗어나 광장(Agora)의 공공 정치 무기로 전유된 변증법적 공진화의 정점을 보여준다.`,
+        scholarlyCallout: {
+          type: 'theory-debate',
+          titleKo: '변증법적 종합: 로절린드 토머스의 그리스 폴리스 문해론',
+          bodyKo: '로절린드 토머스(Rosalind Thomas, 《Literacy and Orality in Ancient Greece》, 1992)는 그리스 알파벳의 승리가 단순한 문자 형태 덕분이 아니라, 법의 공개성(Isegoria)과 시민 권력 통제를 위해 문자를 공공 광장에 각문(Inscription)한 폴리스 제도의 독특한 정치 문화와의 상호작용 덕분이었음을 논증했다.'
+        }
+      },
+      {
+        id: 'sec-8-8',
+        order: 8,
+        headingKo: '8. 결론: 21세기 디지털 문자문화에 던지는 비교문자학의 교훈',
+        subheadingKo: '도구의 단순성이 아닌 제도와 매체 생태계의 결합이 문명의 형태를 바꾼다',
+        content: `우가리트와 아마르나의 교훈은 현대 디지털 시대에도 여전히 유효하다. 표기 체계나 통신 기술의 단순함이 저절로 문명의 형태를 바꾸거나 민주화를 낳는 것이 아니다.
+
+새로운 문자 기술이 사회에 뿌리내리고 기존 체계를 대체하기 위해서는, 그것을 가르치는 교육 제도, 그것으로 문서를 작성하는 사법 및 행정 체제, 그리고 공동체의 정체성을 인정하는 정치적 결단이 반드시 뒷받침되어야 한다.
+
+문자 부호(Script)는 씨앗에 불과하며, 그 씨앗이 싹트고 자라는 토양은 언제나 인간이 구축한 사회적 제도(Institution)와 매체 생태학적 네트워크였다.`
       }
     ],
     primarySources: [
       {
         id: 'src-8-1',
         artifactId: 'ugarit-baal-cycle',
-        nameKo: '우가리트 바알 서사시 점토판 (KTU 1.1-1.6)',
-        nameEnOrOriginal: 'Ugaritic Baal Epic (KTU 1.1-1.6 / RS 2.[008]+)',
-        catalogNo: 'Louvre AO 16636 / RS 2.[008]+',
+        nameKo: '우가리트 바알 서사시 제2점토판 (KTU 1.2 IV)',
+        nameEnOrOriginal: 'Ugaritic Baal Epic Tablet 2 (KTU 1.2 IV / RS 2.[008]+)',
+        catalogNo: 'Musée du Louvre AO 16636 / RS 2.[008]+',
         institution: 'Musée du Louvre, Paris',
         dateVector: {
           eventDateBCE: 1400,
-          compositionDateBCE: 1400,
+          compositionDateBCE: 1350,
           redactionDateBCE: 1350,
-          witnessDateBCE: 1250
+          witnessDateBCE: 1320
         },
-        originalScript: '𐎁𐎏𐎍 \t 𐎊𐎎 \t 𐎚𐎔𐎉 \t 𐎐𐎅𐎗',
-        transliteration: 'bʿl ym ṯpṭ nhr',
-        translationKo: '바알 신이 바다의 신 얌과 강의 지배자 신에 맞서 싸우는 우가리트 알파벳 쐐기문자 서사시',
+        originalScript: '𐎁𐎏𐎍𐎆𐎊𐎎𐎆𐎚𐎔𐎉𐎆𐎐𐎅𐎗𐎆𐎊𐎔𐎍𐎆𐎍𐎀𐎗𐎕𐎆𐎚𐎐𐎙𐎕𐎐𐎆𐎔𐎐𐎎',
+        transliteration: 'bʿl-m ym [w-]ṯpṭ nhr / y-pl l-ảrṣ w-tngṣn pnm (KTU 1.2 IV 32-34)',
+        translationKo: '바알이 바다의 신 얌과 강의 통치자 나하르를 내리치니, 얌이 땅바닥으로 쓰러지고 그의 얼굴이 경련을 일으키도다!',
         sourceGrade: 'Grade A',
-        epigraphyMethod: '라스 샴라 대사제 관저 발굴, 프랑스 루브르 박물관 비문 정밀 판독',
-        notes: '30개 자음 알파벳 쐐기문자로 기록된 고대 가나안 신화의 최고봉.'
+        epigraphyMethod: '라스 샴라 아크로폴리스 대사제 관저 출토, 수석 서기관 일리밀쿠(ʾIlimilku) 콜로폰 및 프랑스 루브르 박물관 비문 정밀 판독',
+        notes: '니크맛두 2세(King Niqmaddu II, c. 1350–1315 BCE) 치세에 기록된 30자 알파벳 쐐기문자 고대 가나안 토착 신화의 최고봉.'
       },
       {
         id: 'src-8-2',
         artifactId: 'amarna-letters-canaan',
         nameKo: '아마르나 외교 서한 EA 286 (예루살렘 왕 압디-헤바)',
-        nameEnOrOriginal: 'Amarna Letter EA 286 (Abdi-Heba of Jerusalem)',
-        catalogNo: 'Vorderasiatisches Museum Berlin VAT 1642',
+        nameEnOrOriginal: 'Amarna Letter EA 286 (Abdi-Heba of Jerusalem to Pharaoh)',
+        catalogNo: 'Vorderasiatisches Museum Berlin VAT 1642 / CDLI P271171',
         institution: 'Vorderasiatisches Museum, Berlin',
         dateVector: {
           eventDateBCE: 1350,
           compositionDateBCE: 1350,
+          redactionDateBCE: 1350,
           witnessDateBCE: 1350
         },
-        originalScript: '𒀀 𒈾 \t 𒈗 \t 𒁁 𒉌 𒅀 \t 𒁹 𒀵 𒄭 𒁀',
-        transliteration: 'a-na LUGAL EN-ia 1.ARAD2-Hé-ba',
-        translationKo: '나의 주군 파라오께, 예루살렘 왕 압디-헤바가 아카드 쐐기문자로 구원군 파병을 요청하는 서한',
+        originalScript: '1. a-na {disz}LUGAL EN-ia {disz}d.UTU-ia qi2-bi2-ma \t 2. um-ma {disz}ARAD2-khi-ba ARAD2-ka-ma',
+        transliteration: 'a-na LUGAL EN-ia d.UTU-ia qi2-bi2-ma / um-ma 1.ARAD2-Hé-ba ARAD2-ka-ma (EA 286:1-2)',
+        translationKo: '나의 주군이신 국왕이자 나의 태양께 말씀드립니다. 당신의 종 예루살렘 왕 압디-헤바가 아뢰나이다.',
         sourceGrade: 'Grade A',
         epigraphyMethod: '베를린 아시리아학 연구소 점토 원산지 광물학(Petrographic) 분석 및 CDLI 전사',
-        notes: '가나안 왕들이 자국어가 아닌 국제 아카드 외교 쐐기문자로 파라오와 소통했음을 보여주는 결정적 외교 사료.'
+        notes: '가나안 왕들이 자국어 방언 대신 진단적 글로센카일(`\\`)이 포함된 가나안-아카드 혼성 쐐기문자로 파라오와 소통했음을 보여주는 결정적 외교 사료.'
+      },
+      {
+        id: 'src-8-3',
+        artifactId: 'ugarit-abecedary',
+        nameKo: '우가리트 30자 표준 자모표 점토판 (RS 12.063 / KTU 5.6)',
+        nameEnOrOriginal: 'Ugaritic 30-sign Standard Abecedary (RS 12.063 / KTU 5.6)',
+        catalogNo: 'National Archaeological Museum Damascus DO 3651 / DO 4172 / RS 12.063',
+        institution: 'National Archaeological Museum, Damascus',
+        dateVector: {
+          eventDateBCE: 1350,
+          compositionDateBCE: 1350,
+          redactionDateBCE: 1300,
+          witnessDateBCE: 1250
+        },
+        originalScript: '𐎀 𐎁 𐎂 𐎃 𐎄 𐎅 𐎆 𐎇 𐎈 𐎉 𐎊 𐎋 𐎌 𐎍 𐎎 𐎏 𐎐 𐎑 𐎒 𐎓 𐎔 𐎕 𐎖 𐎗 𐎘 𐎙 𐎚 𐎛 𐎜 𐎝',
+        transliteration: 'ʾa - b - g - ḫ - d - h - w - z - ḥ - ṭ - y - k - š - l - m - ḏ - n - ẓ - s - ʿ - p - ṣ - q - r - ṯ - ġ - t - ʾi - ʾu - s̀',
+        translationKo: '우가리트 30개 자음 및 모음 결합 알파벳 쐐기문자의 표준 자모 순서 (ʾ-b-g-d...)',
+        sourceGrade: 'Grade A',
+        epigraphyMethod: '1949년 샤에페르 발굴 라스 샴라 서기관 학교 점토판, 다마스쿠스 박물관 소장 정밀 판독',
+        notes: '후르리어 음운 차용을 위해 기본 27자 외에 ʾi, ʾu, s̀ 3개 문자를 추가 배치한 서아시아 최고의 표준 자모표.'
+      },
+      {
+        id: 'src-8-4',
+        artifactId: 'ugarit-baal-cycle',
+        nameKo: '우가리트 4개 언어 대조 어휘집 (RS 20.123+)',
+        nameEnOrOriginal: 'Ugarit Quadrilingual Polyglot Lexicon (RS 20.123+ / Ugaritica V no. 130)',
+        catalogNo: 'Musée du Louvre AO 19936 / RS 20.123+',
+        institution: 'Musée du Louvre, Paris',
+        dateVector: {
+          eventDateBCE: 1300,
+          compositionDateBCE: 1300,
+          redactionDateBCE: 1250,
+          witnessDateBCE: 1200
+        },
+        originalScript: 'GU4 \t al-pu \t al-te \t a-la-ap-u2',
+        transliteration: 'Col I: GU4 / Col II: al-pu / Col III: al-te / Col IV: a-la-ap-ú (/ʾalpu/)',
+        translationKo: '제1열 수메르어(GU4) - 제2열 아카드어(alpu) - 제3열 후르리어(alte) - 제4열 음절 우가리트어(alapu) 4단 대조',
+        sourceGrade: 'Grade A',
+        epigraphyMethod: '라스 샴라 라프아누 저택(House of Rapʾanu) 출토 다중언어 서기관 교육 점토판 판독',
+        notes: '우가리트 서기관들이 수메르-아카드 고전문헌부터 토착어까지 통합적으로 훈련받은 다중문해 엘리트였음을 실증하는 핵심 유물.'
+      },
+      {
+        id: 'src-8-5',
+        artifactId: 'ugarit-baal-cycle',
+        nameKo: '우가리트 최후의 멸망 위기 서한 (RS 20.238)',
+        nameEnOrOriginal: 'Final Crisis Letter of King Ammurapi to Alashiya (RS 20.238 / Ugaritica V no. 24)',
+        catalogNo: 'National Archaeological Museum Damascus RS 20.238',
+        institution: 'National Archaeological Museum, Damascus',
+        dateVector: {
+          eventDateBCE: 1185,
+          compositionDateBCE: 1185,
+          redactionDateBCE: 1185,
+          witnessDateBCE: 1185
+        },
+        originalScript: 'a-na LUGAL KUR a-la-shi-ia a-bi-ia qi2-bi2-ma ... a-mur ERIN2-mezh LUKUR2 i-na GIŠ.MA2-mezh il-la-ku-ni URU-mezh-ia i-na IZI-mezh i-qad-du-du',
+        transliteration: 'a-na LUGAL KUR a-la-ši-ia a-bi-ia qi2-bi2-ma ... a-mur ERIN2-meš LÚ.KÚR i-na GIŠ.MÁ-meš il-la-ku-ni URU-meš-ia i-na IZI-meš i-qad-du-du (RS 20.238)',
+        translationKo: '나의 아버지, 알라시야의 왕이시여... 보소서, 적의 군함들이 바다에서 몰려와 내 도시들을 불태우고 내 땅에서 온갖 악행을 저질렀나이다.',
+        sourceGrade: 'Grade A',
+        epigraphyMethod: '라스 샴라 가마(Kiln) 소각층 출토, 우가리트 멸망 직전 마지막 왕 암무라피의 아카드어 외교 서한',
+        notes: '기원전 1185년 바다 민족의 침략으로 우가리트 왕궁과 점토판 아카이브가 일시에 소멸했음을 증명하는 포렌식 사료.'
       }
     ],
     scholarlyDebates: [
@@ -2057,18 +2180,35 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
         id: 'deb-8-1',
         topic: '알파벳의 확산 동력: 문자 형태의 단순성(기술)인가, 서기관 길드와 정치 질서(제도)인가?',
         thesisA: {
-          scholarOrSchool: '잭 구디 (Jack Goody, 1977)',
-          eraOrYear: '1977',
-          claimKo: '알파벳의 적은 기호 수와 단순성이 필연적으로 서기관의 문자 독점을 해체하고 민주적 대중 문해 사회를 촉진했다.',
-          keyEvidence: '고대 그리스 폴리스의 도편추방제와 시민 법률 비문의 광범위한 공개성.'
+          scholarOrSchool: '잭 구디 & 에릭 해블록 (Jack Goody & Eric Havelock, 1963, 1977)',
+          eraOrYear: '1963–1977',
+          claimKo: '알파벳의 적은 기호 수와 단순성이 필연적으로 서기관의 문자 독점을 해체하고 인지적 해방과 민주적 대중 문해 사회를 촉진했다.',
+          keyEvidence: '고대 그리스 폴리스의 도편추방제와 시민 법률 비문의 광범위한 공개성 및 서구 합리주의의 발흥.'
         },
         thesisB: {
-          scholarOrSchool: '세스 샌더스 & 존 베인스 (Seth Sanders & John Baines, 2007, 2009)',
-          eraOrYear: '2007–2009',
-          claimKo: '우가리트 사례가 증명하듯 알파벳은 수백 년간 복합 문자와 공존했으며, 문자의 사회적 지위와 용도를 결정한 것은 국가 간 외교 질서와 서기관 양성 제도였다.',
-          keyEvidence: '우가리트에서 알파벳 발명 후에도 국제 외교 문서에 아카드 쐐기문자를 엄격히 독점 유지한 점토판 아카이브의 실태.'
+          scholarOrSchool: '세스 샌더스, 존 베인스, 로절린드 토머스 (Seth Sanders, John Baines, Rosalind Thomas, 1992–2009)',
+          eraOrYear: '1992–2009',
+          claimKo: '우가리트 사례가 증명하듯 알파벳은 수백 년간 복합 문자와 공존했으며, 문자의 사회적 지위와 장르를 결정한 것은 국가 간 외교 질서와 서기관 양성 제도였다. 문해의 확산은 단순한 기술이 아니라 열린 시민 제도와의 변증법적 공진화의 결과다.',
+          keyEvidence: '우가리트에서 30자 알파벳 발명 후에도 국제 외교에 아카드 쐐기문자를 160년 이상 독점 유지한 점토판 아카이브 실태 및 그리스 아고라 비석 문화.'
         },
-        consensusStatus: '현대 고대 근동학계는 기술 결정론적 알파벳 발전관을 기각하고, 서기관 제도와 국가 정치 네트워크의 우위를 인정함.'
+        consensusStatus: '현대 비교문자학계는 단순한 기술 결정론을 기각하고, 인지적 가능조건(기술)과 사회적 선택(제도)의 변증법적 공진화 모델을 수용함.'
+      },
+      {
+        id: 'deb-8-2',
+        topic: '아마르나 가나안-아카드어의 성격: 능동적 혼성 중간언어인가, 수동적 이문 표기(Alloglottography)인가?',
+        thesisA: {
+          scholarOrSchool: '앤슨 레이니 & 윌리엄 모란 (Anson F. Rainey & William L. Moran, 1992, 1996)',
+          eraOrYear: '1992–1996',
+          claimKo: '아마르나 서한의 언어는 서북셈어 문법(VSO 어순, yaqtulu 접두사)과 아카드어 어휘가 결합된 능동적 규칙 체계를 가진 서기관 혼성 중간언어(Interlanguage)다.',
+          keyEvidence: '아마르나 서한에 규칙적으로 등장하는 복합 동사 형태(yi-qtul-u-na)와 글로센카일(\\)을 동반한 음성적 토착어 보충 주석.'
+        },
+        thesisB: {
+          scholarOrSchool: '에바 폰 다소 (Eva von Dassow, 2004, 2008)',
+          eraOrYear: '2004–2008',
+          claimKo: '가나안 서기관들은 아카드어 쐐기문자를 일종의 이문(Akkadogram / Alloglottography)으로 취급하여, 쓰기는 아카드어로 쓰고 읽기는 현지 가나안 구어로 소리 내어 읽었다.',
+          keyEvidence: '메소포타미아 쐐기문자가 히타이트와 엘람에서 표의문자처럼 전용된 역사적 용례 및 서기관들의 문자-구어 분리 현상.'
+        },
+        consensusStatus: '현대 학계는 두 입장을 종합하여, 가나안-아카드어가 순수 구어가 아닌 고도로 인위적인 서기관 문어(Grapholect)이자 혼성 코드 연속체였음을 인정함.'
       }
     ],
     bibliography: [
@@ -2083,18 +2223,74 @@ export const COMPARATIVE_ESSAYS: ComparativeEssay[] = [
       {
         id: 'bib-8-2',
         sourceGrade: 'Grade A',
+        author: 'Rainey, Anson F.',
+        year: 1996,
+        title: 'Canaanite in the Amarna Tablets (4 volumes)',
+        publication: 'Handbuch der Orientalistik. Leiden: E.J. Brill.'
+      },
+      {
+        id: 'bib-8-3',
+        sourceGrade: 'Grade A',
+        author: 'Rainey, Anson F.',
+        year: 2008,
+        title: 'Toward a Grammar of the Amarna Canaanite Texts',
+        publication: 'Bulletin of the American Schools of Oriental Research 350: 59–69.'
+      },
+      {
+        id: 'bib-8-4',
+        sourceGrade: 'Grade A',
+        author: 'Pardee, Dennis',
+        year: 2002,
+        title: 'Ritual and Cult at Ugarit',
+        publication: 'SBL Writings from the Ancient World 10. Atlanta: Society of Biblical Literature.'
+      },
+      {
+        id: 'bib-8-5',
+        sourceGrade: 'Grade A',
+        author: 'Bordreuil, Pierre & Pardee, Dennis',
+        year: 2009,
+        title: 'A Manual of Ugaritic',
+        publication: 'Linguistic Studies in Ancient West Semitic 3. Winona Lake: Eisenbrauns.'
+      },
+      {
+        id: 'bib-8-6',
+        sourceGrade: 'Grade A',
         author: 'Baines, John',
         year: 2007,
         title: 'Visual and Written Culture in Ancient Egypt',
         publication: 'Oxford: Oxford University Press.'
       },
       {
-        id: 'bib-8-3',
+        id: 'bib-8-7',
         sourceGrade: 'Grade A',
-        author: 'Pardee, Dennis',
-        year: 2002,
-        title: 'Ritual and Cult at Ugarit',
-        publication: 'SBL Writings from the Ancient World 10, Atlanta: Society of Biblical Literature.'
+        author: 'von Dassow, Eva',
+        year: 2004,
+        title: 'Canaanite in Cuneiform',
+        publication: 'Journal of the American Oriental Society 124(4): 641–674.'
+      },
+      {
+        id: 'bib-8-8',
+        sourceGrade: 'Grade A',
+        author: 'Rollston, Christopher A.',
+        year: 2010,
+        title: 'Writing and Literacy in the World of Ancient Israel: Epigraphic Evidence from the Iron Age',
+        publication: 'Archaeology and Biblical Studies 11. Atlanta: Society of Biblical Literature.'
+      },
+      {
+        id: 'bib-8-9',
+        sourceGrade: 'Grade A',
+        author: 'Thomas, Rosalind',
+        year: 1992,
+        title: 'Literacy and Orality in Ancient Greece',
+        publication: 'Cambridge: Cambridge University Press.'
+      },
+      {
+        id: 'bib-8-10',
+        sourceGrade: 'Grade A',
+        author: 'Dehaene, Stanislas',
+        year: 2009,
+        title: 'Reading in the Brain: The New Science of How We Read',
+        publication: 'New York: Penguin Viking.'
       }
     ]
   }
